@@ -1,0 +1,27 @@
+name: Start a conversation
+description: Ask about AI education, share a collaboration idea, or give website feedback.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Let's explore what's next.
+        Use this space for questions about AI education, collaboration ideas, or feedback on the website.
+
+        **This issue and all replies are public, not private messages.** GitHub sign-in is required to post and reply. Your GitHub username will identify the conversation.
+
+        Please do not include email addresses, phone numbers, student records, credentials, or other private information.
+  - type: textarea
+    id: message
+    attributes:
+      label: What would you like to discuss?
+      description: Share your question or idea, useful context, and the outcome you are hoping for. Include only information you are comfortable making public.
+      placeholder: Tell me what you are exploring and how I might help.
+    validations:
+      required: true
+  - type: checkboxes
+    id: public-notice
+    attributes:
+      label: Before posting
+      options:
+        - label: I understand this issue and its replies are public, and I have not included private or sensitive information.
+          required: true
