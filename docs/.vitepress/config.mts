@@ -17,6 +17,18 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#f3f0e8' }]
   ],
   transformHead({ pageData }) {
+    if (pageData.relativePath === 'teaching.md' || pageData.relativePath === 'research.md') {
+      const slug = pageData.relativePath.replace(/\\.md$/, '')
+      const url = `${site.url}/${slug}`
+      return [
+        ['link', { rel: 'canonical', href: url }],
+        ['meta', { property: 'og:type', content: 'article' }],
+        ['meta', { property: 'og:url', content: url }],
+        ['meta', { property: 'og:title', content: `${pageData.title} | ${site.name}` }],
+        ['meta', { property: 'og:description', content: pageData.description || site.description }],
+        ['meta', { name: 'twitter:card', content: 'summary' }]
+      ]
+    }
     if (pageData.relativePath !== 'index.md') return []
     return [
       ['link', { rel: 'canonical', href: `${site.url}/` }],
