@@ -7,7 +7,8 @@
     "dev": "vitepress dev docs --host 127.0.0.1",
     "build": "vitepress build docs",
     "preview": "vitepress preview docs --host 127.0.0.1",
-    "deploy": "node scripts/deploy-pages.mjs"
+    "deploy": "node scripts/deploy-pages.mjs",
+    "test": "npm run build && node scripts/verify-site.mjs"
   },
   "devDependencies": {
     "vitepress": "^1.6.4",
