@@ -2,7 +2,7 @@
 import { computed, ref, onMounted, onUnmounted, watch } from 'vue'
 import { useData } from 'vitepress'
 import { site } from '../site'
-import { navItems, focusAreas, approachSteps } from './content'
+import { navItems, focusAreas, approachSteps, projects, zambiaExperience } from './content'
 import SiteIcon from './components/SiteIcon.vue'
 
 const { frontmatter } = useData()
@@ -77,7 +77,7 @@ onUnmounted(() => {
         <p class="eyebrow"><span class="status-dot"></span> AT THE INTERSECTION OF AI & HUMAN POTENTIAL</p>
         <h1 id="hero-title">Exploring AI.<br>Building<br><em>understanding.</em></h1>
         <p class="hero-intro">I'm Keith Williams, an educator and builder exploring how AI can help us learn, create, and solve meaningful problems.</p>
-        <a class="button button-dark" href="#focus">Explore my work <SiteIcon name="arrow-down-right" class="link-arrow" /></a>
+        <a class="button button-dark" href="#projects">Explore my work <SiteIcon name="arrow-down-right" class="link-arrow" /></a>
         <div class="hero-footnote"><span class="small-cross" aria-hidden="true">+</span> Curiosity leads. Judgment gives it direction.</div>
       </div>
       <figure class="hero-art">
@@ -109,9 +109,33 @@ onUnmounted(() => {
       </div>
     </section>
 
+    <section id="projects" class="projects-section wrap" aria-labelledby="projects-title">
+      <div class="section-heading">
+        <p class="eyebrow">02 / SELECTED PROJECTS</p>
+        <div><h2 id="projects-title">Ideas made<br><em>tangible.</em></h2><p>Public work in educational systems, practical AI tools, and learning through design.</p></div>
+      </div>
+      <div class="project-list">
+        <article v-for="project in projects" :id="project.id" :key="project.id" class="project-case" :aria-labelledby="`${project.id}-title`">
+          <div class="project-identity">
+            <p class="eyebrow"><span>{{ project.number }}</span> / {{ project.category }}</p>
+            <h3 :id="`${project.id}-title`">{{ project.title }}</h3>
+            <p class="project-status">{{ project.status }}</p>
+          </div>
+          <div class="project-body">
+            <p class="project-summary">{{ project.summary }}</p>
+            <dl class="project-details">
+              <div v-for="detail in project.details" :key="detail.label"><dt>{{ detail.label }}</dt><dd>{{ detail.text }}</dd></div>
+            </dl>
+            <p class="project-note">{{ project.note }}</p>
+            <div class="project-links"><a v-for="link in project.links" :key="link.href" class="text-link" :href="link.href" :aria-label="`${link.label}: ${project.title}`">{{ link.label }} <SiteIcon name="arrow-up-right" class="link-arrow" /></a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section id="approach" class="approach-section" aria-labelledby="approach-title">
       <div class="wrap approach-inner">
-        <div class="approach-heading"><p class="eyebrow">02 / A WAY OF WORKING</p><h2 id="approach-title">An explorer's curiosity.<br>A sage's <em>discernment.</em></h2><p>Explore what's possible. Understand what works. Share what helps.</p><a class="text-link light-link" :href="site.github">Follow the work on GitHub <SiteIcon name="arrow-up-right" class="link-arrow" /></a></div>
+        <div class="approach-heading"><p class="eyebrow">03 / A WAY OF WORKING</p><h2 id="approach-title">An explorer's curiosity.<br>A sage's <em>discernment.</em></h2><p>Explore what's possible. Understand what works. Share what helps.</p><a class="text-link light-link" :href="site.github">Follow the work on GitHub <SiteIcon name="arrow-up-right" class="link-arrow" /></a></div>
         <ol class="approach-steps">
           <li v-for="step in approachSteps" :key="step.number">
             <span>{{ step.number }}</span>
@@ -127,11 +151,26 @@ onUnmounted(() => {
         <img src="/images/keith-williams-960.webp" srcset="/images/keith-williams-480.webp 480w, /images/keith-williams-960.webp 960w, /images/keith-williams-1440.webp 1440w" sizes="(max-width: 640px) min(440px, calc(100vw - 40px)), (max-width: 1392px) 46vw, 638px" alt="Keith Williams in a classroom" width="2316" height="3088" loading="lazy" decoding="async">
         <figcaption><span>02 / THE EDUCATOR</span><span>Keith Williams</span></figcaption>
       </figure>
-      <div class="about-copy"><p class="eyebrow">03 / A LITTLE BACKGROUND</p><h2 id="about-title">An educator.<br>A builder.<br><em>Always a learner.</em></h2><p>I've spent more than two decades teaching at NJIT, connecting software development with practical learning. Today, my focus is on AI education and the B.S. Enterprise AI program.</p><p>I care about helping people develop the confidence to build and the judgment to know whether what they've built is useful. The tools will keep changing. That foundation matters.</p><a class="text-link" :href="site.faculty">My NJIT faculty profile <SiteIcon name="arrow-up-right" class="link-arrow" /></a></div>
+      <div class="about-copy"><p class="eyebrow">04 / A LITTLE BACKGROUND</p><h2 id="about-title">An educator.<br>A builder.<br><em>Always a learner.</em></h2><p>I've spent more than two decades teaching at NJIT, connecting software development with practical learning. Today, my focus is on AI education and the B.S. Enterprise AI program.</p><p>I care about helping people develop the confidence to build and the judgment to know whether what they've built is useful. The tools will keep changing. That foundation matters.</p><a class="text-link" :href="site.faculty">My NJIT faculty profile <SiteIcon name="arrow-up-right" class="link-arrow" /></a></div>
+    </section>
+
+    <section id="zambia" class="experience-section wrap" aria-labelledby="experience-title">
+      <div class="section-heading">
+        <p class="eyebrow">05 / FIELD EXPERIENCE · ZAMBIA</p>
+        <div><h2 id="experience-title">Learning across<br><em>borders.</em></h2><p>Teaching and software practice connected through work with Zambian universities and government teams.</p></div>
+      </div>
+      <div class="experience-grid">
+        <article v-for="experience in zambiaExperience" :key="experience.year" class="experience-entry" :aria-labelledby="`zambia-${experience.year}-title`">
+          <p class="eyebrow">{{ experience.year }} / ZAMBIA</p>
+          <h3 :id="`zambia-${experience.year}-title`">{{ experience.title }}</h3>
+          <p>{{ experience.text }}</p>
+          <a class="text-link" :href="experience.href">{{ experience.linkLabel }} <SiteIcon name="arrow-up-right" class="link-arrow" /></a>
+        </article>
+      </div>
     </section>
 
     <section class="perspective-section wrap" aria-labelledby="perspective-title">
-      <div class="section-heading compact"><p class="eyebrow">04 / IN THE CONVERSATION</p><h2 id="perspective-title">Learning in the open.</h2></div>
+      <div class="section-heading compact"><p class="eyebrow">06 / IN THE CONVERSATION</p><h2 id="perspective-title">Learning in the open.</h2></div>
       <a class="article-link" href="https://news.njit.edu/njit-faculty-artificial-intelligence-learning-opportunity"><div><span class="eyebrow">NJIT NEWS · AI & EDUCATION</span><h3>Artificial intelligence is a learning opportunity.</h3><p>A conversation about how AI changes the way we teach, learn, and build software.</p></div><SiteIcon name="arrow-up-right" class="article-arrow" /></a>
     </section>
 

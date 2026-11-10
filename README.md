@@ -30,6 +30,8 @@ Homepage structure lives in `docs/.vitepress/theme/Layout.vue`; repeatable conte
 
 No analytics, tracking scripts, embedded contact forms, or external font requests are included.
 
+The Selected Projects and Zambia field-experience sections are driven by `theme/content.ts`. Project summaries distinguish published foundations, alpha software, and a teaching template from unfinished work. Their public evidence is recorded in [CONTENT_SOURCES.md](CONTENT_SOURCES.md). Recheck release status and capabilities before updating these claims; do not present a roadmap, classroom exercise, or proposed outcome as delivered work.
+
 ## Public conversations
 
 The website contact button opens GitHub's native issue form at:

@@ -15,6 +15,28 @@ check('Homepage is pre-rendered with one H1 and original content', () => {
   for (const text of ['Exploring AI.', 'Keith Williams', 'Senior University Lecturer', 'B.S. Enterprise AI', 'Human judgment', 'Public on GitHub', 'student records']) assert.ok(home.includes(text), text)
   assert.ok(home.includes('<main'))
 })
+check('Project cases and historical experience include status and source links', () => {
+  assert.equal((home.match(/class="project-case"/g) || []).length, 3)
+  assert.equal((home.match(/class="experience-entry"/g) || []).length, 2)
+  for (const text of ['Educational Design System', 'Everyday AI CLI', 'IS117 Brand Studio', 'Published phase-one foundation', 'Published alpha · v0.2.2', 'Public teaching template', 'full publishing roadmap is not complete', 'does not process payments or place orders']) assert.ok(home.includes(text), text)
+  for (const url of [
+    'https://github.com/kaw393939/educational-design-system',
+    'https://github.com/kaw393939/everyday-ai-cli',
+    'https://github.com/kaw393939/is117-brand-studio',
+    'https://pypi.org/project/everydayai-cli/0.2.2/',
+    'https://news.njit.edu/inspiring-students-njit-africa',
+    'https://news.njit.edu/njit-lecturer-helps-digitize-government-services-zambia'
+  ]) assert.ok(home.includes(`href="${url}"`), url)
+})
+check('Section anchors and accessible heading references resolve uniquely', () => {
+  const ids = [...home.matchAll(/\bid="([^"]+)"/g)].map(match => match[1])
+  assert.equal(new Set(ids).size, ids.length, 'Duplicate HTML id')
+  for (const [, id] of home.matchAll(/href="\/?#([^"]+)"/g)) assert.ok(ids.includes(id), id)
+  for (const [, references] of home.matchAll(/aria-labelledby="([^"]+)"/g)) {
+    for (const id of references.split(' ')) assert.ok(ids.includes(id), id)
+  }
+  assert.ok(home.includes('href="#projects"'))
+})
 check('Unique title, canonical URL and share metadata', () => {
   assert.match(home, /<title>Keith Williams · AI educator &amp; explorer<\/title>/)
   assert.match(home, /rel="canonical" href="https:\/\/kaw393939.github.io\/"/)

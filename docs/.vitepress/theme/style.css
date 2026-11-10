@@ -879,6 +879,124 @@ main:focus {
   padding-left: 12px;
 }
 
+/* Evidence-backed projects and professional field experience. */
+.projects-section {
+  padding-bottom: 104px;
+}
+
+.project-list {
+  margin-top: 48px;
+  border-bottom: 1px solid var(--line);
+}
+
+.project-case {
+  display: grid;
+  grid-template-columns: 1fr 1.65fr;
+  gap: 64px;
+  border-top: 1px solid var(--line);
+  padding-block: 38px;
+  scroll-margin-top: 112px;
+}
+
+.project-identity .eyebrow, .experience-entry .eyebrow {
+  color: var(--accent);
+}
+
+.project-identity h3, .experience-entry h3 {
+  font-family: var(--serif);
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: -.025em;
+  line-height: 1.2;
+  margin-top: 16px;
+}
+
+.project-status {
+  display: inline-block;
+  border-left: 2px solid var(--accent);
+  padding-left: 11px;
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.project-summary {
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 52ch;
+}
+
+.project-details {
+  display: grid;
+  gap: 14px;
+  margin: 22px 0;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.project-details > div {
+  display: grid;
+  grid-template-columns: 65px 1fr;
+  gap: 14px;
+}
+
+.project-details dt {
+  font-weight: 600;
+}
+
+.project-details dd {
+  margin: 0;
+  color: var(--body);
+}
+
+.project-note {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.75;
+  max-width: 65ch;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 30px;
+  margin-top: 22px;
+}
+
+.project-links .text-link {
+  gap: 12px;
+}
+
+.experience-section {
+  padding-bottom: 96px;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 42px;
+}
+
+.experience-entry {
+  border-top: 1px solid var(--ink);
+  padding-top: 26px;
+}
+
+.experience-entry > p:not(.eyebrow) {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--body);
+  margin-top: 18px;
+  max-width: 55ch;
+}
+
+.experience-entry .text-link {
+  margin-top: 22px;
+  gap: 12px;
+}
+
 @media (min-width:1500px) {
   .hero {
     padding-top: 75px;
@@ -971,6 +1089,23 @@ main:focus {
 }
 
 @media (max-width:850px) {
+  .project-case {
+    gap: 30px;
+    grid-template-columns: 1fr 1.5fr;
+  }
+
+  .project-identity h3, .experience-entry h3 {
+    font-size: 27px;
+  }
+
+  .projects-section, .experience-section {
+    padding-bottom: 70px;
+  }
+
+  .experience-grid {
+    gap: 30px;
+  }
+
   .wrap,.header-inner {
     width: calc(100% - 48px);
   }
@@ -1150,6 +1285,40 @@ main:focus {
 }
 
 @media (max-width:640px) {
+  .project-case, .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .project-case {
+    padding-block: 30px;
+  }
+
+  .project-list, .experience-grid {
+    margin-top: 30px;
+  }
+
+  .experience-grid {
+    gap: 36px;
+  }
+
+  .project-identity h3, .experience-entry h3 {
+    font-size: 29px;
+  }
+
+  .project-status {
+    margin-top: 15px;
+  }
+
+  .project-details > div {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .project-links {
+    gap: 12px 24px;
+  }
+
   html {
     scroll-padding-top: 82px;
   }
