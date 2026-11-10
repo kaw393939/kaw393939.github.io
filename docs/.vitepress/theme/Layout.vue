@@ -92,7 +92,10 @@ const focusAreas = [
     </section>
 
     <section id="about" class="about-section wrap" aria-labelledby="about-title">
-      <figure class="study-art"><img src="/images/sage-study.webp" alt="An imagined sunlit study with a blank notebook, bronze compass, and stone sphere" width="1672" height="941" loading="lazy"><figcaption><span>02 / THE SAGE</span><span>Space to think. Room to discover.</span></figcaption></figure>
+      <figure class="portrait">
+        <img src="/images/keith-williams.jpg" alt="Keith Williams in a classroom" width="2316" height="3088" loading="lazy" decoding="async">
+        <figcaption><span>02 / THE EDUCATOR</span><span>Keith Williams</span></figcaption>
+      </figure>
       <div class="about-copy"><p class="eyebrow">03 / A LITTLE BACKGROUND</p><h2 id="about-title">An educator.<br>A builder.<br><em>Always a learner.</em></h2><p>I've spent more than two decades teaching at NJIT, connecting software development with practical learning. Today, my focus is on AI education and the B.S. Enterprise AI program.</p><p>I care about helping people develop the confidence to build and the judgment to know whether what they've built is useful. The tools will keep changing. That foundation matters.</p><a class="text-link" href="https://people.njit.edu/profile/kwilliam">My NJIT faculty profile <span aria-hidden="true">↗</span></a></div>
     </section>
 
@@ -116,5 +119,5 @@ const focusAreas = [
   </main>
   <main v-else id="main" class="document-page wrap"><Content /></main>
 
-  <footer class="site-footer wrap"><div><a class="footer-name" href="/">Keith Williams</a><p>Curiosity with a compass.</p></div><div class="footer-links"><a href="https://github.com/kaw393939">GitHub ↗</a><a href="https://people.njit.edu/profile/kwilliam">NJIT ↗</a><a href="#main">Back to top ↑</a></div><div class="footer-fine"><span>© {{ new Date().getFullYear() }} Keith Williams</span><span>Built with VitePress · Original AI-generated artwork</span><span>Personal website. Views are my own.</span></div></footer>
+  <footer class="site-footer wrap"><div><a class="footer-name" href="/">Keith Williams</a><p>Curiosity with a compass.</p></div><div class="footer-links"><a href="https://github.com/kaw393939">GitHub ↗</a><a href="https://people.njit.edu/profile/kwilliam">NJIT ↗</a><a href="#main">Back to top ↑</a></div><div class="footer-fine"><span>© {{ new Date().getFullYear() }} Keith Williams</span><span>Built with VitePress · AI-generated landscape artwork</span><span>Personal website. Views are my own.</span></div></footer>
 </template>

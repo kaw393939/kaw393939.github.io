@@ -26,7 +26,7 @@ The deploy script builds VitePress and updates the `gh-pages` branch without a f
 
 ## Content and imagery
 
-Homepage content lives in `docs/.vitepress/theme/Layout.vue`; styles live in `style.css`. The original AI-generated explorer and sage imagery lives in `docs/public/images/`. These are conceptual illustrations, not photographs of Keith Williams or his workspace.
+Homepage content lives in `docs/.vitepress/theme/Layout.vue`; styles live in `style.css`. The user-provided photograph of Keith Williams in the About section lives at `docs/public/images/keith-williams.jpg`. It retains its original pixels with private metadata removed (only display orientation is retained), and uses a responsive CSS crop, descriptive alt text, explicit dimensions, and lazy loading. The original AI-generated explorer and sage imagery also lives in `docs/public/images/`. The explorer landscape remains in the hero; these conceptual illustrations are distinct from the portrait photograph.
 
 No analytics, tracking scripts, embedded contact forms, or external font requests are included.
 
