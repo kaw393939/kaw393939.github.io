@@ -1288,6 +1288,8 @@ main:focus {
 
   figcaption {
     font-size: 11px;
+    flex-direction: column;
+    gap: 4px;
   }
 
   .credentials {
