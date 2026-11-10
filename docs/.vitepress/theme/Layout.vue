@@ -28,12 +28,16 @@ const observeSections = () => {
   observer?.disconnect()
   activeSection.value = ''
   if (!isHome.value || !('IntersectionObserver' in window)) return
+  const sections = [...document.querySelectorAll('main section[id]')]
+  const visibleSections = new Set<string>()
   observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) activeSection.value = entry.target.id
+      if (entry.isIntersecting) visibleSections.add(entry.target.id)
+      else visibleSections.delete(entry.target.id)
     })
+    activeSection.value = sections.find(section => visibleSections.has(section.id))?.id ?? ''
   }, { rootMargin: '-20% 0px -60% 0px' })
-  document.querySelectorAll('main section[id]').forEach(section => observer?.observe(section))
+  sections.forEach(section => observer?.observe(section))
 }
 watch(isHome, () => { closeMenu(); observeSections() }, { flush: 'post' })
 onMounted(() => {
