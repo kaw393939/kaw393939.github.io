@@ -1,10 +1,21 @@
-export const navItems = [{ id: 'projects', label: 'Projects' }, { id: 'approach', label: 'Approach' }, { id: 'about', label: 'About' }]
-export const focusAreas = [
-  { number: '01', icon: 'book', title: 'AI education', text: 'Helping people move from experimenting with AI to understanding how to use it thoughtfully. Learning through building, questioning, and evaluating.', tag: 'Learning by doing' },
-  { number: '02', icon: 'specification', title: 'Spec-driven development', text: 'Making intent explicit before asking AI to build. Clear requirements, acceptance criteria, and feedback turn a promising idea into work that can be evaluated.', tag: 'Clarity before code' },
-  { number: '03', icon: 'judgment', title: 'Human judgment', text: 'Keeping people responsible for the questions, the evidence, and the decisions. Useful AI starts with knowing what matters and recognizing what is missing.', tag: 'People at the center' }
+export const navItems = [
+  { id: 'teaching', label: 'Teaching', href: '/teaching' },
+  { id: 'research', label: 'Research', href: '/research' },
+  { id: 'projects', label: 'Projects', href: '/#projects' },
+  { id: 'about', label: 'About', href: '/#about' }
 ]
-
+export const focusAreas = [
+  {
+    number: '01', icon: 'book', title: 'Teaching AI',
+    text: 'Help students, educators, professionals, and curious newcomers learn to work with AI. Practice comes first: build, question, test, and explain what the tools produce.',
+    tag: 'Skills, literacy & applied learning', href: '/teaching', linkLabel: 'Explore teaching'
+  },
+  {
+    number: '02', icon: 'judgment', title: 'Rethinking Education',
+    text: 'Investigate what learning, assessment, and curriculum should become when AI can produce so much of the work. Keep human understanding and judgment at the center.',
+    tag: 'Inquiry, curriculum & assessment', href: '/research', linkLabel: 'Explore research questions'
+  }
+]
 export const approachSteps = [
   {
     "number": "01",
@@ -25,6 +36,23 @@ export const approachSteps = [
     "number": "04",
     "title": "Keep judgment human.",
     "text": "Use AI to extend capability while staying accountable for the decisions that matter."
+  }
+]
+
+
+// Inquiry directions, not statements of completed empirical research.
+export const researchQuestions = [
+  {
+    number: '01', title: 'Learning beyond the generated answer',
+    text: 'How can AI-assisted assignments develop independent problem-solving, transfer of learning, and the ability to evaluate generated work?'
+  },
+  {
+    number: '02', title: 'Assessment when AI can produce the artifact',
+    text: 'What evidence should count as learning: process, explanation, testing, judgment, collaboration, or the finished product?'
+  },
+  {
+    number: '03', title: 'Human-directed intelligent systems',
+    text: 'How do specifications, provenance, bounded autonomy, and human review make AI collaboration accountable and useful?'
   }
 ]
 
