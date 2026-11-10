@@ -18,7 +18,7 @@ export default defineConfig({
   ],
   transformHead({ pageData }) {
     if (pageData.relativePath === 'teaching.md' || pageData.relativePath === 'research.md') {
-      const slug = pageData.relativePath.replace(/\\.md$/, '')
+      const slug = pageData.relativePath.replace(/\.md$/, '')
       const url = `${site.url}/${slug}`
       return [
         ['link', { rel: 'canonical', href: url }],
