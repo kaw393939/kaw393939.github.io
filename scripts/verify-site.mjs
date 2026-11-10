@@ -83,7 +83,7 @@ check('All homepage images have alt text, dimensions, and responsive sources', (
   }
   assert.ok(images[0].includes('fetchpriority="high"'))
   assert.ok(images[1].includes('loading="lazy"'))
-  assert.ok(statSync(resolve(dist, 'images/keith-williams-480.webp')).size < 60000)
+  assert.ok(statSync(resolve(dist, 'images/keith-classroom-nov2026-480.webp')).size < 60000)
   assert.ok(statSync(resolve(dist, 'images/explorer-horizon-480.webp')).size < 60000)
 })
 check('Accessible controls and reduced-motion support remain', () => {
@@ -150,3 +150,6 @@ check('Public guide links only to approved public destinations', () => {
   assert.ok(guide.includes('not automatically an approved home'))
 })
 console.log(`\n${checks.length} static checks passed. Browser and real-device checks remain separate.`)
+
+assert.ok(home.includes('Hi, IS373! Welcome to my portfolio.'))
+assert.ok(home.includes('/images/keith-classroom-nov2026-960.webp'))
