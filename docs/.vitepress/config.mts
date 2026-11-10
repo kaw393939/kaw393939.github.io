@@ -17,6 +17,30 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#f3f0e8' }]
   ],
   transformHead({ pageData }) {
+    if (pageData.relativePath === 'life-tracker.md') {
+      const url = `${site.url}/life-tracker`
+      const title = 'Life Tracker · How I use AI to follow through'
+      const description = 'How Keith Williams uses a private GitHub work queue with an AI assistant, and how to set up a small version of your own.'
+      return [
+        ['link', { rel: 'canonical', href: url }],
+        ['meta', { property: 'og:type', content: 'article' }],
+        ['meta', { property: 'og:url', content: url }],
+        ['meta', { property: 'og:title', content: title }],
+        ['meta', { property: 'og:description', content: description }],
+        ['meta', { property: 'og:image', content: `${site.url}${site.socialImage}` }],
+        ['meta', { property: 'og:image:alt', content: 'An imagined mountain horizon with contour lines and a vermilion sun' }],
+        ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+        ['script', { type: 'application/ld+json' }, JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: title,
+          description,
+          url,
+          author: { '@type': 'Person', name: site.name, url: `${site.url}/` },
+          mainEntityOfPage: url
+        })]
+      ]
+    }
     if (pageData.relativePath !== 'index.md') return []
     return [
       ['link', { rel: 'canonical', href: `${site.url}/` }],

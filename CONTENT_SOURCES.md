@@ -29,3 +29,7 @@ The repository is a public teaching template with a neutral storefront, live sty
 - [NJIT Lecturer Helps Digitize Government Services in Zambia](https://news.njit.edu/njit-lecturer-helps-digitize-government-services-zambia), NJIT News, June 23, 2020.
 
 The 2019 story supports teaching a progressive web app workshop at ZCAS University for staff and students, and participants beginning a registration-app project. The 2020 story supports work with Zambia's Ministry of Finance, agile development, and lessons carried back to NJIT teaching. These are dated historical accounts, not assertions of an ongoing engagement or completed national rollout. The portfolio omits an award claim because the two stories describe Fulbright timing differently.
+
+## Life Tracker public guide
+
+Published at the owner's request on 2026-11-10 to explain the workflow, setup, and human–AI collaboration. Content is a general description with a fictional workshop example and a new, generic starter checklist. No private repository, case, person, document, source-system link, or internal instruction text is reproduced. The proposed starter labels are deliberately simplified; they are not an export of the private working queue.

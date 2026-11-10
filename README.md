@@ -55,3 +55,9 @@ The navigation supports Escape dismissal, outside-click dismissal, and resets ac
 ## Homepage greeting
 
 The homepage opens a native, accessible dialog displaying the requested text `hello is117` after loading. Visitors can dismiss it with Close or Escape. It appears on each new homepage load, does not use cookies or browser storage, and does not appear on the 404 page.
+
+## Life Tracker guide
+
+`docs/life-tracker.md` explains the general private-repository workflow, practical setup steps, and human–AI collaboration at `/life-tracker`. It is linked from Selected Projects. The public starter checklist is `docs/public/life-tracker-starter.txt`; article styling lives in `theme/guide.css`. The fictional example and starter contain no private records. Do not copy private repository contents, internal instructions, or source links into this public site.
+
+The guide describes a working method, not an installable app or an automatic reminder service. Preserve that distinction when updating it.

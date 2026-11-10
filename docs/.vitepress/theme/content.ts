@@ -81,6 +81,22 @@ export const projects = [
       { label: 'Visit the studio', href: 'https://kaw393939.github.io/is117-brand-studio/studio.html' },
       { label: 'View template', href: 'https://github.com/kaw393939/is117-brand-studio' }
     ]
+  },
+  {
+    id: 'life-tracker',
+    number: '04',
+    title: 'Life Tracker',
+    category: 'Human + AI workflow',
+    status: 'Private workspace · Public how-to guide',
+    summary: 'A practical way to keep the next step clear when work is scattered across conversations and documents.',
+    details: [
+      { label: 'What', text: 'A private GitHub work queue with clear owners, next actions, and checks for completion.' },
+      { label: 'Why', text: 'AI helps research and organize the work. I set the direction, review decisions, and check the outcome.' }
+    ],
+    note: 'The guide explains the method and how to set up your own version. Private records stay private.',
+    links: [
+      { label: 'Read the setup guide', href: '/life-tracker' }
+    ]
   }
 ]
 

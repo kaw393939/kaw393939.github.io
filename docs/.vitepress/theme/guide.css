@@ -1,0 +1,74 @@
+/* Long-form guide styles are scoped to keep the homepage and 404 unchanged. */
+.life-guide {
+  max-width: 780px;
+  margin-inline: auto;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--body);
+  overflow-wrap: break-word;
+}
+.life-guide .eyebrow { color: var(--accent); margin-top: 0; }
+.document-page .life-guide h1 {
+  color: var(--ink);
+  font-size: clamp(48px, 7vw, 82px);
+  margin-top: 20px;
+  margin-bottom: 16px;
+}
+.document-page .life-guide .guide-deck {
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.4;
+  font-family: var(--serif);
+  color: var(--ink);
+  margin-top: 0;
+}
+.life-guide h2 {
+  font-size: clamp(31px, 4vw, 42px);
+  line-height: 1.18;
+  color: var(--ink);
+  margin-top: 70px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.life-guide h3 {
+  font-size: 21px;
+  line-height: 1.4;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  margin-top: 34px;
+}
+.document-page .life-guide p { margin-top: 20px; line-height: 1.8; }
+.life-guide ul, .life-guide ol { padding-left: 24px; margin-block: 20px; }
+.life-guide li { padding-left: 5px; margin-block: 12px; }
+.life-guide strong { color: var(--ink); font-weight: 650; }
+.document-page .life-guide a { text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.life-guide a:hover { color: var(--accent); }
+.life-guide .header-anchor { margin-left: 8px; opacity: 0; font-size: .65em; }
+.life-guide :is(h2, h3):hover .header-anchor,
+.life-guide .header-anchor:focus-visible { opacity: 1; }
+.guide-contents {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 24px;
+  background: var(--paper-deep);
+  border-top: 3px solid var(--accent);
+  padding: 24px 28px;
+  margin-top: 40px;
+}
+.guide-contents strong { grid-column: 1 / -1; margin-bottom: 4px; }
+.guide-contents a { padding-block: 4px; }
+.guide-template, .guide-callout {
+  background: var(--paper-deep);
+  padding: 4px 28px 24px;
+  margin-block: 28px;
+  border-left: 3px solid var(--accent);
+}
+.guide-template ul { list-style: none; padding-left: 0; }
+.guide-template li { padding: 8px 0; border-bottom: 1px solid var(--line); margin: 0; }
+.guide-end { border-top: 1px solid var(--line); margin-top: 54px; padding-top: 18px; }
+@media (max-width: 640px) {
+  .life-guide { font-size: 16px; }
+  .life-guide h2 { margin-top: 48px; }
+  .life-guide h3 { font-size: 20px; }
+  .guide-contents { grid-template-columns: 1fr; padding: 20px; }
+  .guide-template, .guide-callout { padding-inline: 20px; }
+}

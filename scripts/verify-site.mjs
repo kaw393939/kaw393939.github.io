@@ -7,6 +7,8 @@ const read = path => readFileSync(resolve(dist, path), 'utf8')
 const home = read('index.html')
 const error = read('404.html')
 const sitemap = read('sitemap.xml')
+const guide = read('life-tracker.html')
+const starter = read('life-tracker-starter.txt')
 const checks = []
 function check(name, fn) { fn(); checks.push(name); console.log(`PASS ${name}`) }
 
@@ -16,7 +18,7 @@ check('Homepage is pre-rendered with one H1 and original content', () => {
   assert.ok(home.includes('<main'))
 })
 check('Project cases and historical experience include status and source links', () => {
-  assert.equal((home.match(/class="project-case"/g) || []).length, 3)
+  assert.equal((home.match(/class="project-case"/g) || []).length, 4)
   assert.equal((home.match(/class="experience-entry"/g) || []).length, 2)
   for (const text of ['Educational Design System', 'Everyday AI CLI', 'IS117 Brand Studio', 'Published phase-one foundation', 'Published alpha · v0.2.2', 'Public teaching template', 'full publishing roadmap is not complete', 'does not process payments or place orders']) assert.ok(home.includes(text), text)
   for (const url of [
@@ -64,7 +66,7 @@ check('Valid profile structured data', () => {
 })
 check('Sitemap excludes the error page; error page is noindex', () => {
   assert.ok(!sitemap.includes('/404'))
-  assert.equal((sitemap.match(/<loc>/g) || []).length, 1)
+  assert.equal((sitemap.match(/<loc>/g) || []).length, 2)
   assert.match(error, /name="robots" content="noindex, follow"/)
   assert.ok(!error.includes('rel="canonical"'))
   assert.ok(!error.includes('application/ld+json'))
@@ -114,5 +116,33 @@ check('Supporting paragraphs do not inherit small eyebrow typography', () => {
     const size = declarations.match(/font-size:\s*(\d+)px/)
     if (size) assert.ok(Number(size[1]) >= 15, selector.trim())
   }
+})
+check('Life Tracker guide is pre-rendered, discoverable, and has complete setup content', () => {
+  assert.equal((guide.match(/<h1\b/g) || []).length, 1)
+  for (const text of ['Life Tracker', 'How I use it', 'Set up your own', 'How I work with AI', 'A simple example', 'Keep the work private', 'status:needs-research', 'Completion criteria', 'Do not send messages or change other systems']) assert.ok(guide.includes(text), text)
+  assert.ok(home.includes('href="/life-tracker"'))
+  assert.ok(guide.includes('href="/life-tracker-starter.txt"'))
+  assert.ok(!guide.includes('greeting-title'))
+  assert.ok(guide.includes('id="main" tabindex="-1"'))
+  const ids = [...guide.matchAll(/\bid="([^"]+)"/g)].map(match => match[1])
+  assert.equal(new Set(ids).size, ids.length)
+  for (const [, id] of guide.matchAll(/href="#([^"]+)"/g)) assert.ok(ids.includes(id), id)
+  assert.ok(starter.includes('Create a new PRIVATE GitHub repository'))
+  assert.ok(starter.includes('## Completion criteria'))
+})
+check('Guide metadata and sitemap resolve to the public article', () => {
+  assert.match(guide, /rel="canonical" href="https:\/\/kaw393939.github.io\/life-tracker"/)
+  assert.match(guide, /property="og:type" content="article"/)
+  assert.match(guide, /property="og:url" content="https:\/\/kaw393939.github.io\/life-tracker"/)
+  assert.ok(sitemap.includes('https://kaw393939.github.io/life-tracker'))
+  const data = JSON.parse(guide.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1])
+  assert.equal(data['@type'], 'Article')
+  assert.equal(data.author.name, 'Keith Williams')
+})
+check('Public guide and starter exclude private source links and internal files', () => {
+  const publicText = guide + starter + home
+  for (const privateMarker of ['github.com/kaw393939/life-tracker', 'teaching-issue-tracker', 'AGENTS.md', 'DATA_SCOPE.md', 'robbery_insurance', 'stella-handoff', 'sk-proj-', 'ghp_']) assert.ok(!publicText.includes(privateMarker), privateMarker)
+  assert.ok(guide.includes('fictional'))
+  assert.ok(guide.includes('not automatically an approved home'))
 })
 console.log(`\n${checks.length} static checks passed. Browser and real-device checks remain separate.`)
