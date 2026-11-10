@@ -2,7 +2,7 @@
 import { computed, ref, onMounted, onUnmounted, watch } from 'vue'
 import { useData } from 'vitepress'
 import { site } from '../site'
-import { navItems, focusAreas, approachSteps, projects, zambiaExperience } from './content'
+import { navItems, focusAreas, approachSteps, projects, zambiaExperience, researchQuestions } from './content'
 import SiteIcon from './components/SiteIcon.vue'
 
 const { frontmatter } = useData()
@@ -61,11 +61,11 @@ onUnmounted(() => {
     <div class="header-inner">
       <a class="wordmark" href="/" aria-label="Keith Williams home">
         <SiteIcon name="compass" class="compass-mark" />
-        <span>Keith Williams<span class="wordmark-sub">AI EDUCATOR & EXPLORER</span></span>
+        <span>Keith Williams<span class="wordmark-sub">AI & EDUCATION</span></span>
       </a>
       <button ref="menuButton" type="button" class="menu-toggle" :aria-expanded="menuOpen" aria-controls="site-nav" @click="menuOpen = !menuOpen">{{ menuOpen ? 'Close' : 'Menu' }} <span aria-hidden="true">{{ menuOpen ? '−' : '+' }}</span></button>
       <nav id="site-nav" :class="{ open: menuOpen }" aria-label="Main navigation">
-        <a v-for="item in navItems" :key="item.id" :href="`/#${item.id}`" :aria-current="activeSection === item.id ? 'location' : undefined" @click="closeMenu">{{ item.label }}</a>
+        <a v-for="item in navItems" :key="item.id" :href="item.href" :aria-current="item.href.startsWith('/#') && activeSection === item.id ? 'location' : undefined" @click="closeMenu">{{ item.label }}</a>
         <a class="nav-contact" href="/#conversation" @click="closeMenu">Let's talk <SiteIcon name="arrow-down-right" class="link-arrow" /></a>
       </nav>
     </div>
@@ -74,11 +74,11 @@ onUnmounted(() => {
   <main v-if="isHome" id="main" tabindex="-1">
     <section class="hero wrap" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span> AT THE INTERSECTION OF AI & HUMAN POTENTIAL</p>
-        <h1 id="hero-title">Exploring AI.<br>Building<br><em>understanding.</em></h1>
-        <p class="hero-intro">I'm Keith Williams, an educator and builder exploring how AI can help us learn, create, and solve meaningful problems.</p>
-        <a class="button button-dark" href="#projects">Explore my work <SiteIcon name="arrow-down-right" class="link-arrow" /></a>
-        <div class="hero-footnote"><span class="small-cross" aria-hidden="true">+</span> Curiosity leads. Judgment gives it direction.</div>
+        <p class="eyebrow"><span class="status-dot"></span> AI & EDUCATION · INQUIRY INTO PRACTICE</p>
+        <h1 id="hero-title">Teaching AI.<br>Rethinking<br><em>Education.</em></h1>
+        <p class="hero-intro">I'm Keith Williams, an NJIT educator and software builder. I teach people to use AI thoughtfully—and explore how AI should change the way we teach, learn, and evaluate work.</p>
+        <div class="hero-actions"><a class="button button-dark" href="#projects">See the work <SiteIcon name="arrow-down-right" class="link-arrow" /></a><a class="text-link" href="#missions">The two missions <SiteIcon name="arrow-down-right" class="link-arrow" /></a></div>
+        <div class="hero-footnote"><span class="small-cross" aria-hidden="true">+</span> Practice builds theory. Evidence keeps us honest.</div>
       </div>
       <figure class="hero-art">
         <img src="/images/explorer-horizon-960.webp" srcset="/images/explorer-horizon-480.webp 480w, /images/explorer-horizon-960.webp 960w, /images/explorer-horizon-1254.webp 1254w" sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 850px) 45vw, (max-width: 1392px) 43vw, 565px" alt="An imagined mountain horizon with fine contour lines and a vermilion sun" width="1254" height="1254" fetchpriority="high">
@@ -94,10 +94,10 @@ onUnmounted(() => {
       <span class="credential-location"><span class="small-cross" aria-hidden="true">+</span> Grounded in education.<br>Looking toward what's next.</span>
     </div>
 
-    <section id="focus" class="focus-section wrap" aria-labelledby="focus-title">
+    <section id="missions" class="focus-section wrap" aria-labelledby="missions-title">
       <div class="section-heading">
-        <p class="eyebrow">01 / AREAS OF FOCUS</p>
-        <div><h2 id="focus-title">Turning possibility<br>into <em>practice.</em></h2><p>My work connects emerging technology with the skills and thinking people need to use it well.</p></div>
+        <p class="eyebrow">01 / TWO CONNECTED MISSIONS</p>
+        <div><h2 id="missions-title">Teach the tools.<br><em>Reimagine learning.</em></h2><p>Helping people use AI and asking what education should become are two parts of the same work.</p></div>
       </div>
       <div class="focus-grid">
         <article v-for="area in focusAreas" :key="area.number" class="focus-item">
@@ -105,6 +105,7 @@ onUnmounted(() => {
           <h3>{{ area.title }}</h3>
           <p>{{ area.text }}</p>
           <span class="focus-tag">{{ area.tag }}</span>
+          <a class="text-link mission-link" :href="area.href">{{ area.linkLabel }} <SiteIcon name="arrow-up-right" class="link-arrow" /></a>
         </article>
       </div>
     </section>
@@ -146,17 +147,33 @@ onUnmounted(() => {
       <div class="approach-bottom wrap"><span>THE COMPASS</span><span>Curiosity · Clarity · Craft · Responsibility</span><SiteIcon name="compass" /></div>
     </section>
 
+    <section id="research" class="research-section wrap" aria-labelledby="research-title">
+      <div class="section-heading">
+        <p class="eyebrow">04 / QUESTIONS WORTH TESTING</p>
+        <div><h2 id="research-title">What should learning<br><em>look like now?</em></h2><p>AI changes how work gets produced. Education must still develop knowledge, judgment, and agency.</p></div>
+      </div>
+      <div class="research-grid">
+        <article v-for="question in researchQuestions" :key="question.number" class="research-item">
+          <span class="eyebrow">{{ question.number }} / OPEN QUESTION</span>
+          <h3>{{ question.title }}</h3>
+          <p>{{ question.text }}</p>
+        </article>
+      </div>
+      <p class="research-disclosure">These are questions guiding exploration and possible future studies, not claims of completed empirical research.</p>
+      <a class="text-link research-more" href="/research">Read the research agenda <SiteIcon name="arrow-up-right" class="link-arrow" /></a>
+    </section>
+
     <section id="about" class="about-section wrap" aria-labelledby="about-title">
       <figure class="portrait">
         <img src="/images/keith-williams-960.webp" srcset="/images/keith-williams-480.webp 480w, /images/keith-williams-960.webp 960w, /images/keith-williams-1440.webp 1440w" sizes="(max-width: 640px) min(440px, calc(100vw - 40px)), (max-width: 1392px) 46vw, 638px" alt="Keith Williams in a classroom" width="2316" height="3088" loading="lazy" decoding="async">
         <figcaption><span>02 / THE EDUCATOR</span><span>Keith Williams</span></figcaption>
       </figure>
-      <div class="about-copy"><p class="eyebrow">04 / A LITTLE BACKGROUND</p><h2 id="about-title">An educator.<br>A builder.<br><em>Always a learner.</em></h2><p>I've spent more than two decades teaching at NJIT, connecting software development with practical learning. Today, my focus is on AI education and the B.S. Enterprise AI program.</p><p>I care about helping people develop the confidence to build and the judgment to know whether what they've built is useful. The tools will keep changing. That foundation matters.</p><a class="text-link" :href="site.faculty">My NJIT faculty profile <SiteIcon name="arrow-up-right" class="link-arrow" /></a></div>
+      <div class="about-copy"><p class="eyebrow">05 / A LITTLE BACKGROUND</p><h2 id="about-title">An educator.<br>A builder.<br><em>Always a learner.</em></h2><p>For more than two decades at NJIT, I've connected software development and hands-on education. My work now has two linked aims: teaching people to use AI with understanding, and rethinking education as these tools become more capable.</p><p>I approach both through practice: define the question, build something useful, test the result, and ask what we actually learned. The technology will change. Human judgment still matters.</p><a class="text-link" :href="site.faculty">My NJIT faculty profile <SiteIcon name="arrow-up-right" class="link-arrow" /></a></div>
     </section>
 
     <section id="zambia" class="experience-section wrap" aria-labelledby="experience-title">
       <div class="section-heading">
-        <p class="eyebrow">05 / FIELD EXPERIENCE · ZAMBIA</p>
+        <p class="eyebrow">06 / FIELD EXPERIENCE · ZAMBIA</p>
         <div><h2 id="experience-title">Learning across<br><em>borders.</em></h2><p>Teaching and software practice connected through work with Zambian universities and government teams.</p></div>
       </div>
       <div class="experience-grid">
@@ -170,7 +187,7 @@ onUnmounted(() => {
     </section>
 
     <section class="perspective-section wrap" aria-labelledby="perspective-title">
-      <div class="section-heading compact"><p class="eyebrow">06 / IN THE CONVERSATION</p><h2 id="perspective-title">Learning in the open.</h2></div>
+      <div class="section-heading compact"><p class="eyebrow">07 / IN THE CONVERSATION</p><h2 id="perspective-title">Learning in the open.</h2></div>
       <a class="article-link" href="https://news.njit.edu/njit-faculty-artificial-intelligence-learning-opportunity"><div><span class="eyebrow">NJIT NEWS · AI & EDUCATION</span><h3>Artificial intelligence is a learning opportunity.</h3><p>A conversation about how AI changes the way we teach, learn, and build software.</p></div><SiteIcon name="arrow-up-right" class="article-arrow" /></a>
     </section>
 
@@ -179,9 +196,9 @@ onUnmounted(() => {
       <div>
         <h2 id="contact-title">Let's explore<br><em>what's next.</em></h2>
         <div class="contact-actions">
-          <p class="contact-intro">A question about AI education, a collaboration idea, or feedback on this site? Start a conversation on GitHub.</p>
+          <p class="contact-intro">For public questions about AI education, collaboration ideas, or site feedback, open a GitHub conversation. For institutional or professional inquiries, use my NJIT faculty profile.</p>
           <a class="button button-dark" :href="site.conversation" aria-describedby="conversation-privacy">Start a conversation <SiteIcon name="arrow-up-right" class="link-arrow" /></a>
-          <p class="contact-platform">Public on GitHub · GitHub sign-in required</p>
+          <p class="contact-platform">Public on GitHub · GitHub sign-in required</p><a class="text-link contact-faculty-link" :href="site.faculty">NJIT faculty profile <SiteIcon name="arrow-up-right" class="link-arrow" /></a>
           <p id="conversation-privacy" class="contact-privacy">Your message and replies will be visible to everyone. Please don't include email addresses, phone numbers, student records, credentials, or other private information.</p>
         </div>
       </div>
