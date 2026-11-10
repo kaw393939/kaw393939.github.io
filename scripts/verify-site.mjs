@@ -10,15 +10,15 @@ const sitemap = read('sitemap.xml')
 const checks = []
 function check(name, fn) { fn(); checks.push(name); console.log(`PASS ${name}`) }
 
-check('Homepage is pre-rendered with one H1 and original content', () => {
+check('Homepage is pre-rendered with one H1 and verified identity', () => {
   assert.equal((home.match(/<h1\b/g) || []).length, 1)
-  for (const text of ['Exploring AI.', 'Keith Williams', 'Senior University Lecturer', 'B.S. Enterprise AI', 'Human judgment', 'Public on GitHub', 'student records']) assert.ok(home.includes(text), text)
+  for (const text of ['Making AI', 'Keith Williams', 'Senior University Lecturer', 'B.S. Enterprise AI', 'consulting', 'Public on GitHub', 'student records']) assert.ok(home.includes(text), text)
   assert.ok(home.includes('<main'))
 })
 check('Project cases and historical experience include status and source links', () => {
   assert.equal((home.match(/class="project-case"/g) || []).length, 3)
   assert.equal((home.match(/class="experience-entry"/g) || []).length, 2)
-  for (const text of ['Educational Design System', 'Everyday AI CLI', 'IS117 Brand Studio', 'Published phase-one foundation', 'Published alpha · v0.2.2', 'Public teaching template', 'full publishing roadmap is not complete', 'does not process payments or place orders']) assert.ok(home.includes(text), text)
+  for (const text of ['Educational Design System', 'Everyday AI CLI', 'IS117 Brand Studio', 'First version published', 'Early release · v0.2.2', 'A classroom starting point', 'are planned', 'does not take payments or place orders']) assert.ok(home.includes(text), text)
   for (const url of [
     'https://github.com/kaw393939/educational-design-system',
     'https://github.com/kaw393939/everyday-ai-cli',
@@ -27,6 +27,10 @@ check('Project cases and historical experience include status and source links',
     'https://news.njit.edu/inspiring-students-njit-africa',
     'https://news.njit.edu/njit-lecturer-helps-digitize-government-services-zambia'
   ]) assert.ok(home.includes(`href="${url}"`), url)
+})
+check('Public copy explains people and purpose without implementation jargon', () => {
+  for (const phrase of ['students, educators, and teams', 'Teaching takes enough preparation', 'Turn a recording into text', 'a plain white T-shirt']) assert.ok(home.includes(phrase), phrase)
+  for (const phrase of ['Design tokens', 'typed page recipes', 'release-selected', 'observability', 'Spec-driven development', 'plugin architecture']) assert.ok(!home.includes(phrase), phrase)
 })
 check('Section anchors and accessible heading references resolve uniquely', () => {
   const ids = [...home.matchAll(/\bid="([^"]+)"/g)].map(match => match[1])

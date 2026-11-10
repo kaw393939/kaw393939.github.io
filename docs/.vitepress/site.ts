@@ -2,7 +2,7 @@
 export const site = {
   name: 'Keith Williams',
   title: 'Keith Williams · AI educator & explorer',
-  description: 'AI educator and explorer. Keith Williams connects emerging technology, clear specifications, and human judgment.',
+  description: 'Keith Williams helps students, educators, and teams make sense of AI and put it to use through teaching, building, and consulting.',
   url: 'https://kaw393939.github.io',
   github: 'https://github.com/kaw393939',
   faculty: 'https://people.njit.edu/profile/kwilliam',

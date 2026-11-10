@@ -1,33 +1,50 @@
 export const navItems = [{ id: 'projects', label: 'Projects' }, { id: 'approach', label: 'Approach' }, { id: 'about', label: 'About' }]
 export const focusAreas = [
-  { number: '01', icon: 'book', title: 'AI education', text: 'Helping people move from experimenting with AI to understanding how to use it thoughtfully. Learning through building, questioning, and evaluating.', tag: 'Learning by doing' },
-  { number: '02', icon: 'specification', title: 'Spec-driven development', text: 'Making intent explicit before asking AI to build. Clear requirements, acceptance criteria, and feedback turn a promising idea into work that can be evaluated.', tag: 'Clarity before code' },
-  { number: '03', icon: 'judgment', title: 'Human judgment', text: 'Keeping people responsible for the questions, the evidence, and the decisions. Useful AI starts with knowing what matters and recognizing what is missing.', tag: 'People at the center' }
+  {
+    "number": "01",
+    "icon": "book",
+    "title": "Learning with AI",
+    "text": "I help students and educators get hands-on with AI, ask better questions, and check the results. The goal is confidence and understanding that last beyond any one tool.",
+    "tag": "Learn by doing"
+  },
+  {
+    "number": "02",
+    "icon": "specification",
+    "title": "Building useful things",
+    "text": "I turn ideas into tools and learning experiences, starting with a simple question: what does the person using this need?",
+    "tag": "Start with a real need"
+  },
+  {
+    "number": "03",
+    "icon": "judgment",
+    "title": "Thinking it through",
+    "text": "I help teams decide where AI can help, what needs a closer look, and when a person should make the call.",
+    "tag": "Keep people in the picture"
+  }
 ]
 
 export const approachSteps = [
   {
     "number": "01",
-    "title": "Ask a better question.",
-    "text": "Start with the people, the problem, and the context. Give curiosity a useful direction."
+    "title": "Start with a person.",
+    "text": "Who will use this? What are they trying to learn or do? A useful project starts there."
   },
   {
     "number": "02",
-    "title": "Make the intent clear.",
-    "text": "Write down the goal, the constraints, and what a good result should look like."
+    "title": "Make the goal clear.",
+    "text": "Describe what a good result would look like in words everyone can understand."
   },
   {
     "number": "03",
-    "title": "Build. Test. Learn.",
-    "text": "Turn ideas into something tangible. Evaluate the result, examine the gaps, and improve it."
+    "title": "Try something small.",
+    "text": "Make a first version, use it, and learn from what works and what does not."
   },
   {
     "number": "04",
-    "title": "Keep judgment human.",
-    "text": "Use AI to extend capability while staying accountable for the decisions that matter."
+    "title": "Keep asking questions.",
+    "text": "Check the facts, listen to feedback, and stay responsible for the choices you make."
   }
 ]
-
 
 // Case summaries checked against each public repository and linked primary sources.
 export const projects = [
@@ -35,51 +52,51 @@ export const projects = [
     id: 'educational-design-system',
     number: '01',
     title: 'Educational Design System',
-    category: 'Learning systems',
-    status: 'Published phase-one foundation',
-    summary: 'A documentation-first foundation for consistent teaching materials and static educational sites.',
+    category: 'For teachers',
+    status: 'First version published',
+    summary: 'Teaching takes enough preparation. This project gives lessons, readings, and assignments a consistent home so students can find their way.',
     details: [
-      { label: 'Built', text: 'Design tokens, shared layouts, teaching primitives, typed page recipes, and release-selected static builds.' },
-      { label: 'Practice', text: 'Explicit specifications, review records, and accessibility checks connect content decisions to a verifiable release.' }
+      { label: 'What', text: 'Reusable course pages for explanations, activities, and next steps.' },
+      { label: 'Why', text: 'The aim is to spend less time rebuilding pages and more time on what students need to learn.' }
     ],
-    note: 'The foundation is published. Later authoring and observability work remains in development; the full publishing roadmap is not complete.',
+    note: 'The first version is available now. More tools for creating and reviewing lessons are planned.',
     links: [
       { label: 'Explore the site', href: 'https://kaw393939.github.io/educational-design-system/' },
-      { label: 'View source', href: 'https://github.com/kaw393939/educational-design-system' }
+      { label: 'See the code', href: 'https://github.com/kaw393939/educational-design-system' }
     ]
   },
   {
     id: 'everyday-ai-cli',
     number: '02',
     title: 'Everyday AI CLI',
-    category: 'AI tooling · Python',
-    status: 'Published alpha · v0.2.2',
-    summary: 'A command-line toolkit that brings AI image, audio, and search workflows into repeatable commands.',
+    category: 'Everyday AI tools',
+    status: 'Early release · v0.2.2',
+    summary: 'Turn a recording into text, make an image, or have text read aloud. Everyday AI CLI brings those tasks into one tool.',
     details: [
-      { label: 'Built', text: 'Commands for image generation and analysis, transcription, speech, audio translation, and web search.' },
-      { label: 'Practice', text: 'A plugin architecture lets additional commands extend the toolkit without replacing its core interface.' }
+      { label: 'What', text: 'A tool that runs from your computer’s command line and connects to AI services.' },
+      { label: 'Why', text: 'A place to try practical AI ideas and combine small tasks into a useful workflow.' }
     ],
-    note: 'Published on PyPI as an alpha. AI commands require access to the relevant provider APIs.',
+    note: 'An early release for people comfortable with a terminal. It needs access to the AI services it uses.',
     links: [
-      { label: 'View source', href: 'https://github.com/kaw393939/everyday-ai-cli' },
-      { label: 'View PyPI release', href: 'https://pypi.org/project/everydayai-cli/0.2.2/' }
+      { label: 'See how it works', href: 'https://github.com/kaw393939/everyday-ai-cli' },
+      { label: 'Get the early release', href: 'https://pypi.org/project/everydayai-cli/0.2.2/' }
     ]
   },
   {
     id: 'is117-brand-studio',
     number: '03',
     title: 'IS117 Brand Studio',
-    category: 'AI-assisted education',
-    status: 'Public teaching template',
-    summary: 'A guided studio where students turn a neutral T-shirt storefront into a brand and a live style guide.',
+    category: 'Learning through design',
+    status: 'A classroom starting point',
+    summary: 'Students start with the same product: a plain white T-shirt. They build a brand and website around it, using AI as a coach.',
     details: [
-      { label: 'Built', text: 'A working storefront, shared styles, a live identity board, and a structured AI-coaching workflow.' },
-      { label: 'Practice', text: 'Students explain their decisions, inspect the result, and review a short learning record alongside browser and accessibility checks.' }
+      { label: 'What', text: 'A starting website and an exercise in choosing an audience, a voice, and a visual style.' },
+      { label: 'Why', text: 'Students explain their choices and try the site themselves. AI helps with the work while they make the decisions.' }
     ],
-    note: 'An educational template. The shopping bag is a demonstration and does not process payments or place orders.',
+    note: 'The starting project is public. Its shopping bag is only a demo; it does not take payments or place orders.',
     links: [
       { label: 'Visit the studio', href: 'https://kaw393939.github.io/is117-brand-studio/studio.html' },
-      { label: 'View template', href: 'https://github.com/kaw393939/is117-brand-studio' }
+      { label: 'See the starting project', href: 'https://github.com/kaw393939/is117-brand-studio' }
     ]
   }
 ]
@@ -87,15 +104,15 @@ export const projects = [
 export const zambiaExperience = [
   {
     year: '2019',
-    title: 'Teaching at ZCAS University',
-    text: 'I taught an intensive progressive web app workshop for university staff and students in Zambia. Participants began developing a student-registration app, connecting mobile development lessons to a practical university need.',
+    title: 'A classroom in Zambia',
+    text: 'At ZCAS University, I taught staff and students how to build web apps for phones. They began working on a student-registration app: a way to apply what they were learning to everyday university life.',
     href: 'https://news.njit.edu/inspiring-students-njit-africa',
     linkLabel: 'Read the 2019 NJIT story'
   },
   {
     year: '2020',
-    title: 'Supporting digital public services',
-    text: 'NJIT reported on my work with Zambia’s Ministry of Finance to help digitize government systems, introduce agile development, and bring lessons from the work back into my NJIT teaching.',
+    title: 'Working with public-service teams',
+    text: 'My work with Zambia’s Ministry of Finance focused on helping teams develop online government services in smaller steps. I brought what I learned back to NJIT, connecting classroom work with the challenges of building for real people.',
     href: 'https://news.njit.edu/njit-lecturer-helps-digitize-government-services-zambia',
     linkLabel: 'Read the 2020 NJIT story'
   }

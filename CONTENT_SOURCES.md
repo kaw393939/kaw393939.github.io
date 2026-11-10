@@ -29,3 +29,7 @@ The repository is a public teaching template with a neutral storefront, live sty
 - [NJIT Lecturer Helps Digitize Government Services in Zambia](https://news.njit.edu/njit-lecturer-helps-digitize-government-services-zambia), NJIT News, June 23, 2020.
 
 The 2019 story supports teaching a progressive web app workshop at ZCAS University for staff and students, and participants beginning a registration-app project. The 2020 story supports work with Zambia's Ministry of Finance, agile development, and lessons carried back to NJIT teaching. These are dated historical accounts, not assertions of an ongoing engagement or completed national rollout. The portfolio omits an award claim because the two stories describe Fulbright timing differently.
+
+## Plain-language presentation
+
+The homepage was rewritten at Keith's request to focus on people, purpose, and concrete examples instead of implementation vocabulary. The underlying project facts and links are unchanged. The homepage explains the first published version, the early CLI release, and the demo shopping bag in everyday language; technical evidence remains available in the linked repositories. Claimed benefits are framed as aims, not measured outcomes.
