@@ -1,5 +1,5 @@
 ---
-title: Keith Williams · AI educator & explorer
+title: Keith Williams · AI & Education
 layout: home
 titleTemplate: false
 ---
