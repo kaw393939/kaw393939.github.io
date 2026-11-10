@@ -52,10 +52,6 @@ The portrait and landscape have responsive WebP derivatives. Originals are retai
 
 The navigation supports Escape dismissal, outside-click dismissal, and resets across layout breakpoints. The page uses SVG arrow icons rather than platform-dependent text glyphs.
 
-## Homepage greeting
-
-The homepage opens a native, accessible dialog displaying the requested text `hello is117` after loading. Visitors can dismiss it with Close or Escape. It appears on each new homepage load, does not use cookies or browser storage, and does not appear on the 404 page.
-
 ## Life Tracker guide
 
 `docs/life-tracker.md` explains the general private-repository workflow, practical setup steps, and human–AI collaboration at `/life-tracker`. It is linked from Selected Projects. The public starter checklist is `docs/public/life-tracker-starter.txt`; article styling lives in `theme/guide.css`. The fictional example and starter contain no private records. Do not copy private records or private source links into this public site.

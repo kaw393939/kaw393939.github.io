@@ -997,37 +997,6 @@ main:focus {
   gap: 12px;
 }
 
-/* Requested greeting. Native dialog provides focus trapping and Escape dismissal. */
-.greeting-dialog {
-  width: min(420px, calc(100% - 40px));
-  max-width: none;
-  margin: auto;
-  padding: 32px;
-  color: var(--ink);
-  background: var(--paper);
-  border: 1px solid var(--ink);
-  box-shadow: 0 24px 80px #14281e40;
-}
-
-.greeting-dialog::backdrop {
-  background: #14281e99;
-}
-
-.greeting-dialog h2 {
-  font-size: clamp(30px, 6vw, 40px);
-  line-height: 1.2;
-  letter-spacing: -.025em;
-}
-
-.greeting-dialog form {
-  margin-top: 24px;
-}
-
-.greeting-dialog button {
-  border: 0;
-  cursor: pointer;
-}
-
 @media (min-width:1500px) {
   .hero {
     padding-top: 75px;

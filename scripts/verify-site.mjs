@@ -39,14 +39,16 @@ check('Section anchors and accessible heading references resolve uniquely', () =
   }
   assert.ok(home.includes('href="#projects"'))
 })
-check('Requested greeting is a labeled native dialog with an accessible close control', () => {
-  assert.match(home, /<dialog[^>]*aria-labelledby="greeting-title"/)
-  assert.match(home, /<h2 id="greeting-title">hello is117<\/h2>/)
-  assert.match(home, /<form method="dialog">/)
-  assert.match(home, /<button[^>]*autofocus[^>]*>Close<\/button>/)
-  assert.ok(!error.includes('greeting-title'))
+check('Removed homepage popup stays absent', () => {
   const layout = readFileSync('docs/.vitepress/theme/Layout.vue', 'utf8')
-  assert.ok(layout.includes('dialog.showModal()'))
+  const css = readFileSync('docs/.vitepress/theme/style.css', 'utf8')
+  for (const content of [home, guide, error, layout, css]) {
+    assert.ok(!content.includes('hello is117'))
+    assert.ok(!content.includes('greeting-dialog'))
+    assert.ok(!content.includes('greetingDialog'))
+    assert.ok(!content.includes('showGreeting'))
+  }
+  assert.ok(!home.includes('<dialog'))
   assert.ok(!layout.includes('Making AI<br>work for'))
 })
 check('Unique title, canonical URL and share metadata', () => {
