@@ -151,5 +151,6 @@ check('Public guide links only to approved public destinations', () => {
 })
 console.log(`\n${checks.length} static checks passed. Browser and real-device checks remain separate.`)
 
-assert.ok(home.includes('Hi, IS373! Welcome to my portfolio.'))
+assert.ok(!home.includes('is373-greeting'))
+assert.ok(!home.includes('Hi, IS373! Welcome to my portfolio.'))
 assert.ok(home.includes('/images/keith-classroom-nov2026-960.webp'))
