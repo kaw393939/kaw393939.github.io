@@ -36,6 +36,6 @@ The homepage and supporting pages describe Keith's educational approach, past te
 
 - [NJIT faculty profile](https://people.njit.edu/profile/kwilliam): public professional affiliation and lecturer role.
 - [Published project examples](https://github.com/kaw393939): refer to each project's actual scope and readiness in its README rather than extrapolating capabilities from project goals.
-- [Research agenda](/research): a proposed line of inquiry; evidence and methodology would be required before factual research claims can be made.
+- [Research agenda](https://kaw393939.github.io/research): a proposed line of inquiry; evidence and methodology would be required before factual research claims can be made.
 
 The site's GitHub discussion mechanism requires sign-in and creates public issues. Private professional inquiries should use a separately appropriate channel reached from the NJIT faculty profile, not the public issue form.
