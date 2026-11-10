@@ -75,4 +75,12 @@ check('Responsive contact rules follow base rules and menu can scroll', () => {
   assert.ok(css.includes('max-height: calc(100dvh - 72px)'))
   assert.ok(css.includes('overflow-y: auto'))
 })
+check('Supporting paragraphs do not inherit small eyebrow typography', () => {
+  const css = readFileSync('docs/.vitepress/theme/style.css', 'utf8')
+  for (const [, selector, declarations] of css.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
+    if (!selector.includes('p:not(.eyebrow)')) continue
+    const size = declarations.match(/font-size:\s*(\d+)px/)
+    if (size) assert.ok(Number(size[1]) >= 15, selector.trim())
+  }
+})
 console.log(`\n${checks.length} static checks passed. Browser and real-device checks remain separate.`)
