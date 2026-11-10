@@ -26,7 +26,9 @@ export default defineConfig({
         ['meta', { property: 'og:url', content: url }],
         ['meta', { property: 'og:title', content: `${pageData.title} | ${site.name}` }],
         ['meta', { property: 'og:description', content: pageData.description || site.description }],
-        ['meta', { name: 'twitter:card', content: 'summary' }]
+        ['meta', { property: 'og:image', content: `${site.url}${site.socialImage}` }],
+        ['meta', { property: 'og:image:alt', content: 'Illustrated explorer landscape representing inquiry and learning' }],
+        ['meta', { name: 'twitter:card', content: 'summary_large_image' }]
       ]
     }
     if (pageData.relativePath !== 'index.md') return []
