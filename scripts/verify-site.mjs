@@ -37,6 +37,16 @@ check('Section anchors and accessible heading references resolve uniquely', () =
   }
   assert.ok(home.includes('href="#projects"'))
 })
+check('Requested greeting is a labeled native dialog with an accessible close control', () => {
+  assert.match(home, /<dialog[^>]*aria-labelledby="greeting-title"/)
+  assert.match(home, /<h2 id="greeting-title">hello is117<\/h2>/)
+  assert.match(home, /<form method="dialog">/)
+  assert.match(home, /<button[^>]*autofocus[^>]*>Close<\/button>/)
+  assert.ok(!error.includes('greeting-title'))
+  const layout = readFileSync('docs/.vitepress/theme/Layout.vue', 'utf8')
+  assert.ok(layout.includes('dialog.showModal()'))
+  assert.ok(!layout.includes('Making AI<br>work for'))
+})
 check('Unique title, canonical URL and share metadata', () => {
   assert.match(home, /<title>Keith Williams · AI educator &amp; explorer<\/title>/)
   assert.match(home, /rel="canonical" href="https:\/\/kaw393939.github.io\/"/)

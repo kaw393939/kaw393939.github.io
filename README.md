@@ -51,3 +51,7 @@ Run `npm test` before publishing. It builds the production site and checks pre-r
 The portrait and landscape have responsive WebP derivatives. Originals are retained unchanged. Regenerate derivatives with `python scripts/optimize-images.py` (Python 3 and Pillow required). The script applies display orientation, preserves the photograph's content, and does not carry private metadata into web derivatives.
 
 The navigation supports Escape dismissal, outside-click dismissal, and resets across layout breakpoints. The page uses SVG arrow icons rather than platform-dependent text glyphs.
+
+## Homepage greeting
+
+The homepage opens a native, accessible dialog displaying the requested text `hello is117` after loading. Visitors can dismiss it with Close or Escape. It appears on each new homepage load, does not use cookies or browser storage, and does not appear on the 404 page.

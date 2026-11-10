@@ -7,6 +7,11 @@ import SiteIcon from './components/SiteIcon.vue'
 
 const { frontmatter } = useData()
 const isHome = computed(() => frontmatter.value.layout === 'home')
+const greetingDialog = ref<HTMLDialogElement>()
+const showGreeting = () => {
+  const dialog = greetingDialog.value
+  if (isHome.value && dialog && !dialog.open) dialog.showModal()
+}
 const menuOpen = ref(false)
 const menuButton = ref<HTMLButtonElement>()
 const header = ref<HTMLElement>()
@@ -39,9 +44,10 @@ const observeSections = () => {
   }, { rootMargin: '-20% 0px -60% 0px' })
   sections.forEach(section => observer?.observe(section))
 }
-watch(isHome, () => { closeMenu(); observeSections() }, { flush: 'post' })
+watch(isHome, () => { closeMenu(); observeSections(); showGreeting() }, { flush: 'post' })
 onMounted(() => {
   observeSections()
+  showGreeting()
   document.addEventListener('keydown', dismissMenu)
   document.addEventListener('click', handleOutsideClick)
   desktopQuery = window.matchMedia('(min-width: 641px)')
@@ -188,6 +194,13 @@ onUnmounted(() => {
     </section>
   </main>
   <main v-else id="main" tabindex="-1" class="document-page wrap"><Content /></main>
+
+  <dialog v-if="isHome" ref="greetingDialog" class="greeting-dialog" aria-labelledby="greeting-title">
+    <h2 id="greeting-title">hello is117</h2>
+    <form method="dialog">
+      <button type="submit" class="button button-dark" autofocus>Close</button>
+    </form>
+  </dialog>
 
   <footer class="site-footer wrap"><div><a class="footer-name" href="/">Keith Williams</a><p>Curiosity with a compass.</p></div><div class="footer-links"><a :href="site.github">GitHub <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a :href="site.faculty">NJIT <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a href="#main">Back to top <SiteIcon name="arrow-up" class="link-arrow" /></a></div><div class="footer-fine"><span>© {{ new Date().getFullYear() }} Keith Williams</span><span>Built with VitePress · AI-generated landscape artwork</span><span>Personal website. Views are my own.</span></div></footer>
 </template>
