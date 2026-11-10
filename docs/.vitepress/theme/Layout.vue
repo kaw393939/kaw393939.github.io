@@ -44,7 +44,7 @@ onMounted(() => {
   observeSections()
   document.addEventListener('keydown', dismissMenu)
   document.addEventListener('click', handleOutsideClick)
-  desktopQuery = window.matchMedia('(min-width: 641px)')
+  desktopQuery = window.matchMedia('(min-width: 721px)')
   desktopQuery.addEventListener('change', closeMenu)
 })
 onUnmounted(() => {
@@ -81,7 +81,7 @@ onUnmounted(() => {
         <div class="hero-footnote"><span class="small-cross" aria-hidden="true">+</span> Practice builds theory. Evidence keeps us honest.</div>
       </div>
       <figure class="hero-art">
-        <img src="/images/explorer-horizon-960.webp" srcset="/images/explorer-horizon-480.webp 480w, /images/explorer-horizon-960.webp 960w, /images/explorer-horizon-1254.webp 1254w" sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 850px) 45vw, (max-width: 1392px) 43vw, 565px" alt="An imagined mountain horizon with fine contour lines and a vermilion sun" width="1254" height="1254" fetchpriority="high">
+        <img src="/images/explorer-horizon-960.webp" srcset="/images/explorer-horizon-480.webp 480w, /images/explorer-horizon-960.webp 960w, /images/explorer-horizon-1254.webp 1254w" sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 850px) 45vw, (max-width: 1392px) 43vw, 565px" alt="An imagined mountain horizon with fine contour lines and a vermilion sun" width="1254" height="1254" fetchpriority="high">
         <div class="art-marker" aria-hidden="true"><span>FIELD OF INQUIRY</span><span>HUMAN × MACHINE</span></div>
         <figcaption><span>01 / THE EXPLORER</span><span>New terrain. Better questions.</span></figcaption>
       </figure>
@@ -165,7 +165,7 @@ onUnmounted(() => {
 
     <section id="about" class="about-section wrap" aria-labelledby="about-title">
       <figure class="portrait">
-        <img src="/images/keith-williams-960.webp" srcset="/images/keith-williams-480.webp 480w, /images/keith-williams-960.webp 960w, /images/keith-williams-1440.webp 1440w" sizes="(max-width: 640px) min(440px, calc(100vw - 40px)), (max-width: 1392px) 46vw, 638px" alt="Keith Williams in a classroom" width="2316" height="3088" loading="lazy" decoding="async">
+        <img src="/images/keith-williams-960.webp" srcset="/images/keith-williams-480.webp 480w, /images/keith-williams-960.webp 960w, /images/keith-williams-1440.webp 1440w" sizes="(max-width: 720px) min(440px, calc(100vw - 40px)), (max-width: 1392px) 46vw, 638px" alt="Keith Williams in a classroom" width="2316" height="3088" loading="lazy" decoding="async">
         <figcaption><span>02 / THE EDUCATOR</span><span>Keith Williams</span></figcaption>
       </figure>
       <div class="about-copy"><p class="eyebrow">05 / A LITTLE BACKGROUND</p><h2 id="about-title">An educator.<br>A builder.<br><em>Always a learner.</em></h2><p>For more than two decades at NJIT, I've connected software development and hands-on education. My work now has two linked aims: teaching people to use AI with understanding, and rethinking education as these tools become more capable.</p><p>I approach both through practice: define the question, build something useful, test the result, and ask what we actually learned. The technology will change. Human judgment still matters.</p><a class="text-link" :href="site.faculty">My NJIT faculty profile <SiteIcon name="arrow-up-right" class="link-arrow" /></a></div>
