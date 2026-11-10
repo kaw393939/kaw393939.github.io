@@ -777,6 +777,108 @@ figcaption span:first-child {
   text-decoration: underline;
 }
 
+/* Public GitHub conversation entry point. */
+
+.contact-actions {
+  max-width: 390px;
+  margin-left: 36px;
+}
+
+.contact-intro {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--body);
+  margin-bottom: 21px;
+}
+
+.contact-actions .button {
+  margin-right: 0;
+  min-width: 230px;
+}
+
+.contact-platform {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .035em;
+  margin-top: 14px;
+  line-height: 1.7;
+}
+
+.contact-privacy {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--body);
+  margin-top: 8px;
+  max-width: 365px;
+}
+
+:root {
+  --target-size: 44px;
+}
+
+main:focus {
+  outline: none;
+}
+
+.link-arrow {
+  width: 19px;
+  height: 19px;
+  flex: none;
+}
+
+.article-arrow {
+  width: 30px;
+  height: 30px;
+  flex: none;
+}
+
+.text-link {
+  min-height: var(--target-size);
+  align-items: center;
+  padding-block: 10px;
+}
+
+.footer-links a {
+  min-height: var(--target-size);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.footer-links .link-arrow {
+  width: 15px;
+  height: 15px;
+}
+
+.focus-item {
+  transition: border-color .2s ease;
+}
+
+.focus-item:hover {
+  border-color: var(--accent);
+}
+
+.hero-art > img, .portrait img {
+  background: var(--paper-deep);
+}
+
+.hero-art > img {
+  border: 1px solid rgba(38,59,49,.1);
+}
+
+.about-copy p:not(.eyebrow) {
+  max-width: 42ch;
+}
+
+.contact-platform {
+  color: var(--ink);
+}
+
+.contact-privacy {
+  border-left: 2px solid var(--line);
+  padding-left: 12px;
+}
+
 @media (min-width:1500px) {
   .hero {
     padding-top: 75px;
@@ -1102,6 +1204,10 @@ figcaption span:first-child {
     align-items: stretch;
     gap: 4px;
     box-shadow: 0 14px 20px #263b310d;
+    max-height: calc(100vh - 72px);
+    max-height: calc(100dvh - 72px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
 
   nav.open {
@@ -1488,109 +1594,6 @@ figcaption span:first-child {
   .approach-bottom svg {
     margin-left: auto;
   }
-}
-
-/* Public GitHub conversation entry point. */
-
-.contact-actions {
-  max-width: 390px;
-  margin-left: 36px;
-}
-
-.contact-intro {
-  font-size: 15px;
-  line-height: 1.8;
-  color: var(--body);
-  margin-bottom: 21px;
-}
-
-.contact-actions .button {
-  margin-right: 0;
-  min-width: 230px;
-}
-
-.contact-platform {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .035em;
-  margin-top: 14px;
-  line-height: 1.7;
-}
-
-.contact-privacy {
-  font-size: 13px;
-  line-height: 1.75;
-  color: var(--body);
-  margin-top: 8px;
-  max-width: 365px;
-}
-
-:root {
-  --target-size: 44px;
-  --section-space: clamp(58px, 7vw, 104px);
-}
-
-main:focus {
-  outline: none;
-}
-
-.link-arrow {
-  width: 19px;
-  height: 19px;
-  flex: none;
-}
-
-.article-arrow {
-  width: 30px;
-  height: 30px;
-  flex: none;
-}
-
-.text-link {
-  min-height: var(--target-size);
-  align-items: center;
-  padding-block: 10px;
-}
-
-.footer-links a {
-  min-height: var(--target-size);
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.footer-links .link-arrow {
-  width: 15px;
-  height: 15px;
-}
-
-.focus-item {
-  transition: border-color .2s ease;
-}
-
-.focus-item:hover {
-  border-color: var(--accent);
-}
-
-.hero-art > img, .portrait img {
-  background: var(--paper-deep);
-}
-
-.hero-art > img {
-  border: 1px solid rgba(38,59,49,.1);
-}
-
-.about-copy p:not(.eyebrow) {
-  max-width: 42ch;
-}
-
-.contact-platform {
-  color: var(--ink);
-}
-
-.contact-privacy {
-  border-left: 2px solid var(--line);
-  padding-left: 12px;
 }
 
 @media (prefers-reduced-motion:reduce) {

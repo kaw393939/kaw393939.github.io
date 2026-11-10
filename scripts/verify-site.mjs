@@ -69,4 +69,10 @@ check('Muted text exceeds AA contrast for normal text', () => {
   const muted = css.match(/--muted:\s*(#[a-f0-9]+)/i)[1]
   assert.ok((luminance(paper) + .05) / (luminance(muted) + .05) >= 4.5)
 })
+check('Responsive contact rules follow base rules and menu can scroll', () => {
+  const css = readFileSync('docs/.vitepress/theme/style.css', 'utf8')
+  assert.ok(css.search(/@media\s*\(max-width:\s*640px\)/) > css.indexOf('.contact-actions {'))
+  assert.ok(css.includes('max-height: calc(100dvh - 72px)'))
+  assert.ok(css.includes('overflow-y: auto'))
+})
 console.log(`\n${checks.length} static checks passed. Browser and real-device checks remain separate.`)
