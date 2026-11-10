@@ -2,6 +2,17 @@
 
 Personal professional homepage, built with VitePress and a custom Vue theme.
 
+## Editorial direction
+
+**Teaching AI. Rethinking Education.** The site presents two connected missions: help people use AI with judgment, and investigate how AI changes learning, assessment, and curriculum.
+
+- `docs/index.md` and `docs/.vitepress/theme/Layout.vue`: homepage and dual-mission overview.
+- `docs/teaching.md`: practical AI education and grounded classroom examples.
+- `docs/research.md`: proposed research questions and methods; not a claim of completed empirical research.
+- `CONTENT_SOURCES.md`: external evidence and publication-status guardrails for project and career claims.
+
+These pages are separate search/index destinations. Navigation also links to the documented public projects, work experience, and a contact flow. Public GitHub Issues remain public; the NJIT faculty profile is the alternative professional contact reference.
+
 ## Development
 
 ```sh
