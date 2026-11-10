@@ -58,6 +58,6 @@ The homepage opens a native, accessible dialog displaying the requested text `he
 
 ## Life Tracker guide
 
-`docs/life-tracker.md` explains the general private-repository workflow, practical setup steps, and human–AI collaboration at `/life-tracker`. It is linked from Selected Projects. The public starter checklist is `docs/public/life-tracker-starter.txt`; article styling lives in `theme/guide.css`. The fictional example and starter contain no private records. Do not copy private repository contents, internal instructions, or source links into this public site.
+`docs/life-tracker.md` explains the general private-repository workflow, practical setup steps, and human–AI collaboration at `/life-tracker`. It is linked from Selected Projects. The public starter checklist is `docs/public/life-tracker-starter.txt`; article styling lives in `theme/guide.css`. The fictional example and starter contain no private records. Do not copy private records or private source links into this public site.
 
 The guide describes a working method, not an installable app or an automatic reminder service. Preserve that distinction when updating it.

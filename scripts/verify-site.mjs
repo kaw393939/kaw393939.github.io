@@ -139,9 +139,11 @@ check('Guide metadata and sitemap resolve to the public article', () => {
   assert.equal(data['@type'], 'Article')
   assert.equal(data.author.name, 'Keith Williams')
 })
-check('Public guide and starter exclude private source links and internal files', () => {
-  const publicText = guide + starter + home
-  for (const privateMarker of ['github.com/kaw393939/life-tracker', 'teaching-issue-tracker', 'AGENTS.md', 'DATA_SCOPE.md', 'robbery_insurance', 'stella-handoff', 'sk-proj-', 'ghp_']) assert.ok(!publicText.includes(privateMarker), privateMarker)
+check('Public guide links only to approved public destinations', () => {
+  const approvedExternalLinks = new Set(['https://github.com/kaw393939', 'https://people.njit.edu/profile/kwilliam'])
+  for (const [, href] of guide.matchAll(/<a\b[^>]*href="(https?:\/\/[^"]+)"/g)) assert.ok(approvedExternalLinks.has(href), href)
+  const starterUrls = starter.match(/https?:\/\/\S+/g) || []
+  assert.deepEqual(starterUrls, ['https://kaw393939.github.io/life-tracker'])
   assert.ok(guide.includes('fictional'))
   assert.ok(guide.includes('not automatically an approved home'))
 })

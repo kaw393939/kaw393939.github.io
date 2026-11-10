@@ -32,4 +32,4 @@ The 2019 story supports teaching a progressive web app workshop at ZCAS Universi
 
 ## Life Tracker public guide
 
-Published at the owner's request on 2026-11-10 to explain the workflow, setup, and human–AI collaboration. Content is a general description with a fictional workshop example and a new, generic starter checklist. No private repository, case, person, document, source-system link, or internal instruction text is reproduced. The proposed starter labels are deliberately simplified; they are not an export of the private working queue.
+Published at the owner's request on 2026-11-10 to explain the workflow, setup, and human–AI collaboration. Content is a general description with a fictional workshop example and a new, generic starter checklist. Private records and source-system links are excluded. The proposed starter labels are deliberately simplified; they are not an export of the private working queue.
