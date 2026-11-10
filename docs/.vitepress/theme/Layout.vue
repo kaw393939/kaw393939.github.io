@@ -72,9 +72,6 @@ onUnmounted(() => {
   </header>
 
   <main v-if="isHome" id="main" tabindex="-1">
-    <section class="wrap" aria-labelledby="is373-greeting" style="padding-top: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid currentColor;">
-      <h2 id="is373-greeting" style="margin: 0; font-size: clamp(1.75rem, 4vw, 3rem); line-height: 1.2;">Hi, IS373! Welcome to my portfolio.</h2>
-    </section>
     <section class="hero wrap" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow"><span class="status-dot"></span> AT THE INTERSECTION OF AI & HUMAN POTENTIAL</p>
