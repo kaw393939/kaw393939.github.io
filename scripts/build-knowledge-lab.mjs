@@ -7,7 +7,7 @@ import { resolve, join, relative, dirname, sep } from 'node:path'
 
 export const source = {
   repository: 'https://github.com/kaw393939/is373-rag.git',
-  revision: '55f3b48df36db9a3621f94fc07bcd23d749063c8',
+  revision: '797882fc1043e15db4f210e29cd3e97b35615294',
   base: '/knowledge-lab/',
   origin: 'https://kaw393939.github.io'
 }
