@@ -20,7 +20,7 @@ for (const target of ['index.html','students/index.html','students/prompts.html'
 }
 const home = page('index.html')
 const students = page('students/index.html')
-assert.ok(home.includes('Knowledge you') && home.includes('Canonical identity'), 'Expected project landing')
+assert.ok(home.includes('Build answers you') && home.includes('ONE COMPLETE RAG EXAMPLE'), 'Expected project landing')
 assert.ok(students.includes('Build a small RAG system you can explain'), 'Expected student guide')
 assert.ok(students.includes('/knowledge-lab/students/'), 'Local navigation must retain mirror base')
 const robots = page('sitemap.xml')

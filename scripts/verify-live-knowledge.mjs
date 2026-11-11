@@ -5,12 +5,12 @@ const root = 'https://kaw393939.github.io'
 const pinned = '797882fc1043e15db4f210e29cd3e97b35615294'
 const targets = [
   {path: '/', test: body => body.includes('href="/knowledge-lab/"') && !body.includes('href="/is373-rag/"') && body.includes('Ordo Knowledge Lab')},
-  {path: '/knowledge-lab/', test: body => body.includes('Knowledge you') && body.includes('Canonical identity')},
+  {path: '/knowledge-lab/', test: body => body.includes('Build answers you') && body.includes('ONE COMPLETE RAG EXAMPLE')},
   // The project owns /is373-rag/ when its separate GitHub Pages site is active.
   // If that site is temporarily disabled, the portfolio's static fallback redirects.
   // Both behaviors are healthy; rejecting the direct project site is a false failure.
   {path: '/is373-rag/', test: body =>
-    (body.includes('Knowledge you') && body.includes('Canonical identity')) ||
+    (body.includes('Build answers you') && body.includes('ONE COMPLETE RAG EXAMPLE')) ||
     (body.includes('http-equiv="refresh"') && body.includes('url=/knowledge-lab/'))},
   {path: '/is373-rag/students/', test: body =>
     body.includes('Build a small RAG system you can explain') ||
