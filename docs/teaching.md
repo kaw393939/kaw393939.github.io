@@ -1,51 +1,51 @@
 ---
 title: Teaching AI
-description: Keith Williams teaches practical AI literacy and software engineering through hands-on projects, specifications, testing, and human judgment.
+description: Keith Williams helps students learn AI and software development by building, questioning, testing, and explaining real work.
 ---
 
 # Teaching AI
 
-**AI literacy is not just knowing which button to click.** It is learning how to frame a problem, direct a capable tool, evaluate its results, and remain responsible for the outcome.
+**AI literacy is not just knowing which button to click.** It's being able to ask a useful question, make something, and decide whether the result deserves your trust.
 
-I'm Keith Williams, a Senior University Lecturer at NJIT. My teaching combines software engineering, instructional design, and hands-on learning. The practical question is: **What do people need to know and do when AI can already perform many of the steps for them?**
+I've taught at NJIT for more than two decades. The tools have changed a lot. What still makes teaching worthwhile is seeing someone go from “I don't know where to start” to “I can figure this out.”
 
-## From using AI to understanding it
+## Build something you can explain
 
-A useful AI learning experience should help someone:
+I want students to use AI, not hide it. But getting a working answer is only the beginning. Can you explain the choices? Find the mistake? Change the requirements and make it work again?
 
-- **Frame the problem:** identify the people involved, constraints, requirements, and desired outcome.
-- **Build a working artifact:** use AI where it helps, but understand the major design choices.
-- **Evaluate the result:** run tests, examine the evidence, and question the model's assumptions.
-- **Explain and transfer learning:** show the reasoning behind the work and apply it in a new situation.
+In practice, that means:
 
-The goal is not to make people dependent on one model or interface. It is to develop the judgment to work with changing tools.
+- **Start with a real purpose.** Who is this for, and what should it help them do?
+- **Make the goal clear.** Write down the requirements and what a good result would look like.
+- **Build and check.** Try the tool, inspect the output, and test the important parts.
+- **Show your thinking.** Explain a decision, reflect on a mistake, and apply what you learned somewhere new.
 
-## What this looks like in practice
+I don't want students' confidence to depend on one model or one interface. I want them to develop habits they can carry to the next tool.
 
-### Spec-driven software development
+## A few ways we practice
 
-I use clear project requirements, personas, acceptance criteria, and reviews to connect ideas to testable work. Students work with repositories, documented decisions, and the evidence needed to evaluate what was built.
+### From an idea to working software
 
-### AI-assisted learning studios
+Students use project requirements, tests, repositories, and small revisions to turn an idea into something they can demonstrate. AI can help with the steps; students still need to understand what they are building and why.
 
-The [IS117 Brand Studio](https://github.com/kaw393939/is117-brand-studio) is a public teaching template in which students turn a neutral T-shirt storefront into a brand. It combines hands-on changes, an evolving style guide, and reflection on decisions. The storefront is an educational demonstration, **not** a commercial checkout.
+### Making a brand from a plain T-shirt
 
-### Reusable learning systems
+The [IS117 Brand Studio](https://github.com/kaw393939/is117-brand-studio) starts with a neutral storefront. Students give it a purpose, a voice, and a visual identity, then explain their choices. It's a public teaching template and an educational demonstration, **not** a commercial checkout.
 
-The [Educational Design System](https://kaw393939.github.io/educational-design-system/) explores repeatable structures for educational content and websites. Its published first-phase foundation includes shared design tokens, layouts, pedagogical components, and release checks; later phases remain work in progress.
+### Asking where an AI answer came from
 
-## Beyond the classroom
+The <a href="/knowledge-lab/">Knowledge Lab</a> gives students a place to explore retrieval, databases, sources, and the cost of using language models. The aim is to look past a convincing answer and understand the system that produced it.
 
-AI education should be understandable to students, educators, professionals, and curious people outside the university. My [Everyday AI CLI](https://github.com/kaw393939/everyday-ai-cli) is one example of making practical AI workflows more approachable through repeatable tools. It is a published alpha, not a claim that every integration is production-ready.
+## Learning should be approachable
 
-## The connection to research
+I care about making technical ideas easier to enter without making them less meaningful. That interest also runs through my [Educational Design System](https://kaw393939.github.io/educational-design-system/), a published foundation for reusable teaching materials, and [Everyday AI CLI](https://github.com/kaw393939/everyday-ai-cli), an alpha toolkit for repeatable AI tasks.
 
-Teaching raises questions that cannot be answered by a working demonstration alone: How do we know someone has learned? What happens when AI produces the final artifact? How do we evaluate independent judgment?
+Neither is a finished answer to teaching with AI. They're things to try, inspect, and improve.
 
-Those questions lead to the second half of this work: [Rethinking education with AI](/research).
+## The question behind the work
 
----
+When AI helps produce an assignment, how do we know what the student learned? That is a question worth investigating, not something a polished demo settles.
 
-**Explore the evidence:** [Selected projects](/#projects) · [NJIT faculty profile](https://people.njit.edu/profile/kwilliam) · [Start a public conversation](/#conversation)
+[Explore my research questions](/research) · [Read my story](/about) · [See the projects](/#projects)
 
-*This is a personal description of my educational approach, not an official NJIT curriculum statement or a claim of measured learning gains.*
+*This is my teaching approach, not an official NJIT curriculum statement or a claim of measured learning gains.*

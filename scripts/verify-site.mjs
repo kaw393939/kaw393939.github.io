@@ -14,7 +14,7 @@ function check(name, fn) { fn(); checks.push(name); console.log(`PASS ${name}`) 
 
 check('Homepage is pre-rendered with one H1 and original content', () => {
   assert.equal((home.match(/<h1\b/g) || []).length, 1)
-  for (const text of ['Teaching AI.', 'Rethinking', 'Education.', 'Keith Williams', 'Senior University Lecturer', 'B.S. Enterprise AI', 'Human judgment', 'Public on GitHub', 'student records']) assert.ok(home.includes(text), text)
+  for (const text of ['Teaching AI.', 'Rethinking', 'Education.', 'Keith Williams', 'Senior University Lecturer', 'B.S. Enterprise AI', 'Keep judgment human.', 'Public on GitHub', 'student records']) assert.ok(home.includes(text), text)
   assert.ok(home.includes('<main'))
 })
 check('Project cases and historical experience include status and source links', () => {
@@ -64,8 +64,8 @@ check('AI education missions and research agenda are explicit and qualified', ()
   assert.ok(teaching.includes('AI literacy is not just knowing'))
   assert.ok(research.includes('not a list of completed experiments'))
   assert.ok(research.includes('peer-reviewed'))
-  assert.ok(teaching.includes('rel="canonical" href="https://kaw393939.github.io/teaching"'))
-  assert.ok(research.includes('rel="canonical" href="https://kaw393939.github.io/research"'))
+  assert.ok(teaching.includes('rel="canonical" href="https://keithwilliams.org/teaching"'))
+  assert.ok(research.includes('rel="canonical" href="https://keithwilliams.org/research"'))
 })
 
 check('Removed homepage popup stays absent', () => {
@@ -82,8 +82,8 @@ check('Removed homepage popup stays absent', () => {
 })
 check('Unique title, canonical URL and share metadata', () => {
   assert.match(home, /<title>Keith Williams · AI &amp; Education<\/title>/)
-  assert.match(home, /rel="canonical" href="https:\/\/kaw393939.github.io\/"/)
-  assert.match(home, /property="og:url" content="https:\/\/kaw393939.github.io\/"/)
+  assert.match(home, /rel="canonical" href="https:\/\/keithwilliams.org\/"/)
+  assert.match(home, /property="og:url" content="https:\/\/keithwilliams.org\/"/)
   assert.ok(home.includes('name="description"'))
   assert.ok(home.includes('name="viewport"'))
   assert.ok(home.includes('lang="en-US"'))
@@ -97,13 +97,13 @@ check('Valid profile structured data', () => {
 })
 check('Sitemap excludes the error page; error page is noindex', () => {
   assert.ok(!sitemap.includes('/404'))
-  assert.equal((sitemap.match(/<loc>/g) || []).length, 4)
+  assert.equal((sitemap.match(/<loc>/g) || []).length, 5)
   assert.ok(sitemap.includes('/teaching'))
   assert.ok(sitemap.includes('/research'))
   assert.match(error, /name="robots" content="noindex, follow"/)
   assert.ok(!error.includes('rel="canonical"'))
   assert.ok(!error.includes('application/ld+json'))
-  assert.ok(read('robots.txt').includes('Sitemap: https://kaw393939.github.io/sitemap.xml'))
+  assert.ok(read('robots.txt').includes('Sitemap: https://keithwilliams.org/sitemap.xml'))
 })
 check('All homepage images have alt text, dimensions, and responsive sources', () => {
   const images = home.match(/<img\b[^>]*>/g)
@@ -164,10 +164,10 @@ check('Life Tracker guide is pre-rendered, discoverable, and has complete setup 
   assert.ok(starter.includes('## Completion criteria'))
 })
 check('Guide metadata and sitemap resolve to the public article', () => {
-  assert.match(guide, /rel="canonical" href="https:\/\/kaw393939.github.io\/life-tracker"/)
+  assert.match(guide, /rel="canonical" href="https:\/\/keithwilliams.org\/life-tracker"/)
   assert.match(guide, /property="og:type" content="article"/)
-  assert.match(guide, /property="og:url" content="https:\/\/kaw393939.github.io\/life-tracker"/)
-  assert.ok(sitemap.includes('https://kaw393939.github.io/life-tracker'))
+  assert.match(guide, /property="og:url" content="https:\/\/keithwilliams.org\/life-tracker"/)
+  assert.ok(sitemap.includes('https://keithwilliams.org/life-tracker'))
   const data = JSON.parse(guide.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1])
   assert.equal(data['@type'], 'Article')
   assert.equal(data.author.name, 'Keith Williams')
@@ -176,9 +176,20 @@ check('Public guide links only to approved public destinations', () => {
   const approvedExternalLinks = new Set(['https://github.com/kaw393939', 'https://people.njit.edu/profile/kwilliam'])
   for (const [, href] of guide.matchAll(/<a\b[^>]*href="(https?:\/\/[^"]+)"/g)) assert.ok(approvedExternalLinks.has(href), href)
   const starterUrls = starter.match(/https?:\/\/\S+/g) || []
-  assert.deepEqual(starterUrls, ['https://kaw393939.github.io/life-tracker'])
+  assert.deepEqual(starterUrls, ['https://keithwilliams.org/life-tracker'])
   assert.ok(guide.includes('fictional'))
   assert.ok(guide.includes('not automatically an approved home'))
+})
+check('Custom domain survives the production build', () => {
+  assert.equal(read('CNAME').trim(), 'keithwilliams.org')
+})
+check('Personal story is sourced and proposals are distinguished from accomplishments', () => {
+  const about = read('about.html')
+  for (const text of ['TRS-80', '1983', 'Alcoa', 'AmeriCorps', 'Showedme.net', 'Wrkbench', 'not an operating program']) assert.ok(about.includes(text), text)
+  assert.ok(home.includes('href="/about"'))
+  assert.ok(about.includes('rel="canonical" href="https://keithwilliams.org/about"'))
+  assert.ok(sitemap.includes('/about'))
+  assert.equal((about.match(/<h1\b/g) || []).length, 1)
 })
 console.log(`\n${checks.length} static checks passed. Browser and real-device checks remain separate.`)
 

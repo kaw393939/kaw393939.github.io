@@ -42,3 +42,7 @@ The site's GitHub discussion mechanism requires sign-in and creates public issue
 ## Life Tracker public guide
 
 Published at the owner's request on 2026-11-10 to explain the workflow, setup, and human–AI collaboration. Content is a general description with a fictional workshop example and a new, generic starter checklist. Private records and source-system links are excluded. The proposed starter labels are deliberately simplified; they are not an export of the private working queue.
+
+## Personal-story rewrite (2026-11-11)
+
+Source: https://eaikw.com/about/, read on 2026-11-11. Keith explicitly identified that page as his actual background and asked to rewrite this site using it. The new About page uses his account of his father at Alcoa, 1983 TRS-80, 2002 adjunct start, Showedme.net, Wrkbench, AmeriCorps and Zambia. Avoided unverified superlatives, enrollment totals and recruitment metrics. EverydayAI Newark is explicitly an unlaunched idea, not a current program, partnership, placement service or event. Current NJIT role and existing primary Zambia links are preserved.

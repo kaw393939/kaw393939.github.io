@@ -1,7 +1,7 @@
 // Production verification after GitHub Pages rebuilds the branch.
 import assert from 'node:assert/strict'
 
-const root = 'https://kaw393939.github.io'
+const root = 'https://keithwilliams.org'
 const pinned = '797882fc1043e15db4f210e29cd3e97b35615294'
 const targets = [
   {path: '/', test: body => body.includes('href="/knowledge-lab/"') && !body.includes('href="/is373-rag/"') && body.includes('Ordo Knowledge Lab')},

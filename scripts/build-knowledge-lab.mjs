@@ -9,7 +9,7 @@ export const source = {
   repository: 'https://github.com/kaw393939/is373-rag.git',
   revision: '797882fc1043e15db4f210e29cd3e97b35615294',
   base: '/knowledge-lab/',
-  origin: 'https://kaw393939.github.io'
+  origin: 'https://keithwilliams.org'
 }
 const run = (command, args, dir, env = process.env) => {
   const proc = spawnSync(command, args, { cwd: dir, env, encoding: 'utf8',

@@ -3,7 +3,7 @@ export const site = {
   name: 'Keith Williams',
   title: 'Keith Williams · AI & Education',
   description: 'Teaching AI. Rethinking Education. Keith Williams connects AI education, software engineering, and human judgment.',
-  url: 'https://kaw393939.github.io',
+  url: 'https://keithwilliams.org',
   github: 'https://github.com/kaw393939',
   faculty: 'https://people.njit.edu/profile/kwilliam',
   conversation: 'https://github.com/kaw393939/kaw393939.github.io/issues/new?template=contact.yml',
