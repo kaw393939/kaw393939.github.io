@@ -1,0 +1,5 @@
+Knowledge Lab documentation mirror publication receipt
+Portfolio source: 45343d738efd430553e7beaa50d541426e0d3ed5
+Knowledge Lab source: 9e368134e3d93bc79bd207480d2c5b5fa617d9d7
+Static content already built and checked in GitHub Actions run 42967706310.
+This receipt marks the GitHub App-origin publication event; it is not proof that GitHub Pages has completed its deployment.
