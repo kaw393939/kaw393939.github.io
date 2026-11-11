@@ -6,8 +6,15 @@ const pinned = '55f3b48df36db9a3621f94fc07bcd23d749063c8'
 const targets = [
   {path: '/', test: body => body.includes('href="/knowledge-lab/"') && !body.includes('href="/is373-rag/"') && body.includes('Ordo Knowledge Lab')},
   {path: '/knowledge-lab/', test: body => body.includes('Knowledge you') && body.includes('Canonical identity')},
-  {path: '/is373-rag/', test: body => body.includes('http-equiv="refresh"') && body.includes('url=/knowledge-lab/')},
-  {path: '/is373-rag/students/', test: body => body.includes('http-equiv="refresh"') && body.includes('url=/knowledge-lab/students/')},
+  // The project owns /is373-rag/ when its separate GitHub Pages site is active.
+  // If that site is temporarily disabled, the portfolio's static fallback redirects.
+  // Both behaviors are healthy; rejecting the direct project site is a false failure.
+  {path: '/is373-rag/', test: body =>
+    (body.includes('Knowledge you') && body.includes('Canonical identity')) ||
+    (body.includes('http-equiv="refresh"') && body.includes('url=/knowledge-lab/'))},
+  {path: '/is373-rag/students/', test: body =>
+    body.includes('Build a small RAG system you can explain') ||
+    (body.includes('http-equiv="refresh"') && body.includes('url=/knowledge-lab/students/'))},
   {path: '/knowledge-lab/students/', test: body => body.includes('Build a small RAG system you can explain')},
   {path: '/knowledge-lab/students/prompts', test: body => body.includes('Ask an AI coding agent')},
   {path: '/knowledge-lab/mirror-manifest.json', test: body => {
