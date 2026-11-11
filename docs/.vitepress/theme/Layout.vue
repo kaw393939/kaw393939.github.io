@@ -149,7 +149,7 @@ onUnmounted(() => {
 
     <section id="about" class="about-section wrap" aria-labelledby="about-title">
       <figure class="portrait">
-        <img src="/images/keith-classroom-nov2026-960.webp" srcset="/images/keith-classroom-nov2026-480.webp 480w, /images/keith-classroom-nov2026-960.webp 960w, /images/keith-classroom-nov2026-1440.webp 1440w" sizes="(max-width: 640px) min(440px, calc(100vw - 40px)), (max-width: 1392px) 46vw, 638px" alt="Keith Williams in a classroom" width="2316" height="3088" loading="lazy" decoding="async">
+        <img src="/images/keith-portrait-20261111-960.webp" srcset="/images/keith-portrait-20261111-480.webp 480w, /images/keith-portrait-20261111-960.webp 960w, /images/keith-portrait-20261111-1440.webp 1440w" sizes="(max-width: 640px) min(440px, calc(100vw - 40px)), (max-width: 1392px) 46vw, 638px" alt="Keith Williams in a classroom" width="2316" height="3088" loading="lazy" decoding="async">
         <figcaption><span>02 / THE EDUCATOR</span><span>Keith Williams</span></figcaption>
       </figure>
       <div class="about-copy"><p class="eyebrow">04 / A LITTLE BACKGROUND</p><h2 id="about-title">An educator.<br>A builder.<br><em>Always a learner.</em></h2><p>I've spent more than two decades teaching at NJIT, connecting software development with practical learning. Today, my focus is on AI education and the B.S. Enterprise AI program.</p><p>I care about helping people develop the confidence to build and the judgment to know whether what they've built is useful. The tools will keep changing. That foundation matters.</p><a class="text-link" :href="site.faculty">My NJIT faculty profile <SiteIcon name="arrow-up-right" class="link-arrow" /></a></div>
