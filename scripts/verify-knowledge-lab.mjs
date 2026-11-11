@@ -9,8 +9,9 @@ assert.equal(manifest.repository, 'https://github.com/kaw393939/is373-rag.git')
 assert.equal(manifest.revision, '55f3b48df36db9a3621f94fc07bcd23d749063c8')
 assert.equal(manifest.base, '/knowledge-lab/')
 const homepage = readFileSync(resolve(root,'index.html'),'utf8')
-assert.ok(homepage.includes('href="/is373-rag/"'), 'Main nav must link to the standalone Knowledge Lab')
+assert.ok(homepage.includes('href="/knowledge-lab/"'), 'Main nav must link to the published Knowledge Lab')
 assert.ok(homepage.includes('Knowledge Lab'), 'Main nav project name is missing')
+assert.ok(!homepage.includes('href="/is373-rag/"'), 'Do not publish stale main navigation')
 assert.ok(homepage.includes('Ordo Knowledge Lab'), 'Portfolio case study is missing')
 for (const target of ['index.html','students/index.html','students/prompts.html',
   'guide/vision.html','project/roadmap.html','assets','sitemap.xml']) {
@@ -26,4 +27,11 @@ assert.ok(robots.includes('https://kaw393939.github.io/knowledge-lab/'), 'Wrong 
 for (const html of [home,students]) {
   assert.ok(!html.includes('href="/is373-rag/'), 'Old standalone-base URL in mirror')
 }
-console.log('PASS: pinned full knowledge-lab mirror, student pages, portfolio navigation and base-aware assets.')
+const redirect = readFileSync(resolve(root, 'is373-rag', 'index.html'), 'utf8')
+assert.match(redirect, /http-equiv="refresh"/i, 'Legacy URL should have a static redirect')
+assert.ok(redirect.includes('/knowledge-lab/'), 'Legacy URL should lead to published docs')
+for (const route of ['students/index.html', 'students/prompts.html', 'guide/vision.html']) {
+  const alias = readFileSync(resolve(root, 'is373-rag', route), 'utf8')
+  assert.ok(alias.includes('/knowledge-lab/'), `Legacy deep link missing redirect: ${route}`)
+}
+console.log('PASS: pinned full knowledge-lab mirror, correct portfolio links, and legacy/deep-link redirects.')

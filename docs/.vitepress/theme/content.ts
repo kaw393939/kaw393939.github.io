@@ -111,7 +111,7 @@ export const projects = [
     ],
     note: 'The educational website and examples are available. The full research runtime, hosted chat, and native AI workers remain planned.',
     links: [
-      { label: 'Explore the textbook', href: '/is373-rag/' },
+      { label: 'Explore the textbook', href: '/knowledge-lab/' },
       { label: 'View project source', href: 'https://github.com/kaw393939/is373-rag' }
     ]
   }

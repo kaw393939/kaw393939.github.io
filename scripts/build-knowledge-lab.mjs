@@ -1,9 +1,9 @@
 // Build a pinned, public VitePress mirror without forking the project's content.
 import assert from 'node:assert/strict'
 import { spawnSync } from 'node:child_process'
-import { mkdtempSync, mkdirSync, cpSync, rmSync, writeFileSync, existsSync } from 'node:fs'
+import { mkdtempSync, mkdirSync, cpSync, rmSync, writeFileSync, existsSync, readdirSync } from 'node:fs'
 import { tmpdir } from 'node:os'
-import { resolve, join } from 'node:path'
+import { resolve, join, relative, dirname, sep } from 'node:path'
 
 export const source = {
   repository: 'https://github.com/kaw393939/is373-rag.git',
@@ -44,6 +44,36 @@ try {
   writeFileSync(join(destination, 'mirror-manifest.json'),
     JSON.stringify({project:'Ordo Knowledge Lab', repository:source.repository,
       revision:source.revision, base:source.base}, null, 2) + '\n')
+
+  // Static GitHub Pages fallback for the original project URL. Avoid redirecting
+  // the canonical docs themselves: one source, one published location.
+  const legacyDir = join(root, 'docs/.vitepress/dist/is373-rag')
+  rmSync(legacyDir, { recursive: true, force: true })
+  const htmlFiles = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
+    const full = join(dir, entry.name)
+    return entry.isDirectory() ? htmlFiles(full) : entry.name.endsWith('.html') ? [full] : []
+  })
+  for (const page of htmlFiles(destination)) {
+    const rel = relative(destination, page).split(sep).join('/')
+    const clean = rel === 'index.html' ? '' :
+      rel.endsWith('/index.html') ? rel.slice(0, -'index.html'.length) :
+      rel.slice(0, -'.html'.length)
+    const target = source.base + clean
+    const redirect = join(legacyDir, rel)
+    mkdirSync(dirname(redirect), { recursive: true })
+    writeFileSync(redirect,
+      `<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="${source.origin}${target}">
+<meta http-equiv="refresh" content="0;url=${target}">
+<title>Ordo Knowledge Lab — moved</title></head>
+<body><main><h1>Ordo Knowledge Lab has moved</h1>
+<p>Find the documentation at <a href="${target}">${target}</a>.</p>
+</main><script>location.replace(${JSON.stringify(target)}+location.search+location.hash)</script></body></html>\n`)
+  }
+  process.stdout.write(`Created ${htmlFiles(destination).length} legacy-route redirects at /is373-rag/.\n`)
   process.stdout.write(`Mirrored verified Ordo docs from ${source.revision} at ${source.base}\n`)
 } finally {
   rmSync(temp, { recursive: true, force: true })
