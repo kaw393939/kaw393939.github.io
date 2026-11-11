@@ -32,8 +32,8 @@ check('Project cases and historical experience include status and source links',
 })
 check('Knowledge Lab is prominent in navigation and accurate in project cases', () => {
   const layout = readFileSync('docs/.vitepress/theme/Layout.vue', 'utf8')
-  assert.ok(layout.includes('href="/is373-rag/"'))
-  assert.ok(home.includes('href="/is373-rag/"'))
+  assert.ok(layout.includes('href="/knowledge-lab/"'))
+  assert.ok(home.includes('href="/knowledge-lab/"'))
   assert.ok(home.includes('>Knowledge Lab</a>'))
   assert.ok(home.includes('Ordo Knowledge Lab'))
   assert.ok(home.includes('research application planned'))

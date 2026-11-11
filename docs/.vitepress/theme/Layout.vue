@@ -66,7 +66,7 @@ onUnmounted(() => {
       <button ref="menuButton" type="button" class="menu-toggle" :aria-expanded="menuOpen" aria-controls="site-nav" @click="menuOpen = !menuOpen">{{ menuOpen ? 'Close' : 'Menu' }} <span aria-hidden="true">{{ menuOpen ? '−' : '+' }}</span></button>
       <nav id="site-nav" :class="{ open: menuOpen }" aria-label="Main navigation">
         <a v-for="item in navItems" :key="item.id" :href="`/#${item.id}`" :aria-current="activeSection === item.id ? 'location' : undefined" @click="closeMenu">{{ item.label }}</a>
-        <a class="nav-lab" href="/is373-rag/" @click="closeMenu">Knowledge Lab</a>
+        <a class="nav-lab" href="/knowledge-lab/" @click="closeMenu">Knowledge Lab</a>
         <a class="nav-contact" href="/#conversation" @click="closeMenu">Let's talk <SiteIcon name="arrow-down-right" class="link-arrow" /></a>
       </nav>
     </div>
