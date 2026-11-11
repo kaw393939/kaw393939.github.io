@@ -16,7 +16,13 @@ const run = (command, args, cwd = root, allow = [0]) => {
 }
 const git = (args, cwd = root, allow = [0]) => run('git', [...gitOptions, ...args], cwd, allow)
 
-run('npm', ['run', 'build'])
+if (process.env.PAGES_PREBUILT !== 'true') {
+  run('npm', ['run', 'build'])
+  run('npm', ['run', 'build:knowledge'])
+  run('npm', ['run', 'verify:knowledge'])
+} else {
+  console.log('Publishing the pre-built and pre-verified output from this release.')
+}
 const remote = git(['remote', 'get-url', 'origin']).stdout.trim()
 const temporaryCheckout = mkdtempSync(join(tmpdir(), 'keith-pages-'))
 try {

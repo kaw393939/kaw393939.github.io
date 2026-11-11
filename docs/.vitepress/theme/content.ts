@@ -109,6 +109,39 @@ export const projects = [
       { label: 'Visit the studio', href: 'https://kaw393939.github.io/is117-brand-studio/studio.html' },
       { label: 'View template', href: 'https://github.com/kaw393939/is117-brand-studio' }
     ]
+  },
+  {
+    id: 'life-tracker',
+    number: '04',
+    title: 'Life Tracker',
+    category: 'Human + AI workflow',
+    status: 'Private workspace · Public how-to guide',
+    summary: 'A practical way to keep the next step clear when work is scattered across conversations and documents.',
+    details: [
+      { label: 'What', text: 'A private GitHub work queue with clear owners, next actions, and checks for completion.' },
+      { label: 'Why', text: 'AI helps research and organize the work. I set the direction, review decisions, and check the outcome.' }
+    ],
+    note: 'The guide explains the method and how to set up your own version. Private records stay private.',
+    links: [
+      { label: 'Read the setup guide', href: '/life-tracker' }
+    ]
+  },
+  {
+    id: 'ordo-knowledge-lab',
+    number: '05',
+    title: 'Ordo Knowledge Lab',
+    category: 'AI knowledge systems · education',
+    status: 'Public textbook and student labs · research application planned',
+    summary: 'A research-grounded VitePress learning resource that connects RAG, databases, AI, systems engineering and evidence-driven software.',
+    details: [
+      { label: 'Available', text: 'IS373 RAG student guides, practical prompts, synthetic examples, design documentation and tested learning labs.' },
+      { label: 'Next', text: 'A portable knowledge engine with evidence, identity review, streaming retrieval and optional specialized model workers.' }
+    ],
+    note: 'The educational website and examples are available. The full research runtime, hosted chat, and native AI workers remain planned.',
+    links: [
+      { label: 'Explore the textbook', href: '/knowledge-lab/' },
+      { label: 'View project source', href: 'https://github.com/kaw393939/is373-rag' }
+    ]
   }
 ]
 

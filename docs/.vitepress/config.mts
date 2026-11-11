@@ -17,18 +17,28 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#f3f0e8' }]
   ],
   transformHead({ pageData }) {
-    if (pageData.relativePath === 'teaching.md' || pageData.relativePath === 'research.md') {
-      const slug = pageData.relativePath.replace(/\.md$/, '')
-      const url = `${site.url}/${slug}`
+    if (['life-tracker.md', 'teaching.md', 'research.md'].includes(pageData.relativePath)) {
+      const url = `${site.url}/${pageData.relativePath.replace(/\.md$/, '')}`
+      const title = pageData.relativePath === 'life-tracker.md' ? 'Life Tracker · How I use AI to follow through' : `${pageData.title} | ${site.name}`
+      const description = pageData.relativePath === 'life-tracker.md' ? 'How Keith Williams uses a private GitHub work queue with an AI assistant, and how to set up a small version of your own.' : pageData.description || site.description
       return [
         ['link', { rel: 'canonical', href: url }],
         ['meta', { property: 'og:type', content: 'article' }],
         ['meta', { property: 'og:url', content: url }],
-        ['meta', { property: 'og:title', content: `${pageData.title} | ${site.name}` }],
-        ['meta', { property: 'og:description', content: pageData.description || site.description }],
+        ['meta', { property: 'og:title', content: title }],
+        ['meta', { property: 'og:description', content: description }],
         ['meta', { property: 'og:image', content: `${site.url}${site.socialImage}` }],
-        ['meta', { property: 'og:image:alt', content: 'Illustrated explorer landscape representing inquiry and learning' }],
-        ['meta', { name: 'twitter:card', content: 'summary_large_image' }]
+        ['meta', { property: 'og:image:alt', content: 'An imagined mountain horizon with contour lines and a vermilion sun' }],
+        ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+        ['script', { type: 'application/ld+json' }, JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: title,
+          description,
+          url,
+          author: { '@type': 'Person', name: site.name, url: `${site.url}/` },
+          mainEntityOfPage: url
+        })]
       ]
     }
     if (pageData.relativePath !== 'index.md') return []

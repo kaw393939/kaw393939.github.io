@@ -39,3 +39,6 @@ The homepage and supporting pages describe Keith's educational approach, past te
 - [Research agenda](https://kaw393939.github.io/research): a proposed line of inquiry; evidence and methodology would be required before factual research claims can be made.
 
 The site's GitHub discussion mechanism requires sign-in and creates public issues. Private professional inquiries should use a separately appropriate channel reached from the NJIT faculty profile, not the public issue form.
+## Life Tracker public guide
+
+Published at the owner's request on 2026-11-10 to explain the workflow, setup, and human–AI collaboration. Content is a general description with a fictional workshop example and a new, generic starter checklist. Private records and source-system links are excluded. The proposed starter labels are deliberately simplified; they are not an export of the private working queue.

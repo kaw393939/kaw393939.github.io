@@ -27,13 +27,15 @@ npm run build
 npm run preview
 ```
 
-Publish the built static site with an authenticated GitHub CLI account:
+The main navigation and project card link to the **published** [Ordo Knowledge Lab](https://kaw393939.github.io/knowledge-lab/). The portfolio Pages site hosts a **pinned, built mirror of its VitePress source** at `/knowledge-lab/`. Legacy `/is373-rag/` links redirect to the published site. Its source stays in [kaw393939/is373-rag](https://github.com/kaw393939/is373-rag); this repository pins its exact public revision in `scripts/build-knowledge-lab.mjs`, verifies the subpath, and deploys both websites together. Update the pin deliberately to promote later project changes.
+
+On `main`, GitHub Actions builds and checks both sites, then attempts publication to the existing `gh-pages` branch. A push is not proof of a Pages rebuild; inspect the live site separately. You can also publish manually with an authenticated GitHub CLI account:
 
 ```sh
 npm run deploy
 ```
 
-The deploy script builds VitePress and updates the `gh-pages` branch without a force push. GitHub Pages serves that branch from `/`. Source and issue templates live on `main`. Pushing source alone does not redeploy the website. This setup uses the existing repository permissions and does not require permission to create GitHub Actions workflows.
+The deploy script builds both VitePress sites and updates the `gh-pages` branch without a force push. GitHub Pages serves that branch from `/`. Source and issue templates live on `main`. Main-branch pushes invoke the publishing workflow. A deployment is complete only after the public site is verified. This setup uses the existing repository permissions and does not require permission to create GitHub Actions workflows.
 
 ## Content and imagery
 
@@ -62,3 +64,9 @@ Run `npm test` before publishing. It builds the production site and checks pre-r
 The portrait and landscape have responsive WebP derivatives. Originals are retained unchanged. Regenerate derivatives with `python scripts/optimize-images.py` (Python 3 and Pillow required). The script applies display orientation, preserves the photograph's content, and does not carry private metadata into web derivatives.
 
 The navigation supports Escape dismissal, outside-click dismissal, and resets across layout breakpoints. The page uses SVG arrow icons rather than platform-dependent text glyphs.
+
+## Life Tracker guide
+
+`docs/life-tracker.md` explains the general private-repository workflow, practical setup steps, and human–AI collaboration at `/life-tracker`. It is linked from Selected Projects. The public starter checklist is `docs/public/life-tracker-starter.txt`; article styling lives in `theme/guide.css`. The fictional example and starter contain no private records. Do not copy private records or private source links into this public site.
+
+The guide describes a working method, not an installable app or an automatic reminder service. Preserve that distinction when updating it.

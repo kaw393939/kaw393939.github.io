@@ -8,5 +8,5 @@ export const site = {
   faculty: 'https://people.njit.edu/profile/kwilliam',
   conversation: 'https://github.com/kaw393939/kaw393939.github.io/issues/new?template=contact.yml',
   socialImage: '/images/explorer-horizon-1254.webp',
-  portrait: '/images/keith-williams-960.webp'
+  portrait: '/images/keith-portrait-20261111-960.webp'
 } as const

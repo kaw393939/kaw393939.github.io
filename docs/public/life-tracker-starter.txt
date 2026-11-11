@@ -1,0 +1,74 @@
+LIFE TRACKER: A SMALL STARTER
+A generic setup checklist and issue template by Keith Williams.
+Public guide: https://kaw393939.github.io/life-tracker
+
+This starter has no connection to or access to Keith's private workspace.
+Use fictional tasks first. Store only information you are permitted to keep
+in your chosen service. A private repository is not automatically approved
+for workplace, school, client, or sensitive personal records.
+
+SETUP CHECKLIST
+[ ] Create a new PRIVATE GitHub repository with a README and Issues enabled.
+[ ] Confirm who can access it. Do not publish it through GitHub Pages.
+[ ] In the README, describe its purpose and how you will review the queue.
+[ ] Document what belongs here and what must remain in source systems.
+[ ] Create the status labels below and one relevant workstream label.
+[ ] Create one low-risk issue using the template below.
+[ ] Research, act with authorization, verify the result, and close the issue.
+[ ] Adjust the template before adding more work.
+
+SUGGESTED LABELS
+Use one status on each OPEN issue:
+- status:needs-research
+- status:needs-draft
+- status:needs-decision
+- status:in-progress
+- status:waiting
+
+Optional labels:
+- workstream:project (replace 'project' with your area of work)
+- priority:time-sensitive (only for a concrete approaching deadline)
+
+Close finished issues and remove active status labels.
+A label or date does not schedule a reminder or send a message.
+
+ISSUE TEMPLATE (copy the section below into a new issue)
+
+Title: [Workstream] Short action to take
+
+## Verified current state
+What is known? Separate checked facts, uncertainty, proposals, and actions.
+
+## Last checked
+YYYY-MM-DD, time and time zone as relevant.
+
+## Source reference
+Where an authorized person can verify the facts.
+Do not paste credentials, full private messages, or unnecessary personal data.
+
+## Next action
+One concrete next step.
+
+## Owner and dependencies
+Who owes the next action? What is blocking it?
+
+## Timing
+Confirmed deadline, if any: date, time, time zone, and source.
+Proposed follow-up target: date and reason, or why none is needed.
+Keep official deadlines separate from suggested check-in dates.
+
+## Completion criteria
+What exact result must be checked before closing?
+
+## Outcome (fill in after action)
+What happened, how it was verified, and when.
+Record an intentional decision to drop work separately from completion.
+
+STARTING REQUEST FOR AN AI ASSISTANT
+Review this task using the sources I have authorized. Tell me what is
+verified, what is missing, and the next action. Draft any suggested message
+for my review. Do not send messages or change other systems.
+
+Grant only the account and repository access needed for the task.
+A draft is not a sent message. A sent message is not a completed task.
+You remain responsible for decisions and reviewing the result.
