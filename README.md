@@ -37,6 +37,10 @@ npm run deploy
 
 The deploy script builds both VitePress sites and updates the `gh-pages` branch without a force push. GitHub Pages serves that branch from `/`. Source and issue templates live on `main`. Main-branch pushes invoke the publishing workflow. A deployment is complete only after the public site is verified. This setup uses the existing repository permissions and does not require permission to create GitHub Actions workflows.
 
+## Hero narration
+
+The homepage includes an optional 16-second AI-narrated audio introduction, generated with ElevenLabs. The MP3 is committed at `docs/public/audio/portfolio-intro.mp3` and published as a static asset. It does not autoplay or preload; visitors can use a play/pause button or read the transcript in `docs/.vitepress/theme/components/HeroAudio.vue`. The synthetic narrator is identified on the page and is not Keith's recorded or cloned voice.
+
 ## Content and imagery
 
 Homepage structure lives in `docs/.vitepress/theme/Layout.vue`; repeatable content lives in `theme/content.ts`, shared identity and URLs in `.vitepress/site.ts`, icons in `theme/components/SiteIcon.vue`, and styles in `theme/style.css`. The user-provided photograph of Keith Williams in the About section lives at `docs/public/images/keith-williams.jpg`. It retains its original pixels with private metadata removed (only display orientation is retained), and uses a responsive CSS crop, descriptive alt text, explicit dimensions, and lazy loading. The original AI-generated explorer and sage imagery also lives in `docs/public/images/`. The explorer landscape remains in the hero; these conceptual illustrations are distinct from the portrait photograph.
