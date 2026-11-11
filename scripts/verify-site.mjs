@@ -14,7 +14,7 @@ function check(name, fn) { fn(); checks.push(name); console.log(`PASS ${name}`) 
 
 check('Homepage is pre-rendered with one H1 and original content', () => {
   assert.equal((home.match(/<h1\b/g) || []).length, 1)
-  for (const text of ['Exploring AI.', 'Keith Williams', 'Senior University Lecturer', 'B.S. Enterprise AI', 'Human judgment', 'Public on GitHub', 'student records']) assert.ok(home.includes(text), text)
+  for (const text of ['Teaching AI.', 'Rethinking', 'Education.', 'Keith Williams', 'Senior University Lecturer', 'B.S. Enterprise AI', 'Human judgment', 'Public on GitHub', 'student records']) assert.ok(home.includes(text), text)
   assert.ok(home.includes('<main'))
 })
 check('Project cases and historical experience include status and source links', () => {
@@ -47,7 +47,27 @@ check('Section anchors and accessible heading references resolve uniquely', () =
     for (const id of references.split(' ')) assert.ok(ids.includes(id), id)
   }
   assert.ok(home.includes('href="#projects"'))
+  for (const href of ['/teaching', '/research', '/#about']) assert.ok(home.includes(`href="${href}"`), href)
 })
+check('AI education missions and research agenda are explicit and qualified', () => {
+  assert.equal((home.match(/class="focus-item"/g) || []).length, 2)
+  assert.equal((home.match(/class="research-item"/g) || []).length, 3)
+  for (const phrase of ['TWO CONNECTED MISSIONS', 'Teaching AI', 'Rethinking Education', 'QUESTIONS WORTH TESTING', 'not claims of completed empirical research']) {
+    assert.ok(home.includes(phrase), phrase)
+  }
+  const teaching = read('teaching.html')
+  const research = read('research.html')
+  for (const page of [teaching, research]) {
+    assert.equal((page.match(/<h1\b/g) || []).length, 1)
+    assert.ok(page.includes('id="main" tabindex="-1"'))
+  }
+  assert.ok(teaching.includes('AI literacy is not just knowing'))
+  assert.ok(research.includes('not a list of completed experiments'))
+  assert.ok(research.includes('peer-reviewed'))
+  assert.ok(teaching.includes('rel="canonical" href="https://kaw393939.github.io/teaching"'))
+  assert.ok(research.includes('rel="canonical" href="https://kaw393939.github.io/research"'))
+})
+
 check('Removed homepage popup stays absent', () => {
   const layout = readFileSync('docs/.vitepress/theme/Layout.vue', 'utf8')
   const css = readFileSync('docs/.vitepress/theme/style.css', 'utf8')
@@ -61,7 +81,7 @@ check('Removed homepage popup stays absent', () => {
   assert.ok(!layout.includes('Making AI<br>work for'))
 })
 check('Unique title, canonical URL and share metadata', () => {
-  assert.match(home, /<title>Keith Williams · AI educator &amp; explorer<\/title>/)
+  assert.match(home, /<title>Keith Williams · AI &amp; Education<\/title>/)
   assert.match(home, /rel="canonical" href="https:\/\/kaw393939.github.io\/"/)
   assert.match(home, /property="og:url" content="https:\/\/kaw393939.github.io\/"/)
   assert.ok(home.includes('name="description"'))
@@ -77,7 +97,9 @@ check('Valid profile structured data', () => {
 })
 check('Sitemap excludes the error page; error page is noindex', () => {
   assert.ok(!sitemap.includes('/404'))
-  assert.equal((sitemap.match(/<loc>/g) || []).length, 2)
+  assert.equal((sitemap.match(/<loc>/g) || []).length, 4)
+  assert.ok(sitemap.includes('/teaching'))
+  assert.ok(sitemap.includes('/research'))
   assert.match(error, /name="robots" content="noindex, follow"/)
   assert.ok(!error.includes('rel="canonical"'))
   assert.ok(!error.includes('application/ld+json'))
@@ -116,7 +138,7 @@ check('Muted text exceeds AA contrast for normal text', () => {
 })
 check('Responsive contact rules follow base rules and menu can scroll', () => {
   const css = readFileSync('docs/.vitepress/theme/style.css', 'utf8')
-  assert.ok(css.search(/@media\s*\(max-width:\s*640px\)/) > css.indexOf('.contact-actions {'))
+  assert.ok(css.search(/@media\s*\(max-width:\s*720px\)/) > css.indexOf('.contact-actions {'))
   assert.ok(css.includes('max-height: calc(100dvh - 72px)'))
   assert.ok(css.includes('overflow-y: auto'))
 })

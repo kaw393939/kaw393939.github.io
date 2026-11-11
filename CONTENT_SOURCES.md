@@ -30,6 +30,15 @@ The repository is a public teaching template with a neutral storefront, live sty
 
 The 2019 story supports teaching a progressive web app workshop at ZCAS University for staff and students, and participants beginning a registration-app project. The 2020 story supports work with Zambia's Ministry of Finance, agile development, and lessons carried back to NJIT teaching. These are dated historical accounts, not assertions of an ongoing engagement or completed national rollout. The portfolio omits an award claim because the two stories describe Fulbright timing differently.
 
+## AI & Education editorial boundaries
+
+The homepage and supporting pages describe Keith's educational approach, past teaching experience, public artifacts, and **open questions** about AI-assisted learning. They do not claim measured learning improvements, validated classroom experiments, an approved dissertation topic, a doctorate, or production-readiness for documented systems.
+
+- [NJIT faculty profile](https://people.njit.edu/profile/kwilliam): public professional affiliation and lecturer role.
+- [Published project examples](https://github.com/kaw393939): refer to each project's actual scope and readiness in its README rather than extrapolating capabilities from project goals.
+- [Research agenda](https://kaw393939.github.io/research): a proposed line of inquiry; evidence and methodology would be required before factual research claims can be made.
+
+The site's GitHub discussion mechanism requires sign-in and creates public issues. Private professional inquiries should use a separately appropriate channel reached from the NJIT faculty profile, not the public issue form.
 ## Life Tracker public guide
 
 Published at the owner's request on 2026-11-10 to explain the workflow, setup, and human–AI collaboration. Content is a general description with a fictional workshop example and a new, generic starter checklist. Private records and source-system links are excluded. The proposed starter labels are deliberately simplified; they are not an export of the private working queue.
