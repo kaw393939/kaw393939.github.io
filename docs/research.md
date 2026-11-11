@@ -1,63 +1,44 @@
 ---
 title: Rethinking Education with AI
-description: A research agenda on AI-assisted learning, assessment, independent judgment, and accountable human–AI collaboration.
+description: Keith Williams explores what learning, judgment, and responsibility mean when AI can produce more of the work.
 ---
 
 # Rethinking Education with AI
 
-**If AI can produce much of the assignment, what should education teach—and what evidence would show that learning happened?**
+**If AI can produce the assignment, what do we want the student to learn?**
 
-I'm interested in the consequences of AI for teaching, assessment, curriculum, and human judgment. My approach starts with a practical problem, builds a concrete example, and asks what we can actually learn from it.
+That question keeps coming up in my teaching and in the tools I build. I don't think we can answer it simply by banning the technology, or by assuming that a better-looking result means better learning.
 
-This page describes **questions and possible directions for study**. It is not a list of completed experiments, peer-reviewed findings, or an approved dissertation proposal.
+This is a set of interests and questions, **not a list of completed experiments or peer-reviewed findings**.
 
-## Three research questions
+## Can you use what you learned somewhere new?
 
-### 1. Does AI-assisted work develop transferable understanding?
+Someone may finish a project with AI and still struggle to explain or change it. I'd like to understand what kinds of practice help students carry their learning into a new situation.
 
-An AI-generated solution can be correct even when a learner cannot explain or independently adapt it. One direction for study is to compare learners' work with AI assistance against their performance on new tasks without that assistance.
+A useful study might look at how students explain a decision, debug unfamiliar code, or solve a related problem with and without AI. We'd need fair comparisons and a clear way to judge the results, not just impressions from a successful class session.
 
-**Possible evidence:** explanation quality, independent debugging, transfer tasks, test design, and the ability to identify model errors. A convincing study would require appropriate comparison groups, controls, and institutional review where applicable.
+## What should count as evidence of learning?
 
-### 2. What should assessment measure when AI produces artifacts?
+The final program, essay, or design is only part of the picture. The questions a student asks, the tests they choose, and the reasons they give for a decision may tell us something the finished work does not.
 
-A finished program, essay, or design may no longer be sufficient evidence of individual learning. Rather than assuming that more surveillance solves this problem, we can investigate assessment built around judgment, transparent process, peer review, defensible choices, and reliable execution.
+I'm interested in assessment that makes room for explanation, revision, and demonstration. That doesn't automatically make it better: we also need to ask whether it is fair, consistent, and practical for students and teachers.
 
-**Possible evidence:** separately evaluated process artifacts, oral or written explanations, novel transfer tasks, and agreement among assessors. We should measure the costs and limitations of these approaches as well as potential benefits.
+## How do we work with AI responsibly?
 
-### 3. How should people govern AI collaborators?
+An assistant that can act across tools creates a different relationship from a chatbot that only suggests text. How much direction does it need? What should it verify? How do we recover when it gets something wrong?
 
-Useful AI systems increasingly perform sequences of actions, not just supply text. That creates questions about authority, evidence, error recovery, and the division of responsibility between human and machine.
+[Life Tracker](/life-tracker) is a practical example of keeping work and follow-through visible. [Ordo](https://github.com/kaw393939/ordo) explores a broader design for human-directed AI workflows. These are examples to examine, not proof that the approach has been validated.
 
-**Possible evidence:** task-completion accuracy, incorrect claims of completion, revision cycles, the traceability of decisions, and human attention required to supervise a workflow.
+## Start small, show the work
 
-My [Ordo project](https://github.com/kaw393939/ordo) explores specifications for local-first, evidence-governed AI workflows. Its documented architecture is a design case—not proof of a deployed runtime or validated outcome.
+My instinct is to build a concrete example, make the assumptions visible, and compare it with an alternative. Then ask what the evidence supports and what it doesn't.
 
-## From practice to evidence
+Any formal study would need an appropriate method, privacy protections, and institutional review where required. Until then, classroom experiences and software projects can help us ask better questions without pretending to settle them.
 
-The work follows a deliberately repeatable cycle:
+## Ideas beyond the university
 
-1. **Formulate:** What problem and learning outcome are we actually investigating?
-2. **Specify:** What would count as success, failure, and evidence?
-3. **Build:** Create a lesson, system, or small study that can be inspected.
-4. **Evaluate:** Compare alternatives, gather observations, and report uncertainty.
-5. **Revise:** Improve the design while separating observation from interpretation.
+I'm also interested in practical community AI education: helping people understand what these tools can and cannot do, and giving them a useful place to begin. My earlier EverydayAI Newark concept belongs in that category of **ideas to explore**, not established programs.
 
-This is also my teaching philosophy in a more research-oriented form: practice informs theory, and theory should help us design better practice.
-
-## Work that informs the questions
-
-- [IS117 Brand Studio](https://github.com/kaw393939/is117-brand-studio): an educational template for AI-assisted design and reflection.
-- [Educational Design System](https://github.com/kaw393939/educational-design-system): a documentation-first approach to repeatable educational experiences.
-- [Everyday AI CLI](https://github.com/kaw393939/everyday-ai-cli): practical AI tools for accessible workflows.
-- [Ordo](https://github.com/kaw393939/ordo): a documented concept for human-directed, auditable AI orchestration; runtime implementation remains an open milestone.
-
-These are design and implementation artifacts, not substitutes for empirical validation. Research claims should be tied to methods, evidence, and appropriately qualified results.
-
-## Collaborate or discuss
-
-I'm interested in conversations connecting AI education, software engineering, instructional design, and research methods. You can find my [NJIT faculty profile](https://people.njit.edu/profile/kwilliam) or [start a public GitHub conversation](/#conversation). Please do not put private or student information in a public issue.
-
-[See how I teach AI](/teaching) · [Selected public projects](/#projects)
+[More about my background and ideas](/about) · [How I teach AI](/teaching) · [Start a public conversation](/#conversation)
 
 *Personal research interests. No completed study, institutional endorsement, or formal doctoral appointment is implied.*

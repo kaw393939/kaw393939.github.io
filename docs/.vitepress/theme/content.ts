@@ -7,12 +7,12 @@ export const navItems = [
 export const focusAreas = [
   {
     number: '01', icon: 'book', title: 'Teaching AI',
-    text: 'Help students, educators, professionals, and curious newcomers learn to work with AI. Practice comes first: build, question, test, and explain what the tools produce.',
+    text: 'Make AI less mysterious by using it to build something real. Then ask what worked, what failed, and what you can explain in your own words.',
     tag: 'Skills, literacy & applied learning', href: '/teaching', linkLabel: 'Explore teaching'
   },
   {
     number: '02', icon: 'judgment', title: 'Rethinking Education',
-    text: 'Investigate what learning, assessment, and curriculum should become when AI can produce so much of the work. Keep human understanding and judgment at the center.',
+    text: 'A finished assignment is not the whole story. I want to understand how people learn with AI and how we can recognize the judgment they develop.',
     tag: 'Inquiry, curriculum & assessment', href: '/research', linkLabel: 'Explore research questions'
   }
 ]
@@ -51,8 +51,8 @@ export const researchQuestions = [
     text: 'What evidence should count as learning: process, explanation, testing, judgment, collaboration, or the finished product?'
   },
   {
-    number: '03', title: 'Human-directed intelligent systems',
-    text: 'How do specifications, provenance, bounded autonomy, and human review make AI collaboration accountable and useful?'
+    number: '03', title: 'Working with AI without handing over judgment',
+    text: 'How do we give AI useful work, check its evidence, and stay responsible for the decisions it helps us make?'
   }
 ]
 

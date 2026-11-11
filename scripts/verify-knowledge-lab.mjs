@@ -24,7 +24,7 @@ assert.ok(home.includes('Build answers you') && home.includes('ONE COMPLETE RAG 
 assert.ok(students.includes('Build a small RAG system you can explain'), 'Expected student guide')
 assert.ok(students.includes('/knowledge-lab/students/'), 'Local navigation must retain mirror base')
 const robots = page('sitemap.xml')
-assert.ok(robots.includes('https://kaw393939.github.io/knowledge-lab/'), 'Wrong sitemap origin/base')
+assert.ok(robots.includes('https://keithwilliams.org/knowledge-lab/'), 'Wrong sitemap origin/base')
 for (const html of [home,students]) {
   assert.ok(!html.includes('href="/is373-rag/'), 'Old standalone-base URL in mirror')
 }

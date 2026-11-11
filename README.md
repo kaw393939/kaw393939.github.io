@@ -70,3 +70,9 @@ The navigation supports Escape dismissal, outside-click dismissal, and resets ac
 `docs/life-tracker.md` explains the general private-repository workflow, practical setup steps, and human–AI collaboration at `/life-tracker`. It is linked from Selected Projects. The public starter checklist is `docs/public/life-tracker-starter.txt`; article styling lives in `theme/guide.css`. The fictional example and starter contain no private records. Do not copy private records or private source links into this public site.
 
 The guide describes a working method, not an installable app or an automatic reminder service. Preserve that distinction when updating it.
+
+## Personal story and domain
+
+The homepage, Teaching and Research pages use a personal, plain-language voice. `docs/about.md` expands the biography Keith supplied from his older site. Proposed community initiatives are labeled as ideas, not operating programs. Keep those distinctions when editing.
+
+The canonical domain is `https://keithwilliams.org`. `docs/public/CNAME` is copied into the built root and retained by the existing publication script. The Knowledge Lab mirror uses the same domain. DNS and GitHub Pages configuration are separate from source publication; verify HTTPS and the live hostname before announcing a domain migration.
