@@ -93,7 +93,7 @@ check('Valid profile structured data', () => {
   assert.equal(data['@type'], 'ProfilePage')
   assert.equal(data.mainEntity['@type'], 'Person')
   assert.equal(data.mainEntity.name, 'Keith Williams')
-  assert.equal(data.mainEntity.sameAs.length, 2)
+  assert.equal(data.mainEntity.sameAs.length, 3)
 })
 check('Sitemap excludes the error page; error page is noindex', () => {
   assert.ok(!sitemap.includes('/404'))
@@ -173,7 +173,7 @@ check('Guide metadata and sitemap resolve to the public article', () => {
   assert.equal(data.author.name, 'Keith Williams')
 })
 check('Public guide links only to approved public destinations', () => {
-  const approvedExternalLinks = new Set(['https://github.com/kaw393939', 'https://people.njit.edu/profile/kwilliam'])
+  const approvedExternalLinks = new Set(['https://github.com/kaw393939', 'https://people.njit.edu/profile/kwilliam', 'https://www.linkedin.com/in/keithwilliams5/'])
   for (const [, href] of guide.matchAll(/<a\b[^>]*href="(https?:\/\/[^"]+)"/g)) assert.ok(approvedExternalLinks.has(href), href)
   const starterUrls = starter.match(/https?:\/\/\S+/g) || []
   assert.deepEqual(starterUrls, ['https://keithwilliams.org/life-tracker'])

@@ -45,6 +45,6 @@ More broadly, I'm asking how education should change when AI can do more of the 
 
 ## Let's compare notes
 
-If you're learning, teaching, or building something interesting, I'd like to hear what you're finding. See [how I teach](/teaching), visit my [NJIT faculty profile](https://people.njit.edu/profile/kwilliam), or [start a public conversation](/#conversation).
+If you're learning, teaching, or building something interesting, I'd like to hear what you're finding. See [how I teach](/teaching), connect on [LinkedIn](https://www.linkedin.com/in/keithwilliams5/), visit my [NJIT faculty profile](https://people.njit.edu/profile/kwilliam), or [start a public conversation](/#conversation).
 
 *Adapted from my earlier [About page](https://eaikw.com/about/). This is my personal account of my background; views on this site are my own.*

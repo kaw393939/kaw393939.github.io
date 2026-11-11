@@ -67,7 +67,7 @@ export default defineConfig({
           image: `${site.url}${site.portrait}`,
           jobTitle: 'Senior University Lecturer',
           worksFor: { '@type': 'CollegeOrUniversity', name: 'New Jersey Institute of Technology' },
-          sameAs: [site.github, site.faculty]
+          sameAs: [site.github, site.faculty, site.linkedin]
         }
       })]
     ]
