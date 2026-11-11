@@ -1911,3 +1911,80 @@ h1 em { color: var(--accent); }
   .research-item h3 { font-size: 27px; }
   .document-page h2 { margin-top: 38px; }
 }
+
+
+/* Opt-in, self-hosted audio introduction. The MP3 is not loaded until play is pressed. */
+.hero-audio {
+  max-width: 440px;
+  margin-top: 26px;
+  padding: 13px 16px;
+  border: 1px solid var(--line);
+  background: var(--paper-deep);
+}
+.hero-audio-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px 15px;
+}
+.hero-audio-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 2px 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.hero-audio-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  flex: none;
+  transition: background .2s, color .2s;
+}
+.hero-audio-toggle:hover .hero-audio-icon {
+  background: var(--ink);
+  color: var(--paper);
+}
+.hero-audio-meta {
+  color: var(--muted);
+  font-size: 12px;
+}
+.hero-audio-transcript {
+  margin: 7px 0 0 46px;
+  font-size: 12px;
+  color: var(--body);
+}
+.hero-audio-transcript summary {
+  width: fit-content;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.hero-audio-transcript p {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-top: 9px;
+}
+.hero-audio-error {
+  font-size: 12px;
+  margin-top: 8px;
+  color: var(--accent);
+}
+@media (max-width: 720px) {
+  .hero-audio { max-width: 100%; padding: 11px 12px; }
+  .hero-audio-transcript { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-audio-icon { transition: none; }
+}

@@ -68,6 +68,17 @@ check('AI education missions and research agenda are explicit and qualified', ()
   assert.ok(research.includes('rel="canonical" href="https://keithwilliams.org/research"'))
 })
 
+check('Hero narration is accessible and bundled as a local asset', () => {
+  assert.ok(home.includes('Listen to introduction'))
+  assert.ok(home.includes('AI-narrated'))
+  assert.ok(home.includes('Read transcript'))
+  assert.ok(home.includes('preload="none"'))
+  assert.ok(home.includes('src="/audio/portfolio-intro.mp3"'))
+  const audio = resolve(dist, 'audio/portfolio-intro.mp3')
+  assert.ok(existsSync(audio))
+  assert.ok(statSync(audio).size > 1000 && statSync(audio).size < 2000000)
+})
+
 check('Removed homepage popup stays absent', () => {
   const layout = readFileSync('docs/.vitepress/theme/Layout.vue', 'utf8')
   const css = readFileSync('docs/.vitepress/theme/style.css', 'utf8')

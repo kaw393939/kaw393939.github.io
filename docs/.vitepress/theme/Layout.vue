@@ -4,6 +4,7 @@ import { useData } from 'vitepress'
 import { site } from '../site'
 import { navItems, focusAreas, approachSteps, projects, zambiaExperience, researchQuestions } from './content'
 import SiteIcon from './components/SiteIcon.vue'
+import HeroAudio from './components/HeroAudio.vue'
 
 const { frontmatter } = useData()
 const isHome = computed(() => frontmatter.value.layout === 'home')
@@ -79,6 +80,7 @@ onUnmounted(() => {
         <h1 id="hero-title">Teaching AI.<br>Rethinking<br><em>Education.</em></h1>
         <p class="hero-intro">I'm Keith Williams. I've spent more than two decades helping students build things and find their way in technology. Now I'm exploring what AI makes possible, and how we can use it without losing our curiosity or judgment.</p>
         <div class="hero-actions"><a class="button button-dark" href="#projects">See the work <SiteIcon name="arrow-down-right" class="link-arrow" /></a><a class="text-link" href="#missions">What I care about <SiteIcon name="arrow-down-right" class="link-arrow" /></a></div>
+        <HeroAudio />
         <div class="hero-footnote"><span class="small-cross" aria-hidden="true">+</span> Build something. Learn from it. Share what helps.</div>
       </div>
       <figure class="hero-art">

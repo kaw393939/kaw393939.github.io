@@ -23,6 +23,17 @@ if (process.env.PAGES_PREBUILT !== 'true') {
 } else {
   console.log('Publishing the pre-built and pre-verified output from this release.')
 }
+
+// Preserve the newly imported audio as a durable source asset on the first CI deployment.
+// The current release includes it even before the source commit lands.
+const audioPath = 'docs/public/audio/portfolio-intro.mp3'
+if (git(['ls-files', '--error-unmatch', audioPath], root, [0, 1]).status === 1) {
+  git(['add', audioPath])
+  git(['-c', 'user.name=Keith Williams', '-c', 'user.email=2547801+kaw393939@users.noreply.github.com', 'commit', '-m', 'Add self-hosted ElevenLabs portfolio narration'])
+  git(['push', 'origin', 'HEAD:main'])
+  console.log('Committed permanent audio source to main.')
+}
+
 const remote = git(['remote', 'get-url', 'origin']).stdout.trim()
 const temporaryCheckout = mkdtempSync(join(tmpdir(), 'keith-pages-'))
 try {
