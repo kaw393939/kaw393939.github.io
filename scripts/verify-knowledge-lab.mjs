@@ -9,7 +9,7 @@ assert.equal(manifest.repository, 'https://github.com/kaw393939/is373-rag.git')
 assert.equal(manifest.revision, '55f3b48df36db9a3621f94fc07bcd23d749063c8')
 assert.equal(manifest.base, '/knowledge-lab/')
 const homepage = readFileSync(resolve(root,'index.html'),'utf8')
-assert.ok(homepage.includes('href="/knowledge-lab/"'), 'Main nav must link to the local hosted docs')
+assert.ok(homepage.includes('href="/is373-rag/"'), 'Main nav must link to the standalone Knowledge Lab')
 assert.ok(homepage.includes('Knowledge Lab'), 'Main nav project name is missing')
 assert.ok(homepage.includes('Ordo Knowledge Lab'), 'Portfolio case study is missing')
 for (const target of ['index.html','students/index.html','students/prompts.html',

@@ -16,7 +16,7 @@ npm run build
 npm run preview
 ```
 
-The existing portfolio Pages site also hosts a **pinned, built mirror of the Ordo Knowledge Lab VitePress site** at `/knowledge-lab/`. Its source stays in [kaw393939/is373-rag](https://github.com/kaw393939/is373-rag); this repository pins its exact public revision in `scripts/build-knowledge-lab.mjs`, verifies the subpath, and deploys both websites together. Update the pin deliberately to promote later project changes.
+The main navigation and project card link to the standalone [Ordo Knowledge Lab](https://kaw393939.github.io/is373-rag/). The existing portfolio Pages site also hosts a **pinned, built mirror of the Ordo Knowledge Lab VitePress site** at `/knowledge-lab/`. Its source stays in [kaw393939/is373-rag](https://github.com/kaw393939/is373-rag); this repository pins its exact public revision in `scripts/build-knowledge-lab.mjs`, verifies the subpath, and deploys both websites together. Update the pin deliberately to promote later project changes.
 
 On `main`, GitHub Actions builds and checks both sites, then attempts publication to the existing `gh-pages` branch. A push is not proof of a Pages rebuild; inspect the live site separately. You can also publish manually with an authenticated GitHub CLI account:
 

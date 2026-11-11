@@ -4,7 +4,7 @@ import assert from 'node:assert/strict'
 const root = 'https://kaw393939.github.io'
 const pinned = '55f3b48df36db9a3621f94fc07bcd23d749063c8'
 const targets = [
-  {path: '/', test: body => body.includes('href="/knowledge-lab/"') && body.includes('Ordo Knowledge Lab')},
+  {path: '/', test: body => body.includes('href="/is373-rag/"') && body.includes('Ordo Knowledge Lab')},
   {path: '/knowledge-lab/', test: body => body.includes('Knowledge you') && body.includes('Canonical identity')},
   {path: '/knowledge-lab/students/', test: body => body.includes('Build a small RAG system you can explain')},
   {path: '/knowledge-lab/students/prompts', test: body => body.includes('Ask an AI coding agent')},
