@@ -16,13 +16,15 @@ npm run build
 npm run preview
 ```
 
-Publish the built static site with an authenticated GitHub CLI account:
+The existing portfolio Pages site also hosts a **pinned, built mirror of the Ordo Knowledge Lab VitePress site** at `/knowledge-lab/`. Its source stays in [kaw393939/is373-rag](https://github.com/kaw393939/is373-rag); this repository pins its exact public revision in `scripts/build-knowledge-lab.mjs`, verifies the subpath, and deploys both websites together. Update the pin deliberately to promote later project changes.
+
+On `main`, GitHub Actions builds and checks both sites, then attempts publication to the existing `gh-pages` branch. A push is not proof of a Pages rebuild; inspect the live site separately. You can also publish manually with an authenticated GitHub CLI account:
 
 ```sh
 npm run deploy
 ```
 
-The deploy script builds VitePress and updates the `gh-pages` branch without a force push. GitHub Pages serves that branch from `/`. Source and issue templates live on `main`. Pushing source alone does not redeploy the website. This setup uses the existing repository permissions and does not require permission to create GitHub Actions workflows.
+The deploy script builds both VitePress sites and updates the `gh-pages` branch without a force push. GitHub Pages serves that branch from `/`. Source and issue templates live on `main`. Main-branch pushes invoke the publishing workflow. A deployment is complete only after the public site is verified. This setup uses the existing repository permissions and does not require permission to create GitHub Actions workflows.
 
 ## Content and imagery
 

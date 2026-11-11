@@ -174,6 +174,8 @@ nav>a:hover::after,nav>a[aria-current]::after {
   transform: scaleX(1);
 }
 
+.nav-lab { color: var(--accent); font-weight: 650; }
+
 .nav-contact {
   margin-left: 9px;
   border: 1px solid var(--ink);
@@ -1115,7 +1117,8 @@ main:focus {
   }
 
   nav {
-    gap: 20px;
+    gap: 12px;
+    font-size: 13px;
   }
 
   .wordmark {
