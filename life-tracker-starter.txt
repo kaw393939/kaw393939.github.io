@@ -1,6 +1,6 @@
 LIFE TRACKER: A SMALL STARTER
 A generic setup checklist and issue template by Keith Williams.
-Public guide: https://kaw393939.github.io/life-tracker
+Public guide: https://keithwilliams.org/life-tracker
 
 This starter has no connection to or access to Keith's private workspace.
 Use fictional tasks first. Store only information you are permitted to keep
