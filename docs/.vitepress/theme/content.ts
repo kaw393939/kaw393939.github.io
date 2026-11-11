@@ -97,6 +97,23 @@ export const projects = [
     links: [
       { label: 'Read the setup guide', href: '/life-tracker' }
     ]
+  },
+  {
+    id: 'ordo-knowledge-lab',
+    number: '05',
+    title: 'Ordo Knowledge Lab',
+    category: 'AI knowledge systems · education',
+    status: 'Public textbook and student labs · research application planned',
+    summary: 'A research-grounded VitePress learning resource that connects RAG, databases, AI, systems engineering and evidence-driven software.',
+    details: [
+      { label: 'Available', text: 'IS373 RAG student guides, practical prompts, synthetic examples, design documentation and tested learning labs.' },
+      { label: 'Next', text: 'A portable knowledge engine with evidence, identity review, streaming retrieval and optional specialized model workers.' }
+    ],
+    note: 'The educational website and examples are available. The full research runtime, hosted chat, and native AI workers remain planned.',
+    links: [
+      { label: 'Explore the textbook', href: '/knowledge-lab/' },
+      { label: 'View project source', href: 'https://github.com/kaw393939/is373-rag' }
+    ]
   }
 ]
 

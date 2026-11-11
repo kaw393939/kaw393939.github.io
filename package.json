@@ -8,7 +8,9 @@
     "build": "vitepress build docs",
     "preview": "vitepress preview docs --host 127.0.0.1",
     "deploy": "node scripts/deploy-pages.mjs",
-    "test": "npm run build && node scripts/verify-site.mjs"
+    "test": "npm run build && node scripts/verify-site.mjs",
+    "build:knowledge": "node scripts/build-knowledge-lab.mjs",
+    "verify:knowledge": "node scripts/verify-knowledge-lab.mjs"
   },
   "devDependencies": {
     "vitepress": "^1.6.4",

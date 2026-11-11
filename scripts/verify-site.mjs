@@ -18,7 +18,7 @@ check('Homepage is pre-rendered with one H1 and original content', () => {
   assert.ok(home.includes('<main'))
 })
 check('Project cases and historical experience include status and source links', () => {
-  assert.equal((home.match(/class="project-case"/g) || []).length, 4)
+  assert.equal((home.match(/class="project-case"/g) || []).length, 5)
   assert.equal((home.match(/class="experience-entry"/g) || []).length, 2)
   for (const text of ['Educational Design System', 'Everyday AI CLI', 'IS117 Brand Studio', 'Published phase-one foundation', 'Published alpha · v0.2.2', 'Public teaching template', 'full publishing roadmap is not complete', 'does not process payments or place orders']) assert.ok(home.includes(text), text)
   for (const url of [
@@ -30,6 +30,15 @@ check('Project cases and historical experience include status and source links',
     'https://news.njit.edu/njit-lecturer-helps-digitize-government-services-zambia'
   ]) assert.ok(home.includes(`href="${url}"`), url)
 })
+check('Knowledge Lab is prominent in navigation and accurate in project cases', () => {
+  const layout = readFileSync('docs/.vitepress/theme/Layout.vue', 'utf8')
+  assert.ok(layout.includes('href="/knowledge-lab/"'))
+  assert.ok(home.includes('href="/knowledge-lab/"'))
+  assert.ok(home.includes('>Knowledge Lab</a>'))
+  assert.ok(home.includes('Ordo Knowledge Lab'))
+  assert.ok(home.includes('research application planned'))
+})
+
 check('Section anchors and accessible heading references resolve uniquely', () => {
   const ids = [...home.matchAll(/\bid="([^"]+)"/g)].map(match => match[1])
   assert.equal(new Set(ids).size, ids.length, 'Duplicate HTML id')
