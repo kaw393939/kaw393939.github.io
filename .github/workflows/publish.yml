@@ -44,6 +44,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PAGES_PREBUILT: 'true'
         run: npm run deploy
+      - name: Verify actual public portfolio and Knowledge Lab
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        run: node scripts/verify-live-knowledge.mjs
+      - name: Check live verification script syntax
+        if: github.event_name == 'pull_request'
+        run: node --check scripts/verify-live-knowledge.mjs
       - name: Record scope
         run: |
           echo 'Portfolio source and pinned is373-rag revision passed static checks.' >> "$GITHUB_STEP_SUMMARY"
