@@ -999,6 +999,33 @@ main:focus {
   gap: 12px;
 }
 
+/* Modern editorial structure, with the warmth of a field notebook. */
+h1, h2 {
+  font-family: var(--sans);
+  font-weight: 620;
+  letter-spacing: -.055em;
+}
+h1 em, h2 em {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -.045em;
+}
+h1 em { color: var(--accent); }
+.wordmark, .footer-name { font-family: var(--sans); font-weight: 650; }
+.hero-intro { max-width: 44ch; }
+.hero-art > img { border-radius: 2px 2px 48px 2px; }
+.art-marker { font-weight: 650; }
+.section-heading > .eyebrow { border-top: 2px solid var(--accent); padding-top: 14px; }
+.focus-item, .research-item { border-top: 2px solid var(--ink); }
+.focus-item h3, .research-item h3 { font-family: var(--sans); font-weight: 600; }
+.project-identity h3 { font-family: var(--sans); font-weight: 600; }
+.portrait img { border-radius: 2px 2px 2px 48px; }
+.approach-section {
+  background-image: radial-gradient(ellipse at 0% 100%, rgba(212,184,126,.10), transparent 55%);
+}
+.document-page h1 { max-width: 14ch; }
+.document-page h2 { border-top: 1px solid var(--line); padding-top: 26px; }
+
 @media (min-width:1500px) {
   .hero {
     padding-top: 75px;
