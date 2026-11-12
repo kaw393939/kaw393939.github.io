@@ -5,8 +5,17 @@ import { site } from '../site'
 import { navItems, focusAreas, approachSteps, projects, zambiaExperience, researchQuestions } from './content'
 import SiteIcon from './components/SiteIcon.vue'
 import HeroAudio from './components/HeroAudio.vue'
+import { messages } from './i18n'
 
-const { frontmatter } = useData()
+const { frontmatter, page } = useData()
+const isPortuguese = computed(() => page.value.relativePath.startsWith('pt-br/'))
+const text = computed(() => messages[isPortuguese.value ? 'ptBR' : 'en'])
+const homeUrl = computed(() => isPortuguese.value ? '/pt-br/' : '/')
+const displayNav = computed(() => isPortuguese.value ? [
+  { id: 'history', label: 'Minha história', href: '/pt-br/#um-pouco-da-minha-historia' },
+  { id: 'interests', label: 'Interesses', href: '/pt-br/#o-que-me-interessa' },
+  { id: 'resources', label: 'Recursos', href: '/pt-br/#por-onde-comecar' }
+] : navItems)
 const isHome = computed(() => frontmatter.value.layout === 'home')
 const menuOpen = ref(false)
 const menuButton = ref<HTMLButtonElement>()
@@ -40,7 +49,7 @@ const observeSections = () => {
   }, { rootMargin: '-20% 0px -60% 0px' })
   sections.forEach(section => observer?.observe(section))
 }
-watch(isHome, () => { closeMenu(); observeSections() }, { flush: 'post' })
+watch(() => page.value.relativePath, () => { closeMenu(); observeSections() }, { flush: 'post' })
 onMounted(() => {
   observeSections()
   document.addEventListener('keydown', dismissMenu)
@@ -57,21 +66,28 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">{{ text.skip }}</a>
   <header ref="header" class="site-header">
     <div class="header-inner">
-      <a class="wordmark" href="/" aria-label="Keith Williams home">
+      <a class="wordmark" :href="homeUrl" :aria-label="text.homeLabel">
         <SiteIcon name="compass" class="compass-mark" />
-        <span>Keith Williams<span class="wordmark-sub">AI & EDUCATION</span></span>
+        <span>Keith Williams<span class="wordmark-sub">{{ text.subtitle }}</span></span>
       </a>
-      <button ref="menuButton" type="button" class="menu-toggle" :aria-expanded="menuOpen" aria-controls="site-nav" @click="menuOpen = !menuOpen">{{ menuOpen ? 'Close' : 'Menu' }} <span aria-hidden="true">{{ menuOpen ? '−' : '+' }}</span></button>
-      <nav id="site-nav" :class="{ open: menuOpen }" aria-label="Main navigation">
-        <a v-for="item in navItems" :key="item.id" :href="item.href" :aria-current="item.href.startsWith('/#') && activeSection === item.id ? 'location' : undefined" @click="closeMenu">{{ item.label }}</a>
-        <a class="nav-lab" href="/knowledge-lab/" @click="closeMenu">Knowledge Lab</a>
-        <a class="nav-contact" href="/#conversation" @click="closeMenu">Let's talk <SiteIcon name="arrow-down-right" class="link-arrow" /></a>
+      <button ref="menuButton" type="button" class="menu-toggle" :aria-expanded="menuOpen" aria-controls="site-nav" @click="menuOpen = !menuOpen">{{ menuOpen ? text.close : text.menu }} <span aria-hidden="true">{{ menuOpen ? '−' : '+' }}</span></button>
+      <nav id="site-nav" :class="{ open: menuOpen }" :aria-label="text.navigation">
+        <a v-for="item in displayNav" :key="item.id" :href="item.href" :aria-current="item.href.startsWith('/#') && activeSection === item.id ? 'location' : undefined" @click="closeMenu">{{ item.label }}</a>
+        <a v-if="!isPortuguese" class="nav-lab" href="/knowledge-lab/" @click="closeMenu">Knowledge Lab</a>
+        <a class="nav-contact" :href="isPortuguese ? '/pt-br/#vamos-conversar' : '/#conversation'" @click="closeMenu">{{ text.talk }} <SiteIcon name="arrow-down-right" class="link-arrow" /></a>
       </nav>
     </div>
   </header>
+
+  <div class="locale-bar wrap" role="group" :aria-label="text.languages">
+    <a href="/" lang="en" hreflang="en" :aria-current="!isPortuguese ? 'true' : undefined">English</a>
+    <span aria-hidden="true">/</span>
+    <a href="/pt-br/" lang="pt-BR" hreflang="pt-BR" :aria-current="isPortuguese ? 'true' : undefined">Português — apresentação</a>
+  </div>
+  <noscript><p class="wrap no-script-help">JavaScript is disabled. Browse: <a href="/teaching">Teaching</a>, <a href="/research">Research</a>, <a href="/about">About</a>, <a href="/pt-br/" lang="pt-BR">Português</a>.</p></noscript>
 
   <main v-if="isHome" id="main" tabindex="-1">
     <section class="hero wrap" aria-labelledby="hero-title">
@@ -191,7 +207,7 @@ onUnmounted(() => {
 
     <section class="perspective-section wrap" aria-labelledby="perspective-title">
       <div class="section-heading compact"><p class="eyebrow">07 / IN THE CONVERSATION</p><h2 id="perspective-title">Learning in the open.</h2></div>
-      <a class="article-link" href="https://news.njit.edu/njit-faculty-artificial-intelligence-learning-opportunity"><div><span class="eyebrow">NJIT NEWS · AI & EDUCATION</span><h3>Artificial intelligence is a learning opportunity.</h3><p>A conversation about how AI changes the way we teach, learn, and build software.</p></div><SiteIcon name="arrow-up-right" class="article-arrow" /></a>
+      <a class="article-link" href="https://news.njit.edu/njit-faculty-artificial-intelligence-learning-opportunity"><div><span class="eyebrow">NJIT NEWS · {{ text.subtitle }}</span><h3>Artificial intelligence is a learning opportunity.</h3><p>A conversation about how AI changes the way we teach, learn, and build software.</p></div><SiteIcon name="arrow-up-right" class="article-arrow" /></a>
     </section>
 
     <section id="conversation" class="contact-section wrap" aria-labelledby="contact-title">
@@ -209,5 +225,5 @@ onUnmounted(() => {
   </main>
   <main v-else id="main" tabindex="-1" class="document-page wrap"><Content /></main>
 
-  <footer class="site-footer wrap"><div><a class="footer-name" href="/">Keith Williams</a><p>Curiosity with a compass.</p></div><div class="footer-links"><a :href="site.linkedin">LinkedIn <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a :href="site.github">GitHub <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a :href="site.faculty">NJIT <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a href="#main">Back to top <SiteIcon name="arrow-up" class="link-arrow" /></a></div><div class="footer-fine"><span>© {{ new Date().getFullYear() }} Keith Williams</span><span>Built with VitePress · AI-generated landscape artwork</span><span>Personal website. Views are my own.</span></div></footer>
+  <footer class="site-footer wrap"><div><a class="footer-name" :href="homeUrl">Keith Williams</a><p>{{ text.tagline }}</p></div><div class="footer-links"><a :href="site.linkedin">LinkedIn <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a :href="site.github">GitHub <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a :href="site.faculty">NJIT <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a href="#main">{{ text.top }} <SiteIcon name="arrow-up" class="link-arrow" /></a></div><div class="footer-fine"><span>© {{ new Date().getFullYear() }} Keith Williams</span><span>{{ text.credit }}</span><span>{{ text.personal }}</span><a :href="isPortuguese ? '/pt-br/acessibilidade' : '/accessibility'">{{ text.accessibility }}</a></div></footer>
 </template>
