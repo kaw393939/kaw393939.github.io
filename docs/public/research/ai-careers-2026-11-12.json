@@ -1,0 +1,1155 @@
+{
+  "checked_date": "2026-11-12",
+  "method": "50 unique requisitions in five purposively selected role families, 10 each; not representative market statistics. Skills are explicit mentions including duties, alternatives and preferred skills, not always mandatory. 38 direct descriptions/application pages, one of which has an elapsed expected-fill date; 11 indexed-primary descriptions and one historical official PDF with live status unconfirmed.",
+  "families": [
+    {
+      "name": "Forward Deployed Engineer",
+      "postings": [
+        {
+          "employer": "OpenAI",
+          "title": "Forward Deployed Engineer - Seoul",
+          "url": "https://openai.com/careers/forward-deployed-engineer-seoul-seoul-south-korea/",
+          "status": "Live full employer page with Apply link",
+          "location": "Seoul; hybrid 3 days; 50% travel",
+          "experience": "5+ years engineering/technical deployment including customer-facing work",
+          "pay": "Not stated",
+          "skills": [
+            "customer discovery and scoping",
+            "full-stack production code",
+            "Python or JavaScript/comparable stack",
+            "LLM deployment",
+            "evaluation-driven feedback",
+            "stakeholder communication",
+            "risk and delivery tradeoffs"
+          ],
+          "evidence": "Own discovery through rollout; write/review frontend and backend code; build generative-model systems; communicate with engineers and customers.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "Reveal Technology",
+          "title": "Forward Deployed Engineer - UK",
+          "url": "https://jobs.lever.co/revealtech/4625811e-f69e-47f1-b278-7da3b5bee806?gh_src=8VC+job+board",
+          "status": "Full employer page retrieved; Apply link",
+          "location": "Remote UK/hybrid; up to 20% global travel",
+          "experience": "5+ years defense/dual-use; UK DV or US TS/SCI/equivalent clearance required",
+          "pay": "Salary plus equity; no range",
+          "skills": [
+            "customer field deployment",
+            "Python Go C++",
+            "REST/gRPC integration",
+            "cloud and edge infrastructure",
+            "secure systems",
+            "stakeholder communication",
+            "R&D and rapid prototypes"
+          ],
+          "evidence": "Integrate tactical hardware/software, manage edge compute/networking/UAS, translate user needs, return field performance to product teams.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "Jeeves",
+          "title": "Forward Deployed Engineer",
+          "url": "https://jobs.lever.co/tryjeeves/4f6d62ba-1496-43db-9bd3-4d10357c98c2?lever-source%5B%5D=portfoliojobs.a16z.com",
+          "status": "Full employer page retrieved; Apply link",
+          "location": "Mexico City remote/hybrid; Latin America travel",
+          "experience": "7+ years software engineering/management; 2+ customer-facing",
+          "pay": "Not stated",
+          "skills": [
+            "production code",
+            "Python TypeScript/Node or Go",
+            "REST APIs and webhooks",
+            "SQL/data mapping",
+            "customer scoping and onboarding",
+            "documentation",
+            "English plus Spanish or Portuguese"
+          ],
+          "evidence": "Own strategic technical accounts from scoping to adoption; build integrations and pipelines. This is a fintech FDE, not explicitly an LLM-building role.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "Loadsmart",
+          "title": "Forward Deployed Engineer",
+          "url": "https://jobs.lever.co/loadsmart/152abf3a-d8b3-4289-b746-3c16dbabc703?gh_src=Purpose+job+board",
+          "status": "Full employer page retrieved; Apply link",
+          "location": "Body says US remote, up to 50% client/Chicago travel; header says Chicago onsite",
+          "experience": "5+ years full-stack; US work authorization, no visa sponsorship",
+          "pay": "$115,700\u2013$180,800/year",
+          "skills": [
+            "Python and TypeScript",
+            "customer discovery",
+            "APIs and enterprise integration",
+            "AI agents and prompt tuning",
+            "production troubleshooting",
+            "security/compliance",
+            "evaluation/monitoring preferred"
+          ],
+          "evidence": "Observe operations, scope solutions, integrate TMS/WMS/ERP, tune agents on production edge cases. Voice/transcription and logistics knowledge preferred.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "Tenex",
+          "title": "Forward Deployed Engineer",
+          "url": "https://jobs.ashbyhq.com/tenexlabs/2a359a2a-d5ed-48e8-96b8-b93826110ee9",
+          "status": "Full primary description recovered through search index; live page JS-only; opening not independently confirmed",
+          "location": "Manhattan onsite 5 days",
+          "experience": "Production delivery required; no minimum years stated",
+          "pay": "Base plus quarterly bonus and equity; no range",
+          "skills": [
+            "production software",
+            "customer discovery and scope",
+            "architecture/integrations",
+            "LLM agents",
+            "evaluations tests monitoring",
+            "AI coding tools and output review",
+            "communication"
+          ],
+          "evidence": "Partner with AI Strategist; own technical delivery and post-launch performance; review coding-agent output and turn unfamiliar business requirements into software.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "Appen",
+          "title": "Forward Deployed Engineer",
+          "url": "https://jobs.lever.co/appen-2/61d18244-84c0-401a-984c-14fc88a1b1da",
+          "status": "Full primary description and application fields recovered through search; live open returned403",
+          "location": "San Francisco hybrid 2 days",
+          "experience": "3+ years customer-facing technical; relevant bachelor's or equivalent",
+          "pay": "$150,000\u2013$200,000 total target compensation including base and incentive",
+          "skills": [
+            "client requirements and success criteria",
+            "GenAI datasets/evaluation",
+            "annotation and quality validation",
+            "reproducible observable pipelines",
+            "AI-assisted coding",
+            "Python and SQL preferred",
+            "consultative communication"
+          ],
+          "evidence": "Own delivered GenAI data quality; create acceptance criteria, annotation guidelines, validators and reusable quality frameworks.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "Teleskope",
+          "title": "Forward Deployed Engineer",
+          "url": "https://jobs.ashbyhq.com/teleskope/278bce22-653b-41f1-aaeb-2c2f7c7f4092",
+          "status": "Full primary description recovered through search; live page JS-only; opening not independently confirmed",
+          "location": "New York hybrid",
+          "experience": "2+ years enterprise customer technical support; CS degree or equivalent",
+          "pay": "$130,000\u2013$170,000 plus equity",
+          "skills": [
+            "Python/Bash",
+            "Go/TypeScript preferred",
+            "cloud Terraform Kubernetes Docker CI/CD",
+            "AI coding tools",
+            "customer communication",
+            "production fixes tests PRs",
+            "integrations and documentation"
+          ],
+          "evidence": "Build bespoke integrations and automations, fix customer issues, conduct architecture reviews, write runbooks. AI coding-tool proficiency explicit.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "FieldAI",
+          "title": "Forward Deployed Engineer (Singapore)",
+          "url": "https://jobs.lever.co/field-ai/dfa08958-6fc7-43f3-ac1f-b4c5767b0d12",
+          "status": "Full primary description recovered through search; live open returned403",
+          "location": "Singapore onsite; travel as needed",
+          "experience": "2\u20133 years field robotics/software integration; master's or equivalent practical experience",
+          "pay": "Not stated",
+          "skills": [
+            "Python C++ Git ROS",
+            "Linux containerization cloud",
+            "customer deployment and training",
+            "monitoring/diagnostics",
+            "software hardware network debugging",
+            "communication",
+            "autonomous systems"
+          ],
+          "evidence": "Own autonomous deployments, test real-world operation, gather field feedback, train operators and build scalable rollout practices.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "CrossCountry Consulting",
+          "title": "Forward Deployed Engineer & Agentic Workflow Engineer",
+          "url": "https://jobs.lever.co/crosscountry-consulting/6a386d56-fd29-4c6d-9bd9-3491464ca68e?lever-source=remotehunt.app",
+          "status": "Full primary description via search and employer board lists role; live detail open403",
+          "location": "US remote; 20\u201340% travel; description also states hybrid option",
+          "experience": "5+ software years, 2+ AI/LLM; technical bachelor's; Manager/Associate Director",
+          "pay": "Base $150,000\u2013$250,000 most US; $175,000\u2013$285,000 NYC/SF; annual bonus",
+          "deadline": "Applications accepted through 2026-12-31",
+          "skills": [
+            "Python TypeScript/JavaScript FastAPI",
+            "LLM agents and orchestration",
+            "RAG/vector databases",
+            "APIs/MCP integration",
+            "Docker Kubernetes cloud CI/CD",
+            "evaluation auditability source controls",
+            "finance domain and stakeholder communication"
+          ],
+          "evidence": "Build production agent workflows and enterprise connectors; control prompt/context/cost/latency; trace outputs for SOX audits. Certifications preferred, not mandatory.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "Baseten",
+          "title": "Forward Deployed Engineer (Training)",
+          "url": "https://jobs.ashbyhq.com/Baseten/11ab2593-6648-4943-ab4a-284fe7e89720/",
+          "status": "Full primary description through search indexed two days ago; live page JS-only; opening not independently confirmed",
+          "location": "San Francisco/New York hybrid",
+          "experience": "Minimum 1\u20132 years shipping/maintaining large production systems",
+          "pay": "$200,000\u2013$400,000 plus equity",
+          "skills": [
+            "production coding",
+            "customer scoping/specification",
+            "evaluations and benchmarks",
+            "debugging logs metrics traces",
+            "communication and on-call",
+            "GPU/distributed systems specialization preferred",
+            "LLM inference/post-training specialization preferred"
+          ],
+          "evidence": "Own workloads from vague objective to production; define benchmarks, troubleshoot failures. Kubernetes/Slurm/Ray, inference engines, PyTorch/JAX or SFT/RL are possible strengths, not all required.",
+          "checked_date": "2026-11-12"
+        }
+      ],
+      "counts": {
+        "Customer communication/discovery": 10,
+        "Python mentioned (including preferred/alternatives)": 8,
+        "LLM/GenAI work mentioned": 6
+      },
+      "note": "Ten employers. Four direct pages with application links; six primary descriptions recovered through search indexing, with live application status unconfirmed. This deliberately includes robotics, security and fintech, not only LLM work.",
+      "sample_size": 10,
+      "unique_employers": 10
+    },
+    {
+      "name": "Applied AI Engineer",
+      "sample_size": 10,
+      "unique_employers": 9,
+      "counts": {
+        "Production delivery": 10,
+        "Evaluation": 10,
+        "Python mentioned (including preferred/alternatives)": 9,
+        "Agents or agent tooling (including preferred)": 10
+      },
+      "interpretation": "Production software plus systematic evaluation is the shared core. Python appears in nine descriptions, but ContactMonkey demonstrates that existing Ruby/Vue infrastructure can matter more. Titles cover both product engineering and customer-facing advisory/implementation. These are mostly experienced roles; CHAOS explicitly welcomes exceptional new graduates despite a 2\u20135-year guideline.",
+      "postings": [
+        {
+          "employer": "Material Bank",
+          "title": "Applied AI Engineer",
+          "url": "https://job-boards.greenhouse.io/materialbank/jobs/7732615003",
+          "location": "Remote",
+          "experience": "8+ years production software; senior individual contributor",
+          "salary": null,
+          "skills": [
+            "Python",
+            "JavaScript/TypeScript",
+            "RAG",
+            "embeddings",
+            "vector search",
+            "chunking",
+            "multi-agent orchestration",
+            "multimodal AI",
+            "evaluation",
+            "cloud",
+            "cost/latency tradeoffs",
+            "communication"
+          ],
+          "evidence": "Responsibilities include production multi-agent workflows, RAG optimization, human-in-loop evaluation and architectural cost/latency tradeoffs; qualifications name Python and JS/TS.",
+          "checked_date": "2026-11-12",
+          "status": "Full employer description and application visible; not recruiter confirmation",
+          "pay": "Not recorded in this review"
+        },
+        {
+          "employer": "Future",
+          "title": "Applied AI Engineer",
+          "url": "https://job-boards.greenhouse.io/future/jobs/4745515005",
+          "location": "Remote",
+          "experience": "Production services and LLM experience; years not specified in reviewed description",
+          "salary": null,
+          "skills": [
+            "Python",
+            "async Python",
+            "LangChain/LangGraph",
+            "tool calling",
+            "evaluation",
+            "Langfuse",
+            "SSE",
+            "APIs",
+            "Pydantic",
+            "JSON Schema",
+            "token budgets",
+            "observability"
+          ],
+          "evidence": "Builds tool-calling agents and evaluation harnesses; owns deployment and monitoring; explicitly requires strong Python and structured output experience.",
+          "checked_date": "2026-11-12",
+          "status": "Full employer description and application visible; not recruiter confirmation",
+          "pay": "Not recorded in this review"
+        },
+        {
+          "employer": "Dwelly",
+          "title": "Applied AI Engineer",
+          "url": "https://job-boards.greenhouse.io/dwelly/jobs/4954106101",
+          "location": "Remote UK/Ireland/European time zones",
+          "experience": "Production AI systems; no numeric minimum stated",
+          "salary": null,
+          "skills": [
+            "TypeScript/Node.js",
+            "Python transferable",
+            "agent orchestration",
+            "context management",
+            "evaluation",
+            "observability",
+            "coding agents",
+            "PostgreSQL",
+            "communication",
+            "product judgment"
+          ],
+          "evidence": "Requires production agentic systems and evaluation/observability; TypeScript-first environment accepts strong Python experience with willingness to transfer; emphasizes when not to use an LLM.",
+          "checked_date": "2026-11-12",
+          "status": "Full employer description and application visible; not recruiter confirmation",
+          "pay": "Not recorded in this review"
+        },
+        {
+          "employer": "ContactMonkey",
+          "title": "Applied AI Engineer",
+          "url": "https://job-boards.greenhouse.io/contactmonkey/jobs/4717437006",
+          "location": "Toronto; three office days weekly",
+          "experience": "3+ years software engineering including AI/ML or LLM features",
+          "salary": "$140,000\u2013$160,000; currency not explicit in reviewed salary text; do not relabel USD",
+          "skills": [
+            "Ruby on Rails",
+            "Vue/React",
+            "AWS Bedrock",
+            "Terraform",
+            "Kubernetes",
+            "RAG",
+            "evaluation",
+            "agent orchestration",
+            "token costs",
+            "privacy",
+            "communication"
+          ],
+          "evidence": "Owns agent workflows, eval harness, AI infrastructure and token-cost/reliability metrics; qualifications emphasize production SaaS, IaC, AWS, RAG and measurement.",
+          "checked_date": "2026-11-12",
+          "status": "Full employer description and application visible; not recruiter confirmation",
+          "pay": "$140,000\u2013$160,000; currency not explicit in reviewed salary text; do not relabel USD"
+        },
+        {
+          "employer": "Scale AI",
+          "title": "Applied AI Engineer",
+          "url": "https://job-boards.greenhouse.io/scaleai/jobs/4751059005",
+          "location": "Kuwait City, Kuwait",
+          "experience": "Production software experience; scoped components under senior engineers",
+          "salary": null,
+          "skills": [
+            "Python",
+            "TypeScript/Java/C++",
+            "APIs",
+            "model integration",
+            "retrieval or agent tooling",
+            "evaluation",
+            "debugging",
+            "client communication"
+          ],
+          "evidence": "Requires Python plus working knowledge of another language, production AI integration, evaluation literacy and ownership through release/debugging.",
+          "checked_date": "2026-11-12",
+          "status": "Full employer description and application visible; not recruiter confirmation",
+          "pay": "Not recorded in this review"
+        },
+        {
+          "employer": "Fanatics",
+          "title": "Applied AI Engineer",
+          "url": "https://job-boards.greenhouse.io/fanaticsinc/jobs/4457595009",
+          "location": "New York City; office-based",
+          "experience": "3+ years applied AI or software engineering, including shipped AI",
+          "salary": "USD $150,000\u2013$200,000 base",
+          "skills": [
+            "Python preferred",
+            "LLM APIs",
+            "MCP",
+            "agent SDKs",
+            "RAG",
+            "evaluation",
+            "computer/browser use",
+            "ROI",
+            "security/governance",
+            "communication"
+          ],
+          "evidence": "Embeds in business functions to automate workflows; production agents, MCP, RAG and evals named; measures business return and may buy/configure instead of build.",
+          "checked_date": "2026-11-12",
+          "status": "Full employer description and application visible; not recruiter confirmation",
+          "pay": "USD $150,000\u2013$200,000 base"
+        },
+        {
+          "employer": "Anthropic",
+          "title": "Applied AI Engineer, Enterprise",
+          "url": "https://job-boards.greenhouse.io/anthropic/jobs/5057647008",
+          "location": "San Francisco/New York; three office days",
+          "experience": "4+ years technical experience",
+          "salary": "USD $200,000\u2013$320,000 listed annual salary; page carries generic sales OTE caveat",
+          "skills": [
+            "Python or TypeScript",
+            "LLM production",
+            "prompting",
+            "agents",
+            "MCP",
+            "evaluation",
+            "architecture",
+            "workshops",
+            "customer communication"
+          ],
+          "evidence": "Technical advisor for enterprise customers; develops prototypes/evaluation suites, code reviews and architecture guidance; production LLM and programming skills required.",
+          "checked_date": "2026-11-12",
+          "status": "Full employer description and application visible; not recruiter confirmation",
+          "pay": "USD $200,000\u2013$320,000 listed annual salary; page carries generic sales OTE caveat"
+        },
+        {
+          "employer": "CHAOS Industries",
+          "title": "Applied AI Engineer",
+          "url": "https://job-boards.greenhouse.io/chaosindustries/jobs/5237013007",
+          "location": "San Francisco; at least two office days",
+          "experience": "2\u20135 years; exceptional fresh graduates welcomed; US citizen or permanent resident",
+          "salary": "USD $150,000\u2013$170,000 base",
+          "skills": [
+            "Python",
+            "model serving",
+            "evaluation",
+            "observability",
+            "data pipelines",
+            "containers",
+            "CI/CD",
+            "edge deployment",
+            "agents preferred"
+          ],
+          "evidence": "Requires production software/model integration and evaluation; Python explicitly required; agents are preferred, while defense/edge robustness is central.",
+          "checked_date": "2026-11-12",
+          "status": "Full employer description and application visible; not recruiter confirmation",
+          "pay": "USD $150,000\u2013$170,000 base"
+        },
+        {
+          "employer": "OpenAI",
+          "title": "Applied AI Engineer",
+          "url": "https://openai.com/careers/applied-ai-engineer-singapore/",
+          "location": "Singapore; three office days",
+          "experience": "Demonstrated enterprise production delivery; numeric minimum not stated",
+          "salary": null,
+          "skills": [
+            "Python",
+            "JavaScript/TypeScript valuable",
+            "evaluation",
+            "agents",
+            "retrieval",
+            "integration",
+            "observability",
+            "cost/latency",
+            "security/governance",
+            "customer communication"
+          ],
+          "evidence": "Hands-on production engineering, evaluation harnesses and enterprise integration; explicitly measures adoption/business outcomes rather than demos.",
+          "checked_date": "2026-11-12",
+          "status": "Full employer description and application visible; not recruiter confirmation",
+          "pay": "Not recorded in this review"
+        },
+        {
+          "employer": "Anthropic",
+          "title": "Applied AI Engineer, Startups",
+          "url": "https://job-boards.greenhouse.io/anthropic/jobs/5432575008",
+          "location": "London, UK",
+          "experience": "4+ years software/FDE/technical founder; customer-facing experience",
+          "salary": "GBP \u00a3225,000\u2013\u00a3255,000 listed annual salary; generic sales OTE caveat",
+          "skills": [
+            "Python",
+            "agents",
+            "context engineering",
+            "evaluation",
+            "production deployment",
+            "pair programming",
+            "architecture reviews",
+            "technical writing",
+            "workshops"
+          ],
+          "evidence": "Distinct startup-customer requisition, not geographic clone of enterprise role; pair programming/code contributions, production LLM applications and developer education.",
+          "checked_date": "2026-11-12",
+          "status": "Full employer description and application visible; not recruiter confirmation",
+          "pay": "GBP \u00a3225,000\u2013\u00a3255,000 listed annual salary; generic sales OTE caveat"
+        }
+      ]
+    },
+    {
+      "name": "AI Solutions Architect",
+      "sample_size": 10,
+      "unique_employers": 8,
+      "counts": {
+        "Stakeholder communication/consultation": 10,
+        "Python mentioned (including preferred/alternatives)": 9,
+        "Cloud mentioned": 8
+      },
+      "interpretation": "Architecture is hands-on but varies: security presales, post-sales deployment, internal transformation, graph AI, marketing automation and infrastructure advisory. Python appears in nine descriptions but sometimes only preferred; cloud appears in eight. Do not treat these as ten identical jobs or count each city as another posting. HiddenLayer contributes three distinct functional requisitions, making this sample security-heavy.",
+      "postings": [
+        {
+          "employer": "HiddenLayer",
+          "title": "AI Solutions Architect \u2013 Federal",
+          "url": "https://job-boards.greenhouse.io/hiddenlayer/jobs/5162409007",
+          "location": "Remote US; DC preferred",
+          "experience": "5+ years customer-facing technical roles with federal support; Top Secret/eligibility preferred",
+          "salary": null,
+          "skills": [
+            "Python",
+            "Kubernetes",
+            "Docker",
+            "Helm",
+            "cloud",
+            "CI/CD",
+            "retrieval",
+            "agents",
+            "security",
+            "demos",
+            "communication"
+          ],
+          "evidence": "Federal presales role deploying into SaaS and airgapped environments; Python and containers required; SDK integrations, mission demos and measurable evaluations.",
+          "checked_date": "2026-11-12",
+          "status": "Full employer description and application visible; not recruiter confirmation",
+          "pay": "Not recorded in this review"
+        },
+        {
+          "employer": "Veeam",
+          "title": "AI Solution Architect",
+          "url": "https://job-boards.greenhouse.io/veeamsoftware/jobs/4999633101",
+          "location": "Remote US",
+          "experience": "2+ years AI architect and 5+ software engineering",
+          "salary": "NYC/Bay Area USD $215,640\u2013$400,440 total target compensation/OTE, NOT base; other zones differ",
+          "skills": [
+            "cloud",
+            "distributed systems",
+            "integration",
+            "UML",
+            "SDLC",
+            "communication",
+            "Python/Go/TypeScript bonus"
+          ],
+          "evidence": "Cross-platform enterprise architecture, requirements and rollout; cloud/distributed systems required, language proficiency specifically appears under bonus skills.",
+          "checked_date": "2026-11-12",
+          "status": "Full employer description and application visible; not recruiter confirmation",
+          "pay": "NYC/Bay Area USD $215,640\u2013$400,440 total target compensation/OTE, NOT base; other zones differ"
+        },
+        {
+          "employer": "Impiricus",
+          "title": "AI Solutions Architect",
+          "url": "https://job-boards.greenhouse.io/impiricus/jobs/5432801008",
+          "location": "Atlanta/New York/Remote US",
+          "experience": "5+ product/design OR 2+ applied engineering",
+          "salary": "USD $165,000\u2013$210,000 base",
+          "skills": [
+            "Python preferred",
+            "APIs",
+            "cloud",
+            "RAG",
+            "LangChain/LlamaIndex",
+            "context management",
+            "security/governance",
+            "stakeholder discovery"
+          ],
+          "evidence": "Internal FDE-style role refactors business-built prototypes into secure production apps; integrations with CRM/data lake; prefers demonstrated shipping over credentials.",
+          "checked_date": "2026-11-12",
+          "status": "Full employer description and application visible; not recruiter confirmation",
+          "pay": "USD $165,000\u2013$210,000 base"
+        },
+        {
+          "employer": "DoorDash",
+          "title": "Senior Associate, AI Solutions Architect, Marketing Technology",
+          "url": "https://job-boards.greenhouse.io/doordashusa/jobs/8226916",
+          "location": "Multiple US cities including NYC",
+          "experience": "2\u20134 years marketing/technology with hands-on tools",
+          "salary": null,
+          "status_note": "Application page visible, but expected fill date November 9, 2026 has passed; treat current availability uncertain",
+          "skills": [
+            "Python/JavaScript/TypeScript",
+            "APIs",
+            "SQL/Postgres",
+            "ETL",
+            "MCP",
+            "prompt chains",
+            "low-code",
+            "communication",
+            "governance"
+          ],
+          "evidence": "Builds marketing tools and workflow automations; measures efficiency/quality gains; coding, APIs/data and explaining concepts to nontechnical partners.",
+          "checked_date": "2026-11-12",
+          "status": "Application page visible, but expected fill date November 9, 2026 has passed; treat current availability uncertain",
+          "pay": "Not recorded in this review"
+        },
+        {
+          "employer": "Neo4j",
+          "title": "AI Solutions Architect",
+          "url": "https://job-boards.greenhouse.io/neo4j/jobs/4726392006",
+          "location": "United States compensation scope; exact work location not captured",
+          "experience": "5+ years enterprise application architecture; travel up to 50%",
+          "salary": "USD $160,000\u2013$220,000 annual OTE, NOT base",
+          "skills": [
+            "Python/Java/JavaScript/C#",
+            "knowledge graphs",
+            "Cypher",
+            "LLMs",
+            "LangChain/LlamaIndex",
+            "cloud",
+            "Docker/Kubernetes",
+            "SQL/NoSQL",
+            "communication"
+          ],
+          "evidence": "Graph+GenAI production architecture and delivery; requires graph modeling/query expertise plus programming/cloud and stakeholder influence.",
+          "checked_date": "2026-11-12",
+          "status": "Full employer description and application visible; not recruiter confirmation",
+          "pay": "USD $160,000\u2013$220,000 annual OTE, NOT base"
+        },
+        {
+          "employer": "Point72",
+          "title": "AI Solutions Architect",
+          "url": "https://job-boards.greenhouse.io/point72/jobs/8649431002",
+          "location": "EMEA-facing; exact city not captured",
+          "experience": "3+ years client-facing product/solution-engineering/FDE",
+          "salary": null,
+          "skills": [
+            "Python",
+            "SQL",
+            "RAG",
+            "agents",
+            "model APIs",
+            "requirements discovery",
+            "enablement",
+            "adoption metrics",
+            "communication"
+          ],
+          "evidence": "Lightweight prototypes, internal adoption and investment-team enablement; explicitly does not own or maintain core production systems.",
+          "checked_date": "2026-11-12",
+          "status": "Full employer description and application visible; not recruiter confirmation",
+          "pay": "Not recorded in this review"
+        },
+        {
+          "employer": "HiddenLayer",
+          "title": "AI Solutions Architect \u2013 Pre-sales",
+          "url": "https://job-boards.greenhouse.io/hiddenlayer/jobs/4595140007",
+          "location": "Remote US",
+          "experience": "Proven presales/postsales architecture experience; years not given",
+          "salary": null,
+          "skills": [
+            "Python",
+            "Linux",
+            "cloud",
+            "IaC",
+            "LangChain/LangGraph",
+            "MLOps",
+            "PoCs",
+            "communication",
+            "Kubernetes/CI/CD helpful"
+          ],
+          "evidence": "Distinct commercial presales role; Python necessary, cloud/IaC and AI workflows expected; conducts demos, discovery and proof-of-concepts.",
+          "checked_date": "2026-11-12",
+          "status": "Full employer description and application visible; not recruiter confirmation",
+          "pay": "Not recorded in this review"
+        },
+        {
+          "employer": "HiddenLayer",
+          "title": "AI Solutions Architect \u2013 Post-Sales (UK)",
+          "url": "https://job-boards.greenhouse.io/hiddenlayer/jobs/5128009007",
+          "location": "Remote UK",
+          "experience": "Proven post-sales/customer success/solutions engineering",
+          "salary": null,
+          "skills": [
+            "Python",
+            "Docker",
+            "cloud",
+            "IaC",
+            "networking",
+            "Kubernetes desirable",
+            "AI frameworks a plus",
+            "communication",
+            "training"
+          ],
+          "evidence": "Distinct post-sale adoption/deployment function; Python and Docker required, cloud networking/IaC expected; AI workflow tools are a plus.",
+          "checked_date": "2026-11-12",
+          "status": "Full employer description and application visible; not recruiter confirmation",
+          "pay": "Not recorded in this review"
+        },
+        {
+          "employer": "Nutanix",
+          "title": "Advisory Solutions Architect \u2013 AI",
+          "url": "https://careers.nutanix.com/en/jobs/32421/advisory-solutions-architect-ai/",
+          "location": "Singapore; at least three office days",
+          "experience": "7\u20139+ years presales/architecture; travel up to 30%",
+          "salary": null,
+          "skills": [
+            "GPU infrastructure",
+            "Kubernetes",
+            "cloud-native",
+            "MLOps",
+            "GenAI serving",
+            "network/storage",
+            "ROI",
+            "presales",
+            "communication"
+          ],
+          "evidence": "Infrastructure-centric technical presales; GPU/distributed AI, Kubernetes, MLOps and business cases. No explicit Python requirement in reviewed description.",
+          "checked_date": "2026-11-12",
+          "status": "Full employer description and application visible; not recruiter confirmation",
+          "pay": "Not recorded in this review"
+        },
+        {
+          "employer": "eimagine",
+          "title": "AI Solutions Architect",
+          "url": "https://careers-eimagine.icims.com/jobs/1779/ai-solutions-architect/job",
+          "location": "Indianapolis, Indiana; remote-enabled employer",
+          "experience": "5+ years AI/ML/analytics; consulting; bachelor's or equivalent",
+          "salary": null,
+          "skills": [
+            "Python",
+            "cloud",
+            "RAG",
+            "prompting",
+            "LLM APIs",
+            "PyTorch/TensorFlow",
+            "data pipelines",
+            "Docker/Kubernetes",
+            "CI/CD",
+            "governance",
+            "stakeholder communication"
+          ],
+          "evidence": "End-to-end AI solution architecture and client roadmaps; cloud deployment, Python and production ML; cloud/AI certifications are a plus, not mandatory.",
+          "checked_date": "2026-11-12",
+          "status": "Full employer description and application visible; not recruiter confirmation",
+          "pay": "Not recorded in this review"
+        }
+      ]
+    },
+    {
+      "name": "AI Agent Engineer",
+      "postings": [
+        {
+          "employer": "Gigi",
+          "title": "AI Engineer / AI Agent Engineer",
+          "url": "https://jobs.ashbyhq.com/gigi/46e8dd52-6b56-4e14-9980-ed74058c9c2c/",
+          "status": "Employer-indexed description; direct page JS-only",
+          "location": "Toronto, on-site",
+          "experience": "Production software track record and hands-on LLM project; no exact years required",
+          "pay": "Omitted: indexed versions conflict ($110\u2013200k vs $150\u2013210k); currency not explicit",
+          "skills": [
+            "Software engineering",
+            "Agents and tools",
+            "Evaluation",
+            "Retrieval/context",
+            "AI coding tools",
+            "Human oversight"
+          ],
+          "evidence": "Production APIs/data/testing/debugging; LLM/agent projects; eval framework and context engineering; coding-agent use with human accountability. Agent-specific framework skills may be learned on job.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "Sekai",
+          "title": "AI Agent Engineer (Coding Agent)",
+          "url": "https://jobs.ashbyhq.com/sekai/6b385ffe-8550-44cb-969e-5fae13d6f42a",
+          "status": "Employer-indexed description; direct page JS-only",
+          "location": "San Francisco listing; remote-first company",
+          "experience": "Shipped and operated agentic production systems; no exact years found",
+          "pay": "Salary and equity; no numeric range",
+          "skills": [
+            "Software engineering",
+            "Python mentioned (required, preferred or option)",
+            "Agents and tools",
+            "Evaluation",
+            "Observability",
+            "Cost/latency",
+            "Retrieval/context"
+          ],
+          "evidence": "Agent harnesses, long workflows, regression/failure taxonomies, model routing, tracing; strong Python/TypeScript and distributed systems. MCP and fine-tuning are bonuses.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "TRM Labs",
+          "title": "AI Agent Engineer \u2013 US Remote",
+          "url": "https://jobs.ashbyhq.com/trm-labs/828b60b2-ac8f-407d-92a0-8b794c8cf391/",
+          "status": "Employer-indexed description; direct page JS-only",
+          "location": "United States remote",
+          "experience": "Deep backend/systems experience; senior/staff expectations described",
+          "pay": "USD $200,000\u2013275,000 base; possible equity",
+          "skills": [
+            "Software engineering",
+            "Python mentioned (required, preferred or option)",
+            "Agents and tools",
+            "Evaluation",
+            "Observability",
+            "Cost/latency",
+            "Retrieval/context",
+            "Human oversight"
+          ],
+          "evidence": "Python preferred; tool-use/memory/planning framework, RAG and evaluation loops, auditable safety, latency/success/hallucination measures, analyst augmentation.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "Hipp Health",
+          "title": "AI Agent Engineer \u2014 Patient Intake",
+          "url": "https://jobs.ashbyhq.com/hipp/65b0c62e-42bf-4817-85eb-7f1adee3c8cd",
+          "status": "Employer-indexed description; direct page JS-only",
+          "location": "United States remote",
+          "experience": "No fixed years; demonstrated built/tested/improved agents",
+          "pay": "Not found",
+          "skills": [
+            "Software engineering",
+            "Python mentioned (required, preferred or option)",
+            "Agents and tools",
+            "Evaluation",
+            "Observability",
+            "Retrieval/context",
+            "Human oversight",
+            "Communication"
+          ],
+          "evidence": "Python/TypeScript or comparable, APIs/databases, planning/retrieval/memory, systematic evaluations, failure-mode analysis, monitoring and human escalation. HIPAA and RAG are nice-to-have.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "Livefront / Zeal",
+          "title": "Agentic Engineer",
+          "url": "https://job-boards.greenhouse.io/livefront/jobs/4390697009",
+          "status": "Full employer page and application form live",
+          "location": "Remote USA",
+          "experience": "Production agent systems and enterprise delivery experience; no numeric years",
+          "pay": "USD $130,000\u2013165,000 annually",
+          "skills": [
+            "Software engineering",
+            "Python mentioned (required, preferred or option)",
+            "Agents and tools",
+            "Evaluation",
+            "Observability",
+            "Cost/latency",
+            "Retrieval/context",
+            "Human oversight",
+            "Cloud",
+            "Communication"
+          ],
+          "evidence": "Python or Java; agent workflows, APIs/MCP, evals/guardrails, state/memory, traceability, token cost and latency; AWS/Azure; containers/CI/CD; security reviews and client communication.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "NewsBreak",
+          "title": "AI Engineer, Agent Platform",
+          "url": "https://job-boards.greenhouse.io/newsbreak/jobs/4683873006",
+          "status": "Full employer page and application form live",
+          "location": "Mountain View, CA; application specifies five days onsite",
+          "experience": "AI product with real users; side project/internal tool/open-source/MVP accepted as evidence",
+          "pay": "USD $120,000\u2013220,000 base; possible bonus/options",
+          "skills": [
+            "Software engineering",
+            "Python mentioned (required, preferred or option)",
+            "Agents and tools",
+            "Evaluation",
+            "Observability",
+            "Cost/latency",
+            "Retrieval/context",
+            "AI coding tools"
+          ],
+          "evidence": "Runtime orchestration, eval/trace harness, retrieval/ranking/compression/memory, model cost decisions, Python or Go/Node plus React/Next.js. Public artifact preferred.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "GitLab",
+          "title": "Backend Engineer (Python), AI Engineering: Agent Foundations",
+          "url": "https://job-boards.greenhouse.io/gitlab/jobs/8704363002",
+          "status": "Full employer page and application form live",
+          "location": "Remote Canada, Poland, UK",
+          "experience": "Intermediate; production Python backend and LLM-framework/AI-backend experience",
+          "pay": "Not listed in inspected page",
+          "skills": [
+            "Software engineering",
+            "Python mentioned (required, preferred or option)",
+            "Agents and tools",
+            "Evaluation",
+            "Observability",
+            "Communication"
+          ],
+          "evidence": "Python, LangGraph/LangChain flows, REST/GraphQL APIs, pytest and agent evaluations; on-call/root-cause/observability; async written collaboration.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "Scale AI",
+          "title": "Frontier Agents Engineer (Applied AI)",
+          "url": "https://job-boards.greenhouse.io/scaleai/jobs/4720573005",
+          "status": "Full employer page and application form live",
+          "location": "San Francisco, CA",
+          "experience": "4+ years software, ML or applied AI",
+          "pay": "USD $180,000\u2013225,000 base for listed SF/NY/Seattle range; equity separate",
+          "skills": [
+            "Software engineering",
+            "Python mentioned (required, preferred or option)",
+            "Agents and tools",
+            "Evaluation",
+            "Observability",
+            "Cost/latency",
+            "Retrieval/context",
+            "Human oversight",
+            "Cloud",
+            "Communication"
+          ],
+          "evidence": "Python, production LLM systems, retrieval/memory/tool-use; quantitative experiments, golden sets, LLM judges and human evaluation; safety, observability/cost. Cloud and Docker/Kubernetes preferred.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "Starburst",
+          "title": "AI Agent Engineer",
+          "url": "https://job-boards.greenhouse.io/starburst/jobs/5430686008",
+          "status": "Full employer page and application form live",
+          "location": "United States; 25% travel stated",
+          "experience": "5+ years AI/ML; 1+ year production agent/LLM; AI startup or product-team experience",
+          "pay": "USD $180,000\u2013225,000; range may include variable compensation",
+          "skills": [
+            "Software engineering",
+            "Agents and tools",
+            "Evaluation",
+            "Observability",
+            "Retrieval/context"
+          ],
+          "evidence": "Agent orchestration/planning/memory/error recovery; RAG chunking/vector DB/embedding/reranking; eval suites; CI/CD and code review. No particular language requirement found.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "Liberate",
+          "title": "AI Agent Engineer",
+          "url": "https://job-boards.greenhouse.io/liberate/jobs/4925435008",
+          "status": "Full employer page and application form live",
+          "location": "Boston or San Francisco/Berkeley hybrid, two office days",
+          "experience": "3+ years solutions engineering or technical consulting; bachelor's related field",
+          "pay": "USD $120,000\u2013190,000 base",
+          "skills": [
+            "Software engineering",
+            "Python mentioned (required, preferred or option)",
+            "Cloud",
+            "Communication"
+          ],
+          "evidence": "Python/Java or similar; API/data/cloud integration; customer discovery, demos, technical documentation and post-sales troubleshooting. Cloud certification preferred. Despite title, duties resemble solutions engineering, not explicit agent-harness design.",
+          "checked_date": "2026-11-12"
+        }
+      ],
+      "counts": {
+        "Software engineering": 10,
+        "Agents and tools": 9,
+        "Evaluation": 9,
+        "Retrieval/context": 8,
+        "Observability": 8,
+        "Cost/latency": 5
+      },
+      "note": "Purposive sample of 10 unique employer postings, 10 employers. Adjacent titles grouped by agent-building duties; not a labor-market estimate. Six full live employer pages with application forms; four Ashby employer-indexed descriptions whose direct rendering needs JavaScript, so current application status unconfirmed. Skills may be duties or preferred, not always required. Salary is not comparable across seniority/geography.",
+      "sample_size": 10,
+      "unique_employers": 10
+    },
+    {
+      "name": "AI Evaluation Engineer",
+      "postings": [
+        {
+          "employer": "Anthropic",
+          "title": "Research Engineer, Post-Training Model Evaluations",
+          "url": "https://job-boards.greenhouse.io/anthropic/jobs/5198255008",
+          "status": "Live employer application page",
+          "location": "San Francisco / Seattle",
+          "experience": "ML evaluations at scale; bachelor's or equivalent; level-dependent years",
+          "pay": "USD $500,000\u2013850,000 annual salary stated",
+          "skills": [
+            "Evaluation",
+            "Python",
+            "Production systems",
+            "Statistics/experiments",
+            "Communication",
+            "Monitoring"
+          ],
+          "evidence": "Evaluation strategy, regression investigation, dashboards/alerts; Python and production systems; statistics/experimental design preferred.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "Dscout",
+          "title": "AI Research Engineer",
+          "url": "https://job-boards.greenhouse.io/dscout/jobs/4472409009",
+          "status": "Live employer application page",
+          "location": "San Francisco / Bay Area",
+          "experience": "Published research; PhD/in progress or MS plus two research internships, or equivalent creative ML research",
+          "pay": "USD $250,000\u2013400,000 OTE plus equity, not base-only",
+          "skills": [
+            "Evaluation",
+            "Python",
+            "Statistics/experiments",
+            "Communication",
+            "Human judgment",
+            "AI coding tools"
+          ],
+          "evidence": "Rubric validity/reliability, inter-rater agreement and power, calibration of AI judges to humans, messy human data, Python pipelines, technical writing and AI coding tools.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "Turing",
+          "title": "AI Evaluation Engineer (Python)",
+          "url": "https://work.turing.com/r/5it0cUV8NC",
+          "status": "Live employer page with apply action; short contract dates must be reconfirmed",
+          "location": "Remote; four-hour PST overlap",
+          "experience": "3\u20135 years Python; relevant bachelor's",
+          "pay": "Not stated; two-month freelance contract, 40h/week, no medical/paid leave",
+          "skills": [
+            "Evaluation",
+            "Python",
+            "Communication",
+            "Software testing"
+          ],
+          "evidence": "Author realistic tasks/reference solutions/verifiers; data structures, algorithms, debugging and tests; clear written English and structured document formats. LLM eval background nice-to-have.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "Tactical Edge",
+          "title": "AI Evaluation Engineer",
+          "url": "https://www.tacticaledgeai.com/careers/qa-engineer/",
+          "status": "Live employer career page and application link",
+          "location": "Seattle onsite",
+          "experience": "Production software/AI/data or distributed-systems testing; no numeric years",
+          "pay": "No numeric range",
+          "skills": [
+            "Evaluation",
+            "Production systems",
+            "Communication",
+            "Human judgment",
+            "Monitoring",
+            "Software testing"
+          ],
+          "evidence": "Golden/adversarial/regression sets, release gates combining humans and telemetry; scored rubrics, CI/CD and observability; documented limitations.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "Ashoka University",
+          "title": "AI Evaluation Engineer",
+          "url": "https://careers.ashoka.edu.in/wp-content/uploads/2026/05/JD-for-AI-Evaluation-Engineer_V2DD.pdf",
+          "status": "Official May 2026 PDF accessible; current vacancy status unconfirmed",
+          "location": "Not captured; India institution",
+          "experience": "Relevant bachelor's/master's; 1\u20134 years desirable",
+          "pay": "Not captured",
+          "skills": [
+            "Evaluation",
+            "Python",
+            "Production systems",
+            "Communication",
+            "Monitoring",
+            "Data pipelines",
+            "Reproducibility"
+          ],
+          "evidence": "Medical evaluation pipelines, model submissions/leaderboards, WER/F1/clinical metrics, logging; Python mandatory, PyTorch/Hugging Face, APIs, batch/streaming, MLflow/W&B and documentation.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "OpenAI",
+          "title": "Product Evals Engineer, ChatGPT Learning",
+          "url": "https://openai.com/careers/product-evals-engineer-chatgpt-learning-san-francisco/",
+          "status": "Live employer career page and application link",
+          "location": "San Francisco, three office days/week",
+          "experience": "Strong software/data/evaluation engineering; no numeric years in description",
+          "pay": "USD $185,000\u2013490,000 base plus equity",
+          "skills": [
+            "Evaluation",
+            "Production systems",
+            "Statistics/experiments",
+            "Communication",
+            "Human judgment",
+            "Data pipelines"
+          ],
+          "evidence": "Learner-relevant quality metrics; representative datasets; automated/human grading calibration; information retrieval, experimentation and interpretable findings. Learning science preferred; no language specified.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "Microsoft AI",
+          "title": "Principal AI Evaluations Platform Engineer",
+          "url": "https://job-boards.greenhouse.io/microsoftcorporation/jobs/4409587009",
+          "status": "Live employer application page",
+          "location": "Zurich or London; four office days/week",
+          "experience": "BS+4 years or MS+2 years or equivalent; production distributed-systems/on-call experience",
+          "pay": "Switzerland CHF183,800\u2013309,700 base; UK range not shown",
+          "skills": [
+            "Evaluation",
+            "Python",
+            "Production systems",
+            "Communication",
+            "Monitoring"
+          ],
+          "evidence": "Benchmark/graders/runners infrastructure, scheduling and throughput, dashboards/runbooks; Python, distributed debugging/on-call. GPU workloads, Ray/Kubernetes/Slurm preferred.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "Karya",
+          "title": "Research Engineer, AI Evaluations",
+          "url": "https://job-boards.greenhouse.io/karya/jobs/5459428008",
+          "status": "Live employer application page",
+          "location": "Bengaluru, India; hybrid options",
+          "experience": "4+ years ML engineering/applied ML research; master's preferred or equivalent",
+          "pay": "Not stated",
+          "skills": [
+            "Evaluation",
+            "Python",
+            "Production systems",
+            "Statistics/experiments",
+            "Communication",
+            "Human judgment",
+            "Data pipelines",
+            "Reproducibility"
+          ],
+          "evidence": "Multilingual/speech benchmarks, rubrics and human adjudication, bias tests, uncertainty/agreement and judge calibration; Python/model-serving/ML pipelines with versioned reproducible configurations.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "HP",
+          "title": "Agentic AI Systems Evaluation Engineer",
+          "url": "https://job-boards.greenhouse.io/hp/jobs/6228405004",
+          "status": "Live employer application page",
+          "location": "Houston, Texas",
+          "experience": "7+ years relevant engineering; bachelor's or equivalent",
+          "pay": "USD $130,700\u2013205,200 annually; possible bonus/equity",
+          "skills": [
+            "Evaluation",
+            "Python",
+            "Statistics/experiments",
+            "Communication",
+            "Monitoring",
+            "Reproducibility"
+          ],
+          "evidence": "Repeatable model/runtime/hardware benchmarks; TTFT, tokens/sec, latency, memory, concurrent workloads; Python/C++ or similar. ONNX/GGUF and inference understanding required; experimental design preferred.",
+          "checked_date": "2026-11-12"
+        },
+        {
+          "employer": "Sedgwick",
+          "title": "AI Evaluation Engineer",
+          "url": "https://sedgwick.wd1.myworkdayjobs.com/en-US/Sedgwick/job/AI-Evaluation-Engineer_R80152",
+          "status": "Full employer-indexed description; direct page empty, application status unconfirmed",
+          "location": "US remote (header Telecommuter FL)",
+          "experience": "4+ years software/ML/data, 1\u20132 LLM years; master's preferred; description contains template wording",
+          "pay": "Not found",
+          "skills": [
+            "Evaluation",
+            "Python",
+            "Production systems",
+            "Statistics/experiments",
+            "Communication",
+            "Human judgment",
+            "Monitoring",
+            "Software testing",
+            "Cloud"
+          ],
+          "evidence": "LLM/RAG eval metrics, CI/CD quality gates, human-label/LLM-judge calibration, statistical significance/inter-rater agreement, red teaming and privacy tests; Python, eval tools, cloud and risk communication.",
+          "checked_date": "2026-11-12"
+        }
+      ],
+      "counts": {
+        "Evaluation": 10,
+        "Python": 8,
+        "Statistics/experiments": 6,
+        "Human judgment": 5,
+        "Production systems": 7,
+        "Communication": 10
+      },
+      "note": "Purposive 10-posting, 10-employer sample across product evals, model evals and eval infrastructure. Nine full primary descriptions inspected (Ashoka is a PDF, not proof of current vacancy), one employer-indexed Workday description whose live rendering was empty. Skill counts combine duties and requirements and are not market prevalence. Do not treat frontier-lab pay as typical graduate pay.",
+      "sample_size": 10,
+      "unique_employers": 10
+    }
+  ],
+  "exclusions": [
+    "Apple Applied AI Engineer 200670689: direct page says unavailable despite indexed description.",
+    "Google Applied AI Engineer 130897867047871174: direct page says job not found despite indexed description.",
+    "Deloitte Toronto 132266: direct page says unavailable despite search result.",
+    "Stripe Solutions Architect AI 8248509: direct page returned 404.",
+    "Accenture 14109246: redirected to general search, not counted.",
+    "RAVL, ShyftLabs and Channel Corp: search descriptions found but direct fetch blocked; not counted.",
+    "Genesys and Pluralsight Workday: no readable direct body, not counted."
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "family": "AI agent engineering",
+  "checkedDate": "2026-11-12",
+  "method": "Purposive sample of 10 unique employer postings, 10 employers. Adjacent titles grouped by agent-building duties; not a labor-market estimate. Six full live employer pages with application forms; four Ashby employer-indexed descriptions whose direct rendering needs JavaScript, so current application status unconfirmed. Skills may be duties or preferred, not always required. Salary is not comparable across seniority/geography.",
+  "postings": [
+    {
+      "employer": "Gigi",
+      "title": "AI Engineer / AI Agent Engineer",
+      "url": "https://jobs.ashbyhq.com/gigi/46e8dd52-6b56-4e14-9980-ed74058c9c2c/",
+      "status": "Employer-indexed description; direct page JS-only",
+      "location": "Toronto, on-site",
+      "experience": "Production software track record and hands-on LLM project; no exact years required",
+      "pay": "Omitted: indexed versions conflict ($110\u2013200k vs $150\u2013210k); currency not explicit",
+      "skills": [
+        "Software engineering",
+        "Agents and tools",
+        "Evaluation",
+        "Retrieval/context",
+        "AI coding tools",
+        "Human oversight"
+      ],
+      "evidence": "Production APIs/data/testing/debugging; LLM/agent projects; eval framework and context engineering; coding-agent use with human accountability. Agent-specific framework skills may be learned on job."
+    },
+    {
+      "employer": "Sekai",
+      "title": "AI Agent Engineer (Coding Agent)",
+      "url": "https://jobs.ashbyhq.com/sekai/6b385ffe-8550-44cb-969e-5fae13d6f42a",
+      "status": "Employer-indexed description; direct page JS-only",
+      "location": "San Francisco listing; remote-first company",
+      "experience": "Shipped and operated agentic production systems; no exact years found",
+      "pay": "Salary and equity; no numeric range",
+      "skills": [
+        "Software engineering",
+        "Python mentioned (required, preferred or option)",
+        "Agents and tools",
+        "Evaluation",
+        "Observability",
+        "Cost/latency",
+        "Retrieval/context"
+      ],
+      "evidence": "Agent harnesses, long workflows, regression/failure taxonomies, model routing, tracing; strong Python/TypeScript and distributed systems. MCP and fine-tuning are bonuses."
+    },
+    {
+      "employer": "TRM Labs",
+      "title": "AI Agent Engineer \u2013 US Remote",
+      "url": "https://jobs.ashbyhq.com/trm-labs/828b60b2-ac8f-407d-92a0-8b794c8cf391/",
+      "status": "Employer-indexed description; direct page JS-only",
+      "location": "United States remote",
+      "experience": "Deep backend/systems experience; senior/staff expectations described",
+      "pay": "USD $200,000\u2013275,000 base; possible equity",
+      "skills": [
+        "Software engineering",
+        "Python mentioned (required, preferred or option)",
+        "Agents and tools",
+        "Evaluation",
+        "Observability",
+        "Cost/latency",
+        "Retrieval/context",
+        "Human oversight"
+      ],
+      "evidence": "Python preferred; tool-use/memory/planning framework, RAG and evaluation loops, auditable safety, latency/success/hallucination measures, analyst augmentation."
+    },
+    {
+      "employer": "Hipp Health",
+      "title": "AI Agent Engineer \u2014 Patient Intake",
+      "url": "https://jobs.ashbyhq.com/hipp/65b0c62e-42bf-4817-85eb-7f1adee3c8cd",
+      "status": "Employer-indexed description; direct page JS-only",
+      "location": "United States remote",
+      "experience": "No fixed years; demonstrated built/tested/improved agents",
+      "pay": "Not found",
+      "skills": [
+        "Software engineering",
+        "Python mentioned (required, preferred or option)",
+        "Agents and tools",
+        "Evaluation",
+        "Observability",
+        "Retrieval/context",
+        "Human oversight",
+        "Communication"
+      ],
+      "evidence": "Python/TypeScript or comparable, APIs/databases, planning/retrieval/memory, systematic evaluations, failure-mode analysis, monitoring and human escalation. HIPAA and RAG are nice-to-have."
+    },
+    {
+      "employer": "Livefront / Zeal",
+      "title": "Agentic Engineer",
+      "url": "https://job-boards.greenhouse.io/livefront/jobs/4390697009",
+      "status": "Full employer page and application form live",
+      "location": "Remote USA",
+      "experience": "Production agent systems and enterprise delivery experience; no numeric years",
+      "pay": "USD $130,000\u2013165,000 annually",
+      "skills": [
+        "Software engineering",
+        "Python mentioned (required, preferred or option)",
+        "Agents and tools",
+        "Evaluation",
+        "Observability",
+        "Cost/latency",
+        "Retrieval/context",
+        "Human oversight",
+        "Cloud",
+        "Communication"
+      ],
+      "evidence": "Python or Java; agent workflows, APIs/MCP, evals/guardrails, state/memory, traceability, token cost and latency; AWS/Azure; containers/CI/CD; security reviews and client communication."
+    },
+    {
+      "employer": "NewsBreak",
+      "title": "AI Engineer, Agent Platform",
+      "url": "https://job-boards.greenhouse.io/newsbreak/jobs/4683873006",
+      "status": "Full employer page and application form live",
+      "location": "Mountain View, CA; application specifies five days onsite",
+      "experience": "AI product with real users; side project/internal tool/open-source/MVP accepted as evidence",
+      "pay": "USD $120,000\u2013220,000 base; possible bonus/options",
+      "skills": [
+        "Software engineering",
+        "Python mentioned (required, preferred or option)",
+        "Agents and tools",
+        "Evaluation",
+        "Observability",
+        "Cost/latency",
+        "Retrieval/context",
+        "AI coding tools"
+      ],
+      "evidence": "Runtime orchestration, eval/trace harness, retrieval/ranking/compression/memory, model cost decisions, Python or Go/Node plus React/Next.js. Public artifact preferred."
+    },
+    {
+      "employer": "GitLab",
+      "title": "Backend Engineer (Python), AI Engineering: Agent Foundations",
+      "url": "https://job-boards.greenhouse.io/gitlab/jobs/8704363002",
+      "status": "Full employer page and application form live",
+      "location": "Remote Canada, Poland, UK",
+      "experience": "Intermediate; production Python backend and LLM-framework/AI-backend experience",
+      "pay": "Not listed in inspected page",
+      "skills": [
+        "Software engineering",
+        "Python mentioned (required, preferred or option)",
+        "Agents and tools",
+        "Evaluation",
+        "Observability",
+        "Communication"
+      ],
+      "evidence": "Python, LangGraph/LangChain flows, REST/GraphQL APIs, pytest and agent evaluations; on-call/root-cause/observability; async written collaboration."
+    },
+    {
+      "employer": "Scale AI",
+      "title": "Frontier Agents Engineer (Applied AI)",
+      "url": "https://job-boards.greenhouse.io/scaleai/jobs/4720573005",
+      "status": "Full employer page and application form live",
+      "location": "San Francisco, CA",
+      "experience": "4+ years software, ML or applied AI",
+      "pay": "USD $180,000\u2013225,000 base for listed SF/NY/Seattle range; equity separate",
+      "skills": [
+        "Software engineering",
+        "Python mentioned (required, preferred or option)",
+        "Agents and tools",
+        "Evaluation",
+        "Observability",
+        "Cost/latency",
+        "Retrieval/context",
+        "Human oversight",
+        "Cloud",
+        "Communication"
+      ],
+      "evidence": "Python, production LLM systems, retrieval/memory/tool-use; quantitative experiments, golden sets, LLM judges and human evaluation; safety, observability/cost. Cloud and Docker/Kubernetes preferred."
+    },
+    {
+      "employer": "Starburst",
+      "title": "AI Agent Engineer",
+      "url": "https://job-boards.greenhouse.io/starburst/jobs/5430686008",
+      "status": "Full employer page and application form live",
+      "location": "United States; 25% travel stated",
+      "experience": "5+ years AI/ML; 1+ year production agent/LLM; AI startup or product-team experience",
+      "pay": "USD $180,000\u2013225,000; range may include variable compensation",
+      "skills": [
+        "Software engineering",
+        "Agents and tools",
+        "Evaluation",
+        "Observability",
+        "Retrieval/context"
+      ],
+      "evidence": "Agent orchestration/planning/memory/error recovery; RAG chunking/vector DB/embedding/reranking; eval suites; CI/CD and code review. No particular language requirement found."
+    },
+    {
+      "employer": "Liberate",
+      "title": "AI Agent Engineer",
+      "url": "https://job-boards.greenhouse.io/liberate/jobs/4925435008",
+      "status": "Full employer page and application form live",
+      "location": "Boston or San Francisco/Berkeley hybrid, two office days",
+      "experience": "3+ years solutions engineering or technical consulting; bachelor's related field",
+      "pay": "USD $120,000\u2013190,000 base",
+      "skills": [
+        "Software engineering",
+        "Python mentioned (required, preferred or option)",
+        "Cloud",
+        "Communication"
+      ],
+      "evidence": "Python/Java or similar; API/data/cloud integration; customer discovery, demos, technical documentation and post-sales troubleshooting. Cloud certification preferred. Despite title, duties resemble solutions engineering, not explicit agent-harness design."
+    }
+  ],
+  "counts": {
+    "Software engineering": 10,
+    "Agents and tools": 9,
+    "Evaluation": 9,
+    "Retrieval/context": 8,
+    "AI coding tools": 2,
+    "Human oversight": 5,
+    "Python mentioned (required, preferred or option)": 8,
+    "Observability": 8,
+    "Cost/latency": 5,
+    "Communication": 5,
+    "Cloud": 3
+  }
+}

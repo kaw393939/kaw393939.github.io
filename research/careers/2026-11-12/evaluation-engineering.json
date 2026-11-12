@@ -1,0 +1,204 @@
+{
+  "family": "AI evaluation engineering",
+  "checkedDate": "2026-11-12",
+  "method": "Purposive 10-posting, 10-employer sample across product evals, model evals and eval infrastructure. Nine full primary descriptions inspected (Ashoka is a PDF, not proof of current vacancy), one employer-indexed Workday description whose live rendering was empty. Skill counts combine duties and requirements and are not market prevalence. Do not treat frontier-lab pay as typical graduate pay.",
+  "postings": [
+    {
+      "employer": "Anthropic",
+      "title": "Research Engineer, Post-Training Model Evaluations",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5198255008",
+      "status": "Live employer application page",
+      "location": "San Francisco / Seattle",
+      "experience": "ML evaluations at scale; bachelor's or equivalent; level-dependent years",
+      "pay": "USD $500,000\u2013850,000 annual salary stated",
+      "skills": [
+        "Evaluation",
+        "Python",
+        "Production systems",
+        "Statistics/experiments",
+        "Communication",
+        "Monitoring"
+      ],
+      "evidence": "Evaluation strategy, regression investigation, dashboards/alerts; Python and production systems; statistics/experimental design preferred."
+    },
+    {
+      "employer": "Dscout",
+      "title": "AI Research Engineer",
+      "url": "https://job-boards.greenhouse.io/dscout/jobs/4472409009",
+      "status": "Live employer application page",
+      "location": "San Francisco / Bay Area",
+      "experience": "Published research; PhD/in progress or MS plus two research internships, or equivalent creative ML research",
+      "pay": "USD $250,000\u2013400,000 OTE plus equity, not base-only",
+      "skills": [
+        "Evaluation",
+        "Python",
+        "Statistics/experiments",
+        "Communication",
+        "Human judgment",
+        "AI coding tools"
+      ],
+      "evidence": "Rubric validity/reliability, inter-rater agreement and power, calibration of AI judges to humans, messy human data, Python pipelines, technical writing and AI coding tools."
+    },
+    {
+      "employer": "Turing",
+      "title": "AI Evaluation Engineer (Python)",
+      "url": "https://work.turing.com/r/5it0cUV8NC",
+      "status": "Live employer page with apply action; short contract dates must be reconfirmed",
+      "location": "Remote; four-hour PST overlap",
+      "experience": "3\u20135 years Python; relevant bachelor's",
+      "pay": "Not stated; two-month freelance contract, 40h/week, no medical/paid leave",
+      "skills": [
+        "Evaluation",
+        "Python",
+        "Communication",
+        "Software testing"
+      ],
+      "evidence": "Author realistic tasks/reference solutions/verifiers; data structures, algorithms, debugging and tests; clear written English and structured document formats. LLM eval background nice-to-have."
+    },
+    {
+      "employer": "Tactical Edge",
+      "title": "AI Evaluation Engineer",
+      "url": "https://www.tacticaledgeai.com/careers/qa-engineer/",
+      "status": "Live employer career page and application link",
+      "location": "Seattle onsite",
+      "experience": "Production software/AI/data or distributed-systems testing; no numeric years",
+      "pay": "No numeric range",
+      "skills": [
+        "Evaluation",
+        "Production systems",
+        "Communication",
+        "Human judgment",
+        "Monitoring",
+        "Software testing"
+      ],
+      "evidence": "Golden/adversarial/regression sets, release gates combining humans and telemetry; scored rubrics, CI/CD and observability; documented limitations."
+    },
+    {
+      "employer": "Ashoka University",
+      "title": "AI Evaluation Engineer",
+      "url": "https://careers.ashoka.edu.in/wp-content/uploads/2026/05/JD-for-AI-Evaluation-Engineer_V2DD.pdf",
+      "status": "Official May 2026 PDF accessible; current vacancy status unconfirmed",
+      "location": "Not captured; India institution",
+      "experience": "Relevant bachelor's/master's; 1\u20134 years desirable",
+      "pay": "Not captured",
+      "skills": [
+        "Evaluation",
+        "Python",
+        "Production systems",
+        "Communication",
+        "Monitoring",
+        "Data pipelines",
+        "Reproducibility"
+      ],
+      "evidence": "Medical evaluation pipelines, model submissions/leaderboards, WER/F1/clinical metrics, logging; Python mandatory, PyTorch/Hugging Face, APIs, batch/streaming, MLflow/W&B and documentation."
+    },
+    {
+      "employer": "OpenAI",
+      "title": "Product Evals Engineer, ChatGPT Learning",
+      "url": "https://openai.com/careers/product-evals-engineer-chatgpt-learning-san-francisco/",
+      "status": "Live employer career page and application link",
+      "location": "San Francisco, three office days/week",
+      "experience": "Strong software/data/evaluation engineering; no numeric years in description",
+      "pay": "USD $185,000\u2013490,000 base plus equity",
+      "skills": [
+        "Evaluation",
+        "Production systems",
+        "Statistics/experiments",
+        "Communication",
+        "Human judgment",
+        "Data pipelines"
+      ],
+      "evidence": "Learner-relevant quality metrics; representative datasets; automated/human grading calibration; information retrieval, experimentation and interpretable findings. Learning science preferred; no language specified."
+    },
+    {
+      "employer": "Microsoft AI",
+      "title": "Principal AI Evaluations Platform Engineer",
+      "url": "https://job-boards.greenhouse.io/microsoftcorporation/jobs/4409587009",
+      "status": "Live employer application page",
+      "location": "Zurich or London; four office days/week",
+      "experience": "BS+4 years or MS+2 years or equivalent; production distributed-systems/on-call experience",
+      "pay": "Switzerland CHF183,800\u2013309,700 base; UK range not shown",
+      "skills": [
+        "Evaluation",
+        "Python",
+        "Production systems",
+        "Communication",
+        "Monitoring"
+      ],
+      "evidence": "Benchmark/graders/runners infrastructure, scheduling and throughput, dashboards/runbooks; Python, distributed debugging/on-call. GPU workloads, Ray/Kubernetes/Slurm preferred."
+    },
+    {
+      "employer": "Karya",
+      "title": "Research Engineer, AI Evaluations",
+      "url": "https://job-boards.greenhouse.io/karya/jobs/5459428008",
+      "status": "Live employer application page",
+      "location": "Bengaluru, India; hybrid options",
+      "experience": "4+ years ML engineering/applied ML research; master's preferred or equivalent",
+      "pay": "Not stated",
+      "skills": [
+        "Evaluation",
+        "Python",
+        "Production systems",
+        "Statistics/experiments",
+        "Communication",
+        "Human judgment",
+        "Data pipelines",
+        "Reproducibility"
+      ],
+      "evidence": "Multilingual/speech benchmarks, rubrics and human adjudication, bias tests, uncertainty/agreement and judge calibration; Python/model-serving/ML pipelines with versioned reproducible configurations."
+    },
+    {
+      "employer": "HP",
+      "title": "Agentic AI Systems Evaluation Engineer",
+      "url": "https://job-boards.greenhouse.io/hp/jobs/6228405004",
+      "status": "Live employer application page",
+      "location": "Houston, Texas",
+      "experience": "7+ years relevant engineering; bachelor's or equivalent",
+      "pay": "USD $130,700\u2013205,200 annually; possible bonus/equity",
+      "skills": [
+        "Evaluation",
+        "Python",
+        "Statistics/experiments",
+        "Communication",
+        "Monitoring",
+        "Reproducibility"
+      ],
+      "evidence": "Repeatable model/runtime/hardware benchmarks; TTFT, tokens/sec, latency, memory, concurrent workloads; Python/C++ or similar. ONNX/GGUF and inference understanding required; experimental design preferred."
+    },
+    {
+      "employer": "Sedgwick",
+      "title": "AI Evaluation Engineer",
+      "url": "https://sedgwick.wd1.myworkdayjobs.com/en-US/Sedgwick/job/AI-Evaluation-Engineer_R80152",
+      "status": "Full employer-indexed description; direct page empty, application status unconfirmed",
+      "location": "US remote (header Telecommuter FL)",
+      "experience": "4+ years software/ML/data, 1\u20132 LLM years; master's preferred; description contains template wording",
+      "pay": "Not found",
+      "skills": [
+        "Evaluation",
+        "Python",
+        "Production systems",
+        "Statistics/experiments",
+        "Communication",
+        "Human judgment",
+        "Monitoring",
+        "Software testing",
+        "Cloud"
+      ],
+      "evidence": "LLM/RAG eval metrics, CI/CD quality gates, human-label/LLM-judge calibration, statistical significance/inter-rater agreement, red teaming and privacy tests; Python, eval tools, cloud and risk communication."
+    }
+  ],
+  "counts": {
+    "Evaluation": 10,
+    "Python": 8,
+    "Production systems": 7,
+    "Statistics/experiments": 6,
+    "Communication": 10,
+    "Monitoring": 6,
+    "Human judgment": 5,
+    "AI coding tools": 1,
+    "Software testing": 3,
+    "Data pipelines": 3,
+    "Reproducibility": 3,
+    "Cloud": 1
+  }
+}

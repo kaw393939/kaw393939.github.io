@@ -220,4 +220,24 @@ check('AI careers guide has discoverability, provenance, eligibility and SEO', (
   assert.ok(sitemap.includes('/ai-careers'))
 })
 
+check('Career skills report has 50 distinct sourced descriptions and honest limits', () => {
+  const careers = read('ai-careers.html')
+  const dataset = JSON.parse(read('research/ai-careers-2026-11-12.json'))
+  assert.equal(dataset.families.length, 5)
+  const postings = dataset.families.flatMap(f => f.postings)
+  assert.equal(postings.length, 50)
+  assert.equal(new Set(postings.map(p => p.url)).size, 50)
+  for (const family of dataset.families) {
+    assert.equal(family.postings.length, 10)
+    for (const count of Object.values(family.counts)) assert.ok(count >= 0 && count <= 10)
+    for (const p of family.postings) {
+      assert.ok(p.url.startsWith('https://') && p.evidence && p.status && p.skills.length)
+      assert.equal(p.checked_date, '2026-11-12')
+    }
+  }
+  for (const phrase of ['50 real posting descriptions', 'purposive convenience sample', 'current application status unconfirmed', 'expected-fill date', 'not hiring guarantees']) assert.ok(careers.includes(phrase), phrase)
+  assert.equal((careers.match(/class="career-evidence"/g) || []).length, 5)
+  assert.ok(careers.includes('/research/ai-careers-2026-11-12.json'))
+})
+
 console.log(`\n${checks.length} static checks passed. Browser and real-device checks remain separate.`)
