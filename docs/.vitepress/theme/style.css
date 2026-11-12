@@ -1988,3 +1988,18 @@ h1 em { color: var(--accent); }
 @media (prefers-reduced-motion: reduce) {
   .hero-audio-icon { transition: none; }
 }
+
+/* Language choice is always visible, including when the mobile menu is closed. */
+.locale-bar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; padding-block: 8px; font-size: 14px; }
+.locale-bar a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; }
+.locale-bar a[aria-current] { font-weight: 700; text-decoration-thickness: 2px; }
+.no-script-help { padding-block: 12px; }
+.no-script-help a { text-decoration: underline; }
+summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+.hero-audio-transcript summary { min-height: 44px; padding-block: 10px; }
+.footer-fine a { text-decoration: underline; text-underline-offset: 4px; }
+.document-page { overflow-wrap: anywhere; }
+@media (forced-colors: active) {
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline-color: Highlight; }
+  .button, .menu-toggle, .hero-audio-toggle { border: 1px solid ButtonText; }
+}

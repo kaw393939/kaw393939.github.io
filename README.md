@@ -80,3 +80,11 @@ The guide describes a working method, not an installable app or an automatic rem
 The homepage, Teaching and Research pages use a personal, plain-language voice. `docs/about.md` expands the biography Keith supplied from his older site. Proposed community initiatives are labeled as ideas, not operating programs. Keep those distinctions when editing.
 
 The canonical domain is `https://keithwilliams.org`. `docs/public/CNAME` is copied into the built root and retained by the existing publication script. The Knowledge Lab mirror uses the same domain. DNS and GitHub Pages configuration are separate from source publication; verify HTTPS and the live hostname before announcing a domain migration.
+
+## Internationalization and accessibility
+
+VitePress locale `pt-br` provides an explicitly partial Brazilian Portuguese introduction and accessibility page. The full English portfolio remains authoritative. Shared interface copy is in `docs/.vitepress/theme/i18n.ts`; new locale landing pages must clearly state coverage and translation-review status. Language names, not flags, identify choices. No visitor is redirected based on language or location, and no third-party translation widget receives page data.
+
+Do not claim that the Portuguese introduction is an equivalent translation of every English page. Canonicals are per page; add hreflang pairs only for genuinely equivalent translations. Project sites under other subpaths have their own locale and accessibility scope.
+
+The accessibility page states the WCAG 2.2 AA goal and actual testing limitations. Static tests verify selected markup and metadata, not full conformance. Before claiming a pass, manually test keyboard navigation (including Escape and mobile menu), zoom/reflow, screen reader language changes, audio controls/transcript, and target sizes on real devices. The mobile menu resets on every route change; the language selector and a no-JavaScript fallback remain available outside the collapsed menu.
