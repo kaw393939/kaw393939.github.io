@@ -42,3 +42,7 @@ I'm also interested in practical community AI education: helping people understa
 [More about my background and ideas](/about) · [How I teach AI](/teaching) · [Start a public conversation](/#conversation)
 
 *Personal research interests. No completed study, institutional endorsement, or formal doctoral appointment is implied.*
+
+## Explore the changing job market
+
+[AI Careers: real jobs, internships and skills](/ai-careers) connects employer requirements to practical projects you can build and explain. It is a dated research snapshot, not a promise of employment.

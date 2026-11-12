@@ -108,7 +108,7 @@ check('Valid profile structured data', () => {
 })
 check('Sitemap excludes the error page; error page is noindex', () => {
   assert.ok(!sitemap.includes('/404'))
-  assert.equal((sitemap.match(/<loc>/g) || []).length, 5)
+  assert.equal((sitemap.match(/<loc>/g) || []).length, 6)
   assert.ok(sitemap.includes('/teaching'))
   assert.ok(sitemap.includes('/research'))
   assert.match(error, /name="robots" content="noindex, follow"/)
@@ -202,8 +202,22 @@ check('Personal story is sourced and proposals are distinguished from accomplish
   assert.ok(sitemap.includes('/about'))
   assert.equal((about.match(/<h1\b/g) || []).length, 1)
 })
-console.log(`\n${checks.length} static checks passed. Browser and real-device checks remain separate.`)
+
 
 assert.ok(!home.includes('is373-greeting'))
 assert.ok(!home.includes('Hi, IS373! Welcome to my portfolio.'))
 assert.ok(home.includes('/images/keith-portrait-20261111-960.webp'))
+
+check('AI careers guide has discoverability, provenance, eligibility and SEO', () => {
+  const careers = read('ai-careers.html')
+  assert.equal((careers.match(/<h1\b/g) || []).length, 1)
+  for (const phrase of ['November 12, 2026', 'November 20, 2026', 'annualized', 'experienced professional roles', 'not market averages', 'No employer affiliation']) assert.ok(careers.includes(phrase), phrase)
+  for (const host of ['www.google.com', 'nvidia.wd5.myworkdayjobs.com', 'jobs.lever.co', 'openai.com', 'job-boards.greenhouse.io']) assert.ok(careers.includes(host), host)
+  assert.ok(careers.includes('https://keithwilliams.org/ai-careers'))
+  assert.ok(careers.includes('application/ld+json'))
+  assert.ok(home.includes('Explore AI careers'))
+  assert.ok(home.includes('>AI Careers</a>'))
+  assert.ok(sitemap.includes('/ai-careers'))
+})
+
+console.log(`\n${checks.length} static checks passed. Browser and real-device checks remain separate.`)

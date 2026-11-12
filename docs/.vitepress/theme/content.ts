@@ -1,4 +1,5 @@
 export const navItems = [
+  { id: 'ai-careers', label: 'AI Careers', href: '/ai-careers' },
   { id: 'teaching', label: 'Teaching', href: '/teaching' },
   { id: 'research', label: 'Research', href: '/research' },
   { id: 'projects', label: 'Projects', href: '/#projects' },

@@ -45,7 +45,7 @@ onMounted(() => {
   observeSections()
   document.addEventListener('keydown', dismissMenu)
   document.addEventListener('click', handleOutsideClick)
-  desktopQuery = window.matchMedia('(min-width: 721px)')
+  desktopQuery = window.matchMedia('(min-width: 1051px)')
   desktopQuery.addEventListener('change', closeMenu)
 })
 onUnmounted(() => {
@@ -96,6 +96,11 @@ onUnmounted(() => {
       <span>Director<span>B.S. Enterprise AI</span></span>
       <span class="credential-location"><span class="small-cross" aria-hidden="true">+</span> Grounded in education.<br>Looking toward what's next.</span>
     </div>
+
+    <section class="career-feature wrap" aria-labelledby="career-feature-title">
+      <div><p class="eyebrow">CAREER FIELD NOTES · CHECKED NOVEMBER 12, 2026</p><h2 id="career-feature-title">What are employers<br><em>actually asking for?</em></h2><p>Real AI roles, internships, skills and pay. Start with evidence, then decide what to learn and build.</p></div>
+      <a class="button button-dark" href="/ai-careers">Explore AI careers <SiteIcon name="arrow-up-right" class="link-arrow" /></a>
+    </section>
 
     <section id="missions" class="focus-section wrap" aria-labelledby="missions-title">
       <div class="section-heading">

@@ -1,0 +1,54 @@
+{
+  "checked_at": "2026-11-12",
+  "scope": "Selected employer postings; not a comprehensive labor-market sample",
+  "sources": [
+    {
+      "label": "Read the Google posting and apply",
+      "url": "https://www.google.com/about/careers/applications/jobs/results/75665705386549958-forward-deployed-engineering-intern-bsms-summer-2027",
+      "checked_at": "2026-11-12",
+      "source_type": "official employer posting"
+    },
+    {
+      "label": "Read the NVIDIA posting and apply",
+      "url": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/AI-Operations-Intern--AI-Clouds---Summer-2027_JR2029119-1",
+      "checked_at": "2026-11-12",
+      "source_type": "official employer posting"
+    },
+    {
+      "label": "Read the Palantir posting and apply",
+      "url": "https://jobs.lever.co/palantir/d5486403-c050-4920-b2e0-91b69b61ebb2",
+      "checked_at": "2026-11-12",
+      "source_type": "official employer posting"
+    },
+    {
+      "label": "Read the official OpenAI FDE posting",
+      "url": "https://openai.com/careers/forward-deployed-software-engineer-nyc-new-york-city/",
+      "checked_at": "2026-11-12",
+      "source_type": "official employer posting"
+    },
+    {
+      "label": "Read the official Anthropic posting",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5057647008",
+      "checked_at": "2026-11-12",
+      "source_type": "official employer posting"
+    },
+    {
+      "label": "Read the official Applied AI Architect posting",
+      "url": "https://openai.com/careers/applied-ai-architect-new-york-city/",
+      "checked_at": "2026-11-12",
+      "source_type": "official employer posting"
+    },
+    {
+      "label": "Read the official AI Deployment Manager posting",
+      "url": "https://openai.com/careers/ai-deployment-manager-builder-new-york-city/",
+      "checked_at": "2026-11-12",
+      "source_type": "official employer posting"
+    },
+    {
+      "label": "Read the official AI Systems Engineer posting",
+      "url": "https://openai.com/careers/ai-systems-engineer-codex-agents-san-francisco/",
+      "checked_at": "2026-11-12",
+      "source_type": "official employer posting"
+    }
+  ]
+}

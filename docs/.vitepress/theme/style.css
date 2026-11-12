@@ -1988,3 +1988,20 @@ h1 em { color: var(--accent); }
 @media (prefers-reduced-motion: reduce) {
   .hero-audio-icon { transition: none; }
 }
+
+/* Careers is a maintained research destination, not a temporary announcement. */
+.career-feature { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding-block: 42px; border-block: 1px solid var(--line); }
+.career-feature h2 { font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin-top: 12px; }
+.career-feature p:not(.eyebrow) { max-width: 58ch; margin-top: 16px; line-height: 1.7; color: var(--body); }
+.career-feature .button { flex-shrink: 0; }
+@media (min-width: 721px) { .site-header nav { gap: clamp(12px, 1.6vw, 25px); font-size: 14px; } }
+@media (max-width: 850px) { .career-feature { flex-direction: column; align-items: flex-start; } }
+
+@media (min-width: 721px) and (max-width: 1050px) {
+  .header-inner { height: 80px; }
+  .menu-toggle { display: flex; align-items: center; gap: 12px; background: transparent; border: 0; padding: 12px; color: var(--ink); }
+  .site-header nav { display: none; position: absolute; top: 80px; left: 0; right: 0; background: var(--paper); border-bottom: 1px solid var(--line); padding: 16px 24px; max-height: calc(100dvh - 80px); overflow-y: auto; align-items: stretch; gap: 4px; }
+  .site-header nav.open { display: flex; flex-direction: column; }
+  .site-header nav > a { padding: 12px 0; font-size: 16px; }
+  .site-header .nav-contact { margin-left: 0; }
+}

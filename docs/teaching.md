@@ -49,3 +49,7 @@ When AI helps produce an assignment, how do we know what the student learned? Th
 [Explore my research questions](/research) · [Read my story](/about) · [See the projects](/#projects)
 
 *This is my teaching approach, not an official NJIT curriculum statement or a claim of measured learning gains.*
+
+## Explore the changing job market
+
+[AI Careers: real jobs, internships and skills](/ai-careers) connects employer requirements to practical projects you can build and explain. It is a dated research snapshot, not a promise of employment.

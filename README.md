@@ -80,3 +80,7 @@ The guide describes a working method, not an installable app or an automatic rem
 The homepage, Teaching and Research pages use a personal, plain-language voice. `docs/about.md` expands the biography Keith supplied from his older site. Proposed community initiatives are labeled as ideas, not operating programs. Keep those distinctions when editing.
 
 The canonical domain is `https://keithwilliams.org`. `docs/public/CNAME` is copied into the built root and retained by the existing publication script. The Knowledge Lab mirror uses the same domain. DNS and GitHub Pages configuration are separate from source publication; verify HTTPS and the live hostname before announcing a domain migration.
+
+## AI careers research
+
+The public [AI Careers field guide](https://keithwilliams.org/ai-careers) lives in `docs/ai-careers.md`, with prominent homepage and navigation links. It separates internships from experienced roles and dates all employer-source checks. Recurring research should update this existing destination, not create duplicate pages or schedules. Before publication, reopen sources, recheck deadlines and availability, distinguish salary from annualized internship pay, preserve uncertainty and never turn a selected sample into market-wide claims. No private applications or student records belong here.
