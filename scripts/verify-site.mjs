@@ -82,7 +82,7 @@ check('Research series and advisor proposal are generated and accessible', () =>
   ]
   for (const page of paths) {
     const html = read(`research/systems/${page}.html`)
-    assert.equal((html.match(/<h1\\b/g) || []).length, 1, page)
+    assert.equal((html.match(/<h1\b/g) || []).length, 1, page)
     assert.ok(html.includes('Keith Williams') || html.includes('Research'), page)
     assert.ok(!html.includes('https://github.com/kaw393939/uap-corpus'), 'private corpus repo URL leaked: ' + page)
     assert.ok(!html.includes('https://github.com/kaw393939/ordo_executor'), 'private executor repo URL leaked: ' + page)
