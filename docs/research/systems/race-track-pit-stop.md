@@ -55,7 +55,7 @@ Test three routing policies on held-out labeled cases: (a) review everything, (b
 
 ### Research precedents
 
-This is not a claim to have invented intelligent interruptions. [Horvitz et al. (1999)](https://www.microsoft.com/en-us/research/people/horvitz/publications/) studied attention-sensitive alerting. [Grandhi and Jones (2010)](https://digitalcommons.njit.edu/fac_pubs/6327/) analyzed interruption value and relational context. [Grandhi, Raban and Jones (2017)](https://digitalcommons.njit.edu/fac_pubs/9959/) found that information about an interruption changes how people judge whether it is worth responding.
+This is not a claim to have invented intelligent interruptions. [Horvitz et al. (1999)](https://www.microsoft.com/en-us/research/people/horvitz/publications/) studied attention-sensitive alerting. [Grandhi and Jones (2015)](https://digitalcommons.njit.edu/fac_pubs/6913/) found that additional context about an interruption improves people's ability to predict its value.
 
 The proposed contribution would be an evaluated mechanism for **commissioning and revising risk-aware human–AI decision policies with provenance**, not the idea of an interruption gate itself.
 
