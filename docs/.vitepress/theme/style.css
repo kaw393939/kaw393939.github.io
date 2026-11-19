@@ -2034,3 +2034,13 @@ h1 em { color: var(--accent); }
 .record-note { max-width: 85ch; font-size: 13px; line-height: 1.7; color: var(--muted); margin-top: 30px; }
 .record-note a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 850px) { .record-grid { grid-template-columns: 1fr; gap: 26px; } .record-section { padding-block: 48px; } }
+
+
+/* Accessibility improvements carried forward from the earlier unmerged site draft. */
+.site-header .nav-language { white-space: nowrap; font-size: 13px; font-weight: 650; text-underline-offset: 4px; }
+.document-page { overflow-wrap: anywhere; }
+@media (forced-colors: active) {
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid Highlight; outline-offset: 4px; }
+  .record-item { border-top-color: CanvasText; }
+  .skip-link:focus { outline: 2px solid Highlight; }
+}
