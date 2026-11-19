@@ -32,9 +32,9 @@ The work evolved through several experimental systems:
 | --- | --- | --- |
 | December 2024 | [Chunky Monkey](https://github.com/kaw393939/chunky-monkey-text-chunker): token-aware segmentation, metadata, hashing, verification | Make large information sources inspectable and reusable |
 | December 2025 | [MetaVis](https://github.com/kaw393939/metavis-demo-projects): Swift/Metal rendering, sensor evidence, deterministic QC, Gemini qualitative review, bounded QA loops | Explore measured versus probabilistic evaluation of generated media |
-| February–May 2026 | [Studio Ordo](https://github.com/kaw393939/ordostudio), [Ordo Executor](https://github.com/kaw393939/ordo_executor): agent evals, modular executors, source/candidate/review/promotion contracts | Convert interpretations into auditable, governed workflows |
+| February–May 2026 | [Studio Ordo](https://github.com/kaw393939/ordostudio), Ordo Executor (private prototype): agent evals, modular executors, source/candidate/review/promotion contracts | Convert interpretations into auditable, governed workflows |
 | July 2026 | [Ordo](https://github.com/kaw393939/ordo): Race Track/Pit Stop and human review doctrine | Formalize permission and attention constraints; runtime remains proposed |
-| November 2026 | [UAP Corpus](https://github.com/kaw393939/uap-corpus): metadata catalog and provenance-first acquisition design | Stress-test conflicting sources and duplicate testimony |
+| November 2026 | UAP Corpus (private research catalog): metadata catalog and provenance-first acquisition design | Stress-test conflicting sources and duplicate testimony |
 
 Dates refer to visible repository records and do not establish the original invention date of every idea. The MetaVis tests are real source code; the full proposed AEGO system has **not** yet been implemented or empirically validated.
 
