@@ -32,9 +32,9 @@ This is **structured compression with recoverable evidence**, not lossless compr
 
 ## UAP corpus as a difficult case
 
-My private [UAP Corpus](https://github.com/kaw393939/uap-corpus) contains a curated metadata-only catalog of **38 source records/leads as of November 12, 2026**, including government archives, hearings, scientific papers, books, historical investigations, and firsthand or secondhand accounts.
+My private UAP Corpus (private research catalog) contains a curated metadata-only catalog of **38 source records/leads as of November 12, 2026**, including government archives, hearings, scientific papers, books, historical investigations, and firsthand or secondhand accounts.
 
-The repository is explicit: no original corpus files have yet been acquired; its claim network is still a plan. Its [network proposal](https://github.com/kaw393939/uap-corpus/blob/main/site/network-plan.md) distinguishes firsthand observation, reporting, reprinting, correction, and contradiction.
+The repository is explicit: no original corpus files have yet been acquired; its claim network is still a plan. Its unpublished network-design notes distinguish firsthand observation, reporting, reprinting, correction, and contradiction.
 
 A rigorous pilot could start with a small rights-cleared selection, perhaps a government report and relevant congressional testimony. We would preserve source and publication dates separately from event dates, distinguish official positions from independent evidence, and represent uncertainty without forcing a binary conclusion.
 
