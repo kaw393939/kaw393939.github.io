@@ -84,6 +84,8 @@ onUnmounted(() => {
     </div>
   </header>
 
+  <noscript><p class="wrap no-script-help">JavaScript is disabled. Browse: <a href="/work">Work</a>, <a href="/teaching">Teaching</a>, <a href="/research/systems/">Research</a>, <a href="/about">About</a>, <a href="/pt-br/" lang="pt-BR">Português</a>.</p></noscript>
+
   <main v-if="isHome" id="main" tabindex="-1">
     <section class="hero wrap" aria-labelledby="hero-title">
       <div class="hero-copy">
