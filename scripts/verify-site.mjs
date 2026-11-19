@@ -14,18 +14,19 @@ function check(name, fn) { fn(); checks.push(name); console.log(`PASS ${name}`) 
 
 check('Homepage is pre-rendered with one H1 and original content', () => {
   assert.equal((home.match(/<h1\b/g) || []).length, 1)
-  for (const text of ['Teaching AI.', 'Rethinking', 'Education.', 'Keith Williams', 'Senior University Lecturer', 'B.S. Enterprise AI', 'Keep judgment human.', 'Public on GitHub', 'student records']) assert.ok(home.includes(text), text)
+  for (const text of ['Teaching AI.', 'Understanding.', 'Keith Williams', 'Senior University Lecturer', 'B.S. Enterprise AI', '23 years', '9,660', 'Public on GitHub', 'student records']) assert.ok(home.includes(text), text)
   assert.ok(home.includes('<main'))
 })
 check('Project cases and historical experience include status and source links', () => {
   assert.equal((home.match(/class="project-case"/g) || []).length, 5)
   assert.equal((home.match(/class="experience-entry"/g) || []).length, 2)
-  for (const text of ['Educational Design System', 'Everyday AI CLI', 'IS117 Brand Studio', 'Published phase-one foundation', 'Published alpha · v0.2.2', 'Public teaching template', 'full publishing roadmap is not complete', 'does not process payments or place orders']) assert.ok(home.includes(text), text)
+  for (const text of ['MetaVis', 'Educational Design System', 'IS117 Brand Studio', 'Ordo', 'Ordo Knowledge Lab', 'Published phase-one foundation', 'Public classroom template', 'does not process payments or place orders']) assert.ok(home.includes(text), text)
   for (const url of [
     'https://github.com/kaw393939/educational-design-system',
-    'https://github.com/kaw393939/everyday-ai-cli',
+    'https://github.com/kaw393939/metavis-demo-projects',
+    'https://github.com/kaw393939/ordo',
     'https://github.com/kaw393939/is117-brand-studio',
-    'https://pypi.org/project/everydayai-cli/0.2.2/',
+    'https://kaw393939.github.io/educational-design-system/',
     'https://news.njit.edu/inspiring-students-njit-africa',
     'https://news.njit.edu/njit-lecturer-helps-digitize-government-services-zambia'
   ]) assert.ok(home.includes(`href="${url}"`), url)
@@ -36,7 +37,7 @@ check('Knowledge Lab is prominent in navigation and accurate in project cases', 
   assert.ok(home.includes('href="/knowledge-lab/"'))
   assert.ok(home.includes('>Knowledge Lab</a>'))
   assert.ok(home.includes('Ordo Knowledge Lab'))
-  assert.ok(home.includes('research application planned'))
+  assert.ok(home.includes('application research planned'))
 })
 
 check('Section anchors and accessible heading references resolve uniquely', () => {
@@ -46,13 +47,13 @@ check('Section anchors and accessible heading references resolve uniquely', () =
   for (const [, references] of home.matchAll(/aria-labelledby="([^"]+)"/g)) {
     for (const id of references.split(' ')) assert.ok(ids.includes(id), id)
   }
-  assert.ok(home.includes('href="#projects"'))
+  assert.ok(home.includes('href="/work"'))
   for (const href of ['/teaching', '/research', '/#about']) assert.ok(home.includes(`href="${href}"`), href)
 })
 check('AI education missions and research agenda are explicit and qualified', () => {
   assert.equal((home.match(/class="focus-item"/g) || []).length, 2)
   assert.equal((home.match(/class="research-item"/g) || []).length, 4)
-  for (const phrase of ['TWO CONNECTED MISSIONS', 'Teaching AI', 'Rethinking Education', 'QUESTIONS WORTH TESTING', 'not claims of completed empirical research']) {
+  for (const phrase of ['TWO CONNECTED MISSIONS', 'Teaching through building', 'Engineering for evidence', 'QUESTIONS WORTH TESTING', 'not claims of completed empirical research']) {
     assert.ok(home.includes(phrase), phrase)
   }
   const teaching = read('teaching.html')
@@ -80,7 +81,11 @@ check('Research series and advisor proposal are generated and accessible', () =>
     'literature-and-faculty',
     'dissertation-proposal',
     'vision-and-interface',
-    'uap-research-testbed'
+    'uap-research-testbed',
+    'research-origins',
+    'epistemic-governance',
+    'advisor-brief',
+    'research-evidence-register'
   ]
   for (const page of paths) {
     const html = read(`research/systems/${page}.html`)
@@ -91,6 +96,29 @@ check('Research series and advisor proposal are generated and accessible', () =>
   }
   const research = read('research.html')
   assert.ok(research.includes('/research/systems/'), 'Research page should link to systems hub')
+})
+
+check('Professional record, advisor brief and language pages are rendered', () => {
+  const work = read('work.html')
+  for (const term of ['IS 117', 'IS 218', 'IS 219', 'IS 333', 'IS 373', 'IS 421', 'IS 425', 'IS 601', '9,660', 'Brook Wu', 'BSEAI']) {
+    assert.ok(work.includes(term), term)
+  }
+  assert.ok(work.includes('course enrollments') && work.includes('not 9,660 distinct people'))
+  assert.ok(home.includes('href="/work"'))
+  assert.ok(home.includes('id="record"'))
+  assert.ok(home.includes('href="/research/systems/"'))
+  const advisor = read('research/systems/advisor-brief.html')
+  assert.ok(advisor.includes('evaluation') && advisor.includes('provenance'))
+  const accessibility = read('accessibility.html')
+  assert.ok(accessibility.includes('WCAG 2.2 AA') && accessibility.includes('not a certification'))
+  const pt = read('pt-br/index.html')
+  assert.ok(pt.includes('lang="pt-BR"'))
+  assert.ok(pt.includes('revisão linguística independente'))
+  assert.ok(!pt.includes('https://keithwilliams.org/educational-design-system/'))
+  assert.ok(read('pt-br/acessibilidade.html').includes('lang="pt-BR"'))
+  for (const item of ['/work', '/accessibility', '/pt-br/', '/pt-br/acessibilidade', '/research/systems/advisor-brief']) {
+    assert.ok(sitemap.includes(item), item)
+  }
 })
 
 check('Hero narration is accessible and bundled as a local asset', () => {
@@ -117,7 +145,7 @@ check('Removed homepage popup stays absent', () => {
   assert.ok(!layout.includes('Making AI<br>work for'))
 })
 check('Unique title, canonical URL and share metadata', () => {
-  assert.match(home, /<title>Keith Williams · AI &amp; Education<\/title>/)
+  assert.match(home, /<title>Keith Williams · AI Education, Engineering &amp; Research<\/title>/)
   assert.match(home, /rel="canonical" href="https:\/\/keithwilliams.org\/"/)
   assert.match(home, /property="og:url" content="https:\/\/keithwilliams.org\/"/)
   assert.ok(home.includes('name="description"'))
@@ -133,7 +161,7 @@ check('Valid profile structured data', () => {
 })
 check('Sitemap excludes the error page; error page is noindex', () => {
   assert.ok(!sitemap.includes('/404'))
-  assert.ok((sitemap.match(/<loc>/g) || []).length >= 17, 'Sitemap should include the expanded research site')
+  assert.ok((sitemap.match(/<loc>/g) || []).length >= 24, 'Sitemap should include the expanded research site')
   assert.ok(sitemap.includes('/teaching'))
   assert.ok(sitemap.includes('/research'))
   assert.ok(sitemap.includes('/research/systems/vision-and-interface'))
@@ -191,7 +219,7 @@ check('Supporting paragraphs do not inherit small eyebrow typography', () => {
 check('Life Tracker guide is pre-rendered, discoverable, and has complete setup content', () => {
   assert.equal((guide.match(/<h1\b/g) || []).length, 1)
   for (const text of ['Life Tracker', 'How I use it', 'Set up your own', 'How I work with AI', 'A simple example', 'Keep the work private', 'status:needs-research', 'Completion criteria', 'Do not send messages or change other systems']) assert.ok(guide.includes(text), text)
-  assert.ok(home.includes('href="/life-tracker"'))
+  assert.ok(read('about.html').includes('href="/life-tracker"'))
   assert.ok(guide.includes('href="/life-tracker-starter.txt"'))
   assert.ok(!guide.includes('greeting-title'))
   assert.ok(guide.includes('id="main" tabindex="-1"'))
