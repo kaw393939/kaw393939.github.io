@@ -158,7 +158,7 @@ onUnmounted(() => {
     <section id="research" class="research-section wrap" aria-labelledby="research-title">
       <div class="section-heading">
         <p class="eyebrow">04 / QUESTIONS WORTH TESTING</p>
-        <div><h2 id="research-title">What should learning<br><em>look like now?</em></h2><p>If a tool can write the code or draft the answer, how do we help someone become a better thinker? I don't think the answer is simply to pretend the tool isn't there.</p></div>
+        <div><h2 id="research-title">How can we build<br><em>AI we can examine?</em></h2><p>I study how AI changes learning—and how systems can preserve evidence, explain decisions, and use human judgment where it matters.</p></div>
       </div>
       <div class="research-grid">
         <article v-for="question in researchQuestions" :key="question.number" class="research-item">
@@ -168,7 +168,7 @@ onUnmounted(() => {
         </article>
       </div>
       <p class="research-disclosure">These are questions guiding exploration and possible future studies, not claims of completed empirical research.</p>
-      <a class="text-link research-more" href="/research">Read the research agenda <SiteIcon name="arrow-up-right" class="link-arrow" /></a>
+      <a class="text-link research-more" href="/research">Research agenda <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a class="text-link research-more" href="/research/systems/">Systems research and case studies <SiteIcon name="arrow-up-right" class="link-arrow" /></a>
     </section>
 
     <section id="about" class="about-section wrap" aria-labelledby="about-title">
