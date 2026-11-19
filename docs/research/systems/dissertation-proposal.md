@@ -178,7 +178,7 @@ Established foundations include:
 
 This is a proposed intellectual alignment, not an indication of commitment by faculty.
 
-- **Jamie Payton, Dean, Ying Wu College of Computing:** dynamic sensor/query fidelity, learning-based adaptation and computing education. Her 2010 work is especially relevant to results that communicate their achieved guarantees.
+- **Jamie Payton, Dean, Ying Wu College of Computing:** a **secondary, bounded connection** through adaptive queries and reporting achieved consistency guarantees in dynamic mobile/sensor networks, plus computing education. Her 2009–2010 work does **not** directly investigate truthfulness of AI-generated claims, provenance-aware graph promotion, or expert-attention routing. Its applicability must be demonstrated, not assumed.
 - **Fadi P. Deek:** problem solving, software development processes, cognitive and collaborative evaluation; useful for the methodology and agent-engineering experiments.
 - **Cheickna Sylla:** multi-criteria decision modeling and technology evaluation; relevant to consequence, cost and review-routing policies.
 - **Michael A. Ehrlich:** innovation and financial decision-making; relevant to the economics of expert attention and the viability of high-value applications.
