@@ -11,6 +11,16 @@ That question keeps coming up in my teaching and in the tools I build. I don't t
 
 This is a set of interests and questions, **not a list of completed experiments or peer-reviewed findings**.
 
+## Research in AI systems and knowledge engineering
+
+Alongside my teaching research, I'm investigating how AI systems can transform messy text, audio, video, and documents into **personalized, source-grounded knowledge artifacts** while using human attention responsibly.
+
+The work connects multimodal sensors, deterministic tests, qualitative model evaluation, provenance, hybrid graph/vector retrieval, and human–AI decision policies. Some components exist in working software; the combined architecture remains a research proposal.
+
+**[Explore the six-article research series and technical case studies](/research/systems/)**
+
+For faculty discussion: [preliminary doctoral research proposal](/research/systems/dissertation-proposal) · [literature and NJIT faculty connections](/research/systems/literature-and-faculty).
+
 ## Can you use what you learned somewhere new?
 
 Someone may finish a project with AI and still struggle to explain or change it. I'd like to understand what kinds of practice help students carry their learning into a new situation.
