@@ -11,11 +11,15 @@ This is a selected record—not an exhaustive CV. I distinguish independently do
 
 ## University teaching and curriculum
 
-I began teaching at NJIT in 2002 and am now a **Senior University Lecturer in Informatics**, working on the **B.S. in Enterprise AI**. My teaching spans introductory web development, advanced web applications, mobile applications, APIs, open-source development, and systems work.
+I have spent **23 years at NJIT**. I am a **Senior University Lecturer in Informatics and director of the B.S. in Enterprise AI (BSEAI) degree**. My work includes course and program design, instruction, and leadership across web applications, information systems, and AI.
 
 My [NJIT faculty profile](https://people.njit.edu/profile/kwilliam) lists the courses I've taught. [NJIT's undergraduate programs](https://computing.njit.edu/undergraduate-degrees) describe the Enterprise AI degree. [NJIT's published syllabi](https://digitalcommons.njit.edu/info-syllabi/) provide dated examples of my teaching assignments.
 
-I helped develop the Web Systems curriculum and am now involved in its evolution toward Enterprise AI. My earlier [personal portfolio account](https://eaikw.com/about/) describes founding the Web Systems program, creating eight regularly offered courses, and teaching more than 10,000 students. **Those counts are my own historical account, not independently audited totals**; the institutional sources substantiate the long teaching record and the range of courses, but do not establish those exact figures.
+**I created eight NJIT courses:** IS 117, IS 218, IS 219, IS 333 (a course that may no longer be offered), IS 373, IS 421, IS 425, and IS 601. Their topics and catalog status have evolved over time. This is my first-person account of course authorship, supported by historical course listings and syllabi that verify the courses and my instruction; catalog listings alone do not establish who originally authored a course.
+
+I also **created the B.S. in Web and Information Systems (WIS) program and co-developed the B.S. in Enterprise AI**. My collaboration included **Brook Wu** and colleagues in Information Systems undergraduate leadership. I am currently **director of the BSEAI degree**. The [historic WIS program](https://informatics.njit.edu/bs-web-and-information-systems) and [BSEAI program](https://informatics.njit.edu/bs-enterprise-ai) are documented by NJIT. Collaborative curriculum design is not a solo achievement; I'm leaving additional collaborator names unspecified until correctly identified.
+
+My teaching volume provides another way to understand this record: approximately **14 sections a year, averaging 30 students per section, across 23 years**. That's an estimated **9,660 course enrollments**—not 9,660 distinct people, and not an official census. The estimate is based on my historical teaching pattern, with actual enrollment changing year to year.
 
 ### Teaching AI before it became a standard course topic
 
