@@ -51,7 +51,7 @@ check('Section anchors and accessible heading references resolve uniquely', () =
 })
 check('AI education missions and research agenda are explicit and qualified', () => {
   assert.equal((home.match(/class="focus-item"/g) || []).length, 2)
-  assert.equal((home.match(/class="research-item"/g) || []).length, 3)
+  assert.equal((home.match(/class="research-item"/g) || []).length, 4)
   for (const phrase of ['TWO CONNECTED MISSIONS', 'Teaching AI', 'Rethinking Education', 'QUESTIONS WORTH TESTING', 'not claims of completed empirical research']) {
     assert.ok(home.includes(phrase), phrase)
   }
@@ -66,6 +66,29 @@ check('AI education missions and research agenda are explicit and qualified', ()
   assert.ok(research.includes('peer-reviewed'))
   assert.ok(teaching.includes('rel="canonical" href="https://keithwilliams.org/teaching"'))
   assert.ok(research.includes('rel="canonical" href="https://keithwilliams.org/research"'))
+})
+
+check('Research series and advisor proposal are generated and accessible', () => {
+  const paths = [
+    'index',
+    'personalized-knowledge-artifacts',
+    'metavis-evidence-and-evaluation',
+    'race-track-pit-stop',
+    'provenance-knowledge-graphs',
+    'english-software-engineering',
+    'human-attention-kanban',
+    'literature-and-faculty',
+    'dissertation-proposal'
+  ]
+  for (const page of paths) {
+    const html = read(`research/systems/${page}.html`)
+    assert.equal((html.match(/<h1\\b/g) || []).length, 1, page)
+    assert.ok(html.includes('Keith Williams') || html.includes('Research'), page)
+    assert.ok(!html.includes('https://github.com/kaw393939/uap-corpus'), 'private corpus repo URL leaked: ' + page)
+    assert.ok(!html.includes('https://github.com/kaw393939/ordo_executor'), 'private executor repo URL leaked: ' + page)
+  }
+  const research = read('research.html')
+  assert.ok(research.includes('/research/systems/'), 'Research page should link to systems hub')
 })
 
 check('Hero narration is accessible and bundled as a local asset', () => {
