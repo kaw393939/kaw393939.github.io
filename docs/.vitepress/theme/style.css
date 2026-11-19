@@ -2044,3 +2044,6 @@ h1 em { color: var(--accent); }
   .record-item { border-top-color: CanvasText; }
   .skip-link:focus { outline: 2px solid Highlight; }
 }
+
+.no-script-help { padding-block: 14px; line-height: 1.7; font-size: 14px; }
+.no-script-help a { text-decoration: underline; text-underline-offset: 3px; margin-inline: 3px; }
