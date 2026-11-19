@@ -48,7 +48,7 @@ check('Section anchors and accessible heading references resolve uniquely', () =
     for (const id of references.split(' ')) assert.ok(ids.includes(id), id)
   }
   assert.ok(home.includes('href="/work"'))
-  for (const href of ['/teaching', '/research', '/#about']) assert.ok(home.includes(`href="${href}"`), href)
+  for (const href of ['/teaching', '/work', '/about', '/research/systems/']) assert.ok(home.includes(`href="${href}"`), href)
 })
 check('AI education missions and research agenda are explicit and qualified', () => {
   assert.equal((home.match(/class="focus-item"/g) || []).length, 2)
