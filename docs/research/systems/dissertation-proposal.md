@@ -18,7 +18,7 @@ Generative AI systems can transform unstructured text, images, audio, and video 
 
 This research proposes **Adaptive Evidence-Governed Orchestration (AEGO)**, a provisional reference architecture in which independently discoverable sensors report observations, capability descriptions and achieved guarantees. Analysis services propose interpretations; a separate policy layer evaluates evidence, error consequences and authority; and a capacity-aware workflow routes work through an automated **Race Track** or a review **Pit Stop**. During commissioning, humans and explicitly authorized AI delegates evaluate selected cases and can approve reusable, narrowly scoped policies. All observations, model evaluations, approval decisions, and knowledge promotions retain traceable provenance.
 
-The dissertation would design and evaluate a working prototype that ingests heterogeneous material, constructs a qualified hybrid graph/vector knowledge base, and generates personalized artifacts with evidence links. Its central question is whether adaptive, consequence-sensitive review can reduce the human attention required per qualified artifact while meeting specified reliability, provenance, and legal/ethical constraints.
+The dissertation would design and evaluate a working prototype that ingests heterogeneous material, constructs attributed claims in a qualified hybrid graph/vector knowledge base, and generates personalized briefings, readable dossiers and other artifacts with evidence links. The intended accountability is for faithful extraction, attribution, reasoning and source citation—not for asserting the ultimate truth of untestable events. Its central question is whether adaptive, consequence-sensitive review can reduce the human attention required per qualified artifact while meeting specified reliability, provenance, and legal/ethical constraints.
 
 The approach is **design science research**, supplemented by controlled comparisons, quantitative systems evaluation, and human-computer interaction studies. The contribution sought is an experimentally supported method for commissioning and operating trustworthy human–AI knowledge production, not a claim to have invented RAG, provenance, selective review, or Kanban.
 
@@ -87,7 +87,17 @@ Raw sources, extracted observations, candidate propositions, and qualified knowl
 
 The framework retains contradictory accounts and shared citation lineages. Knowledge promotion is a recorded, versioned action, with the reviewer or governing policy, rationale, conditions, and appeal or recovery path.
 
-### 4.3 Decision and governance engine
+### 4.3 Distinct graphs and an evidence-first interface
+
+The **claim/evidence graph** stores supported assertions, source passages, entity candidates and conflicting interpretations. A separate **navigation graph** connects readable topic pages and dossiers through hyperlinks. A page link does not imply that its endpoints are related in a verified factual sense.
+
+Wikipedia hyperlinks and their surrounding text can help discover candidate topics, while Wikidata provides candidate entity identifiers, properties and qualifiers. These are **attributed external sources**, not the UI template, the authoritative identity database, or proof that a relationship is true. Local stable identifiers retain mappings and revision history.
+
+The proposed interface combines an executive intelligence briefing, generated topic pages, focused graph neighborhoods, semantic/exact search, and an evidence inspector. A claim drill-down follows the Five Ws (who, what, when, where, why and how) and a bounded Five Whys investigation into why the **system made an assessment**. An accessible, contextual companion can answer questions about the selected topic and reveal source evidence on demand.
+
+Ordo's documented [Product & UX Model](https://github.com/kaw393939/ordo/blob/main/development-docs/PRODUCT-UX.md) and [Briefing UI Runtime](https://github.com/kaw393939/ordo/blob/main/agentic-appliance/architecture/briefing-ui-runtime.md) inform the proposed render contract. The native Swift page-node graph discussed during prior experiments has not been verified as source code in the accessible repository and should not be described as a delivered product.
+
+### 4.4 Decision and governance engine
 
 The engine considers anticipated consequence of an error, uncertainty of the relevant sensors, evidence strength, reversibility, authority, and downstream dependencies. It may:
 
@@ -99,19 +109,19 @@ The engine considers anticipated consequence of an error, uncertainty of the rel
 
 **Delegation of analysis is not delegation of authorization.** Hard permission boundaries cannot be optimized away.
 
-### 4.4 Commissioning and policy improvement
+### 4.5 Commissioning and policy improvement
 
 In early supervised operation, reviewers resolve selected cases. The system may recommend a scoped future rule, supported by historical examples and a held-out evaluation. A qualified operator must explicitly authorize policy activation. The active policy, training examples, model versions, revisions, expiration/revocation conditions, and observed outcomes are logged.
 
 Policies should **never** be inferred as permission solely from repeated approvals.
 
-### 4.5 Flow and resource control
+### 4.6 Flow and resource control
 
 A queueing/scheduling layer limits work in progress for expensive resource classes and respects human review capacity. Large ingest streams live in durable work queues, not individual visible Kanban cards. The UI presents meaningful batches, exceptions, and decisions with progressive disclosure.
 
 The objective combines computation cost, expert time, delays, expected consequences and recovery, subject to hard reliability and authority constraints.
 
-### 4.6 Personalized artifact engine
+### 4.7 Personalized artifact engine
 
 Qualified knowledge can support multiple artifact types—text explanations, instructional content, reports, audiovisual media, interactive diagrams or machine-readable agent packets. Each artifact retains derivation links and notes any assumptions introduced during generation.
 
@@ -122,6 +132,10 @@ Generated artifacts are **derivatives**, not new independent evidence supporting
 Use **design science research** following Hevner et al. (2004): identify a practical problem, design an artifact, evaluate it against baseline approaches, revise its theory and implementation, and communicate both positive and negative results.
 
 ### Study A — Sensor evidence and knowledge construction
+
+**Why UAP:** government and historical UAP records form a difficult testbed for source lineage, multimodal attribution, entity disambiguation, conflicting claims, event versus publication dates, uncertainty and changing releases. NASA's [2023 study](https://www.nasa.gov/wp-content/uploads/2023/09/uap-independent-study-team-final-report-0.pdf) identified missing sensor metadata/calibration as real limitations. The [National Archives RG 615](https://www.archives.gov/research/topics/uaps/rg-615) provides an official collection updated as records arrive. The goal is **faithfulness to evidence**, not adjudicating extraordinary explanations. A second labeled benchmark is mandatory for quantitative ground truth. See [research testbed rationale](./uap-research-testbed).
+
+
 
 **Dataset:** a small rights-cleared sample from the UAP Corpus (private research catalog) including official and nongovernment records, plus an additional corpus with independently checkable labels (e.g., annotated email/public-event data or an established entity-resolution benchmark).
 
@@ -136,6 +150,8 @@ Do **not** score extraordinary UAP claims as true or false absent independent gr
 **Design:** randomized or counterbalanced tasks across review-all, fixed-confidence, and progressively calibrated consequence-aware policies. Independently annotated cases and predefined error consequences are required.
 
 **Measures:** human minutes, false promotions, missed mandatory escalation, reviewer error, notification count, time to resolve, calibration curves, policy generalization, and user confidence. Evaluate a simple recommendation-only interface against an optional expanded evidence view.
+
+A separate **interface comparison** should ask whether an executive brief plus optional graph/source drill-down helps people recognize dependent sources, identify unsupported claims, and reconstruct changed assessments more accurately than an ordinary chat interface or a raw document list. The graph must earn its screen space through measured usability, not its visual appeal.
 
 Human-participant research, educational records, or organizational correspondence would require appropriate institutional/privacy review before collection.
 
@@ -165,6 +181,10 @@ Established foundations include:
 - [GraphRAG](https://arxiv.org/abs/2404.16130) (2024) — graph-based corpus summarization;
 - [Learning to Defer](https://proceedings.mlr.press/v119/mozannar20b.html) (Mozannar and Sontag, 2020) — algorithmic allocation to experts;
 - [GRACE](https://aclanthology.org/2026.akbc-1.16/) (Yi, Minot, and Lee, 2026) — expert attention in graph knowledge expansion;
+- [Provenance-Enhanced Statements](https://arxiv.org/abs/2606.15246) (Vitali and Pasqual, 2026 preprint) — attributed claims and competing epistemic stances;
+- [Epistemic Knowledge Graphs](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7525242) (Kakatkar and Khatib, 2026 working paper) — epistemic status and provenance-aware explanations;
+- [Ontology-guided neuro-symbolic GraphRAG](https://link.springer.com/article/10.1007/s00521-026-12495-0) (2026) — independent empirical comparison with explicit source-traceability measures;
+- [ICD 203](https://www.intelligence.gov/mission/our-values/objectivity) — established analytic tradecraft for source quality, uncertainty and alternatives;
 - [G-Eval](https://aclanthology.org/2023.emnlp-main.153/) (2023) — LLM-based qualitative evaluation;
 - [Payton et al.](https://doi.org/10.1145/1734229.1734231) (2010) — semantic self-assessment and achieved fidelity of query results;
 - [Deek et al.](https://digitalcommons.njit.edu/fac_pubs/16112/) (1999) — structured software problem solving and program development;
