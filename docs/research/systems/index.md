@@ -33,9 +33,9 @@ This is my developing research program. It grew out of building software and exp
 
 ## Implemented evidence versus proposals
 
-**Implemented evidence:** [Chunky Monkey](https://github.com/kaw393939/chunky-monkey-text-chunker) (document processing), [MetaVis](https://github.com/kaw393939/metavis-demo-projects) (Swift/Metal pipeline, sensors and QA code), [Ordo Executor](https://github.com/kaw393939/ordo_executor) (composable ingestion and candidate-promotion contracts).
+**Implemented evidence:** [Chunky Monkey](https://github.com/kaw393939/chunky-monkey-text-chunker) (document processing), [MetaVis](https://github.com/kaw393939/metavis-demo-projects) (Swift/Metal pipeline, sensors and QA code), Ordo Executor (private research prototype) (composable ingestion and candidate-promotion contracts).
 
-**Design and investigation:** [Ordo](https://github.com/kaw393939/ordo) (business appliance doctrine, governance and a runtime that its README says has not started), [UAP Corpus](https://github.com/kaw393939/uap-corpus) (38 curated metadata records and acquisition design; source files not yet downloaded).
+**Design and investigation:** [Ordo](https://github.com/kaw393939/ordo) (business appliance doctrine, governance and a runtime that its README says has not started), UAP Corpus (private research catalog) (38 curated metadata records and acquisition design; source files not yet downloaded).
 
 **Open research question:** no controlled evaluation has yet established the reliability or economic advantage of the full proposed architecture. This site presents that as a hypothesis worth testing, not a result.
 
