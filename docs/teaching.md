@@ -7,7 +7,9 @@ description: Keith Williams helps students learn AI and software development by 
 
 **AI literacy is not just knowing which button to click.** It's being able to ask a useful question, make something, and decide whether the result deserves your trust.
 
-I've taught at NJIT for more than two decades. The tools have changed a lot. What still makes teaching worthwhile is seeing someone go from “I don't know where to start” to “I can figure this out.”
+I've taught at NJIT for **23 years**, developed eight Information Systems courses (IS 117, 218, 219, 333, 373, 421, 425 and 601), created the Web and Information Systems degree, and co-developed the B.S. in Enterprise AI. I'm now director of BSEAI. The tools have changed a lot. What still makes teaching worthwhile is seeing someone go from “I don't know where to start” to “I can figure this out.”
+
+My typical teaching load has been about 14 sections per year, averaging 30 students: roughly **9,660 course enrollments** over 23 years, not unique students. Those years also include international teaching and public-sector software experience. [Selected work and sources](/work).
 
 ## Build something you can explain
 
