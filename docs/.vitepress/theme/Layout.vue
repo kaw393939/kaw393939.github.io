@@ -5,9 +5,11 @@ import { site } from '../site'
 import { navItems, focusAreas, approachSteps, projects, zambiaExperience, researchQuestions } from './content'
 import SiteIcon from './components/SiteIcon.vue'
 import HeroAudio from './components/HeroAudio.vue'
+import { messages } from './i18n'
 
 const { frontmatter, page } = useData()
 const isPortuguese = computed(() => page.value.relativePath.startsWith('pt-br/'))
+const t = computed(() => messages[isPortuguese.value ? 'ptBR' : 'en'])
 const displayNav = computed(() => isPortuguese.value
   ? [
       { id: 'history', label: 'Minha história', href: '/pt-br/#um-pouco-da-minha-historia' },
@@ -65,18 +67,18 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">{{ t.skip }}</a>
   <header ref="header" class="site-header">
     <div class="header-inner">
-      <a class="wordmark" :href="isPortuguese ? '/pt-br/' : '/'" :aria-label="isPortuguese ? 'Página inicial de Keith Williams' : 'Keith Williams home'">
+      <a class="wordmark" :href="isPortuguese ? '/pt-br/' : '/'" :aria-label="t.homeLabel">
         <SiteIcon name="compass" class="compass-mark" />
-        <span>Keith Williams<span class="wordmark-sub">AI & EDUCATION</span></span>
+        <span>Keith Williams<span class="wordmark-sub">{{ t.subtitle }}</span></span>
       </a>
-      <button ref="menuButton" type="button" class="menu-toggle" :aria-expanded="menuOpen" aria-controls="site-nav" @click="menuOpen = !menuOpen">{{ menuOpen ? (isPortuguese ? 'Fechar' : 'Close') : 'Menu' }} <span aria-hidden="true">{{ menuOpen ? '−' : '+' }}</span></button>
-      <nav id="site-nav" :class="{ open: menuOpen }" :aria-label="isPortuguese ? 'Navegação principal' : 'Main navigation'">
+      <button ref="menuButton" type="button" class="menu-toggle" :aria-expanded="menuOpen" aria-controls="site-nav" @click="menuOpen = !menuOpen">{{ menuOpen ? t.close : t.menu }} <span aria-hidden="true">{{ menuOpen ? '−' : '+' }}</span></button>
+      <nav id="site-nav" :class="{ open: menuOpen }" :aria-label="t.navigation">
         <a v-for="item in displayNav" :key="item.id" :href="item.href" :aria-current="item.href.startsWith('/#') && activeSection === item.id ? 'location' : undefined" @click="closeMenu">{{ item.label }}</a>
         <a v-if="!isPortuguese" class="nav-lab" href="/knowledge-lab/" @click="closeMenu">Knowledge Lab</a>
-        <a class="nav-contact" :href="isPortuguese ? '/pt-br/#vamos-conversar' : '/#conversation'" @click="closeMenu">{{ isPortuguese ? 'Conversar' : 'Let\'s talk' }} <SiteIcon name="arrow-down-right" class="link-arrow" /></a>
+        <a class="nav-contact" :href="isPortuguese ? '/pt-br/#vamos-conversar' : '/#conversation'" @click="closeMenu">{{ t.talk }} <SiteIcon name="arrow-down-right" class="link-arrow" /></a>
         <a class="nav-language" :href="isPortuguese ? '/' : '/pt-br/'" :title="isPortuguese ? 'English homepage' : 'Portuguese introduction; other pages remain in English'" @click="closeMenu">{{ isPortuguese ? 'English' : 'Português' }}</a>
       </nav>
     </div>
@@ -234,5 +236,5 @@ onUnmounted(() => {
   </main>
   <main v-else id="main" tabindex="-1" class="document-page wrap"><Content /></main>
 
-  <footer class="site-footer wrap"><div><a class="footer-name" :href="isPortuguese ? '/pt-br/' : '/'">Keith Williams</a><p>{{ isPortuguese ? 'Curiosidade com direção.' : 'Curiosity with a compass.' }}</p></div><div class="footer-links"><a :href="isPortuguese ? '/pt-br/acessibilidade' : '/accessibility'">{{ isPortuguese ? 'Acessibilidade' : 'Accessibility' }} <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a :href="site.linkedin">LinkedIn <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a :href="site.github">GitHub <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a :href="site.faculty">NJIT <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a href="#main">Back to top <SiteIcon name="arrow-up" class="link-arrow" /></a></div><div class="footer-fine"><span>© {{ new Date().getFullYear() }} Keith Williams</span><span>Built with VitePress · AI-generated landscape artwork</span><span>Personal website. Views are my own.</span></div></footer>
+  <footer class="site-footer wrap"><div><a class="footer-name" :href="isPortuguese ? '/pt-br/' : '/'">Keith Williams</a><p>{{ t.tagline }}</p></div><div class="footer-links"><a :href="isPortuguese ? '/pt-br/acessibilidade' : '/accessibility'">{{ t.accessibility }} <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a :href="site.linkedin">LinkedIn <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a :href="site.github">GitHub <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a :href="site.faculty">NJIT <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a href="#main">{{ t.top }} <SiteIcon name="arrow-up" class="link-arrow" /></a></div><div class="footer-fine"><span>© {{ new Date().getFullYear() }} Keith Williams</span><span>{{ t.credit }}</span><span>{{ t.personal }}</span></div></footer>
 </template>
