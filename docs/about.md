@@ -13,7 +13,9 @@ That feeling has stayed with me through a lot of changes in technology.
 
 ## Building things, teaching people
 
-I began teaching at NJIT as an adjunct in 2002. Over more than two decades, I've developed courses and helped shape the Web and Information Systems program. Today I'm a Senior University Lecturer and director of the B.S. in Enterprise AI.
+I've spent **23 years at NJIT**, beginning as an adjunct in 2002. Over that time I created eight courses—**IS 117, 218, 219, 333, 373, 421, 425, and 601**—and helped build the undergraduate programs students learn within. I created the B.S. in Web and Information Systems and co-developed the B.S. in Enterprise AI with Brook Wu and other colleagues. Today I'm a **Senior University Lecturer and director of BSEAI**.
+
+Across roughly 14 sections a year with about 30 students per section, that represents **approximately 9,660 course enrollments over 23 years**. It's an estimate of seats taught, not a count of distinct students. The courses and curriculum have changed many times, as technology and the needs of students have changed. [My professional record](/work) gives the detailed context.
 
 I enjoy working with students as they become people who can build, explain, question, and improve things. The projects matter, but so does the confidence that comes from figuring something out and making it work.
 
@@ -31,7 +33,7 @@ NJIT has written about that work in [Inspiring Students from NJIT to Africa](htt
 
 I started using ChatGPT shortly after it launched. What interested me was not just that it could produce answers, but that it could change how we learn, design, and build.
 
-My current interests include AI-assisted software development, tools that connect answers to their sources, and the relationship between knowledge graphs and retrieval. You can explore some of that through the <a href="/knowledge-lab/">Knowledge Lab</a> and my [public projects](/#projects).
+My recent work brings together personalized knowledge artifacts, AI-assisted software development, epistemology, source-linked claims, graph navigation, and the question of when information is sufficiently justified for a particular use. You can explore some of that through the <a href="/knowledge-lab/">Knowledge Lab</a> and my [public projects](/#projects).
 
 I also use AI to help organize ongoing work. [Life Tracker](/life-tracker) explains that approach: keep a clear record, check what actually happened, and make the next step easier. It is a working method, not a promise that an assistant can do everything on its own.
 
