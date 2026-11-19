@@ -34,9 +34,9 @@ The graph would act as a compressed map of the information, not a replacement fo
 
 **December 2025 — [MetaVis](https://github.com/kaw393939/metavis-demo-projects).** I explored native Swift and Metal media processing, sensor observations, deterministic reference tests, and Gemini-based qualitative reviews. The architecture separated ambiguous interpretation from typed, reversible execution. The code and sprint records provide a richer account than a feature list.
 
-**2026 — [Ordo](https://github.com/kaw393939/ordo) and [Ordo Executor](https://github.com/kaw393939/ordo_executor).** The focus moved toward model-agnostic tools, source manifests, evidence-bearing artifacts, graph candidates, explicit promotion, and risk-based human review. The main Ordo repository contains extensive specifications; its documented Elixir runtime is still planned.
+**2026 — [Ordo](https://github.com/kaw393939/ordo) and Ordo Executor (private prototype).** The focus moved toward model-agnostic tools, source manifests, evidence-bearing artifacts, graph candidates, explicit promotion, and risk-based human review. The main Ordo repository contains extensive specifications; its documented Elixir runtime is still planned.
 
-**November 2026 — [UAP Corpus](https://github.com/kaw393939/uap-corpus).** This is a deliberately difficult collection for testing shared-source repetition, contradictory accounts, provenance, and unknowns. The repository contains metadata and acquisition planning, not a completed downloaded corpus.
+**November 2026 — UAP Corpus (private research catalog).** This is a deliberately difficult collection for testing shared-source repetition, contradictory accounts, provenance, and unknowns. The repository contains metadata and acquisition planning, not a completed downloaded corpus.
 
 These dated repository milestones establish a progression of experimentation, not priority over all prior academic work. Commit dates can also postdate the first idea.
 
