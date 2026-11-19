@@ -51,7 +51,7 @@ Throughput alone is a poor outcome measure: if the system promotes incorrect kno
 
 Does value-aware scheduling outperform FIFO or fixed-confidence review when reviewer capacity is limited? Can progressive commissioning reduce the number of low-value human interruptions without increasing errors? Can progressive-disclosure review interfaces help experts understand and resolve cases more accurately?
 
-Earlier work matters here. [Horvitz et al. (1999)](https://www.microsoft.com/en-us/research/people/horvitz/publications/) studied attention-sensitive alerting. [Jones and coauthors](https://digitalcommons.njit.edu/fac_pubs/9959/) investigated the role of interruption context. [Sylla and Wen (2002)](https://digitalcommons.njit.edu/fac_pubs/14771/) combined decision criteria and goal programming for technology evaluation. [GRACE (2026)](https://aclanthology.org/2026.akbc-1.16/) expressly optimizes return on expert attention.
+Earlier work matters here. [Horvitz et al. (1999)](https://www.microsoft.com/en-us/research/people/horvitz/publications/) studied attention-sensitive alerting. [Grandhi and Jones (2015)](https://digitalcommons.njit.edu/fac_pubs/6913/) investigated the role of interruption context. [Sylla and Wen (2002)](https://digitalcommons.njit.edu/fac_pubs/14771/) combined decision criteria and goal programming for technology evaluation. [GRACE (2026)](https://aclanthology.org/2026.akbc-1.16/) expressly optimizes return on expert attention.
 
 The research claim must therefore involve a **specific new mechanism and measured benefit**, not simply recognizing that review time is scarce.
 
