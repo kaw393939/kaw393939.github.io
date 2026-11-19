@@ -22,6 +22,14 @@ The dissertation would design and evaluate a working prototype that ingests hete
 
 The approach is **design science research**, supplemented by controlled comparisons, quantitative systems evaluation, and human-computer interaction studies. The contribution sought is an experimentally supported method for commissioning and operating trustworthy human–AI knowledge production, not a claim to have invented RAG, provenance, selective review, or Kanban.
 
+## Investigator background and research trajectory
+
+I bring **23 years at NJIT** as a lecturer and curriculum developer, including the creation of IS 117, 218, 219, 333, 373, 421, 425 and 601; creation of the Web and Information Systems degree; and co-development of the B.S. in Enterprise AI with Brook Wu and other colleagues. I now direct BSEAI. Approximately 14 sections per year at around 30 students each represents about **9,660 course enrollments** across 23 years, not 9,660 unique students; this is a self-reported workload estimate. [Selected professional record](/work) and [evidence register](./research-evidence-register) distinguish these personal course-author attributions from independently documented program/course existence.
+
+That career connects the engineering question to personalized education. I have explored fictional universes such as Star Trek and Star Wars where many factual inconsistencies can be checked against explicitly selected canon; native multimedia engineering through MetaVis where some outcomes are deterministic and others qualitative; and UAP historical information where the underlying truth may remain unavailable but source attribution and reasoning can still be checked.
+
+I describe the underlying AI capabilities as **large-scale reading, writing and recommendation**. The research seeks to make their results appropriately justified *for use*, not to make all information perfectly certain. [Epistemic-governance position](./epistemic-governance) explains this distinction and its philosophical precedents.
+
 ## 1. Motivation and origin of the problem
 
 The initial motivation was **personalized knowledge artifacts**: lessons, reports, audio explanations, interactive material, and other presentations tailored to individual users and objectives. Producing such artifacts cheaply is insufficient if they distort facts, obscure uncertain evidence, or require costly manual verification.
@@ -234,6 +242,10 @@ The prototype can reuse selective design ideas and code from MetaVis and Ordo Ex
 **Stage 4 — Synthesis:** limitations, comparative evaluation, theory refinement, and publishable engineering artifacts.
 
 ## 11. Questions for prospective advisors
+
+For a concise version of these ideas, see [Advisor Discussion Brief](./advisor-brief). For a source-by-source separation of the existing record from untested hypotheses, see [Research Evidence and Claim Status](./research-evidence-register).
+
+
 
 1. Is the central contribution best framed as an **Information Systems design-science artifact**, a **Computer Science optimization algorithm**, or a joint program?
 2. Which single outcome should anchor the dissertation: consequential error at fixed review budget, or human minutes at fixed reliability?
