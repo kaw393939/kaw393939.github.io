@@ -57,7 +57,7 @@ export const researchQuestions = [
   },
   {
     number: '04', title: 'Reliable knowledge from messy information',
-    text: 'How can sensors, provenance and selective review turn mixed sources into useful, verifiable knowledge without exhausting human attention?'
+    text: 'How can we turn conflicting sources into explainable knowledge, with citations, progressive disclosure and informed human review?'
   }
 ]
 
