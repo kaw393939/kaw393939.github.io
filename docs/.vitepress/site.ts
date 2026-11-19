@@ -1,8 +1,8 @@
 // Shared identity and destinations for the page, metadata, and structured data.
 export const site = {
   name: 'Keith Williams',
-  title: 'Keith Williams · AI & Education',
-  description: 'Teaching AI. Rethinking Education. Keith Williams connects AI education, software engineering, and human judgment.',
+  title: 'Keith Williams · AI Education, Engineering & Research',
+  description: 'Keith Williams directs NJIT\'s B.S. in Enterprise AI, develops computing curricula, builds software and studies evidence-governed AI and personalized knowledge.',
   url: 'https://keithwilliams.org',
   linkedin: 'https://www.linkedin.com/in/keithwilliams5/',
   github: 'https://github.com/kaw393939',

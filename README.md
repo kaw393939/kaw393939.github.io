@@ -4,11 +4,12 @@ Personal professional homepage, built with VitePress and a custom Vue theme.
 
 ## Editorial direction
 
-**Teaching AI. Rethinking Education.** The site presents two connected missions: help people use AI with judgment, and investigate how AI changes learning, assessment, and curriculum.
+**23 years teaching and building. Now investigating evidence-governed AI.** The site presents an evidence-linked professional record and a developing research agenda. Its audience includes students, academic collaborators, and technical practitioners.
 
 - `docs/index.md` and `docs/.vitepress/theme/Layout.vue`: homepage and dual-mission overview.
 - `docs/teaching.md`: practical AI education and grounded classroom examples.
 - `docs/research.md`: proposed research questions and methods; not a claim of completed empirical research.
+- `docs/work.md`: sourced professional record with eight course-creation attributions, two degree programs and a clearly marked 9,660 course-enrollment estimate.
 - `docs/research/systems/`: six source-linked research articles, a preliminary advisor proposal and faculty literature map. These are working papers, **not** peer-reviewed publications or claims of advisor approval.
 - `CONTENT_SOURCES.md`: external evidence and publication-status guardrails for project and career claims.
 

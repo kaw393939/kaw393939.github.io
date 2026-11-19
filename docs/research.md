@@ -13,13 +13,15 @@ This is a set of interests and questions, **not a list of completed experiments 
 
 ## Research in AI systems and knowledge engineering
 
+My research did not begin as an abstract proposal. It grew from **23 years of teaching and curriculum development**, building software and trying to verify the output of increasingly capable AI systems. I direct NJIT's B.S. in Enterprise AI and have created courses spanning introductory web systems through advanced applications. [Read my professional work record](/work).
+
 Alongside my teaching research, I'm investigating how AI systems can transform messy text, audio, video, and documents into **personalized, source-grounded knowledge artifacts** while using human attention responsibly.
 
 The work connects multimodal sensors, deterministic tests, qualitative model evaluation, provenance, hybrid graph/vector retrieval, and human–AI decision policies. Some components exist in working software; the combined architecture remains a research proposal.
 
-**[Explore the six-article research series and technical case studies](/research/systems/)**
+**[Explore the research program, articles, prototypes and evidence](/research/systems/)**
 
-For faculty discussion: [preliminary doctoral research proposal](/research/systems/dissertation-proposal) · [literature and NJIT faculty connections](/research/systems/literature-and-faculty).
+For faculty discussion: [short advisor brief](/research/systems/advisor-brief) · [full preliminary proposal](/research/systems/dissertation-proposal) · [literature and NJIT faculty connections](/research/systems/literature-and-faculty).
 
 ## Can you use what you learned somewhere new?
 

@@ -1,134 +1,133 @@
 export const navItems = [
-  { id: 'ai-careers', label: 'AI Careers', href: '/ai-careers' },
+  { id: 'work', label: 'Work', href: '/work' },
+  { id: 'research', label: 'Research', href: '/research/systems/' },
   { id: 'teaching', label: 'Teaching', href: '/teaching' },
-  { id: 'research', label: 'Research', href: '/research' },
-  { id: 'projects', label: 'Projects', href: '/#projects' },
-  { id: 'about', label: 'About', href: '/#about' }
+  { id: 'ai-careers', label: 'AI Careers', href: '/ai-careers' },
+  { id: 'about', label: 'About', href: '/about' }
 ]
 export const focusAreas = [
   {
-    number: '01', icon: 'book', title: 'Teaching AI',
-    text: 'Make AI less mysterious by using it to build something real. Then ask what worked, what failed, and what you can explain in your own words.',
-    tag: 'Skills, literacy & applied learning', href: '/teaching', linkLabel: 'Explore teaching'
+    number: '01', icon: 'book', title: 'Teaching through building',
+    text: 'I design courses and learning tools where students create something, test it, explain decisions, and develop judgment they can carry into new work.',
+    tag: 'Education · curriculum · AI-assisted learning', href: '/teaching', linkLabel: 'Explore my teaching'
   },
   {
-    number: '02', icon: 'judgment', title: 'Rethinking Education',
-    text: 'A finished assignment is not the whole story. I want to understand how people learn with AI and how we can recognize the judgment they develop.',
-    tag: 'Inquiry, curriculum & assessment', href: '/research', linkLabel: 'Explore research questions'
+    number: '02', icon: 'judgment', title: 'Engineering for evidence',
+    text: 'I build systems that make AI-generated work inspectable: source-aware claims, measured tests, adaptive review, and explanations people can challenge.',
+    tag: 'Software · epistemology · human–AI systems', href: '/research/systems/', linkLabel: 'Read the research'
   }
 ]
 export const approachSteps = [
   {
-    "number": "01",
-    "title": "Ask a better question.",
-    "text": "Start with the people, the problem, and the context. Give curiosity a useful direction."
+    number: '01',
+    title: 'Start with the real problem.',
+    text: 'Who needs the result, what should it accomplish, and what evidence would make it useful?'
   },
   {
-    "number": "02",
-    "title": "Make the intent clear.",
-    "text": "Write down the goal, the constraints, and what a good result should look like."
+    number: '02',
+    title: 'Build something testable.',
+    text: 'Turn the intent into specifications, working software, measurable constraints, and source-linked artifacts.'
   },
   {
-    "number": "03",
-    "title": "Build. Test. Learn.",
-    "text": "Turn ideas into something tangible. Evaluate the result, examine the gaps, and improve it."
+    number: '03',
+    title: 'Question the answer.',
+    text: 'Separate measurement, interpretation, and authorization. Follow claims back to original sources.'
   },
   {
-    "number": "04",
-    "title": "Keep judgment human.",
-    "text": "Use AI to extend capability while staying accountable for the decisions that matter."
+    number: '04',
+    title: 'Improve with evidence.',
+    text: 'Compare alternatives, learn from errors, and adopt new automation policies only when they are evaluated.'
   }
 ]
 
-
-// Inquiry directions, not statements of completed empirical research.
+// Proposed research questions, not assertions of completed empirical studies.
 export const researchQuestions = [
   {
-    number: '01', title: 'Learning beyond the generated answer',
-    text: 'How can AI-assisted assignments develop independent problem-solving, transfer of learning, and the ability to evaluate generated work?'
+    number: '01', title: 'When is evidence sufficient?',
+    text: 'Can AI match the type and cost of verification to a claim’s intended use and the consequences of being wrong?'
   },
   {
-    number: '02', title: 'Assessment when AI can produce the artifact',
-    text: 'What evidence should count as learning: process, explanation, testing, judgment, collaboration, or the finished product?'
+    number: '02', title: 'Who should review the output?',
+    text: 'How can deterministic checks, models and people share evaluation work without confusing confidence with authority?'
   },
   {
-    number: '03', title: 'Working with AI without handing over judgment',
-    text: 'How do we give AI useful work, check its evidence, and stay responsible for the decisions it helps us make?'
+    number: '03', title: 'Can we navigate the reasoning?',
+    text: 'Can briefings, page-link graphs and original-source citations help people investigate an assessment?'
   },
   {
-    number: '04', title: 'Reliable knowledge from messy information',
-    text: 'How can we turn conflicting sources into explainable knowledge, with citations, progressive disclosure and informed human review?'
+    number: '04', title: 'What do students actually learn?',
+    text: 'Do personalized evidence-explorable lessons improve independent understanding and source evaluation?'
   }
 ]
 
-
-// Case summaries checked against each public repository and linked primary sources.
+// Case summaries are linked to visible implementations or openly marked design documents.
 export const projects = [
   {
-    id: 'educational-design-system',
+    id: 'metavis',
     number: '01',
-    title: 'Educational Design System',
-    category: 'Learning systems',
-    status: 'Published phase-one foundation',
-    summary: 'A documentation-first foundation for consistent teaching materials and static educational sites.',
+    title: 'MetaVis',
+    category: 'Swift / Metal · Experimental media engineering',
+    status: 'Research code and tests · December 2025',
+    summary: 'A native media-processing experiment combining deterministic measurements with optional AI qualitative evaluation.',
     details: [
-      { label: 'Built', text: 'Design tokens, shared layouts, teaching primitives, typed page recipes, and release-selected static builds.' },
-      { label: 'Practice', text: 'Explicit specifications, review records, and accessibility checks connect content decisions to a verifiable release.' }
+      { label: 'Built', text: 'Swift/Metal rendering, sensor output, media QC, golden tests, optional Gemini QA, and performance measurement.' },
+      { label: 'Why', text: 'Explore what can be verified by code, what requires judgment, and how evaluation results can be traced and challenged.' }
     ],
-    note: 'The foundation is published. Later authoring and observability work remains in development; the full publishing roadmap is not complete.',
+    note: 'Experimental research code; some real-media fixtures and optional QA paths are not independently reproducible from the repository.',
     links: [
-      { label: 'Explore the site', href: 'https://kaw393939.github.io/educational-design-system/' },
-      { label: 'View source', href: 'https://github.com/kaw393939/educational-design-system' }
+      { label: 'Technical case study', href: '/research/systems/metavis-evidence-and-evaluation' },
+      { label: 'Inspect source', href: 'https://github.com/kaw393939/metavis-demo-projects' }
     ]
   },
   {
-    id: 'everyday-ai-cli',
+    id: 'educational-design-system',
     number: '02',
-    title: 'Everyday AI CLI',
-    category: 'AI tooling · Python',
-    status: 'Published alpha · v0.2.2',
-    summary: 'A command-line toolkit that brings AI image, audio, and search workflows into repeatable commands.',
+    title: 'Educational Design System',
+    category: 'Learning systems · publishing',
+    status: 'Published phase-one foundation',
+    summary: 'Reusable educational interfaces, course materials, typed content recipes, and evidence-linked publishing workflows.',
     details: [
-      { label: 'Built', text: 'Commands for image generation and analysis, transcription, speech, audio translation, and web search.' },
-      { label: 'Practice', text: 'A plugin architecture lets additional commands extend the toolkit without replacing its core interface.' }
+      { label: 'Built', text: 'Design tokens, shared layouts, teaching primitives, page recipes, and version-selected static release builds.' },
+      { label: 'Why', text: 'Make personalized teaching materials consistent, reviewable, and easier to maintain.' }
     ],
-    note: 'Published on PyPI as an alpha. AI commands require access to the relevant provider APIs.',
+    note: 'Phase-one baseline is available. The larger authoring and observability roadmap is incomplete.',
     links: [
-      { label: 'View source', href: 'https://github.com/kaw393939/everyday-ai-cli' },
-      { label: 'View PyPI release', href: 'https://pypi.org/project/everydayai-cli/0.2.2/' }
+      { label: 'Explore the site', href: 'https://kaw393939.github.io/educational-design-system/' },
+      { label: 'Inspect source', href: 'https://github.com/kaw393939/educational-design-system' }
     ]
   },
   {
     id: 'is117-brand-studio',
     number: '03',
     title: 'IS117 Brand Studio',
-    category: 'AI-assisted education',
-    status: 'Public teaching template',
-    summary: 'A guided studio where students turn a neutral T-shirt storefront into a brand and a live style guide.',
+    category: 'AI-supported teaching',
+    status: 'Public classroom template',
+    summary: 'Students turn a plain T-shirt storefront into a brand while explaining decisions and testing their work.',
     details: [
-      { label: 'Built', text: 'A working storefront, shared styles, a live identity board, and a structured AI-coaching workflow.' },
-      { label: 'Practice', text: 'Students explain their decisions, inspect the result, and review a short learning record alongside browser and accessibility checks.' }
+      { label: 'Built', text: 'Neutral storefront, a live style guide, structured AI coaching, and a student learning record.' },
+      { label: 'Why', text: 'Make the student’s reasoning visible alongside the artifact an AI helped them build.' }
     ],
-    note: 'An educational template. The shopping bag is a demonstration and does not process payments or place orders.',
+    note: 'The shopping bag is a demonstration and does not process payments or place orders.',
     links: [
-      { label: 'Visit the studio', href: 'https://kaw393939.github.io/is117-brand-studio/studio.html' },
-      { label: 'View template', href: 'https://github.com/kaw393939/is117-brand-studio' }
+      { label: 'View teaching template', href: 'https://github.com/kaw393939/is117-brand-studio' },
+      { label: 'How I teach', href: '/teaching' }
     ]
   },
   {
-    id: 'life-tracker',
+    id: 'ordo',
     number: '04',
-    title: 'Life Tracker',
-    category: 'Human + AI workflow',
-    status: 'Private workspace · Public how-to guide',
-    summary: 'A practical way to keep the next step clear when work is scattered across conversations and documents.',
+    title: 'Ordo',
+    category: 'Agent governance · systems design',
+    status: 'Documented architecture · runtime planned',
+    summary: 'A local-first governance harness for AI work: artifacts, permissions, human review, event ledgers, and recovery.',
     details: [
-      { label: 'What', text: 'A private GitHub work queue with clear owners, next actions, and checks for completion.' },
-      { label: 'Why', text: 'AI helps research and organize the work. I set the direction, review decisions, and check the outcome.' }
+      { label: 'Designed', text: 'Race Track / Pit Stop, artifact specs, evidence drawers, briefing-oriented UI, and explicit approval events.' },
+      { label: 'Research', text: 'How to spend human attention where it changes decisions and verify what automated systems are allowed to do.' }
     ],
-    note: 'The guide explains the method and how to set up your own version. Private records stay private.',
+    note: 'The repository’s documented Elixir/Phoenix application runtime has not started. Architectural specifications are not a shipped appliance.',
     links: [
-      { label: 'Read the setup guide', href: '/life-tracker' }
+      { label: 'Read architecture', href: 'https://github.com/kaw393939/ordo' },
+      { label: 'Research context', href: '/research/systems/race-track-pit-stop' }
     ]
   },
   {
@@ -136,15 +135,15 @@ export const projects = [
     number: '05',
     title: 'Ordo Knowledge Lab',
     category: 'AI knowledge systems · education',
-    status: 'Public textbook and student labs · research application planned',
-    summary: 'A research-grounded VitePress learning resource that connects RAG, databases, AI, systems engineering and evidence-driven software.',
+    status: 'Published course material · application research planned',
+    summary: 'Student guides and examples on retrieval, AI models, databases, embeddings, source evidence, and modern systems engineering.',
     details: [
-      { label: 'Available', text: 'IS373 RAG student guides, practical prompts, synthetic examples, design documentation and tested learning labs.' },
-      { label: 'Next', text: 'A portable knowledge engine with evidence, identity review, streaming retrieval and optional specialized model workers.' }
+      { label: 'Available', text: 'Published VitePress student lessons, exercises and tested examples.' },
+      { label: 'Next', text: 'A portable evidence-aware knowledge engine with entity review and hybrid retrieval.' }
     ],
-    note: 'The educational website and examples are available. The full research runtime, hosted chat, and native AI workers remain planned.',
+    note: 'The educational material exists. The planned research runtime and specialized native workers are not delivered.',
     links: [
-      { label: 'Explore the textbook', href: '/knowledge-lab/' },
+      { label: 'Explore Knowledge Lab', href: '/knowledge-lab/' },
       { label: 'View project source', href: 'https://github.com/kaw393939/is373-rag' }
     ]
   }

@@ -5,8 +5,18 @@ import { site } from '../site'
 import { navItems, focusAreas, approachSteps, projects, zambiaExperience, researchQuestions } from './content'
 import SiteIcon from './components/SiteIcon.vue'
 import HeroAudio from './components/HeroAudio.vue'
+import { messages } from './i18n'
 
-const { frontmatter } = useData()
+const { frontmatter, page } = useData()
+const isPortuguese = computed(() => page.value.relativePath.startsWith('pt-br/'))
+const t = computed(() => messages[isPortuguese.value ? 'ptBR' : 'en'])
+const displayNav = computed(() => isPortuguese.value
+  ? [
+      { id: 'history', label: 'Minha história', href: '/pt-br/#um-pouco-da-minha-historia' },
+      { id: 'interests', label: 'Interesses', href: '/pt-br/#o-que-me-interessa' },
+      { id: 'resources', label: 'Recursos', href: '/pt-br/#por-onde-comecar' }
+    ]
+  : navItems)
 const isHome = computed(() => frontmatter.value.layout === 'home')
 const menuOpen = ref(false)
 const menuButton = ref<HTMLButtonElement>()
@@ -40,7 +50,7 @@ const observeSections = () => {
   }, { rootMargin: '-20% 0px -60% 0px' })
   sections.forEach(section => observer?.observe(section))
 }
-watch(isHome, () => { closeMenu(); observeSections() }, { flush: 'post' })
+watch(() => page.value.relativePath, () => { closeMenu(); observeSections() }, { flush: 'post' })
 onMounted(() => {
   observeSections()
   document.addEventListener('keydown', dismissMenu)
@@ -57,29 +67,32 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">{{ t.skip }}</a>
   <header ref="header" class="site-header">
     <div class="header-inner">
-      <a class="wordmark" href="/" aria-label="Keith Williams home">
+      <a class="wordmark" :href="isPortuguese ? '/pt-br/' : '/'" :aria-label="t.homeLabel">
         <SiteIcon name="compass" class="compass-mark" />
-        <span>Keith Williams<span class="wordmark-sub">AI & EDUCATION</span></span>
+        <span>Keith Williams<span class="wordmark-sub">{{ t.subtitle }}</span></span>
       </a>
-      <button ref="menuButton" type="button" class="menu-toggle" :aria-expanded="menuOpen" aria-controls="site-nav" @click="menuOpen = !menuOpen">{{ menuOpen ? 'Close' : 'Menu' }} <span aria-hidden="true">{{ menuOpen ? '−' : '+' }}</span></button>
-      <nav id="site-nav" :class="{ open: menuOpen }" aria-label="Main navigation">
-        <a v-for="item in navItems" :key="item.id" :href="item.href" :aria-current="item.href.startsWith('/#') && activeSection === item.id ? 'location' : undefined" @click="closeMenu">{{ item.label }}</a>
-        <a class="nav-lab" href="/knowledge-lab/" @click="closeMenu">Knowledge Lab</a>
-        <a class="nav-contact" href="/#conversation" @click="closeMenu">Let's talk <SiteIcon name="arrow-down-right" class="link-arrow" /></a>
+      <button ref="menuButton" type="button" class="menu-toggle" :aria-expanded="menuOpen" aria-controls="site-nav" @click="menuOpen = !menuOpen">{{ menuOpen ? t.close : t.menu }} <span aria-hidden="true">{{ menuOpen ? '−' : '+' }}</span></button>
+      <nav id="site-nav" :class="{ open: menuOpen }" :aria-label="t.navigation">
+        <a v-for="item in displayNav" :key="item.id" :href="item.href" :aria-current="item.href.startsWith('/#') && activeSection === item.id ? 'location' : undefined" @click="closeMenu">{{ item.label }}</a>
+        <a v-if="!isPortuguese" class="nav-lab" href="/knowledge-lab/" @click="closeMenu">Knowledge Lab</a>
+        <a class="nav-contact" :href="isPortuguese ? '/pt-br/#vamos-conversar' : '/#conversation'" @click="closeMenu">{{ t.talk }} <SiteIcon name="arrow-down-right" class="link-arrow" /></a>
+        <a class="nav-language" :href="isPortuguese ? '/' : '/pt-br/'" :title="isPortuguese ? 'English homepage' : 'Portuguese introduction; other pages remain in English'" @click="closeMenu">{{ isPortuguese ? 'English' : 'Português' }}</a>
       </nav>
     </div>
   </header>
 
+  <noscript><p class="wrap no-script-help">JavaScript is disabled. Browse: <a href="/work">Work</a>, <a href="/teaching">Teaching</a>, <a href="/research/systems/">Research</a>, <a href="/about">About</a>, <a href="/pt-br/" lang="pt-BR">Português</a>.</p></noscript>
+
   <main v-if="isHome" id="main" tabindex="-1">
     <section class="hero wrap" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span> EDUCATOR · BUILDER · LIFELONG LEARNER</p>
-        <h1 id="hero-title">Teaching AI.<br>Rethinking<br><em>Education.</em></h1>
-        <p class="hero-intro">I'm Keith Williams. I've spent more than two decades helping students build things and find their way in technology. Now I'm exploring what AI makes possible, and how we can use it without losing our curiosity or judgment.</p>
-        <div class="hero-actions"><a class="button button-dark" href="#projects">See the work <SiteIcon name="arrow-down-right" class="link-arrow" /></a><a class="text-link" href="#missions">What I care about <SiteIcon name="arrow-down-right" class="link-arrow" /></a></div>
+        <p class="eyebrow"><span class="status-dot"></span> EDUCATOR · SOFTWARE ENGINEER · PROGRAM DIRECTOR</p>
+        <h1 id="hero-title">Teaching AI.<br>Building<br><em>Understanding.</em></h1>
+        <p class="hero-intro">I'm Keith Williams. For 23 years at NJIT I've developed computing courses and degree programs, taught software engineering, and helped people build useful technology. Today I direct the B.S. in Enterprise AI and investigate how AI-generated knowledge can be examined, explained, and trusted for its intended purpose.</p>
+        <div class="hero-actions"><a class="button button-dark" href="/work">Explore my work <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a class="text-link" href="/research/systems/">Read the research <SiteIcon name="arrow-up-right" class="link-arrow" /></a></div>
         <HeroAudio />
         <div class="hero-footnote"><span class="small-cross" aria-hidden="true">+</span> Build something. Learn from it. Share what helps.</div>
       </div>
@@ -94,8 +107,19 @@ onUnmounted(() => {
       <span class="credential-institution">NJIT<span>New Jersey Institute<br>of Technology</span></span>
       <span>Senior University Lecturer<span>Informatics</span></span>
       <span>Director<span>B.S. Enterprise AI</span></span>
-      <span class="credential-location"><span class="small-cross" aria-hidden="true">+</span> Grounded in education.<br>Looking toward what's next.</span>
+      <span class="credential-location"><span class="small-cross" aria-hidden="true">+</span> 23 years at NJIT.<br>Built through practice.</span>
     </div>
+
+
+    <section id="record" class="record-section wrap" aria-labelledby="record-title">
+      <div class="section-heading compact"><p class="eyebrow">THE RECORD BEHIND THE RESEARCH</p><div><h2 id="record-title">Experience before<br><em>theory.</em></h2><p>These contributions form the foundation of my current research in AI and knowledge systems.</p></div></div>
+      <div class="record-grid">
+        <article class="record-item"><strong>23 years</strong><h3>Teaching at NJIT</h3><p>About 14 sections a year, averaging 30 students. Roughly 9,660 course enrollments over my career, not a count of unique students.</p></article>
+        <article class="record-item"><strong>8 courses</strong><h3>Courses I created</h3><p>IS 117, 218, 219, 333, 373, 421, 425 and 601. Course content and catalog status have evolved over time.</p></article>
+        <article class="record-item"><strong>2 degrees</strong><h3>Curriculum creation</h3><p>Created the Web and Information Systems degree and co-developed Enterprise AI, working with Brook Wu and other colleagues. I now direct BSEAI.</p></article>
+      </div>
+      <p class="record-note">Teaching-volume estimates and course authorship are my first-person professional record; NJIT program pages and historical syllabi independently document the programs and courses. <a href="/work">Read details and sources</a>.</p>
+    </section>
 
     <section class="career-feature wrap" aria-labelledby="career-feature-title">
       <div><p class="eyebrow">CAREER FIELD NOTES · CHECKED NOVEMBER 12, 2026</p><h2 id="career-feature-title">What are employers<br><em>actually asking for?</em></h2><p>Real AI roles, internships, skills and pay. Start with evidence, then decide what to learn and build.</p></div>
@@ -158,7 +182,7 @@ onUnmounted(() => {
     <section id="research" class="research-section wrap" aria-labelledby="research-title">
       <div class="section-heading">
         <p class="eyebrow">04 / QUESTIONS WORTH TESTING</p>
-        <div><h2 id="research-title">How can we build<br><em>AI we can examine?</em></h2><p>I study how AI changes learning—and how systems can preserve evidence, explain decisions, and use human judgment where it matters.</p></div>
+        <div><h2 id="research-title">How can we build<br><em>AI we can examine?</em></h2><p>My research grew from teaching and building systems, then repeatedly asking how to verify AI-produced information and when human judgment is needed.</p></div>
       </div>
       <div class="research-grid">
         <article v-for="question in researchQuestions" :key="question.number" class="research-item">
@@ -176,7 +200,7 @@ onUnmounted(() => {
         <img src="/images/keith-portrait-20261111-960.webp" srcset="/images/keith-portrait-20261111-480.webp 480w, /images/keith-portrait-20261111-960.webp 960w, /images/keith-portrait-20261111-1440.webp 1440w" sizes="(max-width: 720px) min(440px, calc(100vw - 40px)), (max-width: 1392px) 46vw, 638px" alt="Keith Williams in a classroom" width="2316" height="3088" loading="lazy" decoding="async">
         <figcaption><span>02 / THE EDUCATOR</span><span>Keith Williams</span></figcaption>
       </figure>
-      <div class="about-copy"><p class="eyebrow">05 / A LITTLE BACKGROUND</p><h2 id="about-title">An educator.<br>A builder.<br><em>Always a learner.</em></h2><p>My father worked with mainframe computers at Alcoa. I grew up around that world, and a TRS-80 Color Computer 2 for Christmas in 1983 gave me a place to start making things of my own.</p><p>That curiosity has taken me from teaching children in an AmeriCorps program in Pittsburgh to classrooms at NJIT and software engineering work in Zambia. Along the way, I've built software, developed courses, and learned a great deal from the people I teach.</p><p>AI is the next chapter, not a new identity. I'm still interested in the same thing: helping people turn a confusing new technology into something they can understand and use.</p><a class="text-link" href="/about">Read my story <SiteIcon name="arrow-up-right" class="link-arrow" /></a></div>
+      <div class="about-copy"><p class="eyebrow">05 / AN EXPERIENCED BUILDER</p><h2 id="about-title">23 years teaching.<br>Decades <em>building.</em></h2><p>I started programming in 1983 on a TRS-80 and later built software products, taught with AmeriCorps, and worked on digital public services in Zambia.</p><p>At NJIT I created eight IS courses and the WIS degree, then co-developed the B.S. in Enterprise AI with colleagues including Brook Wu. I now direct that program. My estimated 9,660 course enrollments over 23 years reflect a typical load, not a unique-student count.</p><p>The research grows from that work: when AI can read, write, and recommend at scale, how do we make its information useful, verifiable, and appropriate to its purpose?</p><a class="text-link" href="/work">Read my professional record <SiteIcon name="arrow-up-right" class="link-arrow" /></a></div>
     </section>
 
     <section id="zambia" class="experience-section wrap" aria-labelledby="experience-title">
@@ -214,5 +238,5 @@ onUnmounted(() => {
   </main>
   <main v-else id="main" tabindex="-1" class="document-page wrap"><Content /></main>
 
-  <footer class="site-footer wrap"><div><a class="footer-name" href="/">Keith Williams</a><p>Curiosity with a compass.</p></div><div class="footer-links"><a :href="site.linkedin">LinkedIn <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a :href="site.github">GitHub <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a :href="site.faculty">NJIT <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a href="#main">Back to top <SiteIcon name="arrow-up" class="link-arrow" /></a></div><div class="footer-fine"><span>© {{ new Date().getFullYear() }} Keith Williams</span><span>Built with VitePress · AI-generated landscape artwork</span><span>Personal website. Views are my own.</span></div></footer>
+  <footer class="site-footer wrap"><div><a class="footer-name" :href="isPortuguese ? '/pt-br/' : '/'">Keith Williams</a><p>{{ t.tagline }}</p></div><div class="footer-links"><a :href="isPortuguese ? '/pt-br/acessibilidade' : '/accessibility'">{{ t.accessibility }} <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a :href="site.linkedin">LinkedIn <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a :href="site.github">GitHub <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a :href="site.faculty">NJIT <SiteIcon name="arrow-up-right" class="link-arrow" /></a><a href="#main">{{ t.top }} <SiteIcon name="arrow-up" class="link-arrow" /></a></div><div class="footer-fine"><span>© {{ new Date().getFullYear() }} Keith Williams</span><span>{{ t.credit }}</span><span>{{ t.personal }}</span></div></footer>
 </template>

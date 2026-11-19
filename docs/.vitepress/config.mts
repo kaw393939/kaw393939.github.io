@@ -5,6 +5,10 @@ export default defineConfig({
   title: site.name,
   description: site.description,
   lang: 'en-US',
+  locales: {
+    root: { label: 'English', lang: 'en-US' },
+    'pt-br': { label: 'Português — introdução', lang: 'pt-BR' }
+  },
   cleanUrls: true,
   lastUpdated: false,
   appearance: false,
@@ -17,7 +21,7 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#f3f0e8' }]
   ],
   transformHead({ pageData }) {
-    if (['life-tracker.md', 'teaching.md', 'research.md', 'about.md', 'ai-careers.md'].includes(pageData.relativePath) || pageData.relativePath.startsWith('research/systems/')) {
+    if (['life-tracker.md', 'teaching.md', 'research.md', 'about.md', 'ai-careers.md', 'work.md', 'accessibility.md', 'pt-br/index.md', 'pt-br/acessibilidade.md'].includes(pageData.relativePath) || pageData.relativePath.startsWith('research/systems/')) {
       const pagePath = pageData.relativePath.replace(/\.md$/, '').replace(/\/index$/, '/')
       const url = `${site.url}/${pagePath}`
       const title = pageData.relativePath === 'life-tracker.md' ? 'Life Tracker · How I use AI to follow through' : `${pageData.title} | ${site.name}`
