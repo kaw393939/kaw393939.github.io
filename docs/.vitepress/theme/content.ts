@@ -54,6 +54,10 @@ export const researchQuestions = [
   {
     number: '03', title: 'Working with AI without handing over judgment',
     text: 'How do we give AI useful work, check its evidence, and stay responsible for the decisions it helps us make?'
+  },
+  {
+    number: '04', title: 'Reliable knowledge from messy information',
+    text: 'How can sensors, provenance and selective review turn mixed sources into useful, verifiable knowledge without exhausting human attention?'
   }
 ]
 
