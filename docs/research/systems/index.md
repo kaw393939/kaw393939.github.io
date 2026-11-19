@@ -9,6 +9,12 @@ description: Research agenda, engineering case studies, working papers, prior ar
 
 This is my developing research program. It grew out of building software and exploring the limits of AI-assisted development. The articles distinguish *implemented systems*, *documented design proposals*, and *hypotheses not yet tested in controlled studies*. They are not peer-reviewed publications.
 
+## A connected research vision
+
+**[From claims to navigable knowledge](./vision-and-interface)** connects the full experience: evidence-backed claims as the canonical knowledge model; distinct page-navigation and evidentiary graphs; Wikipedia/Wikidata as attributed discovery sources; semantic search; dynamically rendered dossiers; and a decision-oriented intelligence briefing with original-citation drill-down.
+
+**[Why UAP records are an unusually demanding testbed](./uap-research-testbed)** explains exactly what the case can and cannot demonstrate, what source acquisition remains to be done, and why a second independently labeled benchmark is essential.
+
 ## The research in one view
 
 - **Knowledge:** acquire multimodal material, construct claims and relationships, and retain access to exact sources, contradictory evidence, and uncertainty.
@@ -29,7 +35,7 @@ This is my developing research program. It grew out of building software and exp
 ## Academic documents
 
 - [Preliminary dissertation proposal](./dissertation-proposal) — advisor discussion draft, not an approved proposal.
-- [Related research and NJIT faculty reading map](./literature-and-faculty) — a selective, sourced starting bibliography and four relevant research traditions.
+- [Related research and NJIT faculty reading map](./literature-and-faculty) — a selective, sourced starting bibliography, including five NJIT faculty research connections.
 
 ## Implemented evidence versus proposals
 
@@ -37,6 +43,6 @@ This is my developing research program. It grew out of building software and exp
 
 **Design and investigation:** [Ordo](https://github.com/kaw393939/ordo) (business appliance doctrine, governance and a runtime that its README says has not started), UAP Corpus (private research catalog) (38 curated metadata records and acquisition design; source files not yet downloaded).
 
-**Open research question:** no controlled evaluation has yet established the reliability or economic advantage of the full proposed architecture. This site presents that as a hypothesis worth testing, not a result.
+**Open research question:** no controlled evaluation has yet established the reliability, navigability or economic advantage of the full proposed architecture. This site presents that as a hypothesis worth testing, not a result.
 
 *Personal research work, November 2026. No institutional endorsement, approved doctorate, or completed dissertation is implied.*
