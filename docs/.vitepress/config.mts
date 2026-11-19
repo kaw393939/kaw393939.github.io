@@ -17,8 +17,9 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#f3f0e8' }]
   ],
   transformHead({ pageData }) {
-    if (['life-tracker.md', 'teaching.md', 'research.md', 'about.md', 'ai-careers.md'].includes(pageData.relativePath)) {
-      const url = `${site.url}/${pageData.relativePath.replace(/\.md$/, '')}`
+    if (['life-tracker.md', 'teaching.md', 'research.md', 'about.md', 'ai-careers.md'].includes(pageData.relativePath) || pageData.relativePath.startsWith('research/systems/')) {
+      const pagePath = pageData.relativePath.replace(/\.md$/, '').replace(/\/index$/, '/')
+      const url = `${site.url}/${pagePath}`
       const title = pageData.relativePath === 'life-tracker.md' ? 'Life Tracker · How I use AI to follow through' : `${pageData.title} | ${site.name}`
       const description = pageData.relativePath === 'life-tracker.md' ? 'How Keith Williams uses a private GitHub work queue with an AI assistant, and how to set up a small version of your own.' : pageData.description || site.description
       return [

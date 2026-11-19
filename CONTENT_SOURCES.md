@@ -46,3 +46,12 @@ Published at the owner's request on 2026-11-10 to explain the workflow, setup, a
 ## Personal-story rewrite (2026-11-11)
 
 Source: https://eaikw.com/about/, read on 2026-11-11. Keith explicitly identified that page as his actual background and asked to rewrite this site using it. The new About page uses his account of his father at Alcoa, 1983 TRS-80, 2002 adjunct start, Showedme.net, Wrkbench, AmeriCorps and Zambia. Avoided unverified superlatives, enrollment totals and recruitment metrics. EverydayAI Newark is explicitly an unlaunched idea, not a current program, partnership, placement service or event. Current NJIT role and existing primary Zambia links are preserved.
+
+
+## Research writing and advisor proposal (2026-11-19)
+
+The six-article research series under `docs/research/systems/` distinguishes implemented experiments from research propositions. Public implementation evidence includes [MetaVis](https://github.com/kaw393939/metavis-demo-projects), [Chunky Monkey](https://github.com/kaw393939/chunky-monkey-text-chunker), and [Ordo](https://github.com/kaw393939/ordo). Some related experiments and the UAP source catalog are private; the website must not include private repository URLs, private documents, or private identifiers.
+
+The advisor proposal is a **working research draft**, not an approved dissertation or evidence of supervision, originality, or comparative performance. Faculty alignment is inferred from independently published work and implies no endorsement. Institutional sources include [Dean Jamie Payton](https://computing.njit.edu/dean), [Payton et al. (2010)](https://doi.org/10.1145/1734229.1734231), [Deek et al. (1999)](https://digitalcommons.njit.edu/fac_pubs/16112/), [Sylla and Wen (2002)](https://digitalcommons.njit.edu/fac_pubs/14771/), [Ehrlich and Parhankangas (2014)](https://doi.org/10.1016/j.jbusvent.2013.08.001), and [Grandhi and Jones (2015)](https://digitalcommons.njit.edu/fac_pubs/6913/).
+
+Before publishing stronger claims, validate original records, experiment reproducibility, research ethics, and intellectual-property status. Do not present a private metadata-only corpus as an acquired or annotated dataset.
