@@ -123,7 +123,7 @@ Use **design science research** following Hevner et al. (2004): identify a pract
 
 ### Study A — Sensor evidence and knowledge construction
 
-**Dataset:** a small rights-cleared sample from the [UAP Corpus](https://github.com/kaw393939/uap-corpus) including official and nongovernment records, plus an additional corpus with independently checkable labels (e.g., annotated email/public-event data or an established entity-resolution benchmark).
+**Dataset:** a small rights-cleared sample from the UAP Corpus (private research catalog) including official and nongovernment records, plus an additional corpus with independently checkable labels (e.g., annotated email/public-event data or an established entity-resolution benchmark).
 
 **Comparators:** a passage/vector-only pipeline, a conventional graph-extraction pipeline, and the proposed observation/candidate/qualification architecture.
 
