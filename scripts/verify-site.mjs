@@ -78,7 +78,9 @@ check('Research series and advisor proposal are generated and accessible', () =>
     'english-software-engineering',
     'human-attention-kanban',
     'literature-and-faculty',
-    'dissertation-proposal'
+    'dissertation-proposal',
+    'vision-and-interface',
+    'uap-research-testbed'
   ]
   for (const page of paths) {
     const html = read(`research/systems/${page}.html`)
@@ -131,9 +133,11 @@ check('Valid profile structured data', () => {
 })
 check('Sitemap excludes the error page; error page is noindex', () => {
   assert.ok(!sitemap.includes('/404'))
-  assert.equal((sitemap.match(/<loc>/g) || []).length, 6)
+  assert.ok((sitemap.match(/<loc>/g) || []).length >= 17, 'Sitemap should include the expanded research site')
   assert.ok(sitemap.includes('/teaching'))
   assert.ok(sitemap.includes('/research'))
+  assert.ok(sitemap.includes('/research/systems/vision-and-interface'))
+  assert.ok(sitemap.includes('/research/systems/uap-research-testbed'))
   assert.match(error, /name="robots" content="noindex, follow"/)
   assert.ok(!error.includes('rel="canonical"'))
   assert.ok(!error.includes('application/ld+json'))
