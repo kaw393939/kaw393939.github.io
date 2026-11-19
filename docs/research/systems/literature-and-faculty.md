@@ -62,6 +62,19 @@ The study should include a real user-value and deployment-cost model, not rely o
 - Zheng et al., **[Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena](https://arxiv.org/abs/2306.05685)** (2023): useful and fallible model-based evaluation.
 - David J. Anderson, *Kanban* (2010), and queueing/constraint theory: conceptual foundations for constrained work flow, throughput, and review queues.
 
+## Recent epistemic and interface research (important prior art)
+
+A substantial 2026 body of work already examines **claims as attributed propositions rather than uniform facts**. It changes what this dissertation should claim as novel.
+
+- Vitali and Pasqual, [*Provenance-Enhanced Statements in Knowledge Graphs*](https://arxiv.org/abs/2606.15246) (June 2026 **preprint**): attributed propositions, competing epistemic stances and explicit limits on what can be treated as factual. This is especially close to our proposed difference between reported testimony and established observation.
+- Kakatkar and Khatib, [*Epistemic Knowledge Graphs: An Approach for Grounding and Explaining AI Claims*](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7525242) (2026 **working paper**, not established here as peer reviewed): epistemic status, temporal validity, provenance, and explanation trees. Treat its conceptual overlap seriously before asserting novelty.
+- [*Ontology-guided neuro-symbolic GraphRAG for grounded query answering*](https://link.springer.com/article/10.1007/s00521-026-12495-0) (2026): a cybersecurity evaluation of grounded graph materialization, source-traceable edges and citation precision. It provides concrete baselines for the planned knowledge layer.
+- [*Entity Linking with Wikidata: A Systematic Literature Review*](https://doi.org/10.1145/3795134) (2026): an established research basis for entity matching and disambiguation, including challenges around temporal and qualified relations.
+- [Wikidata's data model](https://www.wikidata.org/wiki/Wikidata:Data_model): identifiers, typed properties, statement qualifiers and references. External identifiers should enrich local entities; Wikipedia links should remain **navigation/context evidence**, not independently verified semantic relationships.
+- [Intelligence Community Directive 203](https://www.intelligence.gov/mission/our-values/objectivity): source-quality assessment, uncertainty, alternative interpretations, change explanations and effective visual communication. The proposed briefing should be evaluated against explicit analytic tradecraft rather than military styling.
+
+This literature suggests narrowing the claimed research contribution toward **progressive policy commissioning, consequence-sensitive review, sensor evidence contracts and allocation of scarce operator attention**. Even this combination requires a systematic prior-art search and comparative experiments.
+
 ## Preliminary novelty matrix
 
 | Component | State of prior art | Research question left open |
