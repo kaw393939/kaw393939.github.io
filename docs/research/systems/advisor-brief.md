@@ -17,7 +17,7 @@ A correct quotation is not necessarily a true account of an event. Several publi
 
 ## Why I am pursuing this
 
-I am a Senior University Lecturer at NJIT with more than two decades of teaching and systems-development experience. My work connects curriculum, software architecture, digital public services and AI-assisted development. [Professional record](/work) · [NJIT faculty profile](https://people.njit.edu/profile/kwilliam).
+I am a Senior University Lecturer and director of NJIT's B.S. in Enterprise AI, with **23 years of university teaching**. I created eight IS courses (117, 218, 219, 333, 373, 421, 425, 601), created the B.S. in Web and Information Systems, and co-developed the BSEAI degree with Brook Wu and other colleagues. My typical teaching load of roughly 14 sections and 30 students per section implies about **9,660 course enrollments** over that period—not a unique-student count. These curriculum-attribution and teaching-volume details are my account; the cited NJIT program and faculty pages independently establish the programs and roles. My work connects curriculum, software architecture, digital public services and AI-assisted development. [Professional record](/work) · [NJIT faculty profile](https://people.njit.edu/profile/kwilliam).
 
 The question arose through experiments, not merely a speculative architecture:
 
