@@ -1,25 +1,26 @@
 ---
-title: AI Careers — Real Jobs, Internships & Skills
-description: A source-linked guide to AI careers and internships, with a 50-posting skills analysis across forward deployed, applied AI, architecture, agent and evaluation engineering.
+title: What 50 AI Job Postings Ask Engineers to Do
+description: Compare five AI engineering career paths, examine employer postings and internship requirements, and turn one job responsibility into a portfolio project.
+teaser: All ten forward deployed roles in this sample mentioned working with customers. Six mentioned language models. What would you put in a portfolio to show you can do the job?
 ---
 
-# AI Careers
+# What 50 AI Job Postings Ask Engineers to Do {#ai-careers}
 
-**What problem would an employer trust you to solve?** I put together this field guide for students choosing what to practice and what to show in a portfolio. It draws on 50 employer postings. Pick a responsibility that interests you, then find a project where someone could watch you do it.
+Pick up two ads for an “AI engineer” and underline the verbs. One employer wants someone to sit with a customer, find out why a workflow stalls, and deliver a fix. Another wants someone to design tests that catch model failures before release. Those are two different weeks at work. They also suggest two different projects a student could build.
 
-For example, a forward deployed engineer works with a customer to get software working in their environment. A short demo in which a classmate tries your app, finds a problem, and retests your fix can help you explain how you work with another person. [See how I use project demos in class](/teaching)
+I read employer descriptions across five role families to help students decide what to practice. The 50-posting sample covers professional roles. Three separate internship examples show where a student might start. The sources were checked on **November 12, 2026**. Check the employer’s page for today’s availability, pay, and eligibility.
 
-**I checked these sources on November 12, 2026.** The examples preserve what employers asked for at that time. Visit the employer's page for current availability, pay, and eligibility.
-
-[Explore roles](#roles-to-understand) · [Study the internship examples](#internships-start-here) · [Compare 50 postings](#skills-report-50-real-posting-descriptions) · [Plan your skills](#what-should-you-learn) · [Build your research site](#turn-research-into-a-plan)
+[Explore roles](#roles-to-understand) · [Study internships](#internships-start-here) · [Compare 50 postings](#skills-report-50-real-posting-descriptions) · [Plan your skills](#what-should-you-learn) · [Build a portfolio project](#turn-research-into-a-plan)
 
 ## The short version
 
-- **Production is only part of the job.** Employers also ask for discovery, communication, evaluation, security, integration and measurable business results.
-- **FDE is a useful starting point, not the only path.** Forward deployed engineering predates the current AI boom. Look at the actual work, not whether a title sounds new.
-- **Start before graduation.** Internships have specific eligibility windows. A strong project helps you demonstrate skills, but neither AI fluency nor a portfolio guarantees a job.
+- **If you like working with people**, look for customer discovery, workshops, and implementation. For a portfolio example, give a classmate the keyboard, observe one difficulty, fix it, and invite them to retest. [See a classroom demo](/teaching)
+- **If you like investigating failures**, look for evaluation, observability, and testing. Show a test that caught a plausible wrong answer and explain how you knew it was wrong.
+- **If you’re applying as a student**, check graduation windows, work location, travel, and deadlines before you spend hours on an application.
 
-## Internships: start here
+
+
+## Internship examples {#internships-start-here}
 
 ### Google · Forward Deployed Engineering Intern, BS/MS, Summer 2027
 
@@ -27,13 +28,13 @@ For example, a forward deployed engineer works with a customer to get software w
 
 For penultimate-year BS/MS students. The posting connects Python, production AI, data pipelines and vector databases/RAG with customer discovery. Preferred skills include agents, tracing and token/cost metrics.
 
-**Pay:** the posting lists a US salary range of **$98,000–$131,000**, with 0% bonus. Treat this as an **annualized salary range**, not the total earnings for a 12-week internship.
+Google listed **$98,000–$131,000** as an **annualized salary range** with a 0% bonus. The listed internship duration was 12 weeks, so that range uses a different pay period from the internship itself.
 
 [View Google's posting](https://www.google.com/about/careers/applications/jobs/results/75665705386549958-forward-deployed-engineering-intern-bsms-summer-2027)
 
 ### NVIDIA · AI Operations Intern, AI Clouds, Summer 2027
 
-**Santa Clara · $20–$71/hour.** Posted November 10, 2026. The posting said applications would be accepted **at least until November 14, 2026**. Check the employer's page for its current status.
+**Santa Clara · $20–$71/hour.** NVIDIA posted the role on November 10, 2026, and said applications would be accepted at least until November 14, 2026.
 
 For students pursuing a BS/MS in computer science, software engineering, data science or an equivalent field. Build a scoped workflow tool with AI-assisted development, validate the output, collect feedback and document the result. Skills include Python/JavaScript/TypeScript, APIs, Git and testing.
 
@@ -41,7 +42,7 @@ For students pursuing a BS/MS in computer science, software engineering, data sc
 
 ### Palantir · Forward Deployed Software Engineer, Internship — Commercial
 
-**Chicago · Onsite · Estimated $10,000/month.** The posting targets graduation in **December 2027 or Spring 2028** and expects 25–50% travel. No closing date was listed when checked.
+**Chicago · Onsite · Estimated $10,000/month.** The posting specified graduation in **December 2027 or spring 2028**, listed 25–50% travel, and gave no closing date when checked.
 
 Programming proficiency and an engineering degree support the work: developing customer-specific applications, LLM workflows and production solutions. This is a useful example of software work that also requires understanding people and their organizations.
 
@@ -49,7 +50,7 @@ Programming proficiency and an engineering degree support the work: developing c
 
 ## Roles to understand
 
-These examples are **experienced professional roles**, not new-graduate salary promises. They show directions to work toward. Posted ranges are not market averages; salary, hourly pay, equity and commission are different things.
+These are **experienced professional roles**. Read the job duties alongside the years of experience each employer requested. Posted ranges are not market averages. Compare base pay with base pay and note separately where equity, commission, or annualized figures enter the calculation.
 
 ### Forward Deployed Software Engineer
 
@@ -93,32 +94,35 @@ These examples are **experienced professional roles**, not new-graduate salary p
 
 ## Skills report: 50 real posting descriptions
 
-**Five role families, 10 distinct requisitions each. Checked November 12, 2026.** The point is to compare actual work, not chase a fashionable title. These are mostly experienced roles; the internships above are a separate entry route.
+The sample contains ten distinct job descriptions per family, checked November 12, 2026. Start with the work you want to learn and open the corresponding employer records below.
 
 ### What the sample suggests
 
-- **FDE is a delivery model, not one technology.** All 10 descriptions include customer communication or discovery; 6 mention LLM/GenAI work. The others show how the same customer-embedded approach serves robotics, fintech and security.
-- **Applied AI means shipping and measuring.** All 10 sampled descriptions discuss production delivery and evaluation. Nine mention Python, sometimes as a preferred or transferable language rather than a fixed requirement.
-- **Architecture is not just drawing diagrams.** All 10 architect descriptions involve stakeholder consultation; 8 mention cloud and 9 mention Python. The work ranges from presales to internal adoption and production deployment.
-- **Agents need engineering around the model.** Nine of 10 agent-family descriptions mention agent/tool design and evaluation; 8 mention retrieval/context and observability. Only 2 explicitly mention AI coding tools. These counts describe the text, not the importance of an unmentioned skill.
-- **Evaluation is its own technical path.** The 10 evaluation descriptions span product quality, frontier-model testing and infrastructure. Six mention statistics/experiments and five human judgment, alongside engineering. This is not simply reading outputs and rating them.
-- **A title can mislead.** Liberate's “AI Agent Engineer” reads like solutions engineering. Point72's architect enables users but explicitly does not own core production systems. Read responsibilities, not just the headline.
+| Role family | What the postings said | Something you could practice |
+| --- | --- | --- |
+| Forward deployed engineering | All ten mentioned customer communication or discovery. Six mentioned language models or generative AI. Others embedded engineers in robotics, security, or fintech. | Watch a user attempt one task, then deliver a change they can retest. |
+| Applied AI | All ten mentioned production delivery and evaluation. Nine mentioned Python, sometimes as one acceptable language. | Ship a small feature and measure how it handles a difficult input. |
+| Solutions architecture | All ten mentioned work with stakeholders. Eight mentioned cloud systems and nine mentioned Python. The roles ranged from presales to internal deployment. | Explain two viable designs and why you would choose one for a particular team. |
+| Agent engineering | Nine mentioned agents or tools and nine mentioned evaluation. Eight mentioned retrieval or context and eight mentioned observability. Two explicitly mentioned AI coding tools. | Build a workflow that reports a failed tool call in a way someone can diagnose. |
+| Evaluation engineering | The roles covered product quality, model testing, and the infrastructure used to run tests. Six mentioned statistics or experimental design and five mentioned human judgment. | Write a rubric, compare two reviewers’ decisions, and investigate a disagreement. |
 
-**What is actually new?** AI Agent Engineer, Agentic Engineer, Frontier Agents Engineer, AI Engineer—Agent Platform and AI Deployment Manager—Builder are useful search terms. Also search Product Evals Engineer, Agentic AI Systems Evaluation Engineer and AI Evaluations Platform Engineer. Applied AI Engineer and AI Solutions Architect also surface relevant work. This research does **not** establish when these titles were invented, their growth rate, or that conventional software careers have disappeared.
+Read the responsibilities even when a title sounds familiar. Liberate’s “AI Agent Engineer” involved customer discovery and integrations. Point72’s architect helped users adopt AI while a separate team owned the core production systems.
+
+For searches, try the titles employers actually used. Examples include *Frontier Agents Engineer*, *AI Engineer — Agent Platform*, *AI Deployment Manager — Builder*, *Product Evals Engineer*, and *AI Evaluations Platform Engineer*. These examples document terminology in use as of November 2026. Measuring growth would take comparable data across time.
 
 ### How to read the counts
 
-This is a **purposive convenience sample**, not a representative labor-market survey. We selected distinct employer requisitions, excluded location clones and did not add duplicate syndications. Applied AI includes 9 employers; architects include 8, including three different HiddenLayer functions. FDE, agent engineering and evaluation each include 10 employers. That concentration affects the results.
+This is a **purposive convenience sample**. I selected distinct employer requisitions and excluded duplicate syndications and location variants. The forward deployed, agent, and evaluation groups each cover ten employers. Applied AI covers nine and architecture eight. HiddenLayer contributed three distinct architecture functions, giving security work a larger place in that group.
 
-**38 descriptions were directly readable with an application route visible; 11 were available through indexed primary-source descriptions, with current application status unconfirmed. One further source is an official May 2026 PDF, not proof of a current vacancy.** DoorDash's visible page also has an expected-fill date of November 9 that has passed. A readable posting is not proof that hiring continues. Four stale employer links were excluded after their direct pages were unavailable.
+At the review date, **38 employer descriptions showed an application route**. Eleven could be read through indexed employer material, with current application status unconfirmed. One was an official May 2026 PDF. DoorDash still showed an application page after its November 9 expected-fill date. Four other links had already stopped serving a usable posting and were excluded.
 
-Counts include explicit duties, alternatives and preferred skills, not only hard requirements. Different families have different coding categories; do not rank families against each other using these bars. Missing mention is not evidence that a skill is unneeded. Open each evidence panel to inspect the actual role, experience and access caveats.
+Counts include duties, preferred skills, and allowed alternatives. Eight mentions of a language in ten postings do not mean eight employers required it. Each chart counts the skills relevant to that role family. The records underneath show what each employer actually said and how the source was checked.
 
 [Download the dated evidence dataset (JSON)](/research/ai-careers-2026-11-12.json)
 
 ### Forward Deployed Engineer: 10 postings
 
-Ten employers. Four direct pages with application links; six primary descriptions recovered through search indexing, with live application status unconfirmed. This deliberately includes robotics, security and fintech, not only LLM work.
+The ten employers placed engineers alongside customers in industries ranging from robotics to fintech. Four descriptions had a directly visible application route. Six came from search indexes of employer pages.
 
 <ul class="career-skill-chart">
 <li>Customer communication/discovery: <strong>10/10</strong><meter min="0" max="10" value="10" aria-label="Customer communication/discovery: 10 of 10 sampled descriptions">10/10</meter></li>
@@ -127,7 +131,7 @@ Ten employers. Four direct pages with application links; six primary description
 </ul>
 
 <details class="career-evidence">
-<summary>Inspect the 10 postings, skills and source limitations</summary>
+<summary>Read the 10 forward deployed engineering postings and source notes</summary>
 
 #### OpenAI · Forward Deployed Engineer - Seoul
 
@@ -139,7 +143,7 @@ Ten employers. Four direct pages with application links; six primary description
 
 **What the work involves:** Own discovery through rollout; write/review frontend and backend code; build generative-model systems; communicate with engineers and customers.
 
-**Pay:** Not stated. **Source status:** Live full employer page with Apply link.
+**Pay:** Not stated. **Source at review:** The employer page showed the full description and an application link.
 
 #### Reveal Technology · Forward Deployed Engineer - UK
 
@@ -151,7 +155,7 @@ Ten employers. Four direct pages with application links; six primary description
 
 **What the work involves:** Integrate tactical hardware/software, manage edge compute/networking/UAS, translate user needs, return field performance to product teams.
 
-**Pay:** Salary plus equity; no range. **Source status:** Full employer page retrieved; Apply link.
+**Pay:** Salary plus equity; no range. **Source at review:** The employer page showed the description and an application link.
 
 #### Jeeves · Forward Deployed Engineer
 
@@ -163,7 +167,7 @@ Ten employers. Four direct pages with application links; six primary description
 
 **What the work involves:** Own strategic technical accounts from scoping to adoption; build integrations and pipelines. This is a fintech FDE, not explicitly an LLM-building role.
 
-**Pay:** Not stated. **Source status:** Full employer page retrieved; Apply link.
+**Pay:** Not stated. **Source at review:** The employer page showed the description and an application link.
 
 #### Loadsmart · Forward Deployed Engineer
 
@@ -175,7 +179,7 @@ Ten employers. Four direct pages with application links; six primary description
 
 **What the work involves:** Observe operations, scope solutions, integrate TMS/WMS/ERP, tune agents on production edge cases. Voice/transcription and logistics knowledge preferred.
 
-**Pay:** $115,700–$180,800/year. **Source status:** Full employer page retrieved; Apply link.
+**Pay:** $115,700–$180,800/year. **Source at review:** The employer page showed the description and an application link.
 
 #### Tenex · Forward Deployed Engineer
 
@@ -187,7 +191,7 @@ Ten employers. Four direct pages with application links; six primary description
 
 **What the work involves:** Partner with AI Strategist; own technical delivery and post-launch performance; review coding-agent output and turn unfamiliar business requirements into software.
 
-**Pay:** Base plus quarterly bonus and equity; no range. **Source status:** Full primary description recovered through search index; live page JS-only; opening not independently confirmed.
+**Pay:** Base plus quarterly bonus and equity; no range. **Source at review:** The employer’s full description appeared in search. The direct page required JavaScript, and availability could not be confirmed.
 
 #### Appen · Forward Deployed Engineer
 
@@ -199,7 +203,7 @@ Ten employers. Four direct pages with application links; six primary description
 
 **What the work involves:** Own delivered GenAI data quality; create acceptance criteria, annotation guidelines, validators and reusable quality frameworks.
 
-**Pay:** $150,000–$200,000 total target compensation including base and incentive. **Source status:** Full primary description and application fields recovered through search; live open returned403.
+**Pay:** $150,000–$200,000 total target compensation including base and incentive. **Source at review:** Search showed the employer’s description and application fields. The direct page returned HTTP 403.
 
 #### Teleskope · Forward Deployed Engineer
 
@@ -211,7 +215,7 @@ Ten employers. Four direct pages with application links; six primary description
 
 **What the work involves:** Build bespoke integrations and automations, fix customer issues, conduct architecture reviews, write runbooks. AI coding-tool proficiency explicit.
 
-**Pay:** $130,000–$170,000 plus equity. **Source status:** Full primary description recovered through search; live page JS-only; opening not independently confirmed.
+**Pay:** $130,000–$170,000 plus equity. **Source at review:** The employer’s description appeared in search. The direct page required JavaScript, and availability could not be confirmed.
 
 #### FieldAI · Forward Deployed Engineer (Singapore)
 
@@ -223,7 +227,7 @@ Ten employers. Four direct pages with application links; six primary description
 
 **What the work involves:** Own autonomous deployments, test real-world operation, gather field feedback, train operators and build scalable rollout practices.
 
-**Pay:** Not stated. **Source status:** Full primary description recovered through search; live open returned403.
+**Pay:** Not stated. **Source at review:** Search showed the employer’s description. The direct page returned HTTP 403.
 
 #### CrossCountry Consulting · Forward Deployed Engineer & Agentic Workflow Engineer
 
@@ -235,7 +239,7 @@ Ten employers. Four direct pages with application links; six primary description
 
 **What the work involves:** Build production agent workflows and enterprise connectors; control prompt/context/cost/latency; trace outputs for SOX audits. Certifications preferred, not mandatory.
 
-**Pay:** Base $150,000–$250,000 most US; $175,000–$285,000 NYC/SF; annual bonus. **Source status:** Full primary description via search and employer board lists role; live detail open403.
+**Pay:** Base $150,000–$250,000 most US; $175,000–$285,000 NYC/SF; annual bonus. **Source at review:** The employer’s board listed the role and search showed the full description. The detail page returned HTTP 403.
 
 #### Baseten · Forward Deployed Engineer (Training)
 
@@ -247,13 +251,13 @@ Ten employers. Four direct pages with application links; six primary description
 
 **What the work involves:** Own workloads from vague objective to production; define benchmarks, troubleshoot failures. Kubernetes/Slurm/Ray, inference engines, PyTorch/JAX or SFT/RL are possible strengths, not all required.
 
-**Pay:** $200,000–$400,000 plus equity. **Source status:** Full primary description through search indexed two days ago; live page JS-only; opening not independently confirmed.
+**Pay:** $200,000–$400,000 plus equity. **Source at review:** Search showed the employer’s description. The direct page required JavaScript, and availability could not be confirmed.
 
 </details>
 
 ### Applied AI Engineer: 10 postings
 
-Production software plus systematic evaluation is the shared core. Python appears in nine descriptions, but ContactMonkey demonstrates that existing Ruby/Vue infrastructure can matter more. Titles cover both product engineering and customer-facing advisory/implementation. These are mostly experienced roles; CHAOS explicitly welcomes exceptional new graduates despite a 2–5-year guideline.
+All ten descriptions combined software delivery and evaluation. ContactMonkey used a Ruby and Vue stack. CHAOS explicitly welcomed exceptional new graduates alongside its two-to-five-year experience guideline. Look for the actual stack and entry requirements before deciding whether to apply.
 
 <ul class="career-skill-chart">
 <li>Production delivery: <strong>10/10</strong><meter min="0" max="10" value="10" aria-label="Production delivery: 10 of 10 sampled descriptions">10/10</meter></li>
@@ -263,7 +267,7 @@ Production software plus systematic evaluation is the shared core. Python appear
 </ul>
 
 <details class="career-evidence">
-<summary>Inspect the 10 postings, skills and source limitations</summary>
+<summary>Read the 10 applied AI postings and source notes</summary>
 
 #### Material Bank · Applied AI Engineer
 
@@ -275,7 +279,7 @@ Production software plus systematic evaluation is the shared core. Python appear
 
 **What the work involves:** Responsibilities include production multi-agent workflows, RAG optimization, human-in-loop evaluation and architectural cost/latency tradeoffs; qualifications name Python and JS/TS.
 
-**Pay:** Not recorded in this review. **Source status:** Full employer description and application visible; not recruiter confirmation.
+**Pay:** Not recorded in this review. **Source at review:** The employer showed a full description and application form.
 
 #### Future · Applied AI Engineer
 
@@ -287,7 +291,7 @@ Production software plus systematic evaluation is the shared core. Python appear
 
 **What the work involves:** Builds tool-calling agents and evaluation harnesses; owns deployment and monitoring; explicitly requires strong Python and structured output experience.
 
-**Pay:** Not recorded in this review. **Source status:** Full employer description and application visible; not recruiter confirmation.
+**Pay:** Not recorded in this review. **Source at review:** The employer showed a full description and application form.
 
 #### Dwelly · Applied AI Engineer
 
@@ -299,7 +303,7 @@ Production software plus systematic evaluation is the shared core. Python appear
 
 **What the work involves:** Requires production agentic systems and evaluation/observability; TypeScript-first environment accepts strong Python experience with willingness to transfer; emphasizes when not to use an LLM.
 
-**Pay:** Not recorded in this review. **Source status:** Full employer description and application visible; not recruiter confirmation.
+**Pay:** Not recorded in this review. **Source at review:** The employer showed a full description and application form.
 
 #### ContactMonkey · Applied AI Engineer
 
@@ -311,7 +315,7 @@ Production software plus systematic evaluation is the shared core. Python appear
 
 **What the work involves:** Owns agent workflows, eval harness, AI infrastructure and token-cost/reliability metrics; qualifications emphasize production SaaS, IaC, AWS, RAG and measurement.
 
-**Pay:** $140,000–$160,000; currency not explicit in reviewed salary text; do not relabel USD. **Source status:** Full employer description and application visible; not recruiter confirmation.
+**Pay:** The listed range was $140,000–$160,000. The employer did not specify the currency. **Source at review:** The employer showed a full description and application form.
 
 #### Scale AI · Applied AI Engineer
 
@@ -323,7 +327,7 @@ Production software plus systematic evaluation is the shared core. Python appear
 
 **What the work involves:** Requires Python plus working knowledge of another language, production AI integration, evaluation literacy and ownership through release/debugging.
 
-**Pay:** Not recorded in this review. **Source status:** Full employer description and application visible; not recruiter confirmation.
+**Pay:** Not recorded in this review. **Source at review:** The employer showed a full description and application form.
 
 #### Fanatics · Applied AI Engineer
 
@@ -335,7 +339,7 @@ Production software plus systematic evaluation is the shared core. Python appear
 
 **What the work involves:** Embeds in business functions to automate workflows; production agents, MCP, RAG and evals named; measures business return and may buy/configure instead of build.
 
-**Pay:** USD $150,000–$200,000 base. **Source status:** Full employer description and application visible; not recruiter confirmation.
+**Pay:** USD $150,000–$200,000 base. **Source at review:** The employer showed a full description and application form.
 
 #### Anthropic · Applied AI Engineer, Enterprise
 
@@ -347,7 +351,7 @@ Production software plus systematic evaluation is the shared core. Python appear
 
 **What the work involves:** Technical advisor for enterprise customers; develops prototypes/evaluation suites, code reviews and architecture guidance; production LLM and programming skills required.
 
-**Pay:** USD $200,000–$320,000 listed annual salary; page carries generic sales OTE caveat. **Source status:** Full employer description and application visible; not recruiter confirmation.
+**Pay:** USD $200,000–$320,000 listed annual salary; page carries generic sales OTE caveat. **Source at review:** The employer showed a full description and application form.
 
 #### CHAOS Industries · Applied AI Engineer
 
@@ -359,7 +363,7 @@ Production software plus systematic evaluation is the shared core. Python appear
 
 **What the work involves:** Requires production software/model integration and evaluation; Python explicitly required; agents are preferred, while defense/edge robustness is central.
 
-**Pay:** USD $150,000–$170,000 base. **Source status:** Full employer description and application visible; not recruiter confirmation.
+**Pay:** USD $150,000–$170,000 base. **Source at review:** The employer showed a full description and application form.
 
 #### OpenAI · Applied AI Engineer
 
@@ -371,7 +375,7 @@ Production software plus systematic evaluation is the shared core. Python appear
 
 **What the work involves:** Hands-on production engineering, evaluation harnesses and enterprise integration; explicitly measures adoption/business outcomes rather than demos.
 
-**Pay:** Not recorded in this review. **Source status:** Full employer description and application visible; not recruiter confirmation.
+**Pay:** Not recorded in this review. **Source at review:** The employer showed a full description and application form.
 
 #### Anthropic · Applied AI Engineer, Startups
 
@@ -383,13 +387,13 @@ Production software plus systematic evaluation is the shared core. Python appear
 
 **What the work involves:** Distinct startup-customer requisition, not geographic clone of enterprise role; pair programming/code contributions, production LLM applications and developer education.
 
-**Pay:** GBP £225,000–£255,000 listed annual salary; generic sales OTE caveat. **Source status:** Full employer description and application visible; not recruiter confirmation.
+**Pay:** GBP £225,000–£255,000 listed annual salary; generic sales OTE caveat. **Source at review:** The employer showed a full description and application form.
 
 </details>
 
 ### AI Solutions Architect: 10 postings
 
-Architecture is hands-on but varies: security presales, post-sales deployment, internal transformation, graph AI, marketing automation and infrastructure advisory. Python appears in nine descriptions but sometimes only preferred; cloud appears in eight. Do not treat these as ten identical jobs or count each city as another posting. HiddenLayer contributes three distinct functional requisitions, making this sample security-heavy.
+These architects worked on presales, customer deployments, internal adoption, and infrastructure. HiddenLayer accounted for three distinct functions, which gives security work extra weight here. Python appeared in nine descriptions and cloud systems in eight.
 
 <ul class="career-skill-chart">
 <li>Stakeholder communication/consultation: <strong>10/10</strong><meter min="0" max="10" value="10" aria-label="Stakeholder communication/consultation: 10 of 10 sampled descriptions">10/10</meter></li>
@@ -398,7 +402,7 @@ Architecture is hands-on but varies: security presales, post-sales deployment, i
 </ul>
 
 <details class="career-evidence">
-<summary>Inspect the 10 postings, skills and source limitations</summary>
+<summary>Read the 10 solutions architecture postings and source notes</summary>
 
 #### HiddenLayer · AI Solutions Architect – Federal
 
@@ -410,7 +414,7 @@ Architecture is hands-on but varies: security presales, post-sales deployment, i
 
 **What the work involves:** Federal presales role deploying into SaaS and airgapped environments; Python and containers required; SDK integrations, mission demos and measurable evaluations.
 
-**Pay:** Not recorded in this review. **Source status:** Full employer description and application visible; not recruiter confirmation.
+**Pay:** Not recorded in this review. **Source at review:** The employer showed a full description and application form.
 
 #### Veeam · AI Solution Architect
 
@@ -422,7 +426,7 @@ Architecture is hands-on but varies: security presales, post-sales deployment, i
 
 **What the work involves:** Cross-platform enterprise architecture, requirements and rollout; cloud/distributed systems required, language proficiency specifically appears under bonus skills.
 
-**Pay:** NYC/Bay Area USD $215,640–$400,440 total target compensation/OTE, NOT base; other zones differ. **Source status:** Full employer description and application visible; not recruiter confirmation.
+**Pay:** NYC/Bay Area USD $215,640–$400,440 in total target compensation, including variable pay. Other locations had different ranges. **Source at review:** The employer showed a full description and application form.
 
 #### Impiricus · AI Solutions Architect
 
@@ -434,7 +438,7 @@ Architecture is hands-on but varies: security presales, post-sales deployment, i
 
 **What the work involves:** Internal FDE-style role refactors business-built prototypes into secure production apps; integrations with CRM/data lake; prefers demonstrated shipping over credentials.
 
-**Pay:** USD $165,000–$210,000 base. **Source status:** Full employer description and application visible; not recruiter confirmation.
+**Pay:** USD $165,000–$210,000 base. **Source at review:** The employer showed a full description and application form.
 
 #### DoorDash · Senior Associate, AI Solutions Architect, Marketing Technology
 
@@ -446,7 +450,7 @@ Architecture is hands-on but varies: security presales, post-sales deployment, i
 
 **What the work involves:** Builds marketing tools and workflow automations; measures efficiency/quality gains; coding, APIs/data and explaining concepts to nontechnical partners.
 
-**Pay:** Not recorded in this review. **Source status:** Application page visible, but expected fill date November 9, 2026 has passed; treat current availability uncertain.
+**Pay:** Not recorded in this review. **Source at review:** The application page was visible after the November 9, 2026 expected-fill date. Availability was uncertain.
 
 #### Neo4j · AI Solutions Architect
 
@@ -458,7 +462,7 @@ Architecture is hands-on but varies: security presales, post-sales deployment, i
 
 **What the work involves:** Graph+GenAI production architecture and delivery; requires graph modeling/query expertise plus programming/cloud and stakeholder influence.
 
-**Pay:** USD $160,000–$220,000 annual OTE, NOT base. **Source status:** Full employer description and application visible; not recruiter confirmation.
+**Pay:** USD $160,000–$220,000 in annual on-target earnings, including variable pay. **Source at review:** The employer showed a full description and application form.
 
 #### Point72 · AI Solutions Architect
 
@@ -470,7 +474,7 @@ Architecture is hands-on but varies: security presales, post-sales deployment, i
 
 **What the work involves:** Lightweight prototypes, internal adoption and investment-team enablement; explicitly does not own or maintain core production systems.
 
-**Pay:** Not recorded in this review. **Source status:** Full employer description and application visible; not recruiter confirmation.
+**Pay:** Not recorded in this review. **Source at review:** The employer showed a full description and application form.
 
 #### HiddenLayer · AI Solutions Architect – Pre-sales
 
@@ -482,7 +486,7 @@ Architecture is hands-on but varies: security presales, post-sales deployment, i
 
 **What the work involves:** Distinct commercial presales role; Python necessary, cloud/IaC and AI workflows expected; conducts demos, discovery and proof-of-concepts.
 
-**Pay:** Not recorded in this review. **Source status:** Full employer description and application visible; not recruiter confirmation.
+**Pay:** Not recorded in this review. **Source at review:** The employer showed a full description and application form.
 
 #### HiddenLayer · AI Solutions Architect – Post-Sales (UK)
 
@@ -494,7 +498,7 @@ Architecture is hands-on but varies: security presales, post-sales deployment, i
 
 **What the work involves:** Distinct post-sale adoption/deployment function; Python and Docker required, cloud networking/IaC expected; AI workflow tools are a plus.
 
-**Pay:** Not recorded in this review. **Source status:** Full employer description and application visible; not recruiter confirmation.
+**Pay:** Not recorded in this review. **Source at review:** The employer showed a full description and application form.
 
 #### Nutanix · Advisory Solutions Architect – AI
 
@@ -506,7 +510,7 @@ Architecture is hands-on but varies: security presales, post-sales deployment, i
 
 **What the work involves:** Infrastructure-centric technical presales; GPU/distributed AI, Kubernetes, MLOps and business cases. No explicit Python requirement in reviewed description.
 
-**Pay:** Not recorded in this review. **Source status:** Full employer description and application visible; not recruiter confirmation.
+**Pay:** Not recorded in this review. **Source at review:** The employer showed a full description and application form.
 
 #### eimagine · AI Solutions Architect
 
@@ -518,13 +522,13 @@ Architecture is hands-on but varies: security presales, post-sales deployment, i
 
 **What the work involves:** End-to-end AI solution architecture and client roadmaps; cloud deployment, Python and production ML; cloud/AI certifications are a plus, not mandatory.
 
-**Pay:** Not recorded in this review. **Source status:** Full employer description and application visible; not recruiter confirmation.
+**Pay:** Not recorded in this review. **Source at review:** The employer showed a full description and application form.
 
 </details>
 
 ### AI Agent Engineer: 10 postings
 
-Purposive sample of 10 unique employer postings, 10 employers. Adjacent titles grouped by agent-building duties; not a labor-market estimate. Six full live employer pages with application forms; four Ashby employer-indexed descriptions whose direct rendering needs JavaScript, so current application status unconfirmed. Skills may be duties or preferred, not always required. Salary is not comparable across seniority/geography.
+These ten employers gave agent-building work several titles. Six had directly visible applications. Four descriptions came from indexed employer pages whose application status could not be confirmed. A skill may appear as a duty or preference.
 
 <ul class="career-skill-chart">
 <li>Software engineering: <strong>10/10</strong><meter min="0" max="10" value="10" aria-label="Software engineering: 10 of 10 sampled descriptions">10/10</meter></li>
@@ -536,7 +540,7 @@ Purposive sample of 10 unique employer postings, 10 employers. Adjacent titles g
 </ul>
 
 <details class="career-evidence">
-<summary>Inspect the 10 postings, skills and source limitations</summary>
+<summary>Read the 10 agent engineering postings and source notes</summary>
 
 #### Gigi · AI Engineer / AI Agent Engineer
 
@@ -548,7 +552,7 @@ Purposive sample of 10 unique employer postings, 10 employers. Adjacent titles g
 
 **What the work involves:** Production APIs/data/testing/debugging; LLM/agent projects; eval framework and context engineering; coding-agent use with human accountability. Agent-specific framework skills may be learned on job.
 
-**Pay:** Omitted: indexed versions conflict ($110–200k vs $150–210k); currency not explicit. **Source status:** Employer-indexed description; direct page JS-only.
+**Pay:** Indexed versions gave different ranges ($110,000–$200,000 and $150,000–$210,000) without identifying a currency. **Source at review:** The employer’s description appeared in search. The direct page required JavaScript.
 
 #### Sekai · AI Agent Engineer (Coding Agent)
 
@@ -560,7 +564,7 @@ Purposive sample of 10 unique employer postings, 10 employers. Adjacent titles g
 
 **What the work involves:** Agent harnesses, long workflows, regression/failure taxonomies, model routing, tracing; strong Python/TypeScript and distributed systems. MCP and fine-tuning are bonuses.
 
-**Pay:** Salary and equity; no numeric range. **Source status:** Employer-indexed description; direct page JS-only.
+**Pay:** Salary and equity; no numeric range. **Source at review:** The employer’s description appeared in search. The direct page required JavaScript.
 
 #### TRM Labs · AI Agent Engineer – US Remote
 
@@ -572,7 +576,7 @@ Purposive sample of 10 unique employer postings, 10 employers. Adjacent titles g
 
 **What the work involves:** Python preferred; tool-use/memory/planning framework, RAG and evaluation loops, auditable safety, latency/success/hallucination measures, analyst augmentation.
 
-**Pay:** USD $200,000–275,000 base; possible equity. **Source status:** Employer-indexed description; direct page JS-only.
+**Pay:** USD $200,000–275,000 base; possible equity. **Source at review:** The employer’s description appeared in search. The direct page required JavaScript.
 
 #### Hipp Health · AI Agent Engineer — Patient Intake
 
@@ -584,7 +588,7 @@ Purposive sample of 10 unique employer postings, 10 employers. Adjacent titles g
 
 **What the work involves:** Python/TypeScript or comparable, APIs/databases, planning/retrieval/memory, systematic evaluations, failure-mode analysis, monitoring and human escalation. HIPAA and RAG are nice-to-have.
 
-**Pay:** Not found. **Source status:** Employer-indexed description; direct page JS-only.
+**Pay:** Not found. **Source at review:** The employer’s description appeared in search. The direct page required JavaScript.
 
 #### Livefront / Zeal · Agentic Engineer
 
@@ -596,7 +600,7 @@ Purposive sample of 10 unique employer postings, 10 employers. Adjacent titles g
 
 **What the work involves:** Python or Java; agent workflows, APIs/MCP, evals/guardrails, state/memory, traceability, token cost and latency; AWS/Azure; containers/CI/CD; security reviews and client communication.
 
-**Pay:** USD $130,000–165,000 annually. **Source status:** Full employer page and application form live.
+**Pay:** USD $130,000–165,000 annually. **Source at review:** The employer showed a full description and application form.
 
 #### NewsBreak · AI Engineer, Agent Platform
 
@@ -608,7 +612,7 @@ Purposive sample of 10 unique employer postings, 10 employers. Adjacent titles g
 
 **What the work involves:** Runtime orchestration, eval/trace harness, retrieval/ranking/compression/memory, model cost decisions, Python or Go/Node plus React/Next.js. Public artifact preferred.
 
-**Pay:** USD $120,000–220,000 base; possible bonus/options. **Source status:** Full employer page and application form live.
+**Pay:** USD $120,000–220,000 base; possible bonus/options. **Source at review:** The employer showed a full description and application form.
 
 #### GitLab · Backend Engineer (Python), AI Engineering: Agent Foundations
 
@@ -620,7 +624,7 @@ Purposive sample of 10 unique employer postings, 10 employers. Adjacent titles g
 
 **What the work involves:** Python, LangGraph/LangChain flows, REST/GraphQL APIs, pytest and agent evaluations; on-call/root-cause/observability; async written collaboration.
 
-**Pay:** Not listed in inspected page. **Source status:** Full employer page and application form live.
+**Pay:** Not listed in inspected page. **Source at review:** The employer showed a full description and application form.
 
 #### Scale AI · Frontier Agents Engineer (Applied AI)
 
@@ -632,7 +636,7 @@ Purposive sample of 10 unique employer postings, 10 employers. Adjacent titles g
 
 **What the work involves:** Python, production LLM systems, retrieval/memory/tool-use; quantitative experiments, golden sets, LLM judges and human evaluation; safety, observability/cost. Cloud and Docker/Kubernetes preferred.
 
-**Pay:** USD $180,000–225,000 base for listed SF/NY/Seattle range; equity separate. **Source status:** Full employer page and application form live.
+**Pay:** USD $180,000–225,000 base for listed SF/NY/Seattle range; equity separate. **Source at review:** The employer showed a full description and application form.
 
 #### Starburst · AI Agent Engineer
 
@@ -644,7 +648,7 @@ Purposive sample of 10 unique employer postings, 10 employers. Adjacent titles g
 
 **What the work involves:** Agent orchestration/planning/memory/error recovery; RAG chunking/vector DB/embedding/reranking; eval suites; CI/CD and code review. No particular language requirement found.
 
-**Pay:** USD $180,000–225,000; range may include variable compensation. **Source status:** Full employer page and application form live.
+**Pay:** USD $180,000–225,000; range may include variable compensation. **Source at review:** The employer showed a full description and application form.
 
 #### Liberate · AI Agent Engineer
 
@@ -656,13 +660,13 @@ Purposive sample of 10 unique employer postings, 10 employers. Adjacent titles g
 
 **What the work involves:** Python/Java or similar; API/data/cloud integration; customer discovery, demos, technical documentation and post-sales troubleshooting. Cloud certification preferred. Despite title, duties resemble solutions engineering, not explicit agent-harness design.
 
-**Pay:** USD $120,000–190,000 base. **Source status:** Full employer page and application form live.
+**Pay:** USD $120,000–190,000 base. **Source at review:** The employer showed a full description and application form.
 
 </details>
 
 ### AI Evaluation Engineer: 10 postings
 
-Purposive 10-posting, 10-employer sample across product evals, model evals and eval infrastructure. Nine full primary descriptions inspected (Ashoka is a PDF, not proof of current vacancy), one employer-indexed Workday description whose live rendering was empty. Skill counts combine duties and requirements and are not market prevalence. Do not treat frontier-lab pay as typical graduate pay.
+The ten employers covered product evaluation, model evaluation, and the systems that run tests. Eight had visible application routes. Ashoka published a PDF, and the tenth description was readable through indexed employer material. Seniority and geography vary considerably across this group.
 
 <ul class="career-skill-chart">
 <li>Evaluation: <strong>10/10</strong><meter min="0" max="10" value="10" aria-label="Evaluation: 10 of 10 sampled descriptions">10/10</meter></li>
@@ -674,7 +678,7 @@ Purposive 10-posting, 10-employer sample across product evals, model evals and e
 </ul>
 
 <details class="career-evidence">
-<summary>Inspect the 10 postings, skills and source limitations</summary>
+<summary>Read the 10 evaluation engineering postings and source notes</summary>
 
 #### Anthropic · Research Engineer, Post-Training Model Evaluations
 
@@ -686,7 +690,7 @@ Purposive 10-posting, 10-employer sample across product evals, model evals and e
 
 **What the work involves:** Evaluation strategy, regression investigation, dashboards/alerts; Python and production systems; statistics/experimental design preferred.
 
-**Pay:** USD $500,000–850,000 annual salary stated. **Source status:** Live employer application page.
+**Pay:** USD $500,000–850,000 annual salary stated. **Source at review:** The employer’s application page was visible.
 
 #### Dscout · AI Research Engineer
 
@@ -698,7 +702,7 @@ Purposive 10-posting, 10-employer sample across product evals, model evals and e
 
 **What the work involves:** Rubric validity/reliability, inter-rater agreement and power, calibration of AI judges to humans, messy human data, Python pipelines, technical writing and AI coding tools.
 
-**Pay:** USD $250,000–400,000 OTE plus equity, not base-only. **Source status:** Live employer application page.
+**Pay:** USD $250,000–400,000 OTE plus equity, not base-only. **Source at review:** The employer’s application page was visible.
 
 #### Turing · AI Evaluation Engineer (Python)
 
@@ -710,7 +714,7 @@ Purposive 10-posting, 10-employer sample across product evals, model evals and e
 
 **What the work involves:** Author realistic tasks/reference solutions/verifiers; data structures, algorithms, debugging and tests; clear written English and structured document formats. LLM eval background nice-to-have.
 
-**Pay:** Not stated; two-month freelance contract, 40h/week, no medical/paid leave. **Source status:** Live employer page with apply action; short contract dates must be reconfirmed.
+**Pay:** Not stated; two-month freelance contract, 40h/week, no medical/paid leave. **Source at review:** The employer’s page accepted applications. Check the contract dates with the employer.
 
 #### Tactical Edge · AI Evaluation Engineer
 
@@ -722,7 +726,7 @@ Purposive 10-posting, 10-employer sample across product evals, model evals and e
 
 **What the work involves:** Golden/adversarial/regression sets, release gates combining humans and telemetry; scored rubrics, CI/CD and observability; documented limitations.
 
-**Pay:** No numeric range. **Source status:** Live employer career page and application link.
+**Pay:** No numeric range. **Source at review:** The employer’s careers page showed an application link.
 
 #### Ashoka University · AI Evaluation Engineer
 
@@ -734,7 +738,7 @@ Purposive 10-posting, 10-employer sample across product evals, model evals and e
 
 **What the work involves:** Medical evaluation pipelines, model submissions/leaderboards, WER/F1/clinical metrics, logging; Python mandatory, PyTorch/Hugging Face, APIs, batch/streaming, MLflow/W&B and documentation.
 
-**Pay:** Not captured. **Source status:** Official May 2026 PDF accessible; current vacancy status unconfirmed.
+**Pay:** Not captured. **Source at review:** The university’s May 2026 PDF was accessible. Vacancy status was unconfirmed.
 
 #### OpenAI · Product Evals Engineer, ChatGPT Learning
 
@@ -746,7 +750,7 @@ Purposive 10-posting, 10-employer sample across product evals, model evals and e
 
 **What the work involves:** Learner-relevant quality metrics; representative datasets; automated/human grading calibration; information retrieval, experimentation and interpretable findings. Learning science preferred; no language specified.
 
-**Pay:** USD $185,000–490,000 base plus equity. **Source status:** Live employer career page and application link.
+**Pay:** USD $185,000–490,000 base plus equity. **Source at review:** The employer’s careers page showed an application link.
 
 #### Microsoft AI · Principal AI Evaluations Platform Engineer
 
@@ -758,7 +762,7 @@ Purposive 10-posting, 10-employer sample across product evals, model evals and e
 
 **What the work involves:** Benchmark/graders/runners infrastructure, scheduling and throughput, dashboards/runbooks; Python, distributed debugging/on-call. GPU workloads, Ray/Kubernetes/Slurm preferred.
 
-**Pay:** Switzerland CHF183,800–309,700 base; UK range not shown. **Source status:** Live employer application page.
+**Pay:** Switzerland CHF183,800–309,700 base; UK range not shown. **Source at review:** The employer’s application page was visible.
 
 #### Karya · Research Engineer, AI Evaluations
 
@@ -770,7 +774,7 @@ Purposive 10-posting, 10-employer sample across product evals, model evals and e
 
 **What the work involves:** Multilingual/speech benchmarks, rubrics and human adjudication, bias tests, uncertainty/agreement and judge calibration; Python/model-serving/ML pipelines with versioned reproducible configurations.
 
-**Pay:** Not stated. **Source status:** Live employer application page.
+**Pay:** Not stated. **Source at review:** The employer’s application page was visible.
 
 #### HP · Agentic AI Systems Evaluation Engineer
 
@@ -782,7 +786,7 @@ Purposive 10-posting, 10-employer sample across product evals, model evals and e
 
 **What the work involves:** Repeatable model/runtime/hardware benchmarks; TTFT, tokens/sec, latency, memory, concurrent workloads; Python/C++ or similar. ONNX/GGUF and inference understanding required; experimental design preferred.
 
-**Pay:** USD $130,700–205,200 annually; possible bonus/equity. **Source status:** Live employer application page.
+**Pay:** USD $130,700–205,200 annually; possible bonus/equity. **Source at review:** The employer’s application page was visible.
 
 #### Sedgwick · AI Evaluation Engineer
 
@@ -794,48 +798,34 @@ Purposive 10-posting, 10-employer sample across product evals, model evals and e
 
 **What the work involves:** LLM/RAG eval metrics, CI/CD quality gates, human-label/LLM-judge calibration, statistical significance/inter-rater agreement, red teaming and privacy tests; Python, eval tools, cloud and risk communication.
 
-**Pay:** Not found. **Source status:** Full employer-indexed description; direct page empty, application status unconfirmed.
+**Pay:** Not found. **Source at review:** The employer’s full description appeared in search. The direct page was empty, so application status was unconfirmed.
 
 </details>
 
 ### Turn the evidence into a learning plan
 
-Start with one small working system and adapt the proof to your target role:
+One small project can demonstrate different responsibilities. For a forward deployed role, show how a user’s feedback changed the work. For applied AI, compare a feature against a baseline and a difficult test case. An architect could use the same project to explain the data flow, access controls, operating costs, and a build-or-buy decision. An evaluation engineer could track disagreement between two reviewers. An agent engineer could trace a failed tool call and show what happens next.
 
-- **FDE:** interview a real user, write a bounded problem statement, integrate an API and document deployment and a handoff. Show how feedback changed the solution.
-- **Applied AI:** build an LLM feature with a test set, baselines, failure cases and a reproducible evaluation. Compare quality, latency and cost rather than showing only a polished demo.
-- **AI architect:** document data flow, access controls, deployment choices, operating costs and a build-versus-buy decision. Explain the tradeoff to a nontechnical stakeholder.
-- **Evaluation engineer:** design a rubric, compare automated judgments with human ratings, examine disagreement and report uncertainty. Build a repeatable pipeline that can catch regressions.
-- **Agent engineer:** demonstrate tool permissions, state, retries, cancellation, tracing and human escalation. Add tests for wrong answers and failed tools, not just the happy path.
-
-These are **suggested practice projects**, not hiring guarantees or a claim every employer requires the same stack. Check enrollment, work authorization, geography, travel and clearance constraints before investing time in an application. A certification can help when a posting prefers it; this sample does not establish a universal certificate requirement.
+These are examples for practice, **not hiring guarantees**. Check enrollment, work authorization, location, travel, and clearance requirements in the current posting.
 
 ## What should you learn?
 
-My interpretation of these postings is straightforward: **learn to build, explain, evaluate and improve a system that solves a real problem.** Programming fundamentals still matter. The examples do not establish that conventional software jobs have disappeared.
+1. **Build something small.** Connect a Python or TypeScript application to an API or database. Use Git, write a test, and deploy it somewhere a second person can try.
+2. **Trace an answer.** Connect a model to a source, then ask for a detail that source leaves out. Show where the answer came from. The <a href="/knowledge-lab/">Knowledge Lab</a> has an exercise.
+3. **Measure a result.** Run a small test set, record one failure, and check the effect of a change. If cost, latency, privacy, or security matters to the user, say how you checked it.
+4. **Hand over the keyboard.** Ask someone who never helped build the system to try it. Let them tell you where an instruction, screen, or result surprised them.
+5. **Make a claim you can defend.** If your change saved time, show the before and after measurements. If you tried it with fictional data, say so.
 
-1. **Build:** practice Python or TypeScript, APIs, SQL, Git, tests and deployment. Use AI assistance, but be able to debug what it produces.
-2. **Ground:** connect a model to relevant data. Compare retrieval strategies, preserve sources and handle missing information. The <a href="/knowledge-lab/">Knowledge Lab</a> is a place to start.
-3. **Evaluate:** create a small test set, measure quality and failure cases, and log latency and token cost. Include privacy and security checks.
-4. **Communicate:** interview a potential user, write requirements and explain tradeoffs without jargon. Demonstrate the system to someone who did not build it.
-5. **Show value:** compare the old workflow with the new one. Report what you actually measured, not invented time savings or simulated results presented as real outcomes.
-
-**Degree or certification?** Follow the individual posting. The internship examples specify enrollment and graduation requirements. A certificate may structure learning, but it is not a substitute for the requested experience, and this sample does not establish a universal certification requirement.
+**Credentials.** Read the individual posting. The internship examples specify enrollment and graduation windows. A certification may help when an employer asks for it. The required degree and experience vary by role.
 
 ## Turn research into a plan
 
-Build a small research website before committing to a large project. The point is to organize information so **you** can understand it and make a decision, not to generate more pages.
+Choose two employer descriptions and put them side by side. Keep the original links, dates checked, eligibility, location, pay basis, and deadlines. Underline one responsibility they share. Then choose one gap you can address with a project small enough to finish.
 
-- Separate **roles, internships, skills and next steps**. Record employer, location, eligibility, pay basis, deadline, source URL and date checked.
-- Choose two roles and compare their requirements. Find the overlap and one meaningful gap in your current skills.
-- Build a small proof of that skill: a useful application, a test suite, a cost comparison or a clear technical walkthrough.
-- Ask a peer to review the research and open an issue with one concrete improvement. Make the change, verify it and close the issue with evidence.
-- Keep the presentation concise. Use a chart, diagram or optional audio summary only when it helps you understand the material. Do not upload private application details to a public repository.
+If you publish the work as a portfolio or research site, give a reader three things: the employer requirement, an example of you doing that work, and enough evidence for someone to check the result. Ask a peer for one specific improvement, make the change, and link the revision. Keep private application details out of the public repository.
 
 ## How this guide is maintained
 
-This careers area is intended for recurring, source-based updates. Each published edition should identify its check date, distinguish new findings from older examples and recheck deadlines. **A scheduled review is not a guarantee that every opening is still available between updates.**
-
-The linked employer pages are the primary sources for the examples above. This is a small, deliberately selected sample, not a statistical study of demand, salaries or hiring outcomes. “Emerging AI careers” includes older roles whose responsibilities now involve AI; it does not mean every title was invented recently.
+This edition preserves the descriptions as checked on **November 12, 2026**. A source link lets readers revisit the employer directly. Job availability, compensation, and requirements can change after the check date. A future edition should record its own date and describe what changed.
 
 *Educational guidance from Keith Williams. No employer affiliation, placement guarantee or official NJIT career-services endorsement is implied.*

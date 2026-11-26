@@ -1,38 +1,37 @@
 ---
 title: About Keith Williams
-description: Keith Williams on teaching at NJIT, building software, working in Zambia, and the experiences behind his work in AI education.
+description: Meet Keith Williams, an NJIT lecturer and Enterprise AI program director whose work connects software engineering, classroom teaching, and public services.
+teaser: A home computer in Pittsburgh, a classroom in Newark, and software work in Zambia shaped the way I teach people to build with AI.
 ---
 
 # About Keith Williams
 
-I'm a Senior University Lecturer at the New Jersey Institute of Technology and director of the B.S. in Enterprise AI. I design courses, build software, and study a question that connects the two. When an AI tool helps someone produce good work, how do we tell what that person can do next?
+I’m a Senior University Lecturer at the New Jersey Institute of Technology and director of its B.S. in Enterprise AI. When a student shows me a working project, I like to hand it to someone else. What happens when that person tries something the student never anticipated? That’s often where the most interesting part of the lesson begins. [Inside my classroom](/teaching)
 
 ## Where it started
 
-My father was a mainframe systems lead operator at Alcoa, so computers were part of my world early on. For Christmas in 1983, I received a Tandy TRS-80 Color Computer 2 and started teaching myself to program. There was something wonderful about making a machine do something that had only been an idea a few minutes earlier.
+For Christmas in 1983, I got a Tandy TRS-80 Color Computer 2. My father worked as a mainframe systems lead operator at Alcoa. Now I had a machine I could program myself, and I started teaching myself how.
 
-Before and alongside my university work, I taught children about computers through AmeriCorps at an urban after-school youth center in Pittsburgh. I've also worked with high schools. I still care about that first encounter with a tool, especially for the person who isn't sure they belong in the room.
+Later, through AmeriCorps, I taught children about computers at an after-school center in Pittsburgh. I’ve also worked with high schools. I still think about the person sitting down at a computer for the first time, wondering what they’re allowed to try.
 
 ## Building things, teaching people
 
-I began teaching at NJIT as an adjunct in 2002. Over more than two decades, I've developed courses and helped shape the Web and Information Systems program. I've also built software outside the classroom, including Showedme.net, a web application framework and learning management system, and Wrkbench, an iOS collaboration app.
+I started teaching at NJIT as an adjunct in 2002. I’ve developed courses and helped shape the Web and Information Systems program. Along the way I built Showedme.net, a web application framework and learning management system, and Wrkbench, an iOS collaboration app.
 
-That experience shapes how I teach. I like projects where someone else can try what the student built and ask a question the student didn't anticipate. In my AI-assisted Studios, I write instructions for the coach and give the student decisions to own. [See the classroom Studios](/teaching)
+Today my students use AI coding assistants. In the classroom exercises I call Studios, I can give the assistant a job and reserve a decision for the student. A learner can ask for help, test a prediction, and see what they would change. [Try a Studio](/teaching/when-ai-helps-write-the-code)
 
 ## Learning beyond my own classroom
 
-In Zambia, I taught software engineering and worked with government teams on e-government services, user-experience design, and prototyping. The work kept bringing us back to the person trying to use a public service. What did they come to do? Could they do it with the system in front of them? [NJIT on teaching in Zambia](https://news.njit.edu/inspiring-students-njit-africa) · [NJIT on digitizing government services](https://news.njit.edu/njit-lecturer-helps-digitize-government-services-zambia)
+In Zambia, I taught software engineering and worked with government teams on digital public services, user experience, and prototypes. A prototype gave us something concrete to put in front of the person trying to use a service. We could watch where they got stuck and ask what they had expected to happen. [NJIT on teaching in Zambia](https://news.njit.edu/inspiring-students-njit-africa) · [NJIT on digitizing government services](https://news.njit.edu/njit-lecturer-helps-digitize-government-services-zambia)
 
-## What I'm working on now
+## What I’m working on now {#what-im-working-on-now}
 
-I started using ChatGPT shortly after it launched. Today I build teaching tools and explore how to connect AI-generated answers to evidence people can inspect. You can try a retrieval exercise in the <a href="/knowledge-lab/">Knowledge Lab</a>, look through my [public projects](/#projects), or read my [research questions and technical case studies](/research).
+I started using ChatGPT shortly after its launch. Two questions have held my attention. How do we tell what someone learned when AI helped them build? How do we trace a confident answer back to the evidence behind it? My [research agenda](/research) describes the studies I’d like to run. The <a href="/knowledge-lab/">Knowledge Lab</a> gives readers a retrieval exercise to try, and my [project portfolio](/#projects) links to the software and teaching materials behind the work.
 
-I also use AI to organize ongoing work. [Life Tracker](/life-tracker) shows the everyday version of that problem. How do I keep track of an action I asked an assistant to take and verify what actually happened?
+I also write about ordinary uses of AI. [Life Tracker](/life-tracker) is the method I use to follow a task from a conversation to a verified result. A separate proposal, EverydayAI Newark, imagines paid workshops helping fund free community learning and opportunities for students to show their work. It is a proposal, not an operating program.
 
-One idea I'd still like to explore is EverydayAI Newark. I imagined paid workshops helping support free community learning and opportunities for students to demonstrate their work. It remains a proposal, not an operating program.
+## Let’s compare notes {#lets-compare-notes}
 
-## Let's compare notes
-
-If you're teaching with AI, I'd like to hear about an assignment that made you rethink your approach. I also welcome conversations about software that helps people inspect the evidence behind an answer. [Connect on LinkedIn](https://www.linkedin.com/in/keithwilliams5/) · [Find me at NJIT](https://people.njit.edu/profile/kwilliam) · [Start a public conversation](/#conversation)
+I’d like to hear about an assignment that changed how you teach, or a software project that made you rethink what counts as evidence. [Connect on LinkedIn](https://www.linkedin.com/in/keithwilliams5/) · [Find me at NJIT](https://people.njit.edu/profile/kwilliam) · [Start a public conversation](/#conversation)
 
 *Parts of this account first appeared on my [earlier About page](https://eaikw.com/about/).*

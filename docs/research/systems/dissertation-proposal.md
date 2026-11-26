@@ -1,32 +1,34 @@
 ---
 title: Preliminary Doctoral Dissertation Proposal
-description: Advisor discussion draft on evidence-governed personalized knowledge artifacts and human-attention-constrained adaptive AI orchestration.
+description: Keith Williams proposes three studies to test how an AI system can trace claims to sources and decide which cases deserve an expert’s time.
+teaser: Five stories repeat one witness. Is that enough evidence to put a claim in an AI briefing? A proposed study asks who should decide and what that review costs.
+dateLabel: November 19, 2026
+datePublished: "2026-11-19"
+articleGenre: Preliminary doctoral research proposal
 ---
 
 # Preliminary Doctoral Research Proposal
 
-**Working title:** Adaptive Human–AI Orchestration for Provenance-Governed Knowledge Artifacts: Reliability, Commissioning, and Human Attention
+Imagine an analyst tracing a claim that appears in five reports. Four cite the fifth. An AI briefing calls this “five independent accounts.” Catching the error takes a few minutes if the analyst can see the citations. Finding it in a thousand-page archive could take the afternoon. The question behind this proposal is **when a system should spend those few minutes of human attention, and what evidence it should put on the screen**.
 
-**Researcher:** Keith Williams  
-**Institution:** New Jersey Institute of Technology  
-**Prepared:** November 19, 2026  
-**Status:** Exploratory advisor discussion draft. Not an approved dissertation proposal, completed study, or claim of institutional endorsement.
+This preliminary proposal was prepared at the New Jersey Institute of Technology for advisor discussion. The studies, faculty participation and institutional approval are prospective.
+
+**Working title**  
+Adaptive Human–AI Orchestration for Provenance-Governed Knowledge Artifacts: Reliability, Commissioning, and Human Attention
 
 ## Abstract
 
-Generative AI systems can transform unstructured text, images, audio, and video into structured representations and personalized knowledge artifacts. Yet their usefulness in consequential settings is limited by uncertain source material, unreliable entity and claim resolution, insufficient provenance, uneven model quality, and the expense of expert oversight. Systems that require human approval for every output cannot scale economically; systems that automate all decisions risk promoting unsupported information.
+I propose to build and evaluate a system that turns text, images, audio and video into briefings, lessons and source dossiers. Each significant claim would carry a record of where it came from, how it changed and who authorized its use. A reader could trace an account back to the page, image region or recording that supports it. If accounts conflict, the briefing would say so.
 
-This research proposes **Adaptive Evidence-Governed Orchestration (AEGO)**, a provisional reference architecture in which independently discoverable sensors report observations, capability descriptions and achieved guarantees. Analysis services propose interpretations; a separate policy layer evaluates evidence, error consequences and authority; and a capacity-aware workflow routes work through an automated **Race Track** or a review **Pit Stop**. During commissioning, humans and explicitly authorized AI delegates evaluate selected cases and can approve reusable, narrowly scoped policies. All observations, model evaluations, approval decisions, and knowledge promotions retain traceable provenance.
+The proposed architecture, **Adaptive Evidence-Governed Orchestration (AEGO)**, assigns distinct responsibilities. Software sensors report observations and the guarantees they achieved. Analysis services interpret those observations. A policy decides whether a case can proceed automatically, needs more evidence or warrants an authorized reviewer. In the Ordo design, the automated path is the **Race Track** and a review is a **Pit Stop**. *Commissioning* means observing how a proposed rule performs on examples, testing it on fresh cases and obtaining explicit authorization before using it.
 
-The dissertation would design and evaluate a working prototype that ingests heterogeneous material, constructs attributed claims in a qualified hybrid graph/vector knowledge base, and generates personalized briefings, readable dossiers and other artifacts with evidence links. The intended accountability is for faithful extraction, attribution, reasoning and source citation—not for asserting the ultimate truth of untestable events. Its central question is whether adaptive, consequence-sensitive review can reduce the human attention required per qualified artifact while meeting specified reliability, provenance, and legal/ethical constraints.
-
-The approach is **design science research**, supplemented by controlled comparisons, quantitative systems evaluation, and human-computer interaction studies. The contribution sought is an experimentally supported method for commissioning and operating trustworthy human–AI knowledge production, not a claim to have invented RAG, provenance, selective review, or Kanban.
+The primary question is whether this approach reduces expert minutes per qualified result at a specified level of reliability, with traceable sources and enforceable permissions. The proposed method combines design science, controlled systems comparisons and human–computer interaction studies. Its scope is faithful extraction, attribution and reasoning. For an event the archive cannot independently verify, the result to evaluate is how accurately the system describes the evidence available.
 
 ## 1. Motivation and origin of the problem
 
-The initial motivation was **personalized knowledge artifacts**: lessons, reports, audio explanations, interactive material, and other presentations tailored to individual users and objectives. Producing such artifacts cheaply is insufficient if they distort facts, obscure uncertain evidence, or require costly manual verification.
+I started with a teaching problem. A student might benefit from an audio explanation while a colleague needs a technical report on the same material. Both deserve the same care with sources. If an instructor has to check every sentence of each version, generating more versions quickly creates more work.
 
-The work evolved through several experimental systems:
+These projects supplied parts of the problem and some of the tools I could test.
 
 | Period | Existing repository evidence | Research relevance |
 | --- | --- | --- |
@@ -36,56 +38,54 @@ The work evolved through several experimental systems:
 | July 2026 | [Ordo](https://github.com/kaw393939/ordo): Race Track/Pit Stop and human review doctrine | Formalize permission and attention constraints; runtime remains proposed |
 | November 2026 | UAP Corpus (private research catalog): metadata catalog and provenance-first acquisition design | Stress-test conflicting sources and duplicate testimony |
 
-Dates refer to visible repository records and do not establish the original invention date of every idea. The MetaVis tests are real source code; the full proposed AEGO system has **not** yet been implemented or empirically validated.
+The dates mark repository records. MetaVis includes executable tests. The combined AEGO architecture and the claims about its performance still await implementation and evaluation.
 
 ## 2. Problem statement
 
-Consider a billion-email organization or a research archive containing contradictory accounts, unattributed quotations, repeated sources, and multilingual multimedia. The desired output is not merely a text summary. It is a structured account of people, events, source claims, uncertainty, and relationships that remains connected to original evidence.
+Take an archive that includes a recorded interview, a translated transcript, two news stories quoting it and a correction issued a month later. A search can return five relevant items. A qualified account must also tell the reader whose assertion they share, which wording changed and which version was available at the time of the briefing. The same questions arise in an organization with a billion emails, meeting notes and forwarded attachments.
 
-The software faces several distinct problems:
+For this work, **qualifying a claim** means recording the evidence and conditions under which a specific use is justified. That creates seven design requirements.
 
-1. Extracted claims cannot be treated as facts merely because they appear in a retrieved document.
-2. Several articles citing one witness should not become independent corroboration.
-3. Confidence in transcription, identity resolution, and claim support are different properties.
-4. Approving a source for indexing does not authorize its contents as true or suitable for public publication.
-5. Human review effort is limited; unnecessary interruptions may outweigh the cost of automated computation.
-6. New sensors and models should integrate without rewriting core orchestration logic.
-7. Personalized outputs must preserve qualifications and evidence from a shared knowledge base.
+1. Attribute each extracted claim to a source and preserve the distinction between testimony and independently established observations.
+2. Follow citation chains so that repeated reporting counts as one lineage where appropriate.
+3. Track separate uncertainties in transcription, identity matching and support for the claim.
+4. Distinguish permission to index material from authority to publish or accept its contents.
+5. Allocate scarce human review time to decisions where an error would have meaningful consequences.
+6. Add sensors and models through common contracts so the orchestration code can be reused across domains.
+7. Carry qualifications and disagreements into every personalized output derived from the shared knowledge base.
 
 ## 3. Research questions and hypotheses
 
-**RQ1 — Evidence and interoperability.** Can self-describing, heterogeneous sensors produce interoperable observations with explicit achieved guarantees and provenance, allowing downstream analysis without a domain-specific rewrite of the orchestration core?
+**RQ1 — Evidence and interoperability.** Can sensors for different media describe observations, achieved guarantees and sources in a shared form that downstream tools can use without rewriting the orchestration core for each domain?
 
-**RQ2 — Adaptive review.** Can progressively commissioned, consequence-aware routing reduce expert-review minutes per correctly qualified claim compared with review-all and fixed-confidence approaches, without increasing consequential false promotions beyond a predefined bound?
+**RQ2 — Adaptive review.** Can commissioning rules case by case lower expert minutes per correctly qualified claim compared with reviewing every case or using a fixed confidence threshold? The system must stay within a predefined bound on consequential false promotions, cases in which it accepts a claim for a use its evidence does not support.
 
-**RQ3 — Attention-aware scheduling.** Under fixed reviewer capacity, can a Kanban-inspired, pull-based scheduler improve the rate and timeliness of verified knowledge promotion compared with FIFO and simple uncertainty ordering?
+**RQ3 — Attention-aware scheduling.** With a fixed number of reviewers, can a pull-based, Kanban-inspired queue get verified claims to their users sooner or produce more value per reviewer hour than first-in, first-out (FIFO) or uncertainty-first ordering?
 
-**RQ4 — Knowledge reuse.** Can graph-guided retrieval from qualified, provenance-linked knowledge reduce model context and the marginal cost of personalized artifacts while maintaining citation fidelity, important contradictions, and usefulness to users?
+**RQ4 — Knowledge reuse.** When a graph steers retrieval toward qualified claims and their sources, can it reduce the model context and marginal cost of each new artifact while preserving citation fidelity, important contradictions and usefulness?
 
-Proposed falsifiable hypotheses:
+| Hypothesis | Result that would support it |
+| --- | --- |
+| H1 · Consequence-sensitive routing | Expert review takes fewer minutes than a fixed threshold at matched consequential-error performance. |
+| H2 · Review interface | A concise case with optional evidence details improves accuracy, reduces decision time, or both, compared with raw sensor output. |
+| H3 · Capacity-aware scheduling | Under realistic workloads, the queue reduces avoidable delay or yields more accepted value per reviewer hour. |
+| H4 · Graph-guided retrieval | A grounded answer uses fewer context tokens than passage-only retrieval with no material decline in citation fidelity or coverage of contradictions. |
 
-- **H1:** An adaptive consequence-sensitive policy yields lower human-review effort than a fixed threshold at matched consequential-error performance.
-- **H2:** A concise, progressively disclosed review package improves operator decision accuracy and/or reduces time compared with raw sensor output.
-- **H3:** Reviewer-capacity-aware scheduling reduces avoidable queue time or increases accepted value per reviewer hour under realistic workload distributions.
-- **H4:** Graph-guided retrieval reduces context tokens per grounded answer relative to standard passage-only RAG without material degradation in citation or contradiction coverage.
-
-A negative or null result remains valuable if the experiments identify when the proposed approach fails.
+The comparisons can also establish when a simpler system works equally well. That result would change which parts of the architecture are worth building.
 
 ## 4. Proposed framework
 
 ### 4.1 Observation and sensor layer
 
-Every sensor publishes a versioned **capability manifest**, typed input and output contracts, supported environments, expected cost, limitations, declared uncertainty semantics, and optional deeper evidence. The common envelope standardizes communication rather than imposing a universal ontology on all sensory domains.
+A *sensor* can be software that reads an email header, separates speakers in a recording or flags conflicting dates. Each sensor publishes a versioned capability manifest describing accepted inputs, typed outputs, supported environments, expected cost, limits, the meaning of its uncertainty estimates and any deeper evidence it can supply. The common envelope lets different specialties preserve their own meanings.
 
-Examples: email-header extractor, transcription and diarization, entity-resolution candidates, date/identity inconsistency detector, graph-provenance checker, legal-rights validator, local GPU image sensor.
-
-Sensor self-reports are **claims about capability**, not proof of accuracy. Independently measured calibration and regression data remain separate.
+Other candidates include an entity matcher, a graph-provenance checker, a rights checker and a local GPU image sensor. For each, the system records what the sensor claims it can do, what it reports achieving on this case, and how it performed in independent calibration and regression tests. Those are three different pieces of evidence.
 
 ### 4.2 Interpretation and qualification
 
-Raw sources, extracted observations, candidate propositions, and qualified knowledge remain distinct. Entity and claim records link to exact document spans, page regions, audio/video intervals, transformations and source hashes.
+Suppose a transcript names “Dr. Lee.” The words in the audio, the transcription and the proposed match to a person are different records. A reviewer could accept the transcription and leave the identity unresolved.
 
-The framework retains contradictory accounts and shared citation lineages. Knowledge promotion is a recorded, versioned action, with the reviewer or governing policy, rationale, conditions, and appeal or recovery path.
+The prototype would retain the original source, the extracted observation, the candidate claim and each decision to qualify it. Records would point to exact text spans, page regions or audio/video intervals, with source hashes and any intervening transformations. Each promotion would record the authorized reviewer or policy, the rationale, conditions, and a route to appeal or reverse the decision. Conflicting accounts and shared citation lineages would remain available after review.
 
 ### 4.3 Distinct graphs and an evidence-first interface
 
@@ -99,37 +99,31 @@ Ordo's documented [Product & UX Model](https://github.com/kaw393939/ordo/blob/ma
 
 ### 4.4 Decision and governance engine
 
-The engine considers anticipated consequence of an error, uncertainty of the relevant sensors, evidence strength, reversibility, authority, and downstream dependencies. It may:
+A routing decision weighs the consequence of a mistake, evidence strength, sensor uncertainty, reversibility and downstream dependencies. It also checks who has authority to act. A date used as a search hint can warrant less scrutiny than the same date in a published accusation.
 
-- proceed under an approved automatic rule;
-- request targeted extra evidence;
-- route to a local or frontier model for further evaluation;
-- open a Pit Stop for an authorized human or delegated AI;
-- quarantine, defer, or prohibit an action.
-
-**Delegation of analysis is not delegation of authorization.** Hard permission boundaries cannot be optimized away.
+An approved rule may allow the case to proceed. The system can also request a missing source, send a bounded analysis task to a local or frontier model, or open a Pit Stop for an authorized human or AI delegate. Quarantine, deferral and prohibition remain possible outcomes. A model asked to interpret an image acquires no new publication authority by completing that task.
 
 ### 4.5 Commissioning and policy improvement
 
-In early supervised operation, reviewers resolve selected cases. The system may recommend a scoped future rule, supported by historical examples and a held-out evaluation. A qualified operator must explicitly authorize policy activation. The active policy, training examples, model versions, revisions, expiration/revocation conditions, and observed outcomes are logged.
+During early operation, reviewers resolve selected cases. After several similar decisions, the system might propose a narrow rule. The proposal must specify the kinds of cases it covers, show historical examples and report performance on cases held out from development. An authorized operator decides whether to activate it.
 
-Policies should **never** be inferred as permission solely from repeated approvals.
+The audit record includes the policy and model versions, examples, approvals, changes, conditions for expiry or revocation, and observed outcomes. Repeated approval of individual cases provides examples for testing a rule. Activating it requires a separate decision.
 
 ### 4.6 Flow and resource control
 
-A queueing/scheduling layer limits work in progress for expensive resource classes and respects human review capacity. Large ingest streams live in durable work queues, not individual visible Kanban cards. The UI presents meaningful batches, exceptions, and decisions with progressive disclosure.
+A million incoming records can live in a durable queue. Giving a reviewer a million cards would bury the decisions they need to make. The scheduling layer limits work in progress for each scarce resource, including reviewer time. The interface shows batches and exceptions, with supporting records available on demand.
 
-The objective combines computation cost, expert time, delays, expected consequences and recovery, subject to hard reliability and authority constraints.
+The evaluation weighs expert time, compute cost, delay, the consequences of error and the cost of recovery. Mandatory reliability and authorization constraints apply before the scheduler compares those trade-offs.
 
 ### 4.7 Personalized artifact engine
 
-Qualified knowledge can support multiple artifact types—text explanations, instructional content, reports, audiovisual media, interactive diagrams or machine-readable agent packets. Each artifact retains derivation links and notes any assumptions introduced during generation.
+A single body of qualified claims might support a five-minute audio explanation, an instructor’s lesson, an analyst’s report, an interactive diagram or a machine-readable packet for another agent. Every output would retain links to the claims it used and flag assumptions added during generation.
 
-Generated artifacts are **derivatives**, not new independent evidence supporting their own sources. They cannot be silently fed back to the canonical graph as corroboration.
+The system must recognize its own derivatives. Generating three new briefings from one interview still leaves one original interview. Feeding those briefings back as independent corroboration would recreate the problem the system was built to solve.
 
 ## 5. Methodology
 
-Use **design science research** following Hevner et al. (2004): identify a practical problem, design an artifact, evaluate it against baseline approaches, revise its theory and implementation, and communicate both positive and negative results.
+The three studies follow the **design science research** approach described by Hevner and colleagues (2004). Each tests part of a working artifact against a simpler approach. The results would guide revisions to the software and to the underlying explanation of when it should work.
 
 ### Study A — Sensor evidence and knowledge construction
 
@@ -192,7 +186,7 @@ Established foundations include:
 - [Grandhi and Jones](https://digitalcommons.njit.edu/fac_pubs/6913/) (2015) — interruption decision-making with contextual information;
 - [Hevner et al.](https://aisel.aisnet.org/misq/vol28/iss1/6/) (2004) — design science in information systems.
 
-**Novelty is a question, not a claim.** The targeted contribution is a documented algorithm and reference architecture for sensor-declared evidence quality, policy commissioning, consequence-sensitive review, and capacity-aware knowledge promotion, supported by controlled experiments. The prior-art review must establish whether an existing system has already demonstrated this exact integration.
+The proposed contribution is a documented algorithm and reference architecture joining sensor-reported evidence quality, policy commissioning, consequence-sensitive review and capacity-aware knowledge promotion. A systematic review must first establish what existing systems already demonstrate. Controlled comparisons would then show whether adding these pieces together buys anything in practice.
 
 ## 7. NJIT research alignment
 
@@ -239,10 +233,10 @@ The prototype can reuse selective design ideas and code from MetaVis and Ordo Ex
 2. Which single outcome should anchor the dissertation: consequential error at fixed review budget, or human minutes at fixed reliability?
 3. What is the minimum defensible demonstration of progressive commissioning beyond existing learning-to-defer research?
 4. What secondary dataset would provide useful ground truth alongside the deliberately disputed UAP material?
-5. How should we separate the user's prior engineering experiments from the dissertation's prospective empirical evidence?
+5. What would an independent evaluation need to establish beyond what my existing engineering prototypes demonstrate?
 
 ---
 
-**Draft prepared for discussion, not submission.** No faculty approval, funded research, empirical superiority, or novelty finding is asserted.
+The next decision is which outcome and dataset can support a first defensible experiment. This preliminary proposal carries no claim of faculty approval, research funding, demonstrated superiority or established novelty.
 
 [Research hub](./) · [Literature map](./literature-and-faculty)

@@ -1,58 +1,46 @@
 ---
-title: Human Attention as an Engineering Constraint
-description: Kanban, review queueing, cost of errors, and dynamic human–AI resource allocation.
+title: "Human Attention as an Engineering Constraint"
+description: "A practical way to evaluate AI review queues by expert time, error costs, and how much reliable work reaches the people who need it."
+teaser: "An agent can produce another ten drafts while a reviewer reads the first one. How can a team tell whether it is getting more useful work done?"
+articleGenre: "Research and economics essay"
+dateLabel: "November 2026"
 ---
 
 # Human Attention as an Engineering Constraint
 
-*Research and economic hypothesis · November 2026*
+Suppose an AI system finishes a thousand records overnight. By morning, a specialist has a hundred flagged items and an hour before the first briefing. Generating faster will give that specialist a longer list. The engineering question is which decisions are worth the hour.
 
-As AI agents make generation inexpensive, **the scarcest resource may be the attention of people qualified to verify and authorize their output**.
-
-Optimizing for more AI-produced code, claims, or multimedia can worsen the real bottleneck: an ever-growing queue of decisions humans must inspect.
-
-I want to evaluate systems by accepted, reliable value per human-review minute—not by generated tokens per second.
+I would measure **review minutes per claim accepted at a stated level of reliability**. Count the work the team can stand behind, then look at the errors that slipped through. A queue can look wonderfully efficient when nobody checks what leaves it.
 
 ## Kanban as flow control
 
-Kanban's work-in-progress limits, explicit policies, and pull-based flow provide a useful model. Yet the architecture needs two different flows:
+Kanban limits how much work can be in progress. For review, I would track two flows. One contains incoming sources and all the observations extracted from them. The other contains decisions someone can actually make, such as whether two records refer to the same person or whether a change in evidence warrants a correction.
 
-- **Knowledge flow:** source ingestion, sensor observations, candidate claims, verification, graph promotion, and artifact generation.
-- **Decision flow:** ambiguous cases, policy changes, consequential actions, and reviewer approvals.
-
-Billions of emails should not become billions of visible board cards. The operational board represents batches, blocked jobs, reviewer cases, decisions, and capacity; the detailed event and provenance records remain in the underlying system.
-
-When Pit Stops exceed review capacity, the scheduler should apply backpressure, group repetitive decisions, gather cheaper additional evidence, and prioritize cases by risk and expected value. It must never bypass a mandatory authority gate merely to clear the queue.
+Keep the full history in the underlying system. Give reviewers a board of cases, batches, and blocked decisions. When it fills, slow the incoming work, group related cases, or have a tool gather a missing passage. A full queue leaves the authorization rules in force.
 
 ## Value of additional review
 
-A useful starting model is:
+**Total expected cost = computation + expert review + consequences of errors + recovery.**
 
-**Total expected cost = compute + expert review + error consequences + recovery.**
+Take the ambiguous name. A reviewer can resolve today’s case. If hundreds of similar cases keep arriving, that reviewer might spend the same time evaluating a narrowly defined matching rule. The second option becomes attractive only after the rule works on held-out records and someone with authority approves its use. Sample its automatic decisions afterward to find errors the rule itself misses.
 
-The optimal pathway may be deterministic code; a small local model; a frontier model; an authorized delegate; or a human. A cheap inference that produces substantial rework may be economically worse than an expensive evaluation that prevents a serious error.
-
-Case-by-case approvals can also create higher-value policy proposals. An operator might spend two minutes correcting one ambiguous name, or the same time authorizing a tested, narrow entity-resolution rule that applies to thousands of future observations.
-
-The policy must still be monitored on held-out examples and sampled automatic decisions.
+The least expensive next step might be a database lookup, a local model, a more capable model, or a person. The price of a model call is only one term in that equation.
 
 ## What to measure
 
-- **Review minutes per qualified claim or accepted artifact**
-- **Consequence-weighted false promotions and escaped errors**
-- **Queue time, flow time, throughput, and rework**
-- **Provenance completeness and contradiction-retrieval success**
-- **Inference, storage, and recovery costs**
-- **Reviewer cognitive load and quality of decisions under interruption**
-
-Throughput alone is a poor outcome measure: if the system promotes incorrect knowledge faster, it has not improved.
+| Measure | What it can tell a team |
+| --- | --- |
+| Expert minutes per accepted claim | How much review the output consumes |
+| Consequential errors and missed escalations | What the queue lets through |
+| Time waiting, time reviewing, and rework | Where the work actually stalls |
+| Citation completeness and retrieved contradictions | Whether the result can still be checked |
+| Compute, storage, and recovery costs | Whether cheaper generation shifts cost elsewhere |
+| Decision accuracy and interruptions | What the review design asks of a person |
 
 ## Scientific questions
 
-Does value-aware scheduling outperform FIFO or fixed-confidence review when reviewer capacity is limited? Can progressive commissioning reduce the number of low-value human interruptions without increasing errors? Can progressive-disclosure review interfaces help experts understand and resolve cases more accurately?
+I would compare first-in-first-out review, uncertainty-first review, and a policy that also considers consequence, under the same workload and reviewer capacity. Does the latter save expert time at a comparable error rate? Do reviewers make better decisions with a short account of why an interruption matters? Those outcomes remain to be measured.
 
-Earlier work matters here. [Horvitz et al. (1999)](https://www.microsoft.com/en-us/research/people/horvitz/publications/) studied attention-sensitive alerting. [Grandhi and Jones (2015)](https://digitalcommons.njit.edu/fac_pubs/6913/) investigated the role of interruption context. [Sylla and Wen (2002)](https://digitalcommons.njit.edu/fac_pubs/14771/) combined decision criteria and goal programming for technology evaluation. [GRACE (2026)](https://aclanthology.org/2026.akbc-1.16/) expressly optimizes return on expert attention.
-
-The research claim must therefore involve a **specific new mechanism and measured benefit**, not simply recognizing that review time is scarce.
+This question has a history. Horvitz and colleagues studied attention-sensitive alerts. Grandhi and Jones studied how context helps people judge interruptions. Sylla and Wen combined multiple criteria in technology investment decisions. GRACE explicitly considers the return on expert attention in knowledge-graph expansion. Those approaches give a new review policy something concrete to beat. [Horvitz et al.](https://www.microsoft.com/en-us/research/people/horvitz/publications/) · [Grandhi and Jones](https://digitalcommons.njit.edu/fac_pubs/6913/) · [Sylla and Wen](https://digitalcommons.njit.edu/fac_pubs/14771/) · [GRACE](https://aclanthology.org/2026.akbc-1.16/)
 
 [Research series](./) · [Dissertation proposal](./dissertation-proposal)

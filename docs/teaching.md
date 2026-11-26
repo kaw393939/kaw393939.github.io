@@ -1,40 +1,39 @@
 ---
 title: Teaching AI
-description: Keith Williams’s classroom Studios, teacher starter, and field notes on seeing what a student understands when AI helps build the work.
+description: Explore three NJIT classroom Studios and download a starter for designing AI-assisted assignments where students make and check their own decisions.
+teaser: Give the AI coach one job. Leave the student one decision worth making. Three classroom Studios show what that looks like in practice.
 ---
 
 # Teaching AI
 
-**AI literacy is not just knowing which button to click.** It's being able to ask a useful question, make something, and decide whether the result deserves your trust.
-
-I've taught at NJIT for more than two decades. The tools have changed a lot. What still makes teaching worthwhile is seeing someone go from “I don't know where to start” to “I can figure this out.”
+After more than two decades at NJIT, I still look forward to handing a student’s work to someone who has never seen it. A classmate trying to buy a T-shirt can find a problem that everyone who built the store missed. The student gets feedback they can use straight away. As their teacher, I get to see how they decide what to change.
 
 ## The Tests Passed. Who Won the Game?
 
-A round of Rock, Paper, Scissors gives me a question to ask after the automated checks pass. What result did the student expect when they played? The feature follows three courses and the choices I make about when an AI coach should speak and when it should wait. [Read the classroom story](/teaching/when-ai-helps-write-the-code)
+My web applications starter passed twelve automated checks and still couldn’t settle a round of rock-paper-scissors. That was deliberate. The part I wanted the student to explain was what happens when the computer picks paper and the player picks rock. The feature follows that question through three courses. [Read the classroom story](/teaching/when-ai-helps-write-the-code)
 
 ![A learner holds a pencil over a blank card beside a worked example.](/images/teaching/studio-coach-pause.jpg)
 
 ## Build something you can explain
 
-I call these activities *Studios*. Students try the starter, decide on one change, build it with help, check what happened, and choose what to keep. A short instruction file called `AGENTS.md` tells the AI how to coach that particular lesson. The decision left to the student changes with the course.
+I call these activities *Studios*. Students try a starter, choose one change, build it with help, and check what actually happened. A plain-text file called `AGENTS.md` tells the AI assistant when to help, what to ask, and when to wait.
 
-| Studio | A decision the student owns |
+| Studio | A decision the student makes |
 | --- | --- |
-| [Brand Studio · Intro to Website Development](https://github.com/kaw393939/is117-brand-studio) | Choose an audience for a plain white T-shirt. Show where that choice changed the storefront or its voice. |
-| [Rock, Paper, Scissors · Building Web Applications](https://github.com/kaw393939/is218-rps-starter) | Agree on the rule for one round. Explain a test and check the result by playing the game. |
-| [Server Studio · Content Management Systems](https://github.com/kaw393939/373_hosting) | Predict how a request will reach a calculator running on the student's server. Open the public address and check the prediction. |
+| [Brand Studio · Intro to Website Development](https://github.com/kaw393939/is117-brand-studio) | Choose the audience for a plain white T-shirt. Point to one design or wording choice that fits that buyer. |
+| [Rock, Paper, Scissors · Building Web Applications](https://github.com/kaw393939/is218-rps-starter) | Predict the outcome of a round from the player’s point of view. Check a test, then play it yourself. |
+| [Server Studio · Content Management Systems](https://github.com/kaw393939/373_hosting) | Predict how a request will reach a calculator running on your server. Open the public address and see what happens. |
 
-The <a href="/knowledge-lab/">Knowledge Lab</a> takes the same habit into retrieval. When an AI answers from a collection of documents, can the student find the passage that supports the answer? What happens when the information is missing?
+For a project that works with documents, try the <a href="/knowledge-lab/">Knowledge Lab</a>. Give the system a question it can answer and ask for the passage that supports its answer. Then ask for a detail the collection leaves out.
 
 ## Try a Studio in your course
 
-Start with an assignment you already teach. Choose one moment when you want to hear the learner's reasoning before the assistant offers an answer. The starter helps you rehearse that exchange and produces a student handout and a set of coaching instructions. The teacher copy contains answers. Share only `LESSON.md` and `AGENTS.md` with students. [Download the teacher Studio starter](/downloads/AI-Studio-Starter.zip)
+Pick an assignment you already teach and a decision you want students to make. Rehearse the assignment once, playing a student who is stuck. Does the coach give a helpful hint, or does it make the decision for you?
 
-For the decisions behind the design, the field notes connect classroom and engineering research to specific choices about hints, evidence, and follow-up questions. [Read the Studio field notes](/teaching/studio-field-notes)
+The download includes a worked example, a student handout, and the coach’s instructions. **The teacher copy contains answers. Share only `LESSON.md` and `AGENTS.md` with students.** [Download the teacher Studio starter](/downloads/AI-Studio-Starter.zip) · [Read the research behind the starter](/teaching/studio-field-notes)
 
 ## Learning beyond one assignment
 
-When AI helps produce an assignment, how do we know what the student can do the next time? That's the question behind my [research on learning and judgment](/research). The [AI career field guide](/ai-careers) gives students a way to choose a project around a responsibility they might encounter at work.
+I’m investigating which decisions students can make when the next task looks different. The [research agenda](/research) explains the question. Students choosing a portfolio project can use the [AI career field guide](/ai-careers) to find a responsibility they want to practice.
 
-I also publish the tools behind the teaching. The Educational Design System supplies reusable layouts for course materials. Everyday AI CLI is an alpha toolkit for repeatable AI tasks. [Explore the Educational Design System](https://kaw393939.github.io/educational-design-system/) · [See Everyday AI CLI](https://github.com/kaw393939/everyday-ai-cli)
+I publish two tools for people designing their own materials. The Educational Design System provides reusable layouts for course sites. Everyday AI CLI is an alpha command-line toolkit for repeatable AI tasks. [Explore the Educational Design System](https://kaw393939.github.io/educational-design-system/) · [See Everyday AI CLI](https://github.com/kaw393939/everyday-ai-cli)

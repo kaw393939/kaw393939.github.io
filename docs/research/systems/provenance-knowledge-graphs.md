@@ -1,57 +1,48 @@
 ---
-title: From Messy Multimodal Sources to Qualified Knowledge
-description: Claims, provenance, contradictions, graph/vector retrieval, and a UAP corpus pilot for governed knowledge construction.
+title: "Six Articles, One Witness"
+description: "See how a proposed graph and vector search system would follow a claim back to its origin, distinguish repeated testimony, and retain competing accounts."
+teaser: "A search returns six accounts of an event. If all six quote the same interview, how many independent witnesses should a briefing report?"
+articleGenre: "Research proposal and corpus case study"
+dateLabel: "November 2026"
 ---
 
-# From Messy Multimodal Sources to Qualified Knowledge
+# Six Articles, One Witness {#from-messy-multimodal-sources-to-qualified-knowledge}
 
-*Research proposal and corpus case study · November 2026*
+A search interface returns six articles, each with a citation. Follow the links and every account leads to the same interview. The search did its job. The briefing writer still has to decide how much independent support the claim has.
 
-A knowledge graph should help explain what happened across a large collection, without pretending that every statement in the collection is true.
-
-Consider millions of emails or decades of UFO/UAP material. Some documents copy the same statement. Others contradict it. Dates, names, agencies, witnesses, publishers, and interpretations change. A retrieval system can summarize these materials fluently while inadvertently losing the distinction between *someone reported X* and *X occurred*.
-
-I want to build systems where those distinctions survive extraction, compression, and reuse.
+This is the problem I want a knowledge graph to help solve. When a sentence moves from an archive to a summary and then into a report, the reader should still be able to tell who said it, on what basis, and whether anyone else observed it independently.
 
 ## Separate four things
 
-- **Source:** original file, identity, representation, access rights, content hash, and passage or time interval.
-- **Observation:** what a parser, sensor, or model extracted from that source, along with tool version and confidence or limitations.
-- **Candidate claim:** a proposition connected to speakers, events, and supporting or conflicting evidence.
-- **Qualified knowledge:** a claim approved for a particular use under a recorded rule or authorized decision—not an unconditional declaration of truth.
+| Record | What to keep |
+| --- | --- |
+| Source | Original file, access rights, content hash, and exact passage or time interval |
+| Observation | What a parser, sensor, or model extracted, its version, and the limits of the reading |
+| Candidate claim | The proposition, who made it, whose identity is uncertain, and the evidence for and against it |
+| Qualified claim | What an authorized reviewer or policy accepted, for which use, and why |
 
-A human's review should record *what was approved and why*, including scope. Approval to index a claim as reported testimony is different from approval to present the claim as established fact.
+“Include this statement in the testimony index” and “publish this assertion as established” grant different permissions. The record needs enough detail to tell which decision a reviewer actually made.
 
 ## Why a hybrid graph and vector system
 
-Vectors help find semantically related passages; full-text and exact indexes find specific names and identifiers. The graph organizes claims, identities, evidence lineages, time, agreement, and contradiction.
+A vector search can find descriptions with similar meanings even when people use different words. Exact search can recover a case number or a particular spelling. A graph can connect six articles to the interview they share and preserve a seventh source that offers a different account.
 
-A small retrieved subgraph could answer *which actors, claims, and sources matter to this question?* The system would then retrieve exact passages before making consequential conclusions.
-
-This is **structured compression with recoverable evidence**, not lossless compression. Every summary is an interpretation that can omit something important. Evaluation must test whether crucial qualifiers and competing accounts remain available.
+I would retrieve the small set of relevant relationships, then return to the source passages. Compression makes an archive navigable. It can also remove a qualifier. A worthwhile evaluation should ask reviewers to find whichever caveat a summary left out.
 
 ## UAP corpus as a difficult case
 
-My private UAP Corpus (private research catalog) contains a curated metadata-only catalog of **38 source records/leads as of November 12, 2026**, including government archives, hearings, scientific papers, books, historical investigations, and firsthand or secondhand accounts.
+On November 12, 2026, my private UAP research catalog held **38 metadata records and leads**. They include government archives, hearings, books, scientific papers, and first- or secondhand accounts. The original files had yet to be acquired. The proposed claim network is a design.
 
-The repository is explicit: no original corpus files have yet been acquired; its claim network is still a plan. Its unpublished network-design notes distinguish firsthand observation, reporting, reprinting, correction, and contradiction.
-
-A rigorous pilot could start with a small rights-cleared selection, perhaps a government report and relevant congressional testimony. We would preserve source and publication dates separately from event dates, distinguish official positions from independent evidence, and represent uncertainty without forcing a binary conclusion.
-
-The success criterion would **not** be proving extraterrestrial claims. It would be accurate attribution, shared-source detection, evidence retrieval, contradiction preservation, and transparent qualification.
+For a pilot, I would start with a small rights-cleared selection such as a government report and a hearing transcript. Label the event date separately from the dates of testimony and publication. Ask annotators which statements quote a witness, which restate another publication, and which supply independent observations. These labels let us score attribution and source copying even when the cause of an event is unknown.
 
 ## Sensors and the Pit Stop
 
-A citation sensor might detect a missing passage; an identity sensor could find ambiguous names; a source-lineage sensor could find that six articles repeat the same interview. Their outputs would be analyzed independently of permission policies.
+One checker might flag a missing passage. Another might propose that two names refer to the same person. A third might discover that several articles repeat one interview. Each reports what it found. A separate policy determines whether a person needs to review the case, particularly for a sensitive allegation, a restricted source, or a proposed identity merge.
 
-The Race Track can automatically register traceable, low-consequence observations. Potentially damaging allegations, ambiguous identity merges, restricted source rights, and changes to canonical conclusions may require more evidence or an authorized Pit Stop.
-
-Automatic processing must still undergo sampled independent audit. A sensor that systematically misses errors cannot be made safe simply by routing only its own flagged cases for review.
+Also check a sample of cases that *didn’t* trigger review. A system that catches errors only when its own detector raises a flag can remain unaware of a systematic mistake.
 
 ## Literature and open questions
 
-[W3C PROV-O (2013)](https://www.w3.org/TR/prov-o/) defines reusable provenance relationships. [GraphRAG (Edge et al., 2024)](https://www.microsoft.com/en-us/research/publication/from-local-to-global-a-graph-rag-approach-to-query-focused-summarization/) demonstrates hierarchical graph summaries. [GRACE (Yi, Minot, and Lee, 2026)](https://aclanthology.org/2026.akbc-1.16/) explicitly uses a graph of grounded claims and a return-on-attention criterion to select expert review.
-
-The open research question is whether **heterogeneous, commissioned sensors and consequence-sensitive decision policies** can improve graph integrity and evidence efficiency over these established systems under realistic review constraints.
+Provenance standards already describe how one record derives from another. GraphRAG shows how to summarize collections using graphs. GRACE considers the return on expert attention in a graph of grounded claims. I want to test whether additional source checks and review rules preserve contradictions and improve attribution within a fixed review budget. [W3C PROV-O](https://www.w3.org/TR/prov-o/) · [GraphRAG](https://www.microsoft.com/en-us/research/publication/from-local-to-global-a-graph-rag-approach-to-query-focused-summarization/) · [GRACE](https://aclanthology.org/2026.akbc-1.16/)
 
 [Research series](./) · [Dissertation proposal](./dissertation-proposal)

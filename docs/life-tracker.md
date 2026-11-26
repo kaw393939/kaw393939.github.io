@@ -1,166 +1,90 @@
 ---
-title: Life Tracker · How I use AI to follow through
-description: How Keith Williams uses a private GitHub work queue with an AI assistant, and how to set up a small version of your own.
+title: Life Tracker · How I follow through with AI
+description: Use a private GitHub issue to give an AI-assisted task an owner, a next action, and a clear finish. Includes a worked example and a downloadable template.
+teaser: An assistant can draft a booking request in seconds. Knowing whether you have a room takes a different check. Here’s the small system I use to follow through.
 layout: doc
 ---
 
-<div class="life-guide">
-
-<p class="eyebrow">A PRACTICAL GUIDE / HUMAN + AI</p>
-
 # Life Tracker
 
-<p class="guide-deck">A place to keep the next step clear.</p>
+Suppose an assistant helps arrange a workshop. It finds a room, drafts a request, and reports progress. Can the organizer put the room number on the invitation yet? Until the venue confirms the booking, someone still owns the next step.
 
-I use Life Tracker to bring work that is scattered across conversations and documents into one manageable queue. Each task has a next action, someone responsible for it, and a clear way to tell when it is finished.
+I call my way of keeping track of that step *Life Tracker*. A private GitHub repository holds my work queue. Each issue names the outcome I need, the person responsible, and the evidence that will let me close it. The workshop below is fictional. You can try the method with one task of your own.
 
-The foundation is a **private GitHub repository**, with GitHub Issues for the work queue and selected documents organized alongside it. I work with an AI assistant to research, organize, and prepare the next step. I make the decisions and authorize actions that need my approval.
-
-This is a description of my working method, not a public app or a copy of my private records. The example below is fictional.
+[Download the checklist and issue template](/life-tracker-starter.txt)
 
 <nav class="guide-contents" aria-label="On this page">
-<strong>In this guide</strong>
-<a href="#daily-workflow">How I use it</a>
-<a href="#set-up">Set up your own</a>
-<a href="#working-with-ai">Work with AI</a>
-<a href="#example">See an example</a>
-<a href="#keep-it-private">Keep it private</a>
+  <ul>
+    <li><a href="#daily-workflow">How I use it</a></li>
+    <li><a href="#set-up">Set up your own</a></li>
+    <li><a href="#working-with-ai">How I work with AI</a></li>
+    <li><a href="#example">Follow a workshop booking</a></li>
+    <li><a href="#keep-it-private">Keep the work private</a></li>
+  </ul>
 </nav>
 
 ## How I use it {#daily-workflow}
 
-### 1. Capture a real next step
+I open an issue when a conversation produces a question, a decision, or a result to verify. I search open and closed issues first. If someone has already started the work, one update there can spare us a duplicate task.
 
-I look for something that needs action: a question to answer, a decision to make, or a result to check. I search existing open and closed issues first so the same task does not become several competing records.
+Before I assign the next action, I check the most recent reply or source record. Then I write down five things.
 
-### 2. Check what is true now
+- **Current state.** What did I verify, and when?
+- **Next action.** Who owns it? What can they actually do now?
+- **Source.** Where can an authorized person check the facts?
+- **Timing.** If there’s a deadline, what source confirms the date, time, and time zone? When should I check back?
+- **Completion criteria.** What would someone have to see to call the work done?
 
-Before acting, I check the relevant source and its latest replies or updates. An old request may already have been answered. I keep verified facts separate from guesses, proposed actions, and completed work.
-
-### 3. Write a small, useful task
-
-The issue should answer a few questions without becoming an archive of the whole conversation:
-
-- **Current state:** What has actually been checked, and when?
-- **Next action and owner:** What happens next, and who does it?
-- **Source:** Where can the authorized person verify the facts?
-- **Timing:** Is there a confirmed deadline, a proposed follow-up date, or no date needed?
-- **Done means:** What result must be checked before closing?
-
-A follow-up target is not the same thing as an official deadline. If a deadline matters, I record its source, date, time, and time zone.
-
-### 4. Act, then check the result
-
-Research, drafting, approval, and execution are different stages. A draft has not been sent. A sent message does not mean the underlying task is finished. After an authorized action, I verify what happened and update the issue to match.
-
-### 5. Review and close the loop
-
-I review time-sensitive work, decisions I need to make, and tasks waiting on someone else. I close a task when its completion criteria are met. If I decide to drop it, I record that choice rather than calling it completed.
-
-The tracker itself does not schedule checks or send messages. Dates and labels help organize a review; reminders or automations need to be set up separately.
+A date I choose for checking back goes in its own field. Adding it to an issue doesn’t schedule a reminder, so I set one separately if I need it. At review time, I check what needs a decision, what is due, and what is waiting on someone else. If I drop a task, I record that decision. If I close it as complete, I link or describe the result.
 
 ## Set up your own {#set-up}
 
-Start with one small area of work and a few ordinary, low-risk tasks. You can do all of this in GitHub's website. A terminal, database, and custom app are not required.
-
-### 1. Create a private repository
-
-In GitHub, choose **New repository**, give it a name, select **Private**, and add a README. Check the repository's visibility before adding information. Keep Issues enabled. Do not publish the repository through GitHub Pages.
-
-Use the README to explain what you track, where the original records live, and how you review the queue. You do not need access to my private repository to build your own version.
-
-### 2. Decide what belongs there
-
-Write down the kinds of information you will allow, what must stay in its original system, and who can have access. Start with brief task summaries and source references. Check workplace, school, and client requirements before copying their information into another service.
-
-### 3. Create a few labels
-
-Under **Issues → Labels**, create labels that describe the next stage. Use exactly one status label on each open issue. This small set is enough to begin:
-
-- **status:needs-research:** Facts still need checking.
-- **status:needs-draft:** The facts are ready for a proposed response.
-- **status:needs-decision:** A choice or approval is needed.
-- **status:in-progress:** An authorized action is underway.
-- **status:waiting:** Someone else owns the next step.
-
-Add a label such as **workstream:project** for the area of work. Use **priority:time-sensitive** only when a concrete deadline warrants it. You can split “waiting” into more specific groups later. Close finished issues and remove active status labels.
-
-### 4. Make your first issue
-
-Use a short, action-focused title, assign an owner, and fill in the fields below. You can paste this structure into each issue or turn it into a GitHub issue template once it proves useful.
+1. **Choose one small area of work.** For a first try, use an ordinary task you can safely describe. You can run the whole process on GitHub’s website.
+2. **Create a private repository.** Choose **New repository**, set visibility to **Private**, add a README, and leave Issues enabled. Check visibility before you add material. Keep GitHub Pages off for this workspace.
+3. **Set the scope.** In the README, name the work you track, who can read it, and which records belong in their original systems. A short summary and an authorized source reference are often enough.
+4. **Give each open issue one status.** I use `status:needs-research`, `status:needs-draft`, `status:needs-decision`, `status:in-progress`, and `status:waiting`. I add `workstream:project` when I need to group related work, and `priority:time-sensitive` when a concrete deadline warrants it.
+5. **Take one task through the full cycle.** Use an action as the title, assign an owner, and fill in the template. Verify the outcome and close the issue. Adjust the fields after you see what was useful.
 
 <div class="guide-template">
 
-**Task starter**
+**Your first issue**
 
-- Workstream:
-- Verified current state:
-- Last checked, with time zone:
-- Source reference:
-- Next action:
-- Owner and dependencies:
-- Confirmed deadline, if any, with source:
-- Proposed follow-up target, or why none is needed:
-- Completion criteria:
-
-[Download the starter checklist and issue template](/life-tracker-starter.txt)
+- Workstream
+- Verified current state, source reference, and time checked
+- Next action, owner, and dependencies
+- Confirmed deadline, with its source and time zone
+- Proposed follow-up, if needed
+- Completion criteria
 
 </div>
-
-### 5. Try one complete cycle
-
-Take one task from research through completion. Check that the next action is clear, do the authorized work, verify the result, and close the issue. Adjust the template before adding more tasks. Set a review habit you can maintain; adding a date to an issue alone will not remind you.
 
 ## How I work with AI {#working-with-ai}
 
-I give the assistant a specific outcome and the sources it may use. It can help check the current state, find missing information, organize documents within the allowed scope, draft a response, and update the queue when authorized.
+I tell the assistant which outcome I need, which sources it may use, and whether I want research, a draft, or an action. I can give it read-only access for research. If I later want it to change an issue or send a message, I specify what to change or whom to contact and what commitments it may make.
 
-**My role is to set the goal, judge the result, and make consequential decisions.** The assistant should tell me what it verified, what remains uncertain, and what needs my decision. I do not treat a confident answer as evidence that an action happened.
+A request I use as a starting point is:
 
-For your own setup:
+> Review this task using the sources I have authorized. Tell me what you verified, what you still need, and who owns the next step. Draft any suggested message for my review. Do not send messages or change other systems.
 
-1. Choose an assistant that can work with the tools you use. Connect only the accounts and repository needed for the task, using the service's supported sign-in flow. Never paste passwords or access tokens into issues.
-2. Start with read-only research or a draft. If you want the assistant to create or update issues, give it the appropriate repository access and a clear request. Connecting an account does not grant blanket permission to act.
-3. Be explicit about boundaries: “Review this task and draft a reply. Do not send it.” If you later want it sent, authorize the recipient, purpose, and any important commitments.
-4. Ask for verification after changes. Review the resulting issue or source record, not just the assistant's summary. If access is missing, provide a safe summary or use an approved connection rather than assuming the assistant can see everything.
-
-<div class="guide-callout">
-
-**A useful starting request**
-
-“Review this task using the sources I have authorized. Tell me what is verified, what is missing, and the next action. Draft any suggested message for my review. Do not send messages or change other systems.”
-
-</div>
-
-You can also use the same workflow without AI. The issue record should remain understandable to a person picking it up later.
+After an action, I check the resulting issue, message, or source record. If the assistant cannot see a source, it can identify what is missing. Anyone with authorized access should be able to pick up the task from the issue, including a person working without AI.
 
 ## A simple example {#example}
 
-Suppose you are arranging a small workshop. This is an invented example, with no real names, dates, or private records.
+| Booking stage | What the organizer can verify |
+| --- | --- |
+| Research | The venue’s room options, capacity, and latest availability. |
+| Draft | A request names the room, date, and time the organizer wants. |
+| Decision | The organizer approves the room and the request. |
+| In progress | The authorized request appears in the sent record. |
+| Waiting | The venue owes a reply. The issue names who will check back and when. |
+| Closed | The venue confirms the room, date, and time. The organizer checks all three against the request. |
 
-1. **Needs research:** Check the room requirements and latest availability.
-2. **Needs draft:** Prepare a short booking request with the verified details.
-3. **Needs decision:** The organizer reviews the room choice and request.
-4. **In progress:** Send the request once authorized, then verify it was sent.
-5. **Waiting:** Record that the venue owes the next response and choose a follow-up target.
-6. **Closed:** Check the confirmed room, date, and time against the task's completion criteria.
-
-If the room has not been confirmed, sending the request is progress, not completion.
+Notice what changed in the final row. Now the organizer has the evidence needed to put the room on the invitation.
 
 ## Keep the work private {#keep-it-private}
 
-A private repository limits visibility, but it is not automatically an approved home for workplace, student, client, or sensitive personal records. Keep only the information you are permitted to store there and limit collaborators and connected-app access.
+A private repository is not automatically an approved home for workplace, student, client, or sensitive personal records. Check the rules of the organization that owns the material. Keep original records in the appropriate source system and limit access to the collaborators and apps that need it. Connect accounts through the supported sign-in flow. Never paste passwords or access tokens into an issue.
 
-Original records stay in their proper source systems. If reference copies are allowed, record where each came from, its date, and whether it was redacted. Keep a separate list of missing or unverified material. Do not call a document collection complete until you have checked it.
+If reference copies are permitted, record the original source, date, and any redactions. Mark missing material explicitly. To show the method publicly, create a fictional example in a separate workspace. Issue titles, comments, filenames, screenshots, and Git history can all contain information someone never intended to share.
 
-Use made-up examples when explaining your setup publicly. Check issue titles, comments, filenames, screenshots, and commit history as well as document contents. Never turn a private working repository public just to share the method.
-
-<div class="guide-end">
-
-**Start small. Keep the next action clear. Check the outcome.**
-
-[Back to selected projects](/#projects)
-
-</div>
-
-</div>
+[Download the starter](/life-tracker-starter.txt) · [Explore the other projects](/#projects)

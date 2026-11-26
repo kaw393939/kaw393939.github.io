@@ -1,62 +1,49 @@
 ---
-title: The Race Track and the Pit Stop
-description: A configurable human–AI governance pattern for consequence-aware review, commissioning, and recoverable decisions.
+title: "When Should an AI Workflow Stop for a Person?"
+description: "Follow an email from a timestamp to a proposed financial decision to see how evidence, consequences, and authority change who should review an AI output."
+teaser: "The same email can tell you when a message was sent, what someone reported, and what another person still needs to authorize. Each calls for a different decision."
+articleGenre: "Architecture proposal"
+dateLabel: "November 2026"
 ---
 
-# The Race Track and the Pit Stop
+# When Should an AI Workflow Stop for a Person? {#the-race-track-and-the-pit-stop}
 
-*Working architectural proposal · November 2026*
+An email says the board approved a payment. A tool can check when the email was sent. A reader can verify that its author wrote those words. Before anyone moves money, someone still needs to establish what the board authorized and who can act on it.
 
-A system that asks a person to approve everything does not scale. A system that decides everything itself may be fast and catastrophically wrong. I use **Race Track / Pit Stop** as a plain-language model for the space between these extremes.
-
-The [Ordo pattern](https://github.com/kaw393939/ordo/blob/main/agentic-appliance/patterns/race-track-pit-stop.md) describes a Race Track for bounded routine work and a Pit Stop for consequential, disputed, or insufficiently supported work. The idea is not just a visual workflow. It is a proposal for governing decision authority at runtime.
+I use two names in the Ordo design for what happens next. The **Race Track** carries routine work covered by an approved rule. A **Pit Stop** opens a decision for someone qualified to make it. What matters is being able to explain why a specific case took its route. [Read the Ordo pattern](https://github.com/kaw393939/ordo/blob/main/agentic-appliance/patterns/race-track-pit-stop.md)
 
 ## What changes with self-describing sensors
 
-A sensor should be an independent, discoverable component. It might read email metadata, recognize faces in a film, detect contradictory claims, inspect a contract, or report GPU memory use. It should describe *what it can observe*, input/output contracts, limitations, resource costs, configurable parameters, and version.
+A checker that reads an email header should report which fields it inspected and which it could verify. A tool that proposes an identity match should report its evidence and uncertainty. Both need a version, an input and output format, known limits, and an expected cost.
 
-The orchestration system should not need to know every future sensor capability in advance. Sensors produce typed **observations**; a separate analysis layer constructs interpretations; a recommendation layer proposes next actions. An independent policy layer determines authority.
-
-That distinction makes the architecture extensible without confusing *observation*, *belief*, *authorization*, and *execution*.
+Those observations can feed a recommendation. A separately maintained policy determines who can authorize the next action. Separating these responsibilities makes it possible to add a new checker without quietly granting it new powers.
 
 ## Consequences drive routing
 
-Consider three statements extracted from correspondence:
+| What the system wants to record or do | What a reviewer can check |
+| --- | --- |
+| Record the message timestamp | Header fields and the policy for routine indexing |
+| Attribute the statement about board approval | Exact wording, named speaker, and the limits of the claim |
+| Treat the transaction as authorized | Independent evidence of approval and the authority required to act |
 
-1. A person sent a message on Tuesday. The header can be checked automatically.
-2. A person said the board approved a transaction. The statement is attributable, but does not itself prove approval.
-3. The company is authorized to transfer funds. This has significant consequences and requires stronger evidence and potentially an authorized human decision.
-
-The same model may be equally confident about all three strings. They do not deserve the same routing policy.
-
-Risk estimation needs expected error, severity, uncertainty in measurement, reversibility, and propagation to dependent decisions. Authorization is a separate hard constraint: high confidence does not give an agent permission to send money or publish confidential information.
+A model could be equally confident about all three. The consequences of a mistake, the cost of undoing it, the quality of the evidence, and downstream dependencies all affect the review choice. Authority sets a hard boundary.
 
 ## Commissioning through examples
 
-Initially, operators may review many proposed classifications. Every accepted correction becomes a **case decision**, never an implicit permanent authorization. The system can then propose a scoped **policy decision** (for example, automatically accept a category of unambiguous source-header relationships) and test it against prior decisions.
+Suppose reviewers repeatedly accept matches between two unambiguous header fields. Their decisions supply examples for a possible rule. The next step is to write that rule narrowly, test it on held-out examples, and ask the responsible person to approve its scope. Historical agreement alone grants no standing permission.
 
-A policy should record who authorized it, its applicable domain, evidence requirements, effective version, rollback procedure, and independent evaluations. Approval history should be reproducible rather than reconstructed by a model after the fact.
-
-A human or authorized AI delegate can review a case within its role. Delegating evaluation does not necessarily delegate approval authority.
+Record the rule version, supporting evidence, decision maker, and conditions for rollback. A delegated AI reviewer might evaluate a match. Its permission to evaluate and its permission to authorize are separate settings.
 
 ## Progressive disclosure
 
-An operator's default view should show:
-
-**What needs deciding? Why now? What could go wrong? What is recommended?**
-
-A second level reveals alternatives, summary statistics, disagreements, and relevant prior decisions. An optional evidence view reveals raw source passages, full sensor readings, model outputs, and traces.
-
-The aim is to make review comprehensible without hiding evidence from people who need it.
+I would put four questions at the top of a review request. **What decision do you need? Why now? What could go wrong? What do you recommend?** A reviewer can then open the alternatives and earlier decisions. The full source passages, measurements, and model outputs should remain a click away.
 
 ## Evaluation
 
-Test three routing policies on held-out labeled cases: (a) review everything, (b) fixed confidence threshold, and (c) consequence-aware, progressively commissioned routing. Measure review minutes, consequential errors that escape review, missed escalations, decision latency, and policy drift. Evaluate explicitly under changes in source quality and reviewer workload.
+Give three policies the same held-out cases. One sends everything to review. One uses a fixed confidence threshold. The third considers consequence and uses rules commissioned from earlier examples. Measure expert minutes, missed required escalations, time to decision, and consequential errors that escape. Repeat the comparison after source quality or available review time changes.
 
 ### Research precedents
 
-This is not a claim to have invented intelligent interruptions. [Horvitz et al. (1999)](https://www.microsoft.com/en-us/research/people/horvitz/publications/) studied attention-sensitive alerting. [Grandhi and Jones (2015)](https://digitalcommons.njit.edu/fac_pubs/6913/) found that additional context about an interruption improves people's ability to predict its value.
-
-The proposed contribution would be an evaluated mechanism for **commissioning and revising risk-aware human–AI decision policies with provenance**, not the idea of an interruption gate itself.
+Earlier research on attention-sensitive alerts and interruption context offers credible comparisons for the reviewer’s experience. My open question is whether a team can commission *and revise* decision rules while keeping their evidence and authority visible. The design needs empirical results before anyone can claim that it saves time or reduces errors. [Horvitz and colleagues](https://www.microsoft.com/en-us/research/people/horvitz/publications/) · [Grandhi and Jones](https://digitalcommons.njit.edu/fac_pubs/6913/)
 
 [Research series](./) · [Dissertation proposal](./dissertation-proposal)

@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
+import { createHash } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
-import { readFileSync, existsSync, statSync } from 'node:fs'
+import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs'
 import { resolve } from 'node:path'
 
 const dist = resolve('docs/.vitepress/dist')
@@ -105,8 +106,8 @@ check('Teaching and research front doors expose the feature and supporting mater
     requireLink(mainContent(page), notesPath)
   }
   assert.ok(teaching.includes('AGENTS.md'))
-  assert.ok(research.includes('not a list of completed experiments'))
-  assert.ok(research.includes('peer-reviewed'))
+  assert.match(research, /proposed studies/i)
+  for (const path of ['/research/systems/dissertation-proposal', '/research/systems/metavis-evidence-and-evaluation', '/research/systems/literature-and-faculty']) requireLink(mainContent(research), path)
 })
 
 check('Research series and advisor proposal are generated and accessible', () => {
@@ -211,6 +212,142 @@ check('Social previews, canonical URLs and structured data match the reading des
   assert.ok(data.some(s => s['@type'] === 'WebSite' && s.url === base + '/'))
 })
 
+function renderedText(html) {
+  return html.replace(/<[^>]*>/g, '').replace(/&(?:amp|lt|gt|quot|#39|#x27);/g,
+    entity => ({ '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '"', '&#39;': "'", '&#x27;': "'" })[entity])
+    .replace(/\s+/g, ' ').trim()
+}
+
+function attribute(tag, name) {
+  return tag.match(new RegExp('(?:^|\\s)' + name + '="([^"]*)"'))?.[1]
+}
+
+function jpegDimensions(bytes) {
+  assert.equal(bytes.readUInt16BE(0), 0xffd8, 'JPEG header')
+  for (let offset = 2; offset + 9 < bytes.length;) {
+    assert.equal(bytes[offset], 0xff, 'Invalid JPEG marker')
+    while (bytes[offset] === 0xff) offset++
+    const marker = bytes[offset++]
+    if ([0xc0, 0xc1, 0xc2].includes(marker)) {
+      return [bytes.readUInt16BE(offset + 5), bytes.readUInt16BE(offset + 3)]
+    }
+    if (marker === 0xda || marker === 0xd9) break
+    const length = bytes.readUInt16BE(offset)
+    assert.ok(length >= 2, 'Invalid JPEG segment length')
+    offset += length
+  }
+  assert.fail('Missing JPEG frame with dimensions')
+}
+
+check('Every article has its own illustrated teaser, canonical sharing link and searchable card', () => {
+  const researchArticles = readdirSync('docs/research/systems')
+    .filter(name => name.endsWith('.md') && name !== 'index.md')
+    .map(name => '/research/systems/' + name.slice(0, -3))
+  const expected = new Set([coverPath, notesPath, '/ai-careers', '/life-tracker', ...researchArticles])
+  const cards = new Map()
+  for (const [, card] of mainContent(writing).matchAll(/<article\b[^>]*class="journal-card"[^>]*>([\s\S]*?)<\/article>/g)) {
+    const link = card.match(/<a\b[^>]*\bclass="journal-card-link"[^>]*>/)?.[0]
+    assert.ok(link, 'Missing card link')
+    const path = attribute(link, 'href')
+    assert.ok(path?.startsWith('/') && !cards.has(path), 'Duplicate or invalid card: ' + path)
+    const title = card.match(/<h3\b[^>]*>([\s\S]*?)<\/h3>/)?.[1]
+    const teaser = card.match(/<p\b[^>]*>([\s\S]*?)<\/p>/)?.[1]
+    const image = card.match(/<img\b[^>]*>/)?.[0]
+    assert.ok(title && teaser && image, 'Incomplete card: ' + path)
+    cards.set(path, { title: renderedText(title), teaser: renderedText(teaser), image: attribute(image, 'src') })
+  }
+  for (const path of expected) assert.ok(cards.has(path), 'No writing card for ' + path)
+  const articlePages = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => new URL(match[1]).pathname)
+    .filter(path => {
+      const name = path.slice(1) + (path.endsWith('/') ? 'index.html' : '.html')
+      return metadata(read(name), 'og:type') === 'article'
+    })
+  assert.deepEqual([...cards.keys()].sort(), articlePages.sort(), 'Writing index must list every published article exactly once')
+
+  const teasers = new Set()
+  const descriptions = new Set()
+  const images = new Set()
+  const hashes = new Set()
+  for (const [path, card] of cards) {
+    const html = read(path.slice(1) + '.html')
+    const main = mainContent(html)
+    const canonical = base + path
+    const source = readFileSync(resolve('docs', path.slice(1) + '.md'), 'utf8')
+    const fm = source.match(/^---\r?\n([\s\S]+?)\r?\n---/)?.[1]
+    assert.ok(fm && /^teaser:\s*\S/m.test(fm), 'Missing source teaser: ' + path)
+    assert.equal((main.match(/class="story-intro"/g) || []).length, 1, path)
+    const deck = main.match(/<p\b[^>]*class="article-deck"[^>]*>([\s\S]*?)<\/p>/)?.[1]
+    assert.ok(deck && main.includes('class="byline"'), 'Missing teaser/byline: ' + path)
+    const cover = main.match(/<figure\b[^>]*class="[^"]*\bstory-cover\b[^"]*"[^>]*>([\s\S]*?)<\/figure>/)?.[1]
+    const image = cover?.match(/<img\b[^>]*>/)?.[0]
+    assert.ok(image && attribute(image, 'alt')?.trim() && /<figcaption\b/.test(cover), 'Missing illustrated accessible header: ' + path)
+    const coverPath = attribute(image, 'src')
+    const coverBytes = readFileSync(resolve(dist, coverPath.slice(1)))
+    assert.deepEqual(jpegDimensions(coverBytes), [Number(attribute(image, 'width')), Number(attribute(image, 'height'))], path)
+
+    const article = schemas(html).find(schema => schema['@type'] === 'Article')
+    const label = renderedText(deck)
+    assert.ok(article, 'Missing Article: ' + path)
+    assert.equal(article.abstract, label, path)
+    assert.equal(card.teaser, label, path)
+    assert.equal(card.title, article.headline, path)
+    assert.equal(article.author.name, 'Keith Williams', path)
+    assert.equal(article.publisher.name, 'Keith Williams', path)
+    assert.equal(metadata(html, 'article:section'), article.articleSection, path)
+    const description = renderedText(metadata(html, 'description') || '')
+    assert.ok(description && description !== label, 'Search description and teaser must be individually written: ' + path)
+    assert.equal(renderedText(metadata(html, 'og:description')), label, path)
+    assert.equal(renderedText(metadata(html, 'twitter:description')), label, path)
+    assert.equal(article.description, description, path)
+    assert.ok(!teasers.has(label) && !descriptions.has(description), 'Reused teaser or description: ' + path)
+    teasers.add(label); descriptions.add(description)
+    for (const [key, property] of [['datePublished', 'article:published_time'], ['dateModified', 'article:modified_time']]) {
+      const date = fm.match(new RegExp('^' + key + ':\\s*["\']?(\\d{4}-\\d{2}-\\d{2})', 'm'))?.[1]
+      assert.equal(article[key]?.slice(0, 10), date, path + ' ' + key)
+      assert.equal(metadata(html, property)?.slice(0, 10), date, path + ' ' + property)
+    }
+
+    assert.equal(article.url, canonical)
+    assert.equal(article.mainEntityOfPage, canonical)
+    assert.equal(metadata(html, 'og:url'), canonical)
+    requireLink(html, canonical)
+    const share = main.match(/<div\b[^>]*class="story-share"[^>]*>([\s\S]*?)<\/div>/)?.[1]
+    assert.ok(share && /role="status"/.test(share), 'Missing accessible share controls: ' + path)
+    requireLink(share, 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(canonical))
+    assert.equal(metadata(html, 'twitter:card'), 'summary_large_image', path)
+    const url = new URL(metadata(html, 'og:image'))
+    assert.equal(url.origin, base)
+    assert.equal(metadata(html, 'twitter:image'), url.href)
+    assert.equal(article.image, url.href)
+    assert.equal(card.image, url.pathname, path)
+    assert.ok(metadata(html, 'og:image:alt')?.trim(), path)
+    assert.equal(metadata(html, 'og:image:alt'), metadata(html, 'twitter:image:alt'), path)
+    assert.equal(metadata(html, 'og:image:type'), 'image/jpeg', path)
+    assert.equal(metadata(html, 'og:image:width'), '1200', path)
+    assert.equal(metadata(html, 'og:image:height'), '630', path)
+    const bytes = readFileSync(resolve(dist, url.pathname.slice(1)))
+    assert.deepEqual(jpegDimensions(bytes), [1200, 630], url.pathname)
+    assert.ok(bytes.equals(readFileSync(resolve('docs/public', url.pathname.slice(1)))), 'Share art differs from source: ' + path)
+    const digest = createHash('sha256').update(bytes).digest('hex')
+    assert.ok(!images.has(url.pathname) && !hashes.has(digest), 'Duplicate article art: ' + path)
+    images.add(url.pathname); hashes.add(digest)
+  }
+})
+check('Article share enhancements are shipped with clipboard feedback and a manual fallback', () => {
+  const assets = resolve(dist, 'assets')
+  const scripts = readdirSync(assets, { recursive: true }).filter(path => path.endsWith('.js'))
+  const code = scripts.map(path => readFileSync(resolve(assets, path), 'utf8'))
+    .find(js => /clipboard\.writeText\(/.test(js) && js.includes('Copy link'))
+  assert.ok(code, 'No shipped article clipboard control')
+  for (const text of ['Article link copied.', 'Select and copy the article link.', 'More sharing options']) {
+    assert.ok(code.includes(text), 'Missing share interaction: ' + text)
+  }
+  const component = readFileSync('docs/.vitepress/theme/components/ArticleShare.vue', 'utf8')
+  for (const text of ['aria-live="polite"', 'type="url" readonly', 'field.value?.focus()', 'field.value?.select()']) {
+    assert.ok(component.includes(text), 'Missing accessible copy fallback: ' + text)
+  }
+})
+
 check('Sitemap excludes the error page; error page is noindex', () => {
   assert.ok(!sitemap.includes('/404'))
   assert.ok((sitemap.match(/<loc>/g) || []).length >= 17, 'Sitemap should include the expanded research site')
@@ -307,7 +444,9 @@ check('Guide metadata and sitemap resolve to the public article', () => {
   assert.equal(data.author.name, 'Keith Williams')
 })
 check('Public guide links only to approved public destinations', () => {
-  const approvedExternalLinks = new Set(['https://github.com/kaw393939', 'https://people.njit.edu/profile/kwilliam', 'https://www.linkedin.com/in/keithwilliams5/'])
+  const approvedExternalLinks = new Set([
+    'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(base + '/life-tracker'),
+    'https://github.com/kaw393939', 'https://people.njit.edu/profile/kwilliam', 'https://www.linkedin.com/in/keithwilliams5/'])
   for (const [, href] of mainContent(guide).matchAll(/<a\b[^>]*href="(https?:\/\/[^"]+)"/g)) assert.ok(approvedExternalLinks.has(href), href)
   const starterUrls = starter.match(/https?:\/\/\S+/g) || []
   assert.deepEqual(starterUrls, ['https://keithwilliams.org/life-tracker'])

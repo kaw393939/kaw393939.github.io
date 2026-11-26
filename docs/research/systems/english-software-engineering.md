@@ -1,46 +1,37 @@
 ---
-title: English as a Higher Abstraction in Software Engineering
-description: Natural-language-directed work, executable contracts, tests, Agile/Kanban, and human oversight.
+title: "What Makes a Software Requirement Good Enough for an AI Agent?"
+description: "Turn a user’s request into an observable software requirement, a bounded task for a coding agent, and a test a teammate can run independently."
+teaser: "“The order went through” sounds precise until someone refreshes the page. One extra sentence can make a software requirement testable."
+articleGenre: "Engineering essay"
+dateLabel: "November 2026"
 ---
 
-# English as a Higher Abstraction in Software Engineering
+# What Makes a Software Requirement Good Enough for an AI Agent? {#english-as-a-higher-abstraction-in-software-engineering}
 
-*Research essay · November 2026*
+Imagine a team building a campus storefront. A customer clicks *Buy* and sees a confirmation. Everyone can agree the demo looks right. Then someone closes the tab and asks the coordinator to find the order. That second person has exposed a requirement the first screen never had to meet.
 
-Software engineering has repeatedly moved upward in abstraction: machine instructions, assembly, general-purpose languages, libraries, and declarative interfaces. With capable AI agents, natural language now belongs in that history.
-
-But saying **“English is the new computer science”** is a provocation, not a complete engineering theory. Human language is ambiguous, context-dependent, and not directly executable with programming-language guarantees.
-
-The more precise claim is that software engineers can increasingly work at the **level of goals, constraints, observable behavior, and evaluation**, while agents translate those specifications into code and workflows.
+I sometimes tell students that “English is the new computer science.” What I mean is narrower. With a coding agent at hand, an engineer can do consequential work by describing who needs something, under what conditions, and what another person should observe afterward. Ordinary words can carry that intent. The team still has to decide what those words mean in software.
 
 ## What moves upward
 
-In my educational projects I use personas and journeys for human goals; themes, epics, and user stories for scope; acceptance criteria for observable behavior; GitHub Issues for bounded tasks; and pull requests, commits, and tests for evidence.
+For the storefront, I would write the requirement in the customer’s language. *After I submit a request and close the page, the coordinator can reopen the app and find my request once.* Now the team can discuss whose account can see the record, what survives a restart, and what should happen if someone clicks twice.
 
-The development chain is:
-
-**Human intent → approved specification → bounded agent task → implementation → tests and independent review → accepted outcome.**
-
-An important design choice is keeping the source of truth in concise versioned Markdown and executable contracts, rather than large repeated instructions that gradually disagree.
+In my courses, personas and journeys name the people involved. Themes and epics organize scope. A user story and its acceptance criteria belong in a versioned issue small enough for someone to try. A pull request links the change, the test, and the decision to accept it. A short specification saves the next person from reconstructing these decisions from several chats.
 
 ## Testing is the agent harness
 
-The [MetaVis TDD strategy](https://github.com/kaw393939/metavis-demo-projects/blob/main/Docs/TDD_STRATEGY.md) is a concrete example. It specifies protocol-first design, golden fixtures, deterministic sensor outputs, real hardware tests, and performance budgets. In [MetaVis's GPU test](https://github.com/kaw393939/metavis-demo-projects/blob/main/Tests/MetaVisSimulationTests/Perf/RenderAllocationTests.swift), merely producing an image is insufficient; resource behavior also has to satisfy an invariant.
+The same approach applies below the interface. My MetaVis media prototype specifies reference images, deterministic sensor outputs, hardware checks, and performance budgets. One test checks whether rendering another frame allocates a new Metal texture after warm-up. A reviewer looking at the picture alone could miss that cost. [MetaVis test strategy](https://github.com/kaw393939/metavis-demo-projects/blob/main/Docs/TDD_STRATEGY.md) · [GPU allocation test](https://github.com/kaw393939/metavis-demo-projects/blob/main/Tests/MetaVisSimulationTests/Perf/RenderAllocationTests.swift)
 
-Tests should be tied to user-story acceptance criteria, and implementing agents should not be free to weaken the tests that determine success. LLM-based QA may help examine qualitative outcomes, but does not replace independent measurement or human acceptance.
+Before I give a coding agent a task, I want an expected result that someone else can explain. If the agent changes the implementation and the expected answer together, a passing check tells the reviewer very little. I would ask for a separate decision on any change to the acceptance criteria.
 
 ## Kanban changes when agents are abundant
 
-When agents can produce code rapidly, human review becomes the constrained resource. The board should not maximize simultaneous agent work. It should pull verified, decision-ready increments to human review at a manageable rate. Review packets should show one runnable outcome, what changed, known limitations, and the specific judgment requested.
-
-This is not a proposal to copy every ceremony from traditional Scrum. Short reversible fixes need lightweight control notes; architecture changes and consequential releases need stronger specifications and decision records.
+A small patch with one runnable example is easier to review than five simultaneous proposals for the same feature. Give the next reviewer what they need to act: what changed, how to exercise it, what remains uncertain, and which decision belongs to them. A reversible copy edit calls for a lighter process than a change to who can read customer records.
 
 ## What research is needed
 
-Compare vague-prompt development, conventional issue-driven development, and test-governed agent development on matched tasks. Evaluate defects, acceptance coverage, reviewer minutes, rework, recovery, and student comprehension. A passing test suite is not proof that the underlying requirements are complete.
+A useful study would give teams matched tasks and compare an open-ended prompt, a conventional issue, and an agent task with explicit acceptance tests. I would measure defects, reviewer time, rework, recovery, and whether a student can explain a new case independently. Earlier studies of problem-solving stages and collaborative software work provide starting points for that design. [Deek, Turoff, and McHugh](https://digitalcommons.njit.edu/fac_pubs/16112/) · [DeFranco-Tommarello and Deek](https://digitalcommons.njit.edu/fac_pubs/19489/)
 
-The academic framing connects to [Deek, Turoff and McHugh's integrated problem-solving/programming model (1999)](https://digitalcommons.njit.edu/fac_pubs/16112/) and [DeFranco-Tommarello and Deek's empirical collaboration study (2005)](https://digitalcommons.njit.edu/fac_pubs/19489/). Their research offers a basis for studying process, cognition, and collaboration as well as code artifacts.
-
-**The argument is not that low-level knowledge becomes irrelevant.** Specialized Swift, Metal, graph databases, privacy controls, and deterministic execution still matter. The opportunity is to orchestrate them from a higher-level interface while preserving verification and authority.
+Try it at a demo. Hand a teammate the keyboard and ask them to finish the sentence, *I’ll believe this works when I can …* The difference between their answer and yours is a requirement worth discussing.
 
 [Research series](./) · [MetaVis case study](./metavis-evidence-and-evaluation)
