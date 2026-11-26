@@ -1,8 +1,7 @@
 // Production verification after GitHub Pages rebuilds the branch.
-import assert from 'node:assert/strict'
+import { source } from './knowledge-lab-release.mjs'
 
-const root = 'https://keithwilliams.org'
-const pinned = '7737385b90f5c1a904c3ff881afd27cae61e6d74'
+const { origin: root, revision: pinned } = source
 const targets = [
   {path: '/', plainUrl: true, test: body => body.includes('href="/knowledge-lab/guide/walkthrough"') && body.includes('id="home-lab-title"') && body.includes('Ordo Knowledge Lab')},
   {path: '/knowledge-lab/', test: body => body.includes('Build answers you') && body.includes('ONE COMPLETE RAG EXAMPLE')},

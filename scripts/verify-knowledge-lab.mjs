@@ -1,12 +1,13 @@
 import assert from 'node:assert/strict'
 import { readFileSync, existsSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { source } from './knowledge-lab-release.mjs'
 
 const root = resolve('docs/.vitepress/dist')
 const page = name => readFileSync(resolve(root, 'knowledge-lab', name), 'utf8')
 const manifest = JSON.parse(page('mirror-manifest.json'))
 assert.equal(manifest.repository, 'https://github.com/kaw393939/is373-rag.git')
-assert.equal(manifest.revision, '7737385b90f5c1a904c3ff881afd27cae61e6d74')
+assert.equal(manifest.revision, source.revision)
 assert.equal(manifest.base, '/knowledge-lab/')
 const homepage = readFileSync(resolve(root,'index.html'),'utf8')
 assert.ok(homepage.includes('href="/knowledge-lab/"'), 'Main nav must link to the published Knowledge Lab')

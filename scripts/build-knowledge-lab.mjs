@@ -5,12 +5,8 @@ import { mkdtempSync, mkdirSync, cpSync, rmSync, writeFileSync, existsSync, read
 import { tmpdir } from 'node:os'
 import { resolve, join, relative, dirname, sep } from 'node:path'
 
-export const source = {
-  repository: 'https://github.com/kaw393939/is373-rag.git',
-  revision: '7737385b90f5c1a904c3ff881afd27cae61e6d74',
-  base: '/knowledge-lab/',
-  origin: 'https://keithwilliams.org'
-}
+import { source } from './knowledge-lab-release.mjs'
+
 const run = (command, args, dir, env = process.env) => {
   const proc = spawnSync(command, args, { cwd: dir, env, encoding: 'utf8',
     stdio: ['ignore','pipe','pipe'], maxBuffer: 3 * 1024 * 1024 })
