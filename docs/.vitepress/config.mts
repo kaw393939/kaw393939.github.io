@@ -76,6 +76,14 @@ export default defineConfig({
     }
     delete page.lastUpdated
   },
+  transformHtml(html, _id, { pageData }) {
+    if (pageData.relativePath !== '404.md') return
+    const fallback = `<noscript><main class="document-page wrap">
+      <h1>Page not found</h1>
+      <p>Find an article on <a href="/">Keith Williams’s homepage</a> or a lesson in <a href="/knowledge-lab/">Ordo Knowledge Lab</a>.</p>
+    </main></noscript>`
+    return html.replace('</body>', fallback + '</body>')
+  },
   transformHead({ pageData }) {
     const path = pageData.relativePath
     if (path === '404.md') return [] // The error page sets noindex in its own frontmatter.

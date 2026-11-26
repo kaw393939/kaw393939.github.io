@@ -16,7 +16,7 @@ concurrency:
 jobs:
   release:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 22
     steps:
       - uses: actions/checkout@v4
         with:
@@ -27,6 +27,14 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Read the verified recordings
+        uses: actions/checkout@v4
+        with:
+          ref: narrated-editions
+          path: _spoken_media
+          persist-credentials: false
+      - name: Select publication recordings
+        run: python3 scripts/narration/install.py --media _spoken_media --manifest-dir "$RUNNER_TEMP/spoken-indexes"
       - name: Verify original portfolio
         run: npm test
       - name: Check article layouts and keyboard controls in Chrome
@@ -34,27 +42,44 @@ jobs:
           npm install --prefix "$RUNNER_TEMP/portfolio-browser" --no-save --package-lock=false --ignore-scripts playwright-core@1.56.1
           node scripts/check-responsive.mjs
       - name: Build pinned Ordo Knowledge Lab from public source
+        env:
+          NARRATION_INDEX_DIR: ${{ runner.temp }}/spoken-indexes
+          NARRATION_EXTRACT_DIR: ${{ runner.temp }}/lab-narration
         run: npm run build:knowledge
       - name: Verify mirrored student guide and navigation
         run: npm run verify:knowledge
+      - name: Verify the written and spoken editions together
+        id: editions
+        run: |
+          python3 scripts/narration/extract-journal.py --dist docs/.vitepress/dist --out "$RUNNER_TEMP/journal-narration"
+          python3 scripts/narration/check-current.py --journal "$RUNNER_TEMP/journal-narration" --lab "$RUNNER_TEMP/lab-narration" --media _spoken_media --dist docs/.vitepress/dist
+          python3 scripts/narration/install.py --media _spoken_media --public-dir docs/.vitepress/dist/listen
+      - name: Test real playback in Chrome
+        if: steps.editions.outputs.ready == 'true'
+        run: node scripts/narration/check-playback.mjs
       - uses: actions/upload-artifact@v4
         with:
           name: portfolio-and-knowledge-lab-static-site
           path: docs/.vitepress/dist
           retention-days: 14
       - name: Commit verified site to existing gh-pages branch
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && steps.editions.outputs.ready == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           PAGES_PREBUILT: 'true'
         run: npm run deploy
       - name: Verify actual public portfolio and Knowledge Lab
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-        run: node scripts/verify-live-knowledge.mjs
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && steps.editions.outputs.ready == 'true'
+        run: |
+          node scripts/verify-live-knowledge.mjs
+          node scripts/narration/verify-live.mjs
       - name: Check live verification script syntax
         if: github.event_name == 'pull_request'
         run: node --check scripts/verify-live-knowledge.mjs
       - name: Record scope
         run: |
+          if [[ '${{ steps.editions.outputs.ready }}' != 'true' ]]; then
+            echo 'Waiting for newly edited recordings. The narration workflow will request publication when ready.' >> "$GITHUB_STEP_SUMMARY"
+          fi
           echo 'Portfolio source and pinned is373-rag revision passed static checks.' >> "$GITHUB_STEP_SUMMARY"
           echo 'A published-branch push is not proof of public Pages availability. Check the actual URL separately.' >> "$GITHUB_STEP_SUMMARY"

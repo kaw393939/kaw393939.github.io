@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict'
 
 const root = 'https://keithwilliams.org'
-const pinned = '9f5f8f483ed555dc155e5d0cbd203974d5ca4d4f'
+const pinned = '0d1562b8a70e12c28535a71cd157e40ccfaa5274'
 const targets = [
   {path: '/', test: body => body.includes('href="/knowledge-lab/"') && !body.includes('href="/is373-rag/"') && body.includes('Ordo Knowledge Lab')},
   {path: '/knowledge-lab/', test: body => body.includes('Build answers you') && body.includes('ONE COMPLETE RAG EXAMPLE')},

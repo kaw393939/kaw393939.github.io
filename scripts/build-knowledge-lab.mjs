@@ -7,7 +7,7 @@ import { resolve, join, relative, dirname, sep } from 'node:path'
 
 export const source = {
   repository: 'https://github.com/kaw393939/is373-rag.git',
-  revision: 'daf08ed7dff7e4dda5d4f6c4e4f04654fc58a179',
+  revision: '0d1562b8a70e12c28535a71cd157e40ccfaa5274',
   base: '/knowledge-lab/',
   origin: 'https://keithwilliams.org'
 }
@@ -30,6 +30,9 @@ try {
   const actual = run('git', ['rev-parse', 'HEAD'], temp)
   assert.equal(actual, source.revision, 'Source changed from approved revision')
   run('npm', ['ci', '--no-audit', '--no-fund'], temp)
+  if (process.env.NARRATION_INDEX_DIR) {
+    cpSync(join(process.env.NARRATION_INDEX_DIR, 'lab.json'), join(temp, 'docs/.vitepress/narration.json'))
+  }
   const env = {...process.env, DOCS_BASE: source.base, DOCS_ORIGIN: source.origin, GITHUB_SHA: source.revision}
   for (const cmd of [['npm', ['run','check:plan']],
                      ['npm', ['run','test:students']],
@@ -37,6 +40,10 @@ try {
                      ['npm', ['run','build']],
                      ['npm', ['run','check:pages']],
                      ['node', ['scripts/check-ia.mjs']]]) run(cmd[0], cmd[1], temp, env)
+  if (process.env.NARRATION_EXTRACT_DIR) {
+    run('python3', [join(root, 'scripts/narration/extract-lab.py'), '--dist', join(temp, 'dist'),
+      '--docs', join(temp, 'docs'), '--out', process.env.NARRATION_EXTRACT_DIR], temp, env)
+  }
   if (!existsSync(join(temp, 'dist/students/index.html'))) throw new Error('No built student guide')
   rmSync(destination, { recursive: true, force: true })
   mkdirSync(destination, { recursive: true })

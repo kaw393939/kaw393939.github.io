@@ -20,7 +20,7 @@ A project question posted on GitHub is public. For a private inquiry, an accessi
 
 ## Artwork, audio, and sources
 
-I use AI-generated illustrations to explain ideas. The author portrait is an AI-assisted adaptation of a photograph of me. The optional audio introduction uses a synthetic voice, and its transcript is next to the player. Technical diagrams, references, and links to original materials appear with the work they support.
+I use AI-generated illustrations to explain ideas. The author portrait is an AI-assisted adaptation of a photograph of me. The introduction and the readings use synthetic voices. You choose when audio plays. The introduction has a transcript, and each narrated article or chapter keeps its full written text. Readings describe tables and diagrams in words. Use the written edition to copy commands, follow citations, or check the spelling of a technical term. The recordings are served by this site. [Kokoro speech model](https://huggingface.co/hexgrad/Kokoro-82M) Technical diagrams, references, and links to original materials appear with the work they support.
 
 ## Type and lettering
 
