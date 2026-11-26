@@ -11,6 +11,10 @@ Suppose an AI system finishes a thousand records overnight. By morning, a specia
 
 I would measure **review minutes per claim accepted at a stated level of reliability**. Count the work the team can stand behind, then look at the errors that slipped through. A queue can look wonderfully efficient when nobody checks what leaves it.
 
+**A hypothetical first hour.** Suppose a briefing team allows at most one consequential error in each reviewed batch of 20 accepted claims. On matched work, the faster queue accepts 30 claims in 60 minutes. Independent checks later find two consequential errors in the first 20. The slower queue accepts 20 claims in 60 minutes, with one such error. The first queue averages two reviewer minutes per acceptance and misses the limit. The second averages three and meets it for this batch.
+
+If 30 accepted claims are due, I would budget an extra half hour at the slower pace or agree to a smaller briefing. These figures illustrate a staffing decision. A pilot would log arrival and decision times, active reviewer minutes, accepted and deferred cases, and errors found by an independent reviewer, then estimate how often each queue meets the limit across batches.
+
 ## Kanban as flow control
 
 Kanban limits how much work can be in progress. For review, I would track two flows. One contains incoming sources and all the observations extracted from them. The other contains decisions someone can actually make, such as whether two records refer to the same person or whether a change in evidence warrants a correction.

@@ -20,7 +20,7 @@ Later, through AmeriCorps, I taught children about computers at an after-school 
 
 I started teaching at NJIT as an adjunct. I’ve developed courses and helped shape the Web and Information Systems program. Along the way I built Showedme.net, a web application framework and learning management system, and Wrkbench, an iOS collaboration app.
 
-Today my students use AI coding assistants. In the classroom exercises I call Studios, I can give the assistant a job and reserve a decision for the student. A learner can ask for help, test a prediction, and see what they would change. [Try a Studio](/teaching/when-ai-helps-write-the-code)
+Today my students use AI coding assistants. In the classroom exercises I call Studios, I can give the assistant a job and reserve a decision for the student. In one game starter, all twelve tests passed before anyone had written the rule for winning. [Read the classroom story](/teaching/when-ai-helps-write-the-code)
 
 ## Learning beyond my own classroom
 
@@ -28,7 +28,7 @@ An NJIT graduate student from Zambia connected me with ZCAS University. In our p
 
 ## What I’m working on now {#what-im-working-on-now}
 
-Two questions keep coming up in my work with AI. How do we tell what someone learned when AI helped them build? How do we trace a confident answer back to the evidence behind it? My [research agenda](/research) describes the studies I’d like to run. The <a href="/knowledge-lab/">Knowledge Lab</a> gives readers a retrieval exercise to try, and my [project portfolio](/#projects) links to the software and teaching materials behind the work.
+Two questions keep coming up in my work with AI. How do we tell what someone learned when AI helped them build? How do we trace a confident answer back to the evidence behind it? My research agenda describes the studies I’d like to run. You can also try that second question yourself using three fictional reports from a harbor. [Explore the research](/research) · <a href="/knowledge-lab/guide/walkthrough" target="_self">Try the three-report exercise</a> · [See the projects](/#projects)
 
 In MetaVis, my Swift and Metal video-editing prototype, checking a rendered frame and checking an exported video tell you different things. I wrote up the tests so another engineer can inspect the distinction. [Inside MetaVis](/research/systems/metavis-evidence-and-evaluation)
 
@@ -36,7 +36,9 @@ In MetaVis, my Swift and Metal video-editing prototype, checking a rendered fram
 
 ## Let’s compare notes {#lets-compare-notes}
 
-If you teach with AI, tell me about a decision you want the learner to make independently. If you’re exploring a research collaboration or working on a public-facing service, I’d like to hear which result your team is trying to verify and who needs to trust it. My NJIT profile lists my professional email. [Contact me at NJIT](https://people.njit.edu/profile/kwilliam) · [Connect on LinkedIn](https://www.linkedin.com/in/keithwilliams5/)
+For independent consulting, I’m interested in the step where someone has to double-check an AI result before handing it to a customer or colleague. If your team has a step like that, tell me what the person receives and what they check by hand. That gives us a specific workflow to discuss. [Contact me on LinkedIn about consulting](https://www.linkedin.com/in/keithwilliams5/)
+
+If you teach with AI or want to collaborate on a study, I’d like to hear which decision you want a learner to make independently. My faculty profile lists my university email. [Contact me at NJIT](https://people.njit.edu/profile/kwilliam)
 
 For a reproducible issue with one of my public projects, include the project link and what you observed. [Start a public project conversation](/#conversation)
 

@@ -8,13 +8,13 @@ teaser: A teaching Studio and a video-editing prototype brought me to the same p
 
 In my NJIT Studios, I can change one rule in a game and ask the person who built it which test should fail. In MetaVis, my Swift and Metal editing prototype, a reference frame can pass a pixel check while the exported video still needs a sound check. Both experiences led me to ask what a test actually lets another person conclude.
 
-I’m pursuing that question in two directions. In education, I want to study what someone can do after AI assistance ends. In knowledge systems, I want to find out how a human reviewer can trace a claim to its evidence and spot where the system needs attention. These are proposed studies and engineering questions. The technical case studies document the work completed so far.
+I’m pursuing that question in two directions. For instructors, I want to study which check a learner chooses first after the coach steps back. For teams using AI to prepare briefings, I want to study what it takes to trace a disputed sentence to its original source. These are proposed studies. You can examine the classroom starter and try a paper exercise that makes the second problem visible. [Read the classroom feature](/teaching/when-ai-helps-write-the-code) · <a href="/knowledge-lab/guide/walkthrough" target="_self">Trace one claim across three reports</a>.
 
 ## Can you use what you learned somewhere new?
 
 In a classroom Studio, the AI coach can offer hints and help run checks. A follow-up problem gives the student a fresh choice. Which test would they run first? What evidence would make them change their mind?
 
-I’d like to work with another instructor on a common follow-up problem after students have had different amounts of coaching. We could compare three observations from each attempt. Who suggested the first check? What did the learner predict? How did they explain the result? [Read the classroom feature](/teaching/when-ai-helps-write-the-code) · [Explore the research behind the Studio](/teaching/studio-field-notes)
+I’d like to work with another instructor on a common follow-up problem after students have had different amounts of coaching. We could compare three observations from each attempt. Who suggested the first check? What did the learner predict? How did they explain the result? [Explore the research behind the Studio](/teaching/studio-field-notes)
 
 ## What should count as evidence of learning?
 
@@ -36,4 +36,6 @@ An earlier project proposal, EverydayAI Newark, asked how people outside the uni
 
 ## Research collaborations
 
-I’d welcome a colleague who wants to compare two versions of an AI-assisted assignment, or an engineering team with a claim that is difficult to trace back to a source. A useful first conversation starts with one task, an observable result, and a question the available evidence cannot yet answer. [Contact me through NJIT](https://people.njit.edu/profile/kwilliam)
+I’d welcome a colleague who wants to compare two versions of an AI-assisted assignment or study how reviewers trace a disputed claim. What is one decision we could observe, and what evidence would change our interpretation? [Contact me at NJIT about a study](https://people.njit.edu/profile/kwilliam)
+
+For an independent consulting conversation about a workflow your team is running, tell me where a reviewer has to stop and check the output. [Get in touch about a workflow](/about#lets-compare-notes)

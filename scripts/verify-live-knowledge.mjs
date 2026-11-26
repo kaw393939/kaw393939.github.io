@@ -1,10 +1,9 @@
 // Production verification after GitHub Pages rebuilds the branch.
-import assert from 'node:assert/strict'
+import { source } from './knowledge-lab-release.mjs'
 
-const root = 'https://keithwilliams.org'
-const pinned = '13d5f91c28800de157bd8f018095df25828e30e7'
+const { origin: root, revision: pinned } = source
 const targets = [
-  {path: '/', test: body => body.includes('href="/knowledge-lab/"') && !body.includes('href="/is373-rag/"') && body.includes('Ordo Knowledge Lab')},
+  {path: '/', plainUrl: true, test: body => body.includes('href="/knowledge-lab/guide/walkthrough"') && body.includes('id="home-lab-title"') && body.includes('Ordo Knowledge Lab')},
   {path: '/knowledge-lab/', test: body => body.includes('Build answers you') && body.includes('ONE COMPLETE RAG EXAMPLE')},
   // The project owns /is373-rag/ when its separate GitHub Pages site is active.
   // If that site is temporarily disabled, the portfolio's static fallback redirects.
@@ -23,7 +22,7 @@ const targets = [
   {path: '/knowledge-lab/students/chunking', test: body => body.includes('Chunking: where should we cut a document?')},
   {path: '/knowledge-lab/students/from-app-studio', test: body => body.includes('From your existing FastAPI app to a small hosted RAG')},
   {path: '/knowledge-lab/students/library-survey', test: body => body.includes('AI libraries: what they do, and when to use them')},
-  {path: '/knowledge-lab/guide/walkthrough', test: body => body.includes('/knowledge-lab/kits/three-report-source-check.txt')},
+  {path: '/knowledge-lab/guide/walkthrough', test: body => body.includes('/knowledge-lab/kits/three-report-source-check.txt') && body.includes('href="/research/systems/provenance-knowledge-graphs"')},
   {path: '/knowledge-lab/kits/three-report-source-check.txt', test: body => body.startsWith('ONE INCIDENT, THREE REPORTS')},
   {path: '/site-notes', test: body => body.includes('https://keithwilliams.org/site-notes') && body.includes('GitHub Pages')},
   {path: '/knowledge-lab/mirror-manifest.json', test: body => {
@@ -32,11 +31,12 @@ const targets = [
   }},
 ]
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
-async function verify({path,test}) {
+async function verify({path,test,plainUrl = false}) {
   let last = 'unavailable'
   for (let attempt = 1; attempt <= 24; attempt++) {
     try {
-      const url = root + path + (path.includes('?') ? '&' : '?') + 'release=' + pinned.slice(0,8)
+      const url = new URL(path, root)
+      if (!plainUrl) url.searchParams.set('release', pinned.slice(0,8))
       const res = await fetch(url, {
         signal: AbortSignal.timeout(10000),
         headers: {'Cache-Control':'no-cache', 'User-Agent':'Ordo-Knowledge-Lab-Release-Check'}
@@ -55,4 +55,13 @@ async function verify({path,test}) {
   throw new Error(`GitHub Pages ${path} did not serve expected content: ${last}`)
 }
 for (const target of targets) await verify(target)
+// Record what a reader using an alternate address actually reaches.
+for (const alias of ['https://www.keithwilliams.org/', 'https://kaw393939.github.io/']) {
+  try {
+    const response = await fetch(alias, { signal: AbortSignal.timeout(10000) })
+    console.log(`Address check: ${alias} -> ${response.url} (HTTP ${response.status})`)
+  } catch (error) {
+    console.log(`Address check: ${alias} -> ${error.cause?.code || error.message}`)
+  }
+}
 console.log('PASS: actual portfolio and pinned Knowledge Lab pages served over public HTTPS.')

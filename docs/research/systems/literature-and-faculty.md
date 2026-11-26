@@ -89,7 +89,7 @@ These papers move the research question toward how an organization authorizes po
 | Component | State of prior art | Research question left open |
 | --- | --- | --- |
 | Hybrid graph/vector RAG | Established | Do provenance and contradiction-preserving summaries reduce context without losing evidence? |
-| Human-in-the-loop graph validation | Established, including GRACE | Can case decisions be transformed into scoped, evaluated automation policies that generalize safely? |
+| Expert review and graph expansion | [GRACE](https://aclanthology.org/2026.akbc-1.16/) ranks individual claims for review against existing evidence. An expert-verified claim can become a new evidence anchor. | My proposed addition is a separate authorization for a reusable rule, specifying which future cases it may clear and for which use. On held-out cases at matched consequential-error rates, does commissioning that rule save expert minutes per correctly qualified claim? Equal or higher cost would count against adding it. |
 | Adaptive sensors/query fidelity | Established in pervasive computing | Can heterogeneous sensors express limitations and achieved guarantees in a shared contract that supports adaptive review? |
 | Qualitative model QA plus deterministic checks | Established techniques | Does targeted evidence selection and bounded repair reduce review costs without raising escape rates? |
 | Kanban/WIP/backpressure | Established | Does reviewer-capacity-aware routing improve total verified value under cost-of-error constraints? |

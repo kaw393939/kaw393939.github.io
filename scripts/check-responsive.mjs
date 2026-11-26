@@ -131,6 +131,20 @@ try {
       assert.ok(await page.getByRole('navigation', { name: 'Main navigation' }).isVisible())
     }
     await checkProfiles(page, width)
+    // A successful GET alone would miss a false 404 from the other site's router.
+    const exercise = '/knowledge-lab/guide/walkthrough'
+    await page.locator('main a[href="' + exercise + '"]').first().click()
+    await page.locator('.journal-article-link').waitFor()
+    assert.equal(new URL(page.url()).pathname, exercise)
+    await fit('Ordo source exercise')
+    await page.locator('.journal-article-link').click()
+    await page.getByRole('heading', { level: 1, name: /six articles/i }).waitFor()
+    assert.equal(new URL(page.url()).pathname, '/research/systems/provenance-knowledge-graphs')
+    await page.goBack()
+    await page.locator('.lab-journal-return').waitFor()
+    await page.locator('.lab-journal-return').click()
+    await page.locator('#cover-title').waitFor()
+    assert.equal(new URL(page.url()).pathname, '/')
     const portrait = page.locator('.profile-image img')
     await portrait.scrollIntoViewIfNeeded()
     await portrait.evaluate(img => img.decode())

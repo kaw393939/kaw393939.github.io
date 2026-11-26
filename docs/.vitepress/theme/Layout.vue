@@ -5,6 +5,7 @@ import { site } from '../site'
 import { navItems, projects, researchQuestions, zambiaExperience } from './content'
 import HeroAudio from './components/HeroAudio.vue'
 import SiteIcon from './components/SiteIcon.vue'
+import './ordo-lab.css'
 
 const profiles = [
   { name: 'GitHub', url: site.github, icon: '/icons/github.svg' },
@@ -105,7 +106,7 @@ onUnmounted(() => {
       <nav id="site-nav" class="wrap" :class="{ open: menuOpen }" aria-label="Main navigation">
         <a href="/" :aria-current="isHome && !currentAnchor ? 'page' : undefined" @click="closeMenu">Home</a>
         <a v-for="item in navItems" :key="item.id" :href="item.href" :aria-current="currentItem(item)" @click="closeMenu">{{ item.label }}</a>
-        <a href="/knowledge-lab/" @click="closeMenu">Knowledge Lab</a>
+        <a class="nav-lab" href="/knowledge-lab/" target="_self" @click="closeMenu">Ordo Knowledge Lab</a>
         <a class="nav-contact" href="/#conversation" @click="closeMenu">Get in touch <SiteIcon name="arrow-up-right" class="link-arrow" /></a>
       </nav>
     </div>
@@ -178,8 +179,9 @@ onUnmounted(() => {
     <section id="conversation" class="contact-section wrap" aria-labelledby="contact-title">
       <div><p class="eyebrow section-label"><span aria-hidden="true"></span> Contact</p><h2 id="contact-title">Get in touch.</h2></div>
       <div class="contact-actions">
-        <p>Teaching something similar or testing an idea from the journal? You can reach me privately through NJIT or ask a public project question on GitHub.</p>
-        <div class="project-links"><a class="inline-link" :href="site.faculty">NJIT faculty profile <span aria-hidden="true">↗</span></a><a class="inline-link" :href="site.conversation" aria-describedby="conversation-privacy">Start a conversation <span aria-hidden="true">↗</span></a></div>
+        <p>Trying an exercise with your own students? I’d like to hear what they noticed. <a class="inline-link" :href="site.faculty">Contact me at NJIT</a>.</p>
+        <p>For independent consulting, bring one AI-assisted workflow and the result someone still has to check by hand. <a class="inline-link" :href="site.linkedin">Connect with me on LinkedIn</a>.</p>
+        <div class="project-links"><a class="inline-link" :href="site.conversation" aria-describedby="conversation-privacy">Report a public project issue <span aria-hidden="true">↗</span></a></div>
         <p id="conversation-privacy" class="fine-print">Public on GitHub · Sign-in required. Please keep student records, contact information, and credentials private.</p>
       </div>
     </section>

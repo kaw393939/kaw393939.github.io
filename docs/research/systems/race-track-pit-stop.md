@@ -35,7 +35,11 @@ Record the rule version, supporting evidence, decision maker, and conditions for
 
 ## Progressive disclosure
 
-I would put four questions at the top of a review request. **What decision do you need? Why now? What could go wrong? What do you recommend?** A reviewer can then open the alternatives and earlier decisions. The full source passages, measurements, and model outputs should remain a click away.
+In a proposed review screen for the payment email, the case would read like this.
+
+> **Decision requested from the designated payment approver:** May this payment go forward? The email reports a board vote. Its timestamp and wording are available. The approved minutes or signed resolution covering the payee and amount are missing. Hold the payment instruction until you check that record and confirm that the approved terms match.
+
+The person who indexed the email can attach the missing record. Under this example policy, only the designated approver can clear the hold. The screen would link the email, the approval record when it arrives, and the decision history. That leaves a reviewer enough context to hold, reject, or authorize the instruction.
 
 ## Evaluation
 

@@ -11,6 +11,8 @@ A search interface returns six articles, each with a citation. Follow the links 
 
 This is the problem I want a knowledge graph to help solve. When a sentence moves from an archive to a summary and then into a report, the reader should still be able to tell who said it, on what basis, and whether anyone else observed it independently.
 
+You can try the decision on paper in ten minutes. Read a fictional harbor log, a neighborhood bulletin, and a dispatch note. Before you look at the discussion notes, mark which lines support the claim that a light moved. How many people independently reported motion? <a href="/knowledge-lab/guide/walkthrough" target="_self">Open the three-report exercise</a>.
+
 ## Separate four things
 
 | Record | What to keep |

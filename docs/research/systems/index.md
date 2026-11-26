@@ -13,21 +13,22 @@ This collection brings together working software, design papers, and proposed ex
 
 ## A connected research vision
 
-A reader who wants examples can start with [a video editor’s tests](./metavis-evidence-and-evaluation). A researcher interested in evidence can follow [one disputed claim through a proposed interface](./vision-and-interface). For a deliberately difficult dataset, see [what UAP archives can actually establish](./uap-research-testbed).
+For an engineering review, try the reference-frame or export check in [the MetaVis case](./metavis-evidence-and-evaluation). For a research discussion, [the preliminary proposal](./dissertation-proposal) identifies the comparisons I would run and the results that could change the design.
+
+<span id="essays-and-technical-case-studies"></span>
 
 ## The research in one view
 
-| If your question is … | Start here |
-| --- | --- |
-| How do I write a useful task for a coding agent? | [Software requirements an agent can act on](./english-software-engineering) |
-| Which decisions deserve an interruption? | [Choosing when an AI workflow stops for review](./race-track-pit-stop) |
-| How do I recognize a review bottleneck? | [Measuring the cost of human attention](./human-attention-kanban) |
-| How can a reader find the original witness? | [Tracing contradictory accounts to their sources](./provenance-knowledge-graphs) |
-| Can one set of evidence support several audiences? | [Personalizing a lesson, report, or briefing](./personalized-knowledge-artifacts) |
-
-## Essays and technical case studies
-
-The [MetaVis engineering case](./metavis-evidence-and-evaluation) contains code, tests, and hardware notes from a working prototype. The [interface paper](./vision-and-interface) shows how a reader might inspect an answer, locate its source, and ask why it changed. The question that connects the two is what a person should be able to verify before accepting an AI-assisted result.
+| What would you like to inspect? | Article | Evidence available |
+| --- | --- | --- |
+| Does the video export contain what the editor intended? | [MetaVis frame and export checks](./metavis-evidence-and-evaluation) | Swift/Metal prototype with public test code |
+| Can someone else reproduce an agent’s change? | [Software requirements an agent can act on](./english-software-engineering) | Worked requirement and a proposed team study |
+| Which decisions deserve an interruption? | [Choosing when an AI workflow stops for review](./race-track-pit-stop) | Workflow design and a proposed policy comparison |
+| Would another hour of review help? | [Measuring the cost of human attention](./human-attention-kanban) | Illustrative queue and proposed staffing measures |
+| Do two reports share a witness? | [Tracing accounts to their sources](./provenance-knowledge-graphs) | Worked example and proposed verification method |
+| Can a reader flag a copied passage? | [Following one citation](./vision-and-interface) | Interface sketch and proposed usability study |
+| Which archival records could test this? | [Building a UAP research testbed](./uap-research-testbed) | Catalog of 38 metadata records and an acquisition plan |
+| Can one finding support a lesson and a briefing? | [Adapting a finding for two readers](./personalized-knowledge-artifacts) | Two hypothetical rewrites and a proposed cost comparison |
 
 ## Academic documents
 

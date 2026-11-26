@@ -9,7 +9,9 @@ articleGenre: "Research methods essay"
 
 A hearing transcript can settle a narrow question very well. Did the witness say those words? The same transcript may leave the event itself unexplained. That combination makes historical records of unidentified anomalous phenomena, or UAP, a useful test for software that writes from sources.
 
-I want to see whether a system can preserve testimony, trace a copied account, and leave an uncertainty intact. Those tasks can be evaluated without choosing an explanation for the underlying event.
+My planning catalog contains **38 metadata items and four collection entry points**. The source media, transcripts, and independently checked claim labels still need to be acquired or produced. The first question I would score concerns what a document attributes to a witness.
+
+**Proposed scoring item, using invented records.** In transcript A, a witness says, “I saw a light near the ridge.” Report B quotes those words and credits the transcript. Label that sentence in B *copied testimony* and record the witness’s passage in A as its expected parent. Award credit when the system returns both passages, identifies B as quoting A, and counts one witness. A link to the whole transcript would leave a reviewer searching for the evidence. This item says nothing about what caused the light.
 
 ## Why this domain is useful
 
@@ -34,8 +36,6 @@ The U.S. National Archives maintains Record Group 615 for UAP material received 
 Ask it to identify the original record, distinguish a contemporaneous observation from a later recollection, and point to the exact words behind each sentence. If a later release changes an assessment, ask which passage changed and who made the new judgment. A “why” investigation should trace the basis for the system’s assessment and leave room for competing explanations.
 
 ## The existing corpus is not yet acquired
-
-The reviewed planning catalog contains **38 metadata items and four collection entry points**. The source media, OCR or speech-transcription derivatives, and annotated claim labels still need to be acquired or produced.
 
 I would begin with a small rights-cleared group comprising a government report, a hearing transcript, a historical investigation, and an independently authored account. Preserve acquisition dates, content hashes, rights decisions, page spans, and media timestamps. Then ask annotators to mark attributable statements, source copying, uncertainty, and contradictions.
 

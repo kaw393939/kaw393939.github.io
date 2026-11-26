@@ -21,6 +21,8 @@ const desk = {
 
 I built a game starter that passed twelve tests while leaving the winner undecided. In my video editor, I could check a frame pixel by pixel and still have to listen to the export. I write about the gap between what we checked and what someone has good reason to believe.
 
-To try the classroom exercise, download the [teacher’s Studio starter](/downloads/AI-Studio-Starter.zip). To inspect the engineering, start with the [MetaVis case study](/research/systems/metavis-evidence-and-evaluation) or explore the [systems collection](/research/systems/). The [AI career field guide](/ai-careers) turns responsibilities from job postings into projects you can demonstrate.
+- **Read an engineering case.** Which check tells you what a viewer actually receives in a video export? [Inside MetaVis](/research/systems/metavis-evidence-and-evaluation) · [All systems case studies and research](/research/systems/)
+- **Try a student exercise.** Ask who organizes events, open the passage your search returns, and show a classmate the words that answer the question. <a href="/knowledge-lab/students/reference#your-first-15-minutes" target="_self">Run the 15-minute retrieval lab</a> · [Find a portfolio project in an AI job posting](/ai-careers)
+- **Adapt a Studio for your class.** Choose one decision you want a learner to make, then rehearse how the AI coach responds. [Read the classroom case](/teaching/when-ai-helps-write-the-code) · [Download the teacher kit with worked answers](/downloads/AI-Studio-Starter.zip)
 
 <ArticleIndex />

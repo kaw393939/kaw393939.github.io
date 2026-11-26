@@ -7,9 +7,9 @@ articleGenre: "Engineering case study"
 
 # The Video Looks Right. What Did the Software Check? {#metavis-engineering-ai-through-evidence-and-evaluation}
 
-A rendered frame can be exactly the right color while the video is silent. A clip can play smoothly for a moment while the graphics processor allocates a new texture on every frame. An AI reviewer can even return a reassuring answer when its check did not run.
+In MetaVis, my Swift and Metal editing prototype, one test renders a pattern and checks its frame hash. Another inspects the exported media, manifest, and quality reports. An editor needs both answers. The image can have the expected pixels while the delivered clip is silent.
 
-Building MetaVis, a native Swift and Metal editing prototype, gave me reasons to distinguish three questions. Did the program do what we specified? Does the edit work for a viewer? Which checks actually ran on this export?
+Would you sign off on an export marked `accepted: true`? In one path through the optional Gemini check, that is the recorded verdict even when the reviewer never saw the clip. If the policy disallows sending media, the accompanying text says the check was skipped. I would give each promised check a visible **passed, failed, or untested** state. That change is proposed. Today, a reviewer must read the skip message to interpret the verdict. [Gemini verdict code](https://github.com/kaw393939/metavis-demo-projects/blob/main/Sources/MetaVisQC/GeminiQC.swift) · [Prototype audit](https://github.com/kaw393939/metavis-demo-projects/blob/main/Docs/code_review/Master_Executive_Summary.md)
 
 ## Architecture
 
@@ -39,7 +39,7 @@ The design assigns suitable work to Apple media engines, Core ML/Vision, and Met
 
 ## Gaps and research implications
 
-The prototype code audit found mock services and unfinished production AI paths. Some media fixtures are outside the public repository. Some tests require a particular environment. A skipped AI check can report acceptance. Of those limitations, the last is the one I would fix first. The person approving an export needs to see **passed, failed, or untested** for each promised check. [Read the audit](https://github.com/kaw393939/metavis-demo-projects/blob/main/Docs/code_review/Master_Executive_Summary.md)
+The prototype audit identifies mock services and unfinished AI paths. Some media fixtures sit outside the public repository, and some tests require particular hardware. Anyone reproducing the checks should record which fixtures and hardware they used. [Read the audit](https://github.com/kaw393939/metavis-demo-projects/blob/main/Docs/code_review/Master_Executive_Summary.md)
 
 My research question is whether a few well-chosen measurements, followed by a bounded qualitative review and human acceptance, can catch consequential mistakes with less review effort. The code gives me a place to run that comparison.
 
