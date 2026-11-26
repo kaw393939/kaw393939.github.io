@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://keithwilliams.org/sitemap.xml
+Sitemap: https://keithwilliams.org/knowledge-lab/sitemap.xml
