@@ -1,5 +1,6 @@
 import { defineConfig, type HeadConfig } from 'vitepress'
 import { site } from './site'
+import { homeEditionLoader } from './home-edition'
 import { articleDesk, articleMedia, pageRoute, writingDesk } from './editorial'
 
 const homeUrl = `${site.url}/`
@@ -31,7 +32,10 @@ export default defineConfig({
   lastUpdated: false,
   appearance: false,
   markdown: {
+    toc: { level: [2] },
     config(md) {
+      md.renderer.rules.toc_open = () => '<nav class="research-contents" aria-label="On this page"><details><summary>On this page</summary>\n'
+      md.renderer.rules.toc_close = () => '</details></nav>\n'
       md.renderer.rules.table_open = (tokens, index) => {
         let heading = ''
         for (let i = index - 1; i >= 0; i--) {
@@ -70,13 +74,15 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#f3f0e8' }]
   ],
   transformPageData(page) {
+    // The homepage loader already supplies the resolved edition to its page component.
+    if (page.relativePath === 'index.md') delete page.frontmatter.edition
     // Keep editorial dates out of the client-side navigation payload as well as the page itself.
     for (const key of ['date', 'dateLabel', 'datePublished', 'dateModified', 'lastUpdated']) {
       delete page.frontmatter[key]
     }
     delete page.lastUpdated
   },
-  transformHead({ pageData }) {
+  async transformHead({ pageData }) {
     const path = pageData.relativePath
     if (path === '404.md') return [] // The error page sets noindex in its own frontmatter.
 
@@ -92,7 +98,8 @@ export default defineConfig({
     const sectionImage = path === 'about.md'
       ? { path: site.portrait, alt: 'Portrait of Keith Williams', width: 0, height: 0 }
       : writingDesk
-    const social = article ? articleMedia(path, pageData.frontmatter).share : sectionImage
+    const social = home ? (await homeEditionLoader().load()).lead.shareImage
+      : article ? articleMedia(path, pageData.frontmatter).share : sectionImage
     const imageUrl = new URL(social.path, homeUrl).href
     const imageAlt = social.alt
     const author = { '@type': 'Person', '@id': person['@id'], name: site.name, url: homeUrl }

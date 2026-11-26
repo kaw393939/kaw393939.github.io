@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { createMarkdownRenderer } from 'vitepress'
 import { createHash } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs'
@@ -41,16 +42,49 @@ function schemas(html) {
 }
 function check(name, fn) { fn(); checks.push(name); console.log(`PASS ${name}`) }
 
-check('Editorial homepage leads with a linked cover story', () => {
+const homeEnvironment = {}
+const markdown = await createMarkdownRenderer(resolve('docs'))
+markdown.render(readFileSync('docs/index.md', 'utf8'), homeEnvironment)
+const edition = homeEnvironment.frontmatter.edition
+const leadArticle = read(edition.lead.slice(1) + '.html')
+
+check('Homepage renders the configured articles, promotion copy and sharing artwork', () => {
   const main = mainContent(home)
-  const headings = [...main.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/g)]
-  assert.equal(headings.length, 1)
-  assert.match(headings[0][1].replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' '), /The Tests Passed\.\s*Who Won the Game\?/i)
-  requireLink(headings[0][1], coverPath)
-  requireLink(main, coverPath)
+  const cover = main.match(/<section class="cover wrap"[^>]*>([\s\S]*?)<\/section>/)?.[1]
+  assert.ok(cover)
+  assert.equal((main.match(/<h1\b/g) || []).length, 1)
+  const cards = [...main.matchAll(/<article class="(?:dispatch-card|briefing-card)"[^>]*>([\s\S]*?)<\/article>/g)]
+    .map(match => match[1])
+  assert.equal(cards.length, edition.supporting.length)
+  const paths = [edition.lead, ...edition.supporting]
+  for (const [index, item] of [cover, ...cards].entries()) {
+    const path = paths[index]
+    const target = read(path.slice(1) + '.html')
+    const article = schemas(target).find(data => data['@type'] === 'Article')
+    assert.ok(article, 'Missing article at ' + path)
+    const promotion = edition.overrides?.[path] || {}
+    const heading = item.match(/<h[13]\b[^>]*>([\s\S]*?)<\/h[13]>/)?.[1]
+    assert.ok(heading)
+    requireLink(heading, path)
+    assert.equal(renderedText(heading.replace(/<br\s*\/?>/g, ' ')),
+      (promotion.headline || article.headline).replace(/\s+/g, ' ').trim(), path)
+    const deck = index === 0 ? item.match(/<p class="cover-deck">([\s\S]*?)<\/p>/)
+      : item.match(/<\/h3>\s*<p>([\s\S]*?)<\/p>/)
+    assert.ok(deck, path)
+    assert.equal(renderedText(deck[1]), promotion.teaser || article.abstract, path)
+    const picture = item.match(/<img\b[^>]*>/)?.[0]
+    if (picture || index === 0) {
+      const articleImage = mainContent(target).match(/<figure[^>]*class="[^"]*\bstory-cover\b[^"]*"[^>]*>[\s\S]*?(<img\b[^>]*>)/)?.[1]
+      assert.ok(picture && articleImage, path)
+      assert.equal(attribute(picture, 'src'), attribute(articleImage, 'src'), 'Homepage art must follow article: ' + path)
+    }
+  }
+  for (const key of ['og:image', 'og:image:alt', 'twitter:image']) {
+    assert.equal(metadata(home, key), metadata(leadArticle, key), key)
+  }
   for (const url of ['/writing', '/teaching', '/research', '/research/systems/', '/ai-careers', '/about']) requireLink(home, url)
-  assert.ok(home.includes('Keith Williams'))
 })
+
 check('Writing index puts original work and its classroom materials within reach', () => {
   const index = mainContent(writing)
   assert.match(index, /<figure\b[\s\S]*?src="\/images\/editorial\/field-desk\.jpg"[\s\S]*?<figcaption>AI-generated editorial illustration\.<\/figcaption>/)
@@ -135,6 +169,33 @@ check('Research series and advisor proposal are generated and accessible', () =>
   assert.ok(research.includes('/research/systems/'), 'Research page should link to systems hub')
 })
 
+check('Research breadcrumbs and long-document contents point to the right destinations', () => {
+  const folder = 'research/systems'
+  const longDocuments = new Set(['dissertation-proposal.md', 'literature-and-faculty.md'])
+  for (const filename of readdirSync('docs/' + folder).filter(name => name.endsWith('.md'))) {
+    const main = mainContent(read(folder + '/' + filename.replace(/\.md$/, '.html')))
+    const trail = main.match(/<nav\b[^>]*aria-label="Breadcrumb"[^>]*>([\s\S]*?)<\/nav>/)?.[1]
+    assert.ok(trail, 'Missing research breadcrumb in ' + filename)
+    requireLink(trail, '/research')
+    if (filename === 'index.md') {
+      assert.match(trail, /aria-current="page">Evidence-Governed AI Systems</)
+      assert.ok(!trail.includes('href="/research/systems/"'), 'Collection links to itself')
+    } else {
+      assert.match(trail, /href="\/research\/systems\/">Evidence-Governed AI Systems<\/a>/)
+    }
+    const contents = main.match(/<nav\b[^>]*aria-label="On this page"[^>]*>([\s\S]*?)<\/nav>/)?.[1]
+    if (longDocuments.has(filename)) assert.ok(contents, 'Missing contents in ' + filename)
+    const source = readFileSync(resolve('docs', folder, filename), 'utf8')
+    assert.equal(Boolean(contents), /^\[\[toc\]\]$/m.test(source), 'Contents must be an editorial choice in ' + filename)
+    if (!contents) continue
+    assert.match(contents, /<details><summary>On this page<\/summary>/)
+    const targets = [...contents.matchAll(/href="#([^"]+)"/g)].map(link => link[1])
+    const headings = [...main.matchAll(/<h2\b[^>]*\bid="([^"]+)"/g)].map(heading => heading[1])
+    assert.ok(targets.length > 0, 'Empty contents in ' + filename)
+    assert.deepEqual(targets, headings, 'Contents should match every H2, in order, in ' + filename)
+  }
+})
+
 check('Hero narration is accessible and bundled as a local asset', () => {
   assert.ok(home.includes('Listen to introduction'))
   assert.ok(home.includes('AI-narrated'))
@@ -187,8 +248,10 @@ check('Social previews, canonical URLs and structured data match the reading des
     const image = new URL(metadata(html, 'og:image'))
     assert.equal(image.origin, base)
     if (route === coverPath || route === '/' || route === '/writing') {
-      const crop = route === coverPath ? 'social-rock-paper.jpg' : 'social-field-desk.jpg'
-      assert.equal(image.pathname, '/images/editorial/' + crop, route)
+      if (route !== '/') {
+        const crop = route === coverPath ? 'social-rock-paper.jpg' : 'social-field-desk.jpg'
+        assert.equal(image.pathname, '/images/editorial/' + crop, route)
+      }
       assert.equal(metadata(html, 'og:image:width'), '1200', route)
       assert.equal(metadata(html, 'og:image:height'), '630', route)
     }
@@ -238,6 +301,43 @@ function jpegDimensions(bytes) {
   }
   assert.fail('Missing JPEG frame with dimensions')
 }
+
+function checkReaderPicture(html, placement) {
+  const picture = html.match(/<picture\b[^>]*>([\s\S]*?)<\/picture>/)?.[1]
+  assert.ok(picture, 'Missing responsive picture in ' + placement)
+  const source = picture.match(/<source\b[^>]*>/)?.[0] || ''
+  const fallback = picture.match(/<img\b[^>]*>/)?.[0] || ''
+  assert.equal(attribute(source, 'type'), 'image/webp')
+  assert.ok(attribute(source, 'sizes'), 'Missing layout sizes in ' + placement)
+  assert.ok(attribute(fallback, 'src') && attribute(fallback, 'alt') !== undefined)
+  assert.ok(existsSync(resolve(dist, attribute(fallback, 'src').slice(1))))
+  const candidates = (attribute(source, 'srcset') || '').split(/,\s*/)
+  const widths = candidates.map(candidate => {
+    const match = candidate.match(/^(\/images\/reader\/\S+\.webp) (\d+)w$/)
+    assert.ok(match, candidate)
+    const bytes = readFileSync(resolve(dist, decodeURIComponent(match[1]).slice(1)))
+    assert.equal(bytes.toString('ascii', 8, 12), 'WEBP', match[1])
+    return Number(match[2])
+  })
+  const originalWidth = Number(attribute(fallback, 'width'))
+  for (const width of [480, 768].filter(width => width < originalWidth)) assert.ok(widths.includes(width), placement)
+  assert.deepEqual(widths, [...new Set(widths)].sort((a, b) => a - b))
+  assert.ok(widths.at(-1) <= originalWidth, 'Avoid upscaling ' + placement)
+}
+
+check('Readers get responsive local images across the homepage, Writing index and articles', () => {
+  for (const [, figure] of home.matchAll(/<figure class="(?:cover-image|dispatch-image)"[^>]*>([\s\S]*?)<\/figure>/g)) {
+    checkReaderPicture(figure, 'homepage')
+  }
+  checkReaderPicture(mainContent(writing).match(/<figure\b[^>]*>([\s\S]*?)<\/figure>/)?.[1] || '', 'Writing cover')
+  for (const [, card] of mainContent(writing).matchAll(/<article class="journal-card"[^>]*>([\s\S]*?)<\/article>/g)) {
+    checkReaderPicture(card, 'Writing card')
+    const href = attribute(card.match(/<a\b[^>]*>/)[0], 'href')
+    const article = read(href.slice(1) + '.html')
+    const cover = mainContent(article).match(/<figure\b[^>]*class="[^"]*\bstory-cover\b[^"]*"[^>]*>([\s\S]*?)<\/figure>/)
+    checkReaderPicture(cover?.[1] || '', href)
+  }
+})
 
 check('Every article has its own illustrated teaser, canonical sharing link and searchable card', () => {
   const researchArticles = readdirSync('docs/research/systems')
@@ -363,7 +463,6 @@ check('Homepage serves local editorial photographs with accessible, sized images
   const matches = [...home.matchAll(/<img\b[^>]*>/g)]
   const images = matches.map(match => match[0])
   assert.ok(images.length >= 3)
-  const sources = []
   for (const match of matches) {
     const img = match[0]
     for (const attr of ['width', 'height', 'src']) assert.match(img, new RegExp('\\b' + attr + '="[^"]+"'))
@@ -378,11 +477,8 @@ check('Homepage serves local editorial photographs with accessible, sized images
         assert.match(beforeImage, /<a\b[^>]*aria-hidden="true"[^>]*>\s*$/, 'Decorative linked image must be hidden')
       }
     }
-    const src = img.match(/\bsrc="([^"]+)"/)[1]
-    sources.push(src)
     for (const [, path] of img.matchAll(/\/(images\/[^\s",]+)/g)) assert.ok(existsSync(resolve(dist, path)), path)
   }
-  assert.ok(sources.includes('/images/teaching/studio-rock-paper-tests.jpg'))
   assert.ok(images.some(img => img.includes('fetchpriority="high"') && /\balt="[^"]+"/.test(img)))
   assert.ok(images.some(img => img.includes('loading="lazy"')))
   assert.ok(images.some(img => img.includes('srcset=') && img.includes('sizes=')))

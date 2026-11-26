@@ -4,10 +4,18 @@ description: Explore Keith Williams’s essays on engineering with AI, designing
 teaser: Field notes from my NJIT teaching and engineering practice, from testing a video export to deciding which question an AI coach should leave unanswered.
 ---
 
+<script setup>
+import EditorialImage from './.vitepress/theme/components/EditorialImage.vue'
+const desk = {
+  path: '/images/editorial/field-desk.jpg', width: 1440, height: 960,
+  alt: 'A blue workbench with an open notebook and a red pencil in angled sunlight.'
+}
+</script>
+
 # Writing
 
 <figure>
-  <img src="/images/editorial/field-desk.jpg" alt="A blue workbench with an open notebook and a red pencil in angled sunlight." width="1440" height="960" decoding="async">
+  <EditorialImage :image="desk" placement="index" />
   <figcaption>AI-generated editorial illustration.</figcaption>
 </figure>
 

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { data as stories } from '../articles.data'
 import { deskOrder } from '../../editorial'
+import EditorialImage from './EditorialImage.vue'
 const desks = [...new Set([...deskOrder, ...stories.map(story => story.desk)])]
 const sections = desks.map(name => ({
   name,
@@ -15,7 +16,7 @@ const sections = desks.map(name => ({
       <div class="journal-cards">
         <article v-for="story in section.stories" :key="story.url" class="journal-card">
           <a :href="story.url" class="journal-card-link">
-            <img :src="story.image.path" alt="" :width="story.image.width || undefined" :height="story.image.height || undefined" loading="lazy" decoding="async">
+            <EditorialImage :image="story.image" placement="card" alt="" />
             <h3>{{ story.title }}</h3>
           </a>
           <p>{{ story.teaser }}</p>

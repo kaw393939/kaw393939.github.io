@@ -4,6 +4,7 @@ import { useData } from 'vitepress'
 import { articleMedia, pageRoute } from '../../editorial'
 import { site } from '../../site'
 import ArticleShare from './ArticleShare.vue'
+import EditorialImage from './EditorialImage.vue'
 
 const { page, frontmatter } = useData()
 const media = computed(() => articleMedia(page.value.relativePath, frontmatter.value).cover)
@@ -18,7 +19,7 @@ const url = computed(() => site.url + pageRoute(page.value.relativePath))
     </p>
     <ArticleShare :key="url" :url="url" :title="page.title" />
     <figure class="story-cover editorial-figure">
-      <img :src="media.path" :alt="media.alt" :width="media.width || undefined" :height="media.height || undefined" fetchpriority="high" decoding="async">
+      <EditorialImage :image="media" placement="article" />
       <figcaption><template v-if="frontmatter.imageCaption">{{ frontmatter.imageCaption }} </template>{{ frontmatter.imageCredit || 'AI-generated editorial illustration.' }}</figcaption>
     </figure>
   </div>

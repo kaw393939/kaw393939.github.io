@@ -27,7 +27,7 @@ export default createContentLoader('**/*.md', {
         image: articleMedia(path, frontmatter).share
       })
     }
-    const lead = '/teaching/when-ai-helps-write-the-code'
+    const lead = pages.find(page => page.url === '/')?.frontmatter.edition?.lead
     return stories.sort((a, b) => {
       if (a.url === lead || b.url === lead) return a.url === lead ? -1 : 1
       return deskOrder.indexOf(a.desk) - deskOrder.indexOf(b.desk) || a.title.localeCompare(b.title, 'en')
