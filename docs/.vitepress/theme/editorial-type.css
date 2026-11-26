@@ -116,6 +116,38 @@
   font-family: var(--sans);
 }
 
+.document-page .breadcrumb {
+  flex-wrap: wrap;
+  row-gap: .2rem;
+}
+
+.research-contents {
+  margin-block: 1.25rem;
+  padding-inline: 1rem;
+  border-inline-start: .2rem solid var(--accent);
+  background: var(--paper-deep);
+  font-family: var(--sans);
+}
+.research-contents summary {
+  width: fit-content;
+  padding-block: .7rem;
+  font: 650 1rem/1.4 var(--sans);
+  cursor: pointer;
+}
+.document-page .research-contents ul {
+  margin: 0;
+  padding: 0 0 .8rem;
+  list-style: none;
+}
+.document-page .research-contents li {
+  margin: 0;
+  font: 400 1rem/1.4 var(--sans);
+}
+.research-contents li a {
+  display: inline-block;
+  padding-block: .25rem;
+}
+
 .document-page table {
   font-size: clamp(.95rem, .93rem + .1vw, 1.03rem);
   line-height: 1.44;
@@ -159,7 +191,7 @@
 
 @media print {
   body:has(.document-page) :is(.site-header, .site-footer, .skip-link),
-  .document-page :is(.breadcrumb, .story-share, .article-share, .header-anchor, .table-hint),
+  .document-page :is(.breadcrumb, .research-contents, .story-share, .article-share, .header-anchor, .table-hint),
   .document-page [class*="language-"] .copy { display: none; }
 
   .document-page,

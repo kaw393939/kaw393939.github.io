@@ -42,11 +42,19 @@ The deploy script builds both VitePress sites and updates the `gh-pages` branch 
 
 The homepage includes an optional 16-second AI-narrated audio introduction, generated with ElevenLabs. The MP3 is committed at `docs/public/audio/portfolio-intro.mp3` and published as a static asset. It does not autoplay or preload; visitors can use a play/pause button or read the transcript in `docs/.vitepress/theme/components/HeroAudio.vue`. The synthetic narrator is identified on the page and is not Keith's recorded or cloned voice.
 
+## Editing the homepage edition
+
+In `docs/index.md`, set `edition.lead` to an article’s public path and list the other articles under `edition.supporting` in display order. Use different paths for each position. The third supporting item uses the text-only briefing style. The homepage inherits the article’s headline, teaser and cover art. Its LinkedIn preview uses the lead article’s sharing image.
+
+Optional entries in `edition.overrides` are keyed by article path. Set `headline`, `teaser`, `label`, `caption`, or `linkLabel` there to change the homepage treatment. A two-line headline emphasizes the second line on the cover. Article pages and Writing cards keep their original copy. Build and check the edition with `npm test`.
+
 ## Content and imagery
 
 Homepage structure lives in `docs/.vitepress/theme/Layout.vue`; repeatable content lives in `theme/content.ts`, shared identity and URLs in `.vitepress/site.ts`, icons in `theme/components/SiteIcon.vue`, and styles in `theme/style.css`. The profile uses an AI-assisted editorial portrait adapted from Keith’s classroom photograph. Its three responsive WebP files are in `docs/public/images/keith-williams-editorial-*.webp`; `site.ts` supplies the author image to search and social metadata.
 
 No analytics, tracking scripts, embedded contact forms, or external font requests are included.
+
+For new editorial illustrations, keep the original JPEG or PNG under `docs/public/images/`. Starting the dev server or building the site generates responsive WebP files with Sharp. Run `npm run images` after adding or replacing an image during a dev session. The homepage, Writing index, and article covers use those files according to their display size. Social previews retain the original image URLs.
 
 The Selected Projects and Zambia field-experience sections are driven by `theme/content.ts`. Project summaries distinguish published foundations, alpha software, and a teaching template from unfinished work. Their public evidence is recorded in [CONTENT_SOURCES.md](CONTENT_SOURCES.md). Recheck release status and capabilities before updating these claims; do not present a roadmap, classroom exercise, or proposed outcome as delivered work.
 

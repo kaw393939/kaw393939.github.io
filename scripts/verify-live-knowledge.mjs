@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict'
 
 const root = 'https://keithwilliams.org'
-const pinned = '9f5f8f483ed555dc155e5d0cbd203974d5ca4d4f'
+const pinned = '13d5f91c28800de157bd8f018095df25828e30e7'
 const targets = [
   {path: '/', test: body => body.includes('href="/knowledge-lab/"') && !body.includes('href="/is373-rag/"') && body.includes('Ordo Knowledge Lab')},
   {path: '/knowledge-lab/', test: body => body.includes('Build answers you') && body.includes('ONE COMPLETE RAG EXAMPLE')},
@@ -15,7 +15,9 @@ const targets = [
   {path: '/is373-rag/students/', test: body =>
     body.includes('Build a small RAG system you can explain') ||
     (body.includes('http-equiv="refresh"') && body.includes('url=/knowledge-lab/students/'))},
-  {path: '/knowledge-lab/students/', test: body => body.includes('Build a small RAG system you can explain')},
+  {path: '/writing', test: body => body.includes('journal-card') && body.includes('type="image/webp"')},
+  {path: '/research/systems/dissertation-proposal', test: body => body.includes('On this page') && body.includes('Evidence-Governed AI Systems')},
+  {path: '/knowledge-lab/students/', test: body => body.includes('Build a small RAG system you can explain') && body.includes('Research overview') && body.includes('/knowledge-lab/students/plan')},
   {path: '/knowledge-lab/students/prompts', test: body => body.includes('Ask an AI coding agent')},
   {path: '/knowledge-lab/students/embeddings', test: body => body.includes('Embeddings: how can a computer find related ideas?')},
   {path: '/knowledge-lab/students/chunking', test: body => body.includes('Chunking: where should we cut a document?')},

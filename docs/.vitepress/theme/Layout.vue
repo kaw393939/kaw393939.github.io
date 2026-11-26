@@ -14,10 +14,16 @@ const profiles = [
 const { frontmatter, page } = useData()
 const isHome = computed(() => frontmatter.value.layout === 'home')
 const section = computed(() => page.value.relativePath.split('/')[0].replace(/\.md$/, ''))
-const breadcrumb = computed(() => {
-  if (section.value === 'teaching' && page.value.relativePath.includes('/')) return { href: '/teaching', title: 'Teaching' }
-  if (section.value === 'research' && page.value.relativePath.includes('/')) return { href: '/research', title: 'Research' }
-  return null
+const breadcrumbs = computed(() => {
+  const path = page.value.relativePath
+  if (path.startsWith('teaching/')) return [{ href: '/teaching', title: 'Teaching' }]
+  if (!path.startsWith('research/')) return []
+  const trail: { href?: string, title: string }[] = [{ href: '/research', title: 'Research' }]
+  if (path.startsWith('research/systems/')) {
+    const collection = path === 'research/systems/index.md'
+    trail.push({ href: collection ? undefined : '/research/systems/', title: 'Evidence-Governed AI Systems' })
+  }
+  return trail
 })
 
 const menuOpen = ref(false)
@@ -106,51 +112,7 @@ onUnmounted(() => {
   </header>
 
   <main v-if="isHome" id="main" tabindex="-1" class="home-page">
-    <section class="cover wrap" aria-labelledby="cover-title">
-      <div class="cover-copy">
-        <p class="eyebrow section-label"><span aria-hidden="true"></span> The teaching issue</p>
-        <h1 id="cover-title"><a href="/teaching/when-ai-helps-write-the-code">The Tests Passed.<br><em>Who Won the Game?</em></a></h1>
-        <p class="cover-deck">My rock-paper-scissors starter passed twelve tests. It still couldn’t tell you who won. The missing rule became a lesson in what students can check for themselves.</p>
-        <p class="cover-byline">By <a href="/about">Keith Williams</a> · NJIT lecturer and software builder</p>
-        <a class="read-link" href="/teaching/when-ai-helps-write-the-code">Read the feature <span aria-hidden="true">→</span></a>
-      </div>
-      <figure class="cover-image">
-        <img src="/images/teaching/studio-rock-paper-tests.jpg" alt="A red sheet of paper covers a dark stone beside a strip of green test checks" width="1280" height="853" fetchpriority="high" decoding="async">
-        <figcaption>Paper covers rock. <span>AI-generated illustration</span></figcaption>
-      </figure>
-    </section>
-
-    <section id="missions" class="dispatches wrap" aria-labelledby="dispatches-title">
-      <div class="section-rule"><h2 id="dispatches-title">From the journal</h2> <a href="/writing">All writing <span aria-hidden="true">↗</span></a></div>
-      <div class="dispatch-grid">
-        <article class="dispatch-card">
-          <figure class="dispatch-image">
-            <img src="/images/teaching/studio-coach-pause.jpg" alt="An open hand gestures toward a worked example while a learner holds a pencil over a blank card" width="1080" height="720" loading="lazy" decoding="async">
-            <figcaption>AI-generated illustration</figcaption>
-          </figure>
-          <p class="eyebrow">Classroom practice</p>
-          <h3><a href="/teaching/studio-field-notes">When should an AI coach step back?</a></h3>
-          <p>What happens if you ask your classroom AI for the answer twice? A rehearsal for teachers, and four more ways to put a student’s judgment back into an assignment.</p>
-          <a class="inline-link" href="/teaching/studio-field-notes">Read the field notes <span aria-hidden="true">↗</span></a>
-        </article>
-        <article class="dispatch-card">
-          <figure class="dispatch-image">
-            <img src="/images/editorial/evidence-desk.jpg" alt="A magnifier rests on blue tracing paper" width="1000" height="666" loading="lazy" decoding="async">
-            <figcaption>AI-generated illustration</figcaption>
-          </figure>
-          <p class="eyebrow">Systems research</p>
-          <h3><a href="/research/systems/provenance-knowledge-graphs">Where did that claim come from?</a></h3>
-          <p>Six articles can repeat one witness. Follow the citation trail before treating the retellings as independent evidence.</p>
-          <a class="inline-link" href="/research/systems/provenance-knowledge-graphs">Follow the evidence <span aria-hidden="true">↗</span></a>
-        </article>
-        <article class="briefing-card">
-          <p class="eyebrow">Career field guide</p>
-          <h3><a href="/ai-careers">What are employers actually asking for?</a></h3>
-          <p>I read 50 professional AI job postings and looked separately at three internships. Take one responsibility from a posting and turn it into a project you can show an interviewer.</p>
-          <a class="inline-link" href="/ai-careers">Explore AI careers <span aria-hidden="true">↗</span></a>
-        </article>
-      </div>
-    </section>
+    <Content />
 
     <section id="projects" class="project-section" aria-labelledby="projects-title">
       <div class="wrap project-layout">
@@ -223,7 +185,13 @@ onUnmounted(() => {
     </section>
   </main>
   <main v-else id="main" tabindex="-1" class="document-page wrap">
-    <nav v-if="breadcrumb" class="breadcrumb" aria-label="Breadcrumb"><a :href="breadcrumb.href">{{ breadcrumb.title }}</a><span aria-hidden="true">/</span><span>Article</span></nav>
+    <nav v-if="breadcrumbs.length" class="breadcrumb" aria-label="Breadcrumb">
+      <template v-for="(crumb, index) in breadcrumbs" :key="crumb.title">
+        <span v-if="index" aria-hidden="true">/</span>
+        <a v-if="crumb.href" :href="crumb.href">{{ crumb.title }}</a>
+        <span v-else aria-current="page">{{ crumb.title }}</span>
+      </template>
+    </nav>
     <Content />
   </main>
   <footer class="site-footer">

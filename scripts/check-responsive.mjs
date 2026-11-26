@@ -75,6 +75,16 @@ async function checkArticleType(page, width) {
   }
 }
 
+async function checkEditorialImage(image, width) {
+  await image.scrollIntoViewIfNeeded()
+  const selected = await image.evaluate(async img => {
+    await img.decode()
+    return { url: img.currentSrc, naturalWidth: img.naturalWidth }
+  })
+  assert.ok(selected.naturalWidth > 0, width + 'px editorial image must decode')
+  assert.match(new URL(selected.url).pathname, /\.webp$/i, width + 'px browser should choose a WebP candidate')
+}
+
 const preview = spawn('node', ['node_modules/vitepress/bin/vitepress.js', 'preview', 'docs', '--port', String(port)], { stdio: 'ignore' })
 let browser
 try {
@@ -107,6 +117,7 @@ try {
     }
 
     await open('/')
+    await checkEditorialImage(page.locator('.cover-image img'), width)
     const menu = page.getByRole('button', { name: /^Menu/ })
     if (width <= 800) {
       await menu.focus()
@@ -131,6 +142,7 @@ try {
     await open('/writing')
     const cards = page.locator('.journal-card')
     assert.ok(await cards.count() >= 14)
+    await checkEditorialImage(cards.first().locator('img'), width)
     const columns = await page.locator('.journal-cards').first().evaluate(grid => getComputedStyle(grid).gridTemplateColumns.split(' ').length)
     assert.equal(columns, width <= 550 ? 1 : 2, 'Writing index column count')
     await open('/research/systems/personalized-knowledge-artifacts')
@@ -146,6 +158,24 @@ try {
     }
     assert.ok(await page.getByRole('link', { name: /Share on LinkedIn/ }).isVisible())
 
+    await open('/research/systems/dissertation-proposal')
+    const contents = page.getByRole('navigation', { name: 'On this page' })
+    const toggle = contents.locator('summary')
+    await toggle.focus()
+    await toggle.press('Enter')
+    const methodology = contents.getByRole('link', { name: /methodology/i })
+    assert.ok(await methodology.isVisible())
+    const fragment = await methodology.getAttribute('href')
+    await methodology.click()
+    await page.waitForFunction(hash => {
+      const heading = document.getElementById(decodeURIComponent(hash.slice(1)))
+      if (location.hash !== hash || heading?.tagName !== 'H2') return false
+      const bounds = heading.getBoundingClientRect()
+      return bounds.bottom > 0 && bounds.top < window.innerHeight
+    }, fragment)
+    const collection = page.getByRole('navigation', { name: 'Breadcrumb' })
+      .getByRole('link', { name: 'Evidence-Governed AI Systems' })
+    assert.equal(await collection.getAttribute('href'), '/research/systems/')
     await open('/ai-careers')
     const tables = page.locator('.table-scroll')
     assert.ok(await tables.count() > 0)

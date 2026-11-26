@@ -11,6 +11,8 @@ When an AI system gets a claim wrong, where should an engineer look first? The c
 
 I put this reading map together to design those experiments. It connects five researchers’ work at NJIT with scholarship on provenance, graph retrieval, human attention and AI evaluation. The selections and proposed connections are mine. Faculty participation or endorsement would require a separate conversation. The bibliography is preliminary and selective.
 
+[[toc]]
+
 ## The academic problem
 
 The unit I want to study is a **decision to use a claim**. A sensor reports what it observed and what guarantee it achieved. Someone or something interprets the observation. A policy determines what evidence and authority a particular use requires. When a case needs review, it competes for a person’s time.

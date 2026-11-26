@@ -1,4 +1,6 @@
 node_modules/
 docs/.vitepress/cache/
 docs/.vitepress/dist/
+docs/.vitepress/generated/reader-images.json
+docs/public/images/reader/
 .DS_Store

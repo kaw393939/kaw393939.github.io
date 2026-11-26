@@ -14,6 +14,8 @@ This preliminary proposal was prepared at the New Jersey Institute of Technology
 **Working title**  
 Adaptive Human–AI Orchestration for Provenance-Governed Knowledge Artifacts: Reliability, Commissioning, and Human Attention
 
+[[toc]]
+
 ## Abstract
 
 I propose to build and evaluate a system that turns text, images, audio and video into briefings, lessons and source dossiers. Each significant claim would carry a record of where it came from, how it changed and who authorized its use. A reader could trace an account back to the page, image region or recording that supports it. If accounts conflict, the briefing would say so.

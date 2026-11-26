@@ -4,7 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "images": "node scripts/build-reader-images.mjs",
+    "predev": "npm run images",
     "dev": "vitepress dev docs --host 127.0.0.1",
+    "prebuild": "npm run images",
     "build": "vitepress build docs",
     "preview": "vitepress preview docs --host 127.0.0.1",
     "deploy": "node scripts/deploy-pages.mjs",
@@ -13,6 +16,7 @@
     "verify:knowledge": "node scripts/verify-knowledge-lab.mjs"
   },
   "devDependencies": {
+    "sharp": "0.34.5",
     "vitepress": "^1.6.4",
     "vue": "^3.5.13"
   },
