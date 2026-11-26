@@ -4,7 +4,7 @@ import { source } from './knowledge-lab-release.mjs'
 const { origin: root, revision: pinned } = source
 const targets = [
   {path: '/', plainUrl: true, test: body => body.includes('href="/knowledge-lab/guide/walkthrough"') && body.includes('id="home-lab-title"') && body.includes('Ordo Knowledge Lab')},
-  {path: '/teaching/when-ai-helps-write-the-code', test: body => body.includes('What Could You Learn If You Could Listen to Every Student Work?') && body.includes('Grade one project, then read across the class') && body.includes('href="/knowledge-lab/students/research"')},
+  {path: '/teaching/when-ai-helps-write-the-code', test: body => body.includes('The Question I Want Students to Ask Without Me') && body.includes('Use the responses while students can still revise') && body.includes('href="/knowledge-lab/students/research"')},
   {path: '/knowledge-lab/', test: body => body.includes('Build answers you') && body.includes('href="/knowledge-lab/students/research"') && body.includes('ONE COMPLETE RAG EXAMPLE')},
   {path: '/knowledge-lab/students/research', test: body => body.includes('Compare ways to find the evidence') && body.includes('href="/knowledge-lab/students/plan"')},
   // The project owns /is373-rag/ when its separate GitHub Pages site is active.

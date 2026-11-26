@@ -42,6 +42,14 @@ Software engineer Birgitta Böckeler describes two parts of working with a codin
 
 **Try it.** Hand a teammate one result to reproduce or one claim to inspect. Let them choose where to start. Watch for the instruction you thought was obvious.
 
+## When I let students choose the next check
+
+In IS117, students compare how two stores help a shopper choose a plain white T-shirt. I can show them where one store puts its measurements. On their own site, they hand a classmate the task of choosing a size and watch where the shopper looks. Career research gives the portfolio a reader. A student can ask a classmate to find what they personally built for a team project, then watch which link the classmate opens first. [T-shirt exercise](https://github.com/kaw393939/is117-demo-days/blob/main/docs/process/from-evidence-to-decisions.md) · [Portfolio brief](https://github.com/kaw393939/is117-demo-days/blob/main/docs/projects/portfolio.md)
+
+In IS373 Server Studio, students try their calculator at its public address. In App Studio, I can ask, “How would you show me what an ordinary member can do?” and let the student choose the account and action. The Knowledge Lab starts even earlier. Read a source, ask a question it can answer, and pick the passage you expect to find before running a search. [Server and App briefs](https://github.com/kaw393939/is373-studio/blob/main/docs/projects/studios.md) · <a href="/knowledge-lab/students/research" target="_self">Knowledge Lab research step</a>
+
+In graduate IS601, students study a working calculator, then build their own from requirements. Later the calculator has accounts and saved results. I can ask, “Someone else signs in. What should they see?” The student gets to design the test and tell me what it established. [Worked calculator](https://github.com/kaw393939/module5_is601/blob/main/unit_content.md) · [Midterm](https://github.com/kaw393939/module6_is601/blob/main/readme.md) · [Web app](https://github.com/kaw393939/module14_is601/blob/main/docs/00-course-overview.md)
+
 ## What the studies measured
 
 Majeed Kazemitabaar and colleagues paired Python exercises with manual changes in a controlled study of 69 novice programmers aged 10–17. The group with access to code generation completed more authoring tasks. The researchers found no statistically significant overall difference in retention scores a week later. In a separate randomized high-school math study, Hamsa Bastani and colleagues found that students using unrestricted GPT did better during practice and worse than controls on a subsequent unaided exam. Teacher-designed safeguards substantially reduced that downside. [Programming study](https://arxiv.org/abs/2302.07427) · [Mathematics study](https://doi.org/10.1073/pnas.2422633122)

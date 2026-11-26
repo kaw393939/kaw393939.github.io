@@ -14,10 +14,10 @@ edition:
     /teaching/when-ai-helps-write-the-code:
       label: The teaching issue
       headline: |-
-        What Could You Learn If You Could
-        Listen to Every Student Work?
-      teaser: Turn an assignment you already teach into a Studio. A few well-chosen questions give you student responses you can use for individual feedback and to decide what to teach next.
-      caption: A place to keep the questions you want to ask as students work.
+        The Question I Want Students
+        to Ask Without Me
+      teaser: Give every team a bike-shop owner to interview. What students ask her, and what a rider understands afterward, can change the feedback you give and the class you teach next.
+      caption: A Studio starts with a question the teacher wants students to ask on their own.
     /teaching/studio-field-notes:
       label: Classroom practice
       headline: When should an AI coach step back?

@@ -1,61 +1,62 @@
 ---
-title: What Could You Learn If You Could Listen to Every Student Work?
-description: Turn an assignment into an AI Studio, collect student explanations as they work, and use AI-assisted grading to plan individual feedback and the next class.
-teaser: Give an AI coach an assignment you already teach. What students say while working can help you grade one project and decide what to teach the whole class tomorrow.
+title: The Question I Want Students to Ask Without Me
+description: How an NJIT lecturer turns an existing assignment into an AI Studio, uses student responses to guide revision across a large class, and gives students a decision they can defend in an interview.
+teaser: A rider asks for Friday. Has the bike shop promised a repair? One assignment gives every team a customer to interview and gives me a way to hear what each student decided.
 articleGenre: Classroom feature
-imageCaption: A teacher can design the question and decide which responses are worth bringing back to class.
+imageCaption: Before I write the student handout, I write down the question I hope a student will eventually ask on their own.
 socialImage: /images/editorial/social-field-desk.jpg
 socialImageAlt: An open notebook with hand-drawn diagrams and a red pencil on a blue desk.
 socialImageWidth: 1200
 socialImageHeight: 630
 ---
 
-# What Could You Learn If You Could Listen to Every Student Work?
+# The Question I Want Students to Ask Without Me
 
-One of the best reasons to pull up a chair beside a student is to hear the story behind a choice. Imagine a student pointing to a size chart on a website they built. “I put the measurements at the top. Then I tried to buy the shirt and realized the size button took me right past them.” Now I have something to teach with. I know what the student expected, what surprised them, and why they changed the page. While I’m helping one student, I miss exchanges like that at the next table.
+In my web applications course at NJIT, I can give every project team a bike-shop owner to interview. Her name is Maya. She runs a fictional shop called Bench & Bolt, and repair requests arrive on scraps of paper and in messages. Suppose a team builds her a form and a rider asks for Friday. What should the rider see after pressing Submit?
 
-That’s why I make assignments I call *Studios*. I can take something I already teach, give an AI coach a few good questions to ask while the student works, and decide which responses belong in the hand-in. A student gets to practice explaining a real decision to someone who can ask a follow-up, the way an interviewer might. When I have more than a hundred students to teach, those same responses help me decide what to say to one student and what to take up with the whole class.
+Before anyone writes the receipt, somebody needs to ask Maya what she can promise. Friday is the rider’s preference. The shop still has to review the job. Get those few words wrong and someone could turn up on Friday with a bicycle. [Meet the simulated customer](https://github.com/kaw393939/is218-studio/blob/main/docs/public/kits/fde-customer/scenarios/repair-shop.md)
 
-## Start with an assignment you already teach
+That’s what I enjoy about making an assignment into a *Studio*. While I sit with one team, another can interview Maya, challenge an assumption, and decide what to build. With more than a hundred students across sections, I want to hear how each person reached a decision, including the teammate who won’t be driving the demo. The trick is deciding in advance what’s worth asking and keeping.
 
-Open an ordinary AI chat, paste in the teacher guide and an assignment, and type **“Help me turn this into a Studio.”** The guide asks which decision you want students to learn to make. It drafts a short lesson for them and instructions for a coach that can ask a question, offer a hint, and wait for the reply. You can use your existing rubric and submission process. [Open the teacher guide](https://github.com/kaw393939/kaw393939.github.io/blob/main/examples/ai-studio-starter/TEACHER-STUDIO.md)
+<span id="start-with-an-assignment-you-already-teach"></span>
 
-Before handing it out, I’d play a student for one turn. “I’m stuck. Pick for me.” If the coach makes the decision I wanted the student to practice, I can change that line and try again.
+## Make a Studio from an assignment you already teach
 
-## Bring a job posting to the Studio
+Paste an existing assignment and rubric into a chat with the teacher guide. Ask it to turn the assignment into a Studio. It helps you pick a decision students should own, then drafts a student handout and instructions for an AI coach. You choose when it can offer a hint and what students will submit. [Open the teacher guide](https://github.com/kaw393939/kaw393939.github.io/blob/main/examples/ai-studio-starter/TEACHER-STUDIO.md) · [Download the starter with a worked example](/downloads/AI-Studio-Starter.zip)
 
-Ask students to bring an internship posting they’d actually apply for. With the posting and the assignment in the same chat, I can ask the teacher guide, *“Which responsibility in this job could a student practice through this assignment? Give me one question that would help me hear them doing it.”*
+I’d try it once as a student. *“Just write the confirmation for me.”* If the coach says the repair is booked, it has made a promise on Maya’s behalf. I’d try this instruction instead. *“Ask who gets to accept a repair. Wait while the team checks with the customer.”* On a fresh case, I’d let the student decide whom to ask.
 
-One posting in my career research was for an AI Operations intern at NVIDIA. The intern would build a tool with AI assistance, gather feedback from people using it, and find out whether it improved their work. That last responsibility changes what I’d ask the student with the size chart to do. [Read the internship description](https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/AI-Operations-Intern--AI-Clouds---Summer-2027_JR2029119-1)
+<span id="decide-what-you-want-to-hear"></span>
 
-Hand the store to a classmate. Say, “Pick a shirt that fits you.” Let the shopper decide where to click. Then the coach can ask the designer, **“What did the shopper do that changed your mind?”** If the designer moves the measurements, hand the page back and try the same task again. The student now has a user observation, a change in the project, and a result they can talk about in an interview.
+## Follow Friday through the project
 
-## Decide what you want to hear
+**Research.** Interview Maya. Who reviews an inquiry? What does accepting a job commit the shop to doing? **Plan.** Agree on a first version. A team choosing rider intake sketches what the rider sees and what the coordinator needs to see when that request arrives.
 
-I design these assignments around **Research → Plan → Build → Test → Explain**. Each stage gives the coach a reason to ask a different question. In the Knowledge Lab, a student building an app that answers questions from documents can begin by reading a source and finding a question it can answer. During planning, the coach might ask, “Which passage do you expect your app to find?” After the student builds and tests the app, the coach can return to that prediction. “What did it actually return? Show me the words that support your answer.” The student can set the passages side by side and explain what they would keep or change. <a href="/knowledge-lab/students/research" target="_self">Try the Knowledge Lab research step</a>.
+**Build.** Save the inquiry as pending review. Have the receipt and the shop’s queue read the same status. **Test.** Hand the form to a real classmate and ask them to request Friday. Before explaining the interface, ask, *“What do you think will happen on Friday?”*
 
-You choose how much of that conversation to collect. The general starter lets a learner submit a short exchange, annotate the work, or explain a choice aloud. My Brand Studio gives a more structured example. Its coach drafts a learning record with the student’s words or a labeled paraphrase, the help they received, and a link to the work or check they’re discussing. The student can correct the record before submitting it with their work. A brief answer like “yes” leaves room for a follow-up. [See the Brand Studio learning record](https://github.com/kaw393939/is117-brand-studio/blob/main/LEARNING.md)
+**Explain.** If the classmate expects an appointment, revise and let them try again. Each teammate can point to a choice they made and say what the second attempt showed. The peer’s issue, the change, and the retest stay together in the project record. [Read the team assignment](https://github.com/kaw393939/is218-studio/blob/main/docs/projects/group.md)
 
-## Turn the peer demo into an interview rehearsal
+<span id="grade-one-project-then-read-across-the-class"></span>
+<span id="when-you-teach-more-than-100-students"></span>
 
-At Rootly, product-engineering candidates submit a working app, their AI session transcripts, and a short walkthrough. Its CTO describes a candidate who spotted a problem with how generated code handled a retry from Slack. Canva interviewers also describe watching candidates question AI suggestions as they work. Datadog tells candidates which rounds permit AI and expects them to explain their work when the tool is closed. A Studio gives students room to practice explaining a choice while working with AI and answering a fresh question on their own. [Rootly’s take-home](https://rootly.com/blog/re-thinking-candidates-take-homes-in-the-ai-era-transcripts-over-code) · [Canva’s interviewer guide](https://www.canva.dev/blog/engineering/ai-interview-success/) · [Datadog’s candidate guidance](https://careers.datadoghq.com/candidate-experience/interviewing-at-datadog-ai-guidelines/)
+## Use the responses while students can still revise
 
-I’d use the peer demo students are already doing. With the project and AI tool open, the designer walks a partner through the size-chart change. The partner picks a detail and asks, *“What did the AI suggest here? What did you decide to keep or change? Show me how you checked it.”* The designer can open the page, replay the interaction, or point to a specific edit.
+At a progress review, I’d ask each student to include one short exchange or annotation in the usual private hand-in, or to explain their decision during the demo. They can correct the coach’s account and say where they needed a hint. Consider two illustrative responses.
 
-Then close the chat. The partner changes one condition the designer hasn’t rehearsed. *“The shopper was using a laptop. Suppose they’re holding a phone in one hand. What would you test first, and why?”* Switch roles and let the next interviewer choose a different follow-up. Everyone gets a turn while I circulate. If a student can retell the first decision but gets stuck on the new one, we’ve found something specific to practice before a real interview. [Compare employer interview formats](/ai-careers#how-employers-interview-with-ai)
+*“I changed the receipt to say ‘Request received.’”* I know where to look in the project. I’d ask that student what a rider understood when they tried the new wording.
 
-## Grade one project, then read across the class
+*“My partner still thought Friday was booked. I moved ‘The shop will contact you’ next to the date. On the second try, they said they’d wait to hear back.”* I’d give this student credit for finding a misunderstanding and checking their revision. Even on a team project, I can point to what this person contributed.
 
-### When you teach more than 100 students
+For grading, I can give AI my rubric and one section’s records. *For each student, quote the observation behind your suggested feedback. Link me to the work. Mark what you couldn’t find.* I check the original and decide the grade. Then I can ask for the **whole-class view**. *Which teams recorded an edit? Which found out what a rider understood afterward? Show me an example behind each pattern.*
 
-With more than a hundred students across sections, I can’t sit beside everyone for that conversation. I can give everyone the rehearsal and still hear enough of each person’s reasoning to give useful feedback. The workload decision happens when I design the hand-in. Students keep one moment worth discussing beside the project or rubric entry they already submit. For the storefront, that might be the shopper’s action, the designer’s reason for moving the measurements, and a link to the revision or retest. They can annotate the work or show it during their usual demo.
+If several teams stopped at the edit, I’d open the next class by trading keyboards and trying the revised receipts. Another section might be ready for Maya’s next request. And if almost everyone missed the retest, I’d reread my own handout. Did I ever ask them to find out whether their change helped?
 
-For grading, I’d start with one section’s submissions and my rubric. I’d give the AI this instruction.
+<span id="turn-the-peer-demo-into-an-interview-rehearsal"></span>
 
-> Give me one row per submission. For each student, point to their explanation, the part of the project it refers to, and any evidence of what happened when they tried it. Identify one question if the record leaves something open. Leave missing evidence marked as missing.
+## Bring this decision to an interview {#bring-a-job-posting-to-the-studio}
 
-I can read a row beside the relevant part of the project, check the suggested feedback, and decide the grade. A student who writes “I moved the measurements” has given me a precise place to follow up. *“What happened when you handed the shopper the revised page?”* A student who reports that the shopper still missed the chart on the second try has done something worth recognizing. They found a limit to their fix and can explain what they’d try next. [See the instructor’s assessment guide](https://github.com/kaw393939/is117-brand-studio/blob/main/docs/assessment.md)
+Have students bring a posting for a job they’d actually want. One forward deployed engineering internship in my career research called for customer discovery. A student can show exactly which question they asked Maya and how her answer changed the spec. A Canva engineering interviewer describes looking for candidates who clarify requirements, evaluate AI suggestions, and explain their choices. [Internship examples](/ai-careers#internships-start-here) · [Canva’s interviewer guide](https://www.canva.dev/blog/engineering/ai-interview-success/) · [Compare employer interview formats](/ai-careers#how-employers-interview-with-ai)
 
-For the section overview I’d ask, *“Which students documented a change and left the retest open? Which responses show what a shopper actually did the second time? Link me to an example behind each pattern.”* If several students in one section stopped at the edit, I can use one anonymous example and give the whole room a chance to retest. If another section is already doing that well, I can spend its demo time asking students to defend a tradeoff on a fresh case. A question particular to one student belongs in that student’s feedback.
+At the peer demo, give both teammates a turn. Start with the project open. *“Show me something you changed after another person tried it.”* Then put the chat aside and introduce the owner’s next request. *“Maya wants to flag repairs that need a follow-up. Would you build that now? What would you ask her first?”* A student can take that story into an interview. The moment I’d listen for in class is when they turn back to Maya with a question of their own.
 
-If you try this, start with a question you already ask when you pull up a chair beside a student. Build it into an assignment. When you review the replies, look for one that changes the feedback you give that student and one that changes what you teach next. [Download the teacher Studio, including worked answers](/downloads/AI-Studio-Starter.zip) · [Read the teaching field notes](/teaching/studio-field-notes)
+[See how the practice changes across my courses](/teaching/studio-field-notes#when-i-let-students-choose-the-next-check) · <a href="/knowledge-lab/students/research" target="_self">Try the Knowledge Lab research step</a>
