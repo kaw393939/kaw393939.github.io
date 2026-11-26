@@ -9,6 +9,8 @@ description: Keith Williams helps students learn AI and software development by 
 
 I've taught at NJIT for more than two decades. The tools have changed a lot. What still makes teaching worthwhile is seeing someone go from “I don't know where to start” to “I can figure this out.”
 
+[What I Ask Students to Show When AI Helps Write the Code](/teaching/when-ai-helps-write-the-code) draws on three projects from my fall courses. It includes a demo question you can try with your own students.
+
 ## Build something you can explain
 
 I want students to use AI, not hide it. But getting a working answer is only the beginning. Can you explain the choices? Find the mistake? Change the requirements and make it work again?
