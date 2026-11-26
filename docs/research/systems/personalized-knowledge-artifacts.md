@@ -1,61 +1,42 @@
 ---
-title: From Personalized Knowledge Artifacts to Governed AI Systems
-description: Why generating personalized educational, business, and media artifacts led me to research provenance, multimodal evidence, and human attention.
+title: "Can One Set of Evidence Support a Lesson, a Briefing, and a Podcast?"
+description: "Follow the engineering work from document chunking to media review and a proposal for producing personalized material people can trace to its sources."
+teaser: "A commuter might want the two-minute audio version. A teacher might want a diagram. What happens to the one uncertainty both audiences need to hear?"
+articleGenre: "Research essay"
+dateLabel: "November 2026"
 ---
 
-# From Personalized Knowledge Artifacts to Governed AI Systems
+# Can One Set of Evidence Support a Lesson, a Briefing, and a Podcast? {#from-personalized-knowledge-artifacts-to-governed-ai-systems}
 
-*Research essay · November 2026*
+Imagine asking an AI to turn a technical report into a lesson for a beginner and a short briefing for a manager. The lesson defines unfamiliar terms. The briefing jumps to the decision. In the original report, one finding depends on a measurement the researchers could not repeat. Will that caveat survive either rewrite?
 
-I began with an application question: **could AI make an individually useful knowledge artifact as practical to produce as a mass-market document?**
-
-An artifact might be a lesson for one learner, an audio explanation for a commuter, a business brief tailored to an operator, a research video, or a structured packet for another agent. Personalization would change the presentation and level of detail. It should not change what the underlying evidence supports.
-
-The challenge quickly moved beyond generation. A compelling artifact can still be wrong. A technically correct artifact can fail a human need. And checking every sentence or frame with a specialist destroys the economics of producing artifacts individually.
+That question brought me from personalized educational content to the engineering of evidence. Tailoring the presentation is valuable. Paying an expert to recheck every sentence in every version can consume the time the system was supposed to save.
 
 ## The engineering problem behind the product
 
-To generate repeatedly from mixed sources, a system needs to know:
+I would give each important claim a record of its own. Keep the original passage or media interval, identify the speaker, and record whether the passage describes an observation, a quotation, or an interpretation. Preserve unresolved identities and contrary accounts. If an editor clears a claim for a particular use, record who decided, which evidence they saw, and how far that approval extends.
 
-- Where a statement came from and when the evidence was obtained.
-- Whether it is a first-hand observation, quotation, inference, allegation, or independently supported claim.
-- Which identity or event a passage refers to, including unresolved alternatives.
-- Which transformations produced a summary or generated asset.
-- What a human or authorized agent approved, and **the scope** of that approval.
-- When new evidence should trigger reconsideration.
-
-This led me toward a shared knowledge foundation: retain originals and exact spans; derive claims and graph relations; index for lexical and semantic retrieval; qualify information for particular uses; and generate many forms of artifacts from the same governed sources.
-
-The graph would act as a compressed map of the information, not a replacement for the original evidence. A user or agent could request the source passage whenever a consequential decision demanded it.
+A graph can map those relationships. Text and vector search can retrieve the material a writer needs. The original passage remains available when a reader has a reason to challenge the short version.
 
 ## How my projects explored this
 
-**December 2024 — [Chunky Monkey](https://github.com/kaw393939/chunky-monkey-text-chunker).** The repository records work on token-aware chunking, document metadata, content hashes, verification modes, and repeatable ingestion. This was one necessary infrastructure problem: keeping large information collections manageable and inspectable.
+- **December 2024.** Chunky Monkey splits documents into manageable pieces and preserves metadata, hashes, and verification records. Before asking a model to explain a passage, I need to be able to find that same passage again. [Chunky Monkey](https://github.com/kaw393939/chunky-monkey-text-chunker)
+- **December 2025.** MetaVis combines native Swift and Metal media processing with sensor measurements, reference tests, and optional Gemini review. An editor can describe a desired change in words while code limits what the change can do. [MetaVis](https://github.com/kaw393939/metavis-demo-projects)
+- **2026.** Ordo and a private Ordo Executor prototype moved the inquiry toward source manifests, proposed claims, and explicit decisions to admit them to a shared record. The public Ordo repository documents a broader design whose Elixir runtime remains planned. [Ordo](https://github.com/kaw393939/ordo)
+- **November 2026.** My private UAP catalog identifies sources for later acquisition. Conflicting accounts and repeated testimony make it a useful candidate for future evaluation. The entries are metadata and leads.
 
-**December 2025 — [MetaVis](https://github.com/kaw393939/metavis-demo-projects).** I explored native Swift and Metal media processing, sensor observations, deterministic reference tests, and Gemini-based qualitative reviews. The architecture separated ambiguous interpretation from typed, reversible execution. The code and sprint records provide a richer account than a feature list.
-
-**2026 — [Ordo](https://github.com/kaw393939/ordo) and Ordo Executor (private prototype).** The focus moved toward model-agnostic tools, source manifests, evidence-bearing artifacts, graph candidates, explicit promotion, and risk-based human review. The main Ordo repository contains extensive specifications; its documented Elixir runtime is still planned.
-
-**November 2026 — UAP Corpus (private research catalog).** This is a deliberately difficult collection for testing shared-source repetition, contradictory accounts, provenance, and unknowns. The repository contains metadata and acquisition planning, not a completed downloaded corpus.
-
-These dated repository milestones establish a progression of experimentation, not priority over all prior academic work. Commit dates can also postdate the first idea.
+These dates refer to repository records. They mark a sequence of engineering questions rather than the first appearance of the ideas in the field.
 
 ## What I mean by reliability
 
-Not every artifact needs the same degree of review. Formatting a non-sensitive summary and approving a financial obligation have different consequences. A useful system should choose how much evidence and attention to spend, explain the decision, and retain the ability to recover from mistakes.
-
-I therefore see the long-term system as *evidence-governed artifact production*: cheap operations where reliable, qualified AI review where appropriate, and accountable humans where authority or risk demands it.
+An editor who approves a particular phrase for a classroom handout has decided something quite specific. If a future summary upgrades “reported” to “confirmed,” that wording deserves another look. The potential consequence, the strength of the evidence, and the person authorized to decide should determine how much review the change receives.
 
 ## What needs testing
 
-The central hypothesis is that reusing qualified knowledge can reduce the **marginal cost of producing an additional trustworthy personalized artifact**, while maintaining citation fidelity and a defensible record of decisions.
-
-A valid experiment needs independent reference labels, multiple datasets, measured human review minutes, computational cost, quality, contradiction preservation, and failure recovery. Building the platform alone would not prove that claim.
+Give two systems the same sources and ask each for several formats. Have independent reviewers locate the passages, look for omitted caveats or contradictory evidence, and record correction time and compute cost. The important number is the **cost of producing the next acceptable format**, including the expert time it takes to verify it. Counting generated words misses that expense.
 
 ### Connections to prior research
 
-[GraphRAG (Edge et al., 2024)](https://www.microsoft.com/en-us/research/publication/from-local-to-global-a-graph-rag-approach-to-query-focused-summarization/) already demonstrates graph-based corpus summarization. [W3C PROV-O (2013)](https://www.w3.org/TR/prov-o/) gives a reusable model for provenance. [Hevner et al. (2004)](https://aisel.aisnet.org/misq/vol28/iss1/6/) provides the design-science framework for learning through evaluated artifacts.
-
-The research opportunity is in an evaluated combination, not in claiming that each component is new.
+GraphRAG offers a comparison for graph-based summaries. W3C PROV-O describes relationships among sources, transformations, and people. Design science provides a way to test what the assembled system contributes. [GraphRAG](https://www.microsoft.com/en-us/research/publication/from-local-to-global-a-graph-rag-approach-to-query-focused-summarization/) · [W3C PROV-O](https://www.w3.org/TR/prov-o/) · [Hevner and colleagues](https://aisel.aisnet.org/misq/vol28/iss1/6/)
 
 [Research series](./) · [Dissertation proposal](./dissertation-proposal)

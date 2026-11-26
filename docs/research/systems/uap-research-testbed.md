@@ -1,73 +1,59 @@
 ---
-title: Why UAP Records Are an Unusually Demanding AI Research Testbed
-description: A case for using UAP archives to test provenance, entity resolution, correlated sources, changing evidence, and source-aware intelligence briefings.
+title: "What Can an AI System Actually Verify About a UAP Report?"
+description: "Historical UAP records offer a way to test AI source attribution, copied accounts, and changing assessments alongside an independently labeled benchmark."
+teaser: "Three newspapers can quote one witness. An archive can preserve all three. The question an AI researcher can score is whether a system knows the difference."
+articleGenre: "Research methods essay"
+dateLabel: "November 2026"
 ---
 
-# Why UAP Records Are an Unusually Demanding Research Testbed
+# What Can an AI System Actually Verify About a UAP Report? {#why-uap-records-are-an-unusually-demanding-research-testbed}
 
-*Research-methods position · November 2026*
+A hearing transcript can settle a narrow question very well. Did the witness say those words? The same transcript may leave the event itself unexplained. That combination makes historical records of unidentified anomalous phenomena, or UAP, a useful test for software that writes from sources.
 
-My proposed UAP corpus is not an attempt to prove any predetermined explanation of unidentified phenomena. It is a way to examine whether AI can **organize uncertain, contradictory and imperfect evidence without erasing the distinction between observation, testimony and interpretation**.
-
-That makes UAP a strong stress test for an evidence-governed knowledge system. It does **not** make it a sufficient scientific benchmark on its own.
+I want to see whether a system can preserve testimony, trace a copied account, and leave an uncertainty intact. Those tasks can be evaluated without choosing an explanation for the underlying event.
 
 ## Why this domain is useful
 
-| Difficult property | Research capability being tested |
+| What an archive contains | What I would ask the system to show |
 | --- | --- |
-| Scans, text, audio, video, testimony and incomplete sensor records | Multimodal extraction and precise passage/timecode citations |
-| Historical accounts and later reinterpretations | Temporal provenance and versioned assessments |
-| People and organizations with multiple aliases and roles | Entity linking and source-specific disambiguation |
-| Several publications repeating one original witness | Detecting correlated sources rather than false corroboration |
-| Conflicting narratives, institutional positions and skeptical alternatives | Maintaining attributed propositions and competing hypotheses |
-| Unknown causes or missing primary measurements | Explicit uncertainty and evidence gaps rather than fabricated certainty |
-| Original records, transcriptions, OCR, summaries, and generated derivatives | Recording transformations without treating derivatives as independent witnesses |
-| New official releases over time | Incremental graph updates and explicit explanations of assessment changes |
-| Restricted, redacted or copyrighted material | Rights-aware acquisition, indexing and presentation |
-| Many possible questions and audiences | Generating different grounded artifacts from one shared evidence base |
+| A scan, transcript, audio clip, or video | The original page, region, or timecode for a claim |
+| An account written years later | Both the event date and the publication date |
+| Several names or aliases | The evidence for joining two records, plus unresolved alternatives |
+| Later articles quoting one witness | A visible route back to the shared source |
+| Conflicting accounts or missing measurements | The disagreement and the specific evidence gap |
+| A transcription, translation, or generated summary | The original and the transformations that produced the derivative |
+| A revised release, redaction, or access restriction | Which version the reader can inspect and what it permits |
 
-[NASA's 2023 independent UAP study](https://www.nasa.gov/wp-content/uploads/2023/09/uap-independent-study-team-final-report-0.pdf) explicitly highlights missing calibration data and metadata for many observations. The lack of data is itself a subject of the proposed investigation, not a reason to invent definitive answers.
+NASA’s independent study identified missing calibration data and metadata as limitations for many observations. A system should tell a reader what those gaps prevent them from inferring. [NASA’s 2023 independent study](https://www.nasa.gov/wp-content/uploads/2023/09/uap-independent-study-team-final-report-0.pdf)
 
 ## An official, evolving records source
 
-The [National Archives' Record Group 615](https://www.archives.gov/research/topics/uaps/rg-615) contains UAP records received from federal agencies pursuant to the FY2024 National Defense Authorization Act. The National Archives says it will update the collection as new records arrive.
-
-This establishes official custody and a continuing acquisition pathway. **It does not establish the truth of each statement in the records**, nor does a public download link automatically settle all possible reuse rights.
-
-The evolving collection is valuable for testing whether the system notices new evidence, preserves earlier versions and explains why an assessment changed.
+The U.S. National Archives maintains Record Group 615 for UAP material received from federal agencies under the FY2024 National Defense Authorization Act. The Archives says it updates the collection as records arrive. An accession tells a researcher something important about custody. The statements inside still need attribution, and reuse requires checking the rights associated with the source. [National Archives collection](https://www.archives.gov/research/topics/uaps/rg-615)
 
 ## What the system is responsible for
 
-It should be answerable for: correctly identifying and preserving original source material; attributing each claim; distinguishing contemporaneous records from later recollections; flagging ambiguous people/events; representing evidence dependence; citing specific passages; and accurately recording why a judgment was made.
-
-It **cannot claim certainty about an event with no independently verifiable ground truth**. A statement such as “A testified that B happened” is testable against the transcript. “B really happened” may not be independently testable.
-
-A Five Ws review asks who, what, when, where, why and how. A Five Whys investigation traces the **basis of the system's assessment or failure**, while allowing multiple explanations and stopping at evidence gaps.
+Ask it to identify the original record, distinguish a contemporaneous observation from a later recollection, and point to the exact words behind each sentence. If a later release changes an assessment, ask which passage changed and who made the new judgment. A “why” investigation should trace the basis for the system’s assessment and leave room for competing explanations.
 
 ## The existing corpus is not yet acquired
 
-The November 2026 UAP corpus planning repository describes a **38-item curated metadata catalog and four collection entry points**, not a completed media archive. Originals, OCR/ASR derivatives and annotated claim labels have not yet been downloaded or evaluated. This is a documented development status, not a research result.
+My November 2026 planning catalog contains **38 metadata items and four collection entry points**. The source media, OCR or speech-transcription derivatives, and annotated claim labels still need to be acquired or produced.
 
-A defensible pilot would select a small rights-cleared group: a government report, hearing transcript, historical investigation, and independently authored account. Store original hashes, acquisition receipts, source spans, media timestamps, exact dates, and rights decisions. Annotators then label attributable statements, source copying, uncertainty and contradictions.
+I would begin with a small rights-cleared group comprising a government report, a hearing transcript, a historical investigation, and an independently authored account. Preserve acquisition dates, content hashes, rights decisions, page spans, and media timestamps. Then ask annotators to mark attributable statements, source copying, uncertainty, and contradictions.
 
 ## Why an additional benchmark is mandatory
 
-UAP archives are **not ideal ground truth for extraordinary historical outcomes**. Selection bias, incomplete instrumentation, disputed recollections, and inaccessible source material limit what can be known.
+A historical archive can show whether a tool cites accurately. It rarely gives researchers a known answer for a disputed event. Pair it with an independently labeled benchmark for identities and attributions, plus a controlled corpus with known copying and deliberate name collisions. In the controlled cases we can count false matches and missed links. In the archive we can see whether the same approach helps readers navigate real records.
 
-Pair UAP with an independently labeled entity-resolution and claim-attribution benchmark, plus a controlled synthetic corpus where source copying, false identities, and event truth are specified. The controlled corpus lets us calculate false positives and false negatives; the UAP sample evaluates ecological realism, provenance and navigation.
-
-Do not train on synthetic derivatives of the same source and then treat those derivatives as independent evaluation cases.
+Keep derivatives of a source with their parent when separating training and evaluation material. Putting an original in one group and its synthetic retelling in the other would exaggerate independent performance.
 
 ## How the interface should communicate it
 
-A reader could open an executive brief, select an event, explore two different graphs (a **page navigation graph** and a **claim/evidence graph**), read a dynamically composed dossier, and inspect original passages. Wikipedia and Wikidata may help discover topics and candidate identifiers but are named **external context sources**, not the user interface or final authority.
-
-The interface should answer: “What do we know?”, “Why is that assessment supported?”, “Which sources may depend on one another?”, and “What new evidence would change it?”
+For the three-newspaper example, a reader should be able to open the briefing, inspect the earliest cited passage, and see which later articles repeat it. A navigation graph can connect the pages. An evidence graph can show who quotes whom. Wikipedia and Wikidata may help identify people and topics, with named source revisions available to the reader.
 
 ## Broader application and research funding relevance
 
-The same methods may apply to scientific literature, journalism, public archives, cybersecurity, fraud investigations, intelligence analysis and enterprise document knowledge. [ODNI analytic standards, ICD 203](https://www.intelligence.gov/mission/our-values/objectivity), give a substantive benchmark for sourcing, uncertainty and competing explanations.
+A journalist tracing a quotation, a scientist following a disputed result, and an analyst reviewing conflicting internal reports face a related problem. Sourcing, alternative explanations, and reasons for changed judgments are useful criteria across these settings. They also appear in published intelligence analytic standards. [ICD 203](https://www.intelligence.gov/mission/our-values/objectivity)
 
-This is a case for researching **trustworthy information processing**, not a claim that the government has committed funding to this project or that a UAP-specific grant exists. Application opportunities are dependent on sponsor goals, eligibility and timing and must be checked separately.
+The value of this testbed depends on what it reveals about information processing. Funding opportunities would require a separate check of sponsor goals, eligibility, and timing. The proposal makes no claim of committed funding.
 
 [Research hub](./) · [Interface architecture](./vision-and-interface) · [Advisor proposal](./dissertation-proposal)

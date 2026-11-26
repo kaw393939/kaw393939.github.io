@@ -15,12 +15,6 @@ const breadcrumb = computed(() => {
   return null
 })
 
-const shareUrl = computed(() => {
-  if (!breadcrumb.value || page.value.relativePath.endsWith('/index.md')) return ''
-  const path = page.value.relativePath.replace(/\.md$/, '')
-  return 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(site.url + '/' + path)
-})
-
 const menuOpen = ref(false)
 const header = ref<HTMLElement>()
 const menuButton = ref<HTMLButtonElement>()
@@ -103,7 +97,7 @@ onUnmounted(() => {
       <div class="cover-copy">
         <p class="eyebrow section-label"><span aria-hidden="true"></span> The teaching issue</p>
         <h1 id="cover-title"><a href="/teaching/when-ai-helps-write-the-code">The Tests Passed.<br><em>Who Won the Game?</em></a></h1>
-        <p class="cover-deck">A rock-paper-scissors game raises a question a green test can’t answer on its own. What should students be able to predict, explain, and check when AI helps them build?</p>
+        <p class="cover-deck">My rock-paper-scissors starter passed twelve tests. It still couldn’t tell you who won. The missing rule became a lesson in what students can check for themselves.</p>
         <p class="cover-byline">By Keith Williams <span aria-hidden="true">/</span> <time datetime="2026-11-25">November 25, 2026</time></p>
         <a class="read-link" href="/teaching/when-ai-helps-write-the-code">Read the feature <span aria-hidden="true">→</span></a>
       </div>
@@ -123,7 +117,7 @@ onUnmounted(() => {
           </figure>
           <p class="eyebrow">Classroom practice</p>
           <h3><a href="/teaching/studio-field-notes">When should an AI coach step back?</a></h3>
-          <p>Classroom accounts and research behind a Studio starter that leaves room for students to choose.</p>
+          <p>What happens if you ask your classroom AI for the answer twice? A rehearsal for teachers, and four more ways to put a student’s judgment back into an assignment.</p>
           <a class="inline-link" href="/teaching/studio-field-notes">Read the field notes <span aria-hidden="true">↗</span></a>
         </article>
         <article class="dispatch-card">
@@ -133,13 +127,13 @@ onUnmounted(() => {
           </figure>
           <p class="eyebrow">Systems research</p>
           <h3><a href="/research/systems/provenance-knowledge-graphs">Where did that claim come from?</a></h3>
-          <p>A research proposal for tracing AI answers back to documents, including the ones that disagree.</p>
+          <p>Six articles can repeat one witness. Follow the citation trail before treating the retellings as independent evidence.</p>
           <a class="inline-link" href="/research/systems/provenance-knowledge-graphs">Follow the evidence <span aria-hidden="true">↗</span></a>
         </article>
         <article class="briefing-card">
           <p class="eyebrow">Career field guide</p>
           <h3><a href="/ai-careers">What are employers actually asking for?</a></h3>
-          <p>A closer look at 50 AI job and internship descriptions, the skills they name, and the experience they expect.</p>
+          <p>I read 50 job and internship descriptions. Here’s how to turn one responsibility from a posting into a project you can show an interviewer.</p>
           <a class="inline-link" href="/ai-careers">Explore AI careers <span aria-hidden="true">↗</span></a>
         </article>
       </div>
@@ -150,7 +144,7 @@ onUnmounted(() => {
         <div class="section-intro">
           <p class="eyebrow section-label"><span aria-hidden="true"></span> Selected work</p>
           <h2 id="projects-title">Inside the workshop.</h2>
-          <p>Teaching materials, working software, and research plans. Open a project to see what you can try today.</p>
+          <p>Try a classroom Studio, run a tool, or follow a design decision back to its source. Each project includes its current status and a place to start.</p>
         </div>
         <div class="project-list">
           <article v-for="project in projects" :id="project.id" :key="project.id" class="project-case" :aria-labelledby="`${project.id}-title`">
@@ -209,7 +203,7 @@ onUnmounted(() => {
     <section id="conversation" class="contact-section wrap" aria-labelledby="contact-title">
       <div><p class="eyebrow section-label"><span aria-hidden="true"></span> Contact</p><h2 id="contact-title">Get in touch.</h2></div>
       <div class="contact-actions">
-        <p>For a private inquiry, find my contact information on my NJIT faculty profile. For a public question about a project, start a conversation on GitHub.</p>
+        <p>Teaching something similar or testing an idea from the journal? You can reach me privately through NJIT or ask a public project question on GitHub.</p>
         <div class="project-links"><a class="inline-link" :href="site.faculty">NJIT faculty profile <span aria-hidden="true">↗</span></a><a class="inline-link" :href="site.conversation" aria-describedby="conversation-privacy">Start a conversation <span aria-hidden="true">↗</span></a></div>
         <p id="conversation-privacy" class="fine-print">Public on GitHub · Sign-in required. Please keep student records, contact information, and credentials private.</p>
       </div>
@@ -218,7 +212,6 @@ onUnmounted(() => {
   <main v-else id="main" tabindex="-1" class="document-page wrap">
     <nav v-if="breadcrumb" class="breadcrumb" aria-label="Breadcrumb"><a :href="breadcrumb.href">{{ breadcrumb.title }}</a><span aria-hidden="true">/</span><span>Article</span></nav>
     <Content />
-    <p v-if="shareUrl" class="article-share"><a class="inline-link" :href="shareUrl">Share on LinkedIn <span aria-hidden="true">↗</span></a></p>
   </main>
   <footer class="site-footer">
     <div class="wrap">

@@ -1,93 +1,56 @@
 ---
-title: From Claims to Navigable Knowledge
-description: A design thesis for provenance-backed claims, two distinct graphs, contextual search, generated dossiers, and a decision-oriented briefing interface.
+title: "What Should Happen When You Click an AI Citation?"
+description: "A proposed briefing interface connects each claim to its original passage, keeps competing accounts visible, and explains why an assessment changed."
+teaser: "A citation can open a 200-page document and still leave you guessing. A useful briefing should take you to the passage, the interpretation, and the strongest competing account."
+articleGenre: "Interface design proposal"
+dateLabel: "November 2026"
 ---
 
-# From Claims to Navigable Knowledge
+# What Should Happen When You Click an AI Citation? {#from-claims-to-navigable-knowledge}
 
-*Architecture and interface thesis · November 2026 · Proposed, not a deployed system*
+Imagine reading a briefing that says two reports independently describe the same event. You click the sentence. One report quotes the other. The interface has just helped you correct the briefing, provided you can see where each passage came from and flag the relationship for review.
 
-I want people to move naturally between an intelligence briefing, a readable topic page, a network of related information, and the original evidence. The user should not have to learn the structure of a graph database or the internals of an LLM.
-
-The long-term goal is **personalized knowledge artifacts**: an evidence-linked explanation, a visual investigation, a technical report, an audio overview, or a decision brief generated from the same governed foundation.
+That is the experience I want from an AI-assisted research tool. A teacher, engineer, or analyst should be able to read a short account, investigate one sentence, and return to the account with a clearer idea of what it supports. This essay describes a proposed interface.
 
 ## The central design decision: claims come first
 
-The canonical unit is an **attributed, evidence-backed claim**, not an unquestioned graph edge.
+The unit I would store is an attributed claim. It names who said what, connects that statement to an original passage or timecode, and records the grounds for the current assessment. A government archive can establish who published a report. Whether the report supports the briefing’s wording is a separate question.
 
-An archive can establish that an agency published a report; it does not automatically establish the truth of every statement in the report. Multiple websites repeating a source do not create independent corroboration. A generated summary does not become a second source confirming the first.
-
-Each consequential assessment should answer:
-
-1. **What do we know?** The exact reported observations and the available sources.
-2. **Why do we believe it?** Citations, interpretation, source dependence, alternatives, and qualifications.
-3. **What would change our assessment?** Missing or contrary evidence, measurement limitations, or unresolved identities.
-
-This is accountable analysis, **not** a claim that software can determine the ultimate truth of disputed history.
+For each consequential sentence I want three answers. What do we know from the available sources? Why does that evidence support these particular words? What new information could change the assessment?
 
 ## Two different graphs
 
-A page-link graph and an evidence graph should be connected, but never conflated.
-
-| Navigation graph | Evidence and assertion graph |
+| When you are reading | When you are checking |
 | --- | --- |
-| **Nodes:** generated or published topic pages | **Nodes:** sources, passages, people, events, claims, assessments |
-| **Edges:** hyperlinks between pages | **Edges:** explicitly typed, evidence-cited relationships |
-| Optimized for exploration, orientation and reading | Optimized for provenance, qualification and investigation |
-| A link says “this page leads to that page” | A claim says “this source reports this proposition” |
+| A link leads from an event page to a person, place, or related topic. | An evidence link identifies what a source said about that person or event. |
+| A useful measure is how quickly someone finds the relevant topic. | A useful measure is whether someone can locate the exact supporting or conflicting passage. |
 
-The navigation graph lets the user move through knowledge like a networked book. The evidence graph lets the user inspect why pages contain a statement. One hyperlink is not proof of a relationship.
+The navigation graph organizes pages. The evidence graph records sources, claims, entities, and the relationships among them. One helps you find a name. The other helps you decide whether it belongs in the sentence.
 
 ## Wikipedia and Wikidata are external sources, not UI templates
 
-Wikipedia is useful for topic discovery: linked pages, anchor text, article sections, references and surrounding context can reveal candidate entities and relation types. [Wikidata](https://www.wikidata.org/wiki/Wikidata:Data_model) supplies reusable identifiers, aliases, typed properties, qualifiers and references. <https://www.wikidata.org/wiki/Help:Data_access>
-
-The system should save a local entity identity, candidate Wikidata identifiers, source revisions and the evidence behind disambiguation. Wikipedia's linked context may *suggest* a relationship; it cannot silently certify one.
-
-The UI remains independent of Wikipedia. It identifies Wikipedia as **one named external source** when used and prefers original material where the question demands it. A page cannot cite its own generated summary as fresh corroboration.
+A Wikipedia link and its surrounding text can suggest a candidate topic. Wikidata offers identifiers, aliases, qualifiers, and references. Preserve a stable local identifier, the external source and revision, and the evidence used to resolve the match. If the match changes later, a reader should still be able to reconstruct the earlier interpretation. [Wikidata’s data model](https://www.wikidata.org/wiki/Wikidata:Data_model) · [Accessing Wikidata](https://www.wikidata.org/wiki/Help:Data_access)
 
 ## The intended interface
 
-The user arrives at an **intelligence briefing**, not a database administration dashboard.
+The briefing opens with what changed and why it matters. Select a claim to open a short, versioned dossier with the chronology, supporting passages, and competing accounts. Exact search should find a name or document number. Semantic search should find related descriptions. A focused graph view can show how a small group of sources depends on one another.
 
-**Briefing** — the most relevant changes, conclusions, unresolved questions, risks and recommended next decisions. Each claim can open a transparent evidence trail.
-
-**Dynamic dossier** — a readable, versioned page about an entity or event, with an overview, chronology, cited claims, competing interpretations, and linked subtopics. It is generated from qualified information, not treated as a primary source.
-
-**Graph explorer** — a focused neighborhood of connected pages, entities or claims; selecting a node opens an appropriate dossier or evidence view. Showing a billion nodes at once is not useful.
-
-**Semantic and exact search** — retrieves concepts, source spans, names and identifiers; search can progressively expand into graph relationships and provenance.
-
-**Evidence and Five Whys explorer** — exposes what was said, the original span or timecode, intermediate transformations, conflicts, and the reasons an assessment was made. A Five Whys trace is an *investigation prompt*, not an automatically correct causal explanation.
-
-A contextual assistant should follow the selected claim, entity, and page rather than becoming a disconnected chatbot. A reader can ask “Why is this relationship here?”, “Who is the original source?”, “What changed?”, and “Show the other interpretation.” 
+A contextual assistant should follow the selected passage. Ask “Why did the assessment change?” and it should show the new record, the old assessment, and the decision that connects them. A Five Whys investigation can help trace the system’s reasoning. When the evidence ends, the trace should say so.
 
 ## How Ordo informs this interface
 
-The earlier [Ordo Product & UX Model](https://github.com/kaw393939/ordo/blob/main/development-docs/PRODUCT-UX.md) already specifies daily briefings, persistent artifacts, contextual conversation, progressive disclosure, and explicit approval actions.
-
-Its [Briefing UI Runtime](https://github.com/kaw393939/ordo/blob/main/agentic-appliance/architecture/briefing-ui-runtime.md) states the key design principle: *the page is the artifact; the AI is the operator; chat is the control surface*. The [Artifact Spec Renderer](https://github.com/kaw393939/ordo/blob/main/agentic-appliance/patterns/artifact-spec-renderer.md) proposes a typed artifact rendered into multiple formats.
-
-These are documented designs, **not evidence of a shipped native Swift graph application**. The proposed runtime should keep evidence stores, rendering schemas, and UI clients separate; a native Swift UI and a web client could render the same versioned knowledge artifacts.
+The Ordo design documents describe daily briefings, stored artifacts, contextual conversation, and explicit approvals. A typed representation could let a web client and a native Swift client present the same versioned material. The documents establish the design. A released native Swift graph application would be a separate engineering milestone. [Product and UX model](https://github.com/kaw393939/ordo/blob/main/development-docs/PRODUCT-UX.md) · [Briefing runtime](https://github.com/kaw393939/ordo/blob/main/agentic-appliance/architecture/briefing-ui-runtime.md) · [Artifact renderer](https://github.com/kaw393939/ordo/blob/main/agentic-appliance/patterns/artifact-spec-renderer.md)
 
 ## Briefing as a quality standard, not military styling
 
-The intelligence briefing metaphor is useful because the user needs concise, consequential analysis with drill-down. [ICD 203](https://www.intelligence.gov/mission/our-values/objectivity) describes relevant analytic tradecraft: qualify sources, explain uncertainty, distinguish information from judgments, consider alternatives, identify changes and provide useful visual aids.
-
-The system should help an operator understand decisions without hiding evidence or overclaiming authority. Source credibility, claim support, transcription confidence, and reviewer authorization must remain distinguishable.
+A briefing earns its short form by making qualifications easy to inspect. The intelligence community’s published analytic standards offer useful criteria: assess the source, distinguish information from judgment, consider alternatives, and explain changes. A transcription confidence score and a reviewer’s authority to publish answer different questions. Give each a clear label. [ICD 203 analytic standards](https://www.intelligence.gov/mission/our-values/objectivity)
 
 ## What needs empirical evaluation
 
-The interface is a hypothesis. Research should compare a briefing + optional evidence path with a raw-document list and an ordinary chat interface. Outcomes include finding and correcting a false source link, identifying a copied claim, reconstructing why an assessment changed, decision accuracy, time, and cognitive load.
-
-The system should also test whether its **navigation graph** genuinely improves exploration or merely adds visual complexity. The correct design is the one that helps users accomplish tasks.
+Give participants the same documents in three interfaces: a document list, an ordinary chat, and a briefing with optional evidence views. Ask them to spot a copied claim, correct an incorrect source link, and explain a changed assessment. Measure accuracy, time, and cognitive load. A graph deserves the space it takes only if readers complete these tasks more effectively with it.
 
 ## Related 2026 research
 
-- [Vitali and Pasqual, *Provenance-Enhanced Statements in Knowledge Graphs* (2026 preprint)](https://arxiv.org/abs/2606.15246) addresses attributed claims and competing epistemic stances.
-- [Kakatkar and Khatib, *Epistemic Knowledge Graphs* (2026 working paper)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7525242) formalizes epistemic status, provenance and claim-level explanations.
-- [*Entity Linking with Wikidata: A Systematic Literature Review* (2026)](https://doi.org/10.1145/3795134) documents prior work on entity disambiguation and areas such as temporal and qualified relations.
-
-These publications are **prior art**, not evidence of an original invention here. The research contribution would have to be tested against this scholarship.
+Vitali and Pasqual’s preprint treats statements as attributable claims with potentially competing interpretations. Kakatkar and Khatib’s working paper examines how to represent and explain the status of claims. A systematic review of Wikidata entity linking addresses disambiguation, including the complications of time and qualified relationships. These are starting points for a comparison. [Provenance-Enhanced Statements](https://arxiv.org/abs/2606.15246) · [Epistemic Knowledge Graphs](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7525242) · [Entity Linking with Wikidata](https://doi.org/10.1145/3795134)
 
 [Research hub](./) · [Why UAP is the testbed](./uap-research-testbed) · [Advisor proposal](./dissertation-proposal)

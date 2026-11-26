@@ -1,54 +1,47 @@
 ---
-title: MetaVis — Engineering AI Through Evidence and Evaluation
-description: A source-linked case study of Swift, Metal, deterministic media tests, Gemini qualitative QA, and bounded AI feedback.
+title: "The Video Looks Right. What Did the Software Check?"
+description: "Inside MetaVis, a Swift and Metal editing prototype where frame hashes, GPU tests, and a bounded Gemini review check different parts of a video export."
+teaser: "A polished frame can hide a missing soundtrack or an expensive rendering loop. The tests in my video editor gave each failure a different way to show up."
+articleGenre: "Engineering case study"
+dateLabel: "December 2025 experiments, reviewed November 2026"
 ---
 
-# MetaVis: Engineering AI Through Evidence and Evaluation
+# The Video Looks Right. What Did the Software Check? {#metavis-engineering-ai-through-evidence-and-evaluation}
 
-*Technical case study · December 2025 experiments, reviewed November 2026*
+A rendered frame can be exactly the right color while the video is silent. A clip can play smoothly for a moment while the graphics processor allocates a new texture on every frame. An AI reviewer can even return a reassuring answer when its check did not run.
 
-**MetaVis was an exploration of how AI can direct sophisticated software while tests and specialized hardware establish measurable constraints.** It was not only a video editor prototype; the tests themselves were experimental instruments.
+Building MetaVis, a native Swift and Metal editing prototype, gave me reasons to distinguish three questions. Did the program do what we specified? Does the edit work for a viewer? Which checks actually ran on this export?
 
 ## Architecture
 
-The [SwiftPM workspace](https://github.com/kaw393939/metavis-demo-projects/blob/main/Package.swift) separates timeline models, a compiler, Metal rendering, native media ingestion, perception, export, session orchestration, and quality control. The design expresses high-level editing intent as a typed timeline and compiles it into a precise render graph. AI can propose editing actions; deterministic code performs them.
-
-The [vibe-editing design](https://github.com/kaw393939/metavis-demo-projects/blob/main/Docs/CONCEPT_VIBE_EDITING.md) calls for grounded context, typed intents, deterministic commands, reversibility, and test-locked semantics. The architecture also records where abstraction can become costly: the [system critique](https://github.com/kaw393939/metavis-demo-projects/blob/main/Docs/SYSTEM_CRITIQUE.md) warns against using stateful-device interfaces for every operation in a real-time rendering loop.
+The system translates editing intent into a typed timeline, then compiles the timeline into a render graph. A model can propose a change. Swift code applies a defined operation. That boundary makes the change easier to reproduce and undo. The code separates media ingestion, rendering, perception, export, and quality control. The design critique also flags an abstraction that can cost too much in a real-time render loop. [Swift packages](https://github.com/kaw393939/metavis-demo-projects/blob/main/Package.swift) · [Editing design](https://github.com/kaw393939/metavis-demo-projects/blob/main/Docs/CONCEPT_VIBE_EDITING.md) · [Architecture critique](https://github.com/kaw393939/metavis-demo-projects/blob/main/Docs/SYSTEM_CRITIQUE.md)
 
 ## Tests as instruments, not decoration
 
-The [TDD strategy](https://github.com/kaw393939/metavis-demo-projects/blob/main/Docs/TDD_STRATEGY.md) calls for protocols, dependency injection, golden fixtures, and layered tests.
+| A question a reviewer can ask | The experiment in code |
+| --- | --- |
+| Did the same input produce the expected pixels? | [Render a reference pattern and compare its frame hash](https://github.com/kaw393939/metavis-demo-projects/blob/main/Tests/MetaVisSimulationTests/Golden/GoldenFrameHashTests.swift) |
+| Does the GPU path agree with a reference implementation? | [Compare the Metal output with a reference buffer](https://github.com/kaw393939/metavis-demo-projects/blob/main/Tests/MetaVisSimulationTests/TwinVerificationTests.swift) |
+| Can the same clip produce different sensor readings? | [Ingest the media twice and compare the results](https://github.com/kaw393939/metavis-demo-projects/blob/main/Tests/MetaVisPerceptionTests/MasterSensorsDeterminismTests.swift) |
+| What happens after the first frame? | [Check allocations after warm-up](https://github.com/kaw393939/metavis-demo-projects/blob/main/Tests/MetaVisSimulationTests/Perf/RenderAllocationTests.swift) |
+| What would a recipient actually receive? | [Inspect the exported media, manifest, and quality reports](https://github.com/kaw393939/metavis-demo-projects/blob/main/Tests/MetaVisExportTests/DeliverableE2ETests.swift) |
 
-Examples in the source:
-
-- [Golden frame hashes](https://github.com/kaw393939/metavis-demo-projects/blob/main/Tests/MetaVisSimulationTests/Golden/GoldenFrameHashTests.swift): render procedural test patterns and check stable downsampled hashes.
-- [CPU/GPU twin comparison](https://github.com/kaw393939/metavis-demo-projects/blob/main/Tests/MetaVisSimulationTests/TwinVerificationTests.swift): compare a Metal path to a reference buffer.
-- [Sensor determinism](https://github.com/kaw393939/metavis-demo-projects/blob/main/Tests/MetaVisPerceptionTests/MasterSensorsDeterminismTests.swift): ingest the same media twice and assert identical structured sensor results.
-- [Allocation invariants](https://github.com/kaw393939/metavis-demo-projects/blob/main/Tests/MetaVisSimulationTests/Perf/RenderAllocationTests.swift): after warm-up, repeated frames should not allocate new Metal textures.
-- [Export contracts](https://github.com/kaw393939/metavis-demo-projects/blob/main/Tests/MetaVisExportTests/DeliverableE2ETests.swift): verify media, manifests, sidecars, quality reports, and absence of normal-path CPU readback.
-
-These tests encode not only functionality but resource constraints. A video can look correct while missing an audio track, rendering the wrong content for seconds, or performing costly texture allocations.
+These are different claims about one deliverable. A project can choose its most consequential claim first and give someone a repeatable check before adding another model to the workflow. [Test strategy](https://github.com/kaw393939/metavis-demo-projects/blob/main/Docs/TDD_STRATEGY.md)
 
 ## Deterministic measures and qualitative Gemini review
 
-The [VideoQC](https://github.com/kaw393939/metavis-demo-projects/blob/main/Sources/MetaVisQC/VideoQC.swift) and [VideoContentQC](https://github.com/kaw393939/metavis-demo-projects/blob/main/Sources/MetaVisQC/VideoContentQC.swift) modules measure frame counts, codec-related properties, silence, temporal variety, and image statistics.
+The quality-control modules measure properties such as frame count, silence, temporal variety, and image statistics. An optional Gemini reviewer then gets the intended narrative, selected media, and the measured results. It can question whether an exposure correction suits the scene. The program still enforces which parameters may change. [Video measurements](https://github.com/kaw393939/metavis-demo-projects/blob/main/Sources/MetaVisQC/VideoQC.swift) · [Content checks](https://github.com/kaw393939/metavis-demo-projects/blob/main/Sources/MetaVisQC/VideoContentQC.swift) · [Gemini review](https://github.com/kaw393939/metavis-demo-projects/blob/main/Sources/MetaVisQC/GeminiQC.swift) · [What the reviewer receives](https://github.com/kaw393939/metavis-demo-projects/blob/main/Sources/MetaVisQC/GeminiPromptBuilder.swift)
 
-The optional [GeminiQC](https://github.com/kaw393939/metavis-demo-projects/blob/main/Sources/MetaVisQC/GeminiQC.swift) layer adds qualitative judgments. Its [prompt builder](https://github.com/kaw393939/metavis-demo-projects/blob/main/Sources/MetaVisQC/GeminiPromptBuilder.swift) supplies expected narrative and deterministic metrics, limits external media according to privacy policies, and requests structured responses.
-
-More importantly, the [Sprint 16 feedback loop](https://github.com/kaw393939/metavis-demo-projects/blob/main/Sprints/16_Feedback_done/archive/PLAN.md) creates a **budgeted EvidencePack** from selected frames, short audio/video snippets, and sensor summaries. It can ask for targeted additional evidence rather than upload entire deliverables. [AutoColorCorrectQA](https://github.com/kaw393939/metavis-demo-projects/blob/main/Sources/MetaVisLab/AutoColorCorrectQA.swift) provides a numeric exposure heuristic, while permitting a Gemini reviewer to disagree if actual visual evidence justifies it. A [ParameterWhitelist](https://github.com/kaw393939/metavis-demo-projects/blob/main/Sources/MetaVisCore/FeedbackLoopContracts.swift) enforces bounded edits in code.
-
-The AI reviewer supplies judgments and proposed changes; it does **not** replace measured physical constraints.
+The Sprint 16 design budgets how much evidence leaves the system. It selects frames, short audio or video snippets, and sensor summaries. A reviewer can request another sample when those are insufficient. One useful disagreement is a numerical exposure heuristic and a model that sees an intentionally dark scene. I want that disagreement available to inspect before changing the image. [Evidence packet design](https://github.com/kaw393939/metavis-demo-projects/blob/main/Sprints/16_Feedback_done/archive/PLAN.md) · [Exposure heuristic](https://github.com/kaw393939/metavis-demo-projects/blob/main/Sources/MetaVisLab/AutoColorCorrectQA.swift) · [Allowed edits](https://github.com/kaw393939/metavis-demo-projects/blob/main/Sources/MetaVisCore/FeedbackLoopContracts.swift)
 
 ## Hardware optimization as an engineering boundary
 
-The [hardware maximization design](https://github.com/kaw393939/metavis-demo-projects/blob/main/Docs/CONCEPT_HARDWARE_MAXIMIZATION.md) assigns suitable workloads to Apple media engines, Core ML/Vision, and Metal, while limiting copies and reusing buffers. The [performance findings](https://github.com/kaw393939/metavis-demo-projects/blob/main/Sprints/24i_shader_perf_m3/FINDINGS.md) record measurements on an Apple M3 machine dated December 22–23, 2025. These are engineering observations, not controlled comparative performance claims.
+The design assigns suitable work to Apple media engines, Core ML/Vision, and Metal and reuses buffers to limit copies. The December 22–23, 2025 sprint notes report measurements on an Apple M3. They document that setup and workload. A claim about comparative performance would need a controlled test on the systems being compared. [Hardware design](https://github.com/kaw393939/metavis-demo-projects/blob/main/Docs/CONCEPT_HARDWARE_MAXIMIZATION.md) · [M3 measurements](https://github.com/kaw393939/metavis-demo-projects/blob/main/Sprints/24i_shader_perf_m3/FINDINGS.md)
 
 ## Gaps and research implications
 
-The repository includes examples of genuine self-critique. A [December 21 AI code audit](https://github.com/kaw393939/metavis-demo-projects/blob/main/Docs/code_review/Master_Executive_Summary.md) identifies mock services and incomplete production AI pathways. Some real-asset fixtures are not tracked publicly, some tests require optional environment gates, and some AI-QA skip paths report acceptance rather than distinguishing *not run* from *passed*. AI judgments also need independent human calibration.
+The December 21 code audit found mock services and unfinished production AI paths. Some media fixtures are outside the public repository. Some tests require a particular environment. A skipped AI check can report acceptance. Of those limitations, the last is the one I would fix first. The person approving an export needs to see **passed, failed, or untested** for each promised check. [Read the audit](https://github.com/kaw393939/metavis-demo-projects/blob/main/Docs/code_review/Master_Executive_Summary.md)
 
-These limitations are particularly instructive. The evaluation harness itself requires governance, data provenance, and auditability.
-
-**Generalizable hypothesis:** a layered evaluation system—deterministic measurement, selected evidence, constrained probabilistic critique, bounded revision, then authorized review—can produce more trustworthy artifacts while spending fewer expensive evaluation resources.
+My research question is whether a few well-chosen measurements, followed by a bounded qualitative review and human acceptance, can catch consequential mistakes with less review effort. The code gives me a place to run that comparison.
 
 [Research series](./) · [Human attention and Kanban](./human-attention-kanban)

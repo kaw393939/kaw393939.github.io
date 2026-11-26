@@ -1,5 +1,6 @@
 import { defineConfig, type HeadConfig } from 'vitepress'
 import { site } from './site'
+import { articleDesk, articleMedia, pageRoute, writingDesk } from './editorial'
 
 const homeUrl = `${site.url}/`
 const websiteId = `${homeUrl}#website`
@@ -14,15 +15,6 @@ const person = {
   sameAs: [site.github, site.faculty, site.linkedin]
 }
 
-const portrait = { path: site.portrait, alt: 'Portrait of Keith Williams' }
-const fieldDesk = { path: '/images/editorial/social-field-desk.jpg', alt: 'An open notebook with hand-drawn diagrams and a red pencil on a blue desk' }
-const studioImage = { path: '/images/editorial/social-rock-paper.jpg', alt: 'Red paper covers a rock beside a row of green check marks' }
-const standardCards = new Set([fieldDesk.path, studioImage.path].map(path => new URL(path, homeUrl).href))
-const covers: Record<string, { path: string; alt: string }> = {
-  'about.md': portrait,
-  'teaching/when-ai-helps-write-the-code.md': studioImage,
-  'teaching/studio-field-notes.md': { path: '/images/teaching/studio-coach-pause.jpg', alt: 'An illustration for teaching an AI coach when to pause' }
-}
 const collections = new Set(['writing.md', 'teaching.md', 'research.md', 'research/systems/index.md'])
 
 function jsonLd(data: Record<string, unknown>): HeadConfig {
@@ -38,6 +30,19 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: false,
   appearance: false,
+  markdown: {
+    config(md) {
+      md.core.ruler.after('inline', 'article-introduction', state => {
+        const path = state.env.relativePath || ''
+        if (!articleDesk(path, state.env.frontmatter || {})) return
+        const h1 = state.tokens.findIndex(token => token.type === 'heading_close' && token.tag === 'h1')
+        if (h1 < 0) return
+        const intro = new state.Token('html_block', '', 0)
+        intro.content = '<ArticleHeader />\n'
+        state.tokens.splice(h1 + 1, 0, intro)
+      })
+    }
+  },
   sitemap: {
     hostname: site.url,
     transformItems: items => items.filter(item => !/(^|\/)404(?:\.html)?\/?$/.test(item.url))
@@ -51,17 +56,20 @@ export default defineConfig({
     if (path === '404.md') return [] // The error page sets noindex in its own frontmatter.
 
     const home = path === 'index.md'
-    const route = path.replace(/\.md$/, '').replace(/(^|\/)index$/, '$1')
-    const url = `${homeUrl}${route}`
+    const url = site.url + pageRoute(path)
     const profile = home || path === 'about.md'
     const collection = collections.has(path) || (!home && path.endsWith('/index.md'))
-    const article = !collection && (path.startsWith('teaching/') || path.startsWith('research/systems/') ||
-      path === 'life-tracker.md' || path === 'ai-careers.md')
+    const desk = articleDesk(path, pageData.frontmatter)
+    const article = Boolean(desk)
     const title = home ? pageData.title || site.title : `${pageData.title} | ${site.name}`
     const description = pageData.description || site.description
-    const image = covers[path] || fieldDesk
-    const imageUrl = new URL(pageData.frontmatter.socialImage || image.path, homeUrl).href
-    const imageAlt = pageData.frontmatter.socialImageAlt || image.alt
+    const shareDescription = pageData.frontmatter.teaser || description
+    const sectionImage = path === 'about.md'
+      ? { path: site.portrait, alt: 'Portrait of Keith Williams', width: 0, height: 0 }
+      : writingDesk
+    const social = article ? articleMedia(path, pageData.frontmatter).share : sectionImage
+    const imageUrl = new URL(social.path, homeUrl).href
+    const imageAlt = social.alt
     const author = { '@type': 'Person', '@id': person['@id'], name: site.name, url: homeUrl }
     const published = pageData.frontmatter.datePublished
     const modified = pageData.frontmatter.dateModified
@@ -72,20 +80,20 @@ export default defineConfig({
       ['meta', { property: 'og:site_name', content: site.name }],
       ['meta', { property: 'og:locale', content: 'en_US' }],
       ['meta', { property: 'og:title', content: title }],
-      ['meta', { property: 'og:description', content: description }],
+      ['meta', { property: 'og:description', content: shareDescription }],
       ['meta', { property: 'og:image', content: imageUrl }],
       ['meta', { property: 'og:image:alt', content: imageAlt }],
       ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
       ['meta', { name: 'twitter:title', content: title }],
-      ['meta', { name: 'twitter:description', content: description }],
+      ['meta', { name: 'twitter:description', content: shareDescription }],
       ['meta', { name: 'twitter:image', content: imageUrl }],
       ['meta', { name: 'twitter:image:alt', content: imageAlt }]
     ]
-    if (standardCards.has(imageUrl)) {
+    if (social.width && social.height) {
       head.push(
-        ['meta', { property: 'og:image:type', content: 'image/jpeg' }],
-        ['meta', { property: 'og:image:width', content: '1200' }],
-        ['meta', { property: 'og:image:height', content: '630' }]
+        ['meta', { property: 'og:image:type', content: /\.webp$/i.test(social.path) ? 'image/webp' : /\.png$/i.test(social.path) ? 'image/png' : 'image/jpeg' }],
+        ['meta', { property: 'og:image:width', content: String(social.width) }],
+        ['meta', { property: 'og:image:height', content: String(social.height) }]
       )
     }
     const common = { url, description, inLanguage: 'en-US', isPartOf: { '@id': websiteId } }
@@ -94,10 +102,16 @@ export default defineConfig({
     } else if (article) {
       head.push(jsonLd({
         '@type': 'Article', '@id': `${url}#article`, ...common, headline: pageData.title,
-        author, image: imageUrl, mainEntityOfPage: url,
+        author, image: imageUrl, mainEntityOfPage: url, articleSection: desk,
+        abstract: shareDescription, publisher: author,
         ...(published ? { datePublished: published } : {}),
         ...(modified ? { dateModified: modified } : {})
       }))
+      head.push(
+        ['meta', { name: 'author', content: site.name }],
+        ['meta', { property: 'article:author', content: site.url + '/about' }],
+        ['meta', { property: 'article:section', content: desk }]
+      )
       if (published) head.push(['meta', { property: 'article:published_time', content: String(published) }])
       if (modified) head.push(['meta', { property: 'article:modified_time', content: String(modified) }])
     } else {

@@ -11,19 +11,19 @@ export const navItems = [
 export const researchQuestions = [
   {
     number: '01', title: 'Learning beyond the generated answer',
-    text: 'How can AI-assisted assignments develop independent problem-solving, transfer of learning, and the ability to evaluate generated work?'
+    text: 'A coach helps with the first example. What does the student notice when a detail changes in the second?'
   },
   {
     number: '02', title: 'Assessment when AI can produce the artifact',
-    text: 'What evidence should count as learning: process, explanation, testing, judgment, collaboration, or the finished product?'
+    text: 'What can a student predict, check, or correct that a finished project alone would never show?'
   },
   {
     number: '03', title: 'Working with AI without handing over judgment',
-    text: 'How do we give AI useful work, check its evidence, and stay responsible for the decisions it helps us make?'
+    text: 'Which decisions can an agent make on its own, and which need someone who knows the customer and the consequences?'
   },
   {
     number: '04', title: 'Reliable knowledge from messy information',
-    text: 'How can we turn conflicting sources into explainable knowledge, with citations, progressive disclosure and informed human review?'
+    text: 'When two sources disagree, can a reader open the original passages and understand why a claim changed?'
   }
 ]
 
@@ -36,9 +36,9 @@ export const projects = [
     title: 'Educational Design System',
     category: 'Learning systems',
     status: 'Published phase-one foundation',
-    summary: 'A documentation-first foundation for consistent teaching materials and static educational sites.',
+    summary: 'A shared set of page patterns for teachers who want lessons, examples, and references to feel familiar from week to week.',
     details: [
-      { label: 'Built', text: 'Design tokens, shared layouts, teaching primitives, typed page recipes, and release-selected static builds.' },
+      { label: 'Built', text: 'Shared colors, typography, layouts, and reusable lesson components, published together in static course sites.' },
       { label: 'Practice', text: 'Explicit specifications, review records, and accessibility checks connect content decisions to a verifiable release.' }
     ],
     note: 'The foundation is published. Later authoring and observability work remains in development; the full publishing roadmap is not complete.',
@@ -70,7 +70,7 @@ export const projects = [
     title: 'IS117 Brand Studio',
     category: 'AI-assisted education',
     status: 'Public teaching template',
-    summary: 'A guided studio where students turn a neutral T-shirt storefront into a brand and a live style guide.',
+    summary: 'Students start with the same plain T-shirt. Their choice of buyer changes the words, colors, and storefront they build.',
     details: [
       { label: 'Built', text: 'A working storefront, shared styles, a live identity board, and a structured AI-coaching workflow.' },
       { label: 'Practice', text: 'Students explain their decisions, inspect the result, and review a short learning record alongside browser and accessibility checks.' }
@@ -87,7 +87,7 @@ export const projects = [
     title: 'Life Tracker',
     category: 'Human + AI workflow',
     status: 'Private workspace · Public how-to guide',
-    summary: 'A practical way to keep the next step clear when work is scattered across conversations and documents.',
+    summary: 'A way to carry one decision from a conversation into a private work queue, with an owner and a way to tell when the work is done.',
     details: [
       { label: 'What', text: 'A private GitHub work queue with clear owners, next actions, and checks for completion.' },
       { label: 'Why', text: 'AI helps research and organize the work. I set the direction, review decisions, and check the outcome.' }
@@ -103,7 +103,7 @@ export const projects = [
     title: 'Ordo Knowledge Lab',
     category: 'AI knowledge systems · education',
     status: 'Public textbook and student labs · research application planned',
-    summary: 'A research-grounded VitePress learning resource that connects RAG, databases, AI, systems engineering and evidence-driven software.',
+    summary: 'A textbook and set of runnable labs for tracing an AI answer back to its sources. Start with a small collection and ask one question it cannot answer.',
     details: [
       { label: 'Available', text: 'IS373 RAG student guides, practical prompts, synthetic examples, design documentation and tested learning labs.' },
       { label: 'Next', text: 'A portable knowledge engine with evidence, identity review, streaming retrieval and optional specialized model workers.' }

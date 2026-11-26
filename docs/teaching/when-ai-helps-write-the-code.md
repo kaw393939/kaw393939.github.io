@@ -1,6 +1,10 @@
 ---
 title: The Tests Passed. Who Won the Game?
 description: A rock-paper-scissors game, an overly helpful AI coach, and a classroom exercise for finding out what a learner can check on their own.
+teaser: "A rock-paper-scissors game taught me where an AI coach should stop talking."
+dateLabel: "November 25, 2026"
+articleGenre: "Classroom feature"
+imageCaption: "Paper covers rock. A green check tells you only what someone thought to test."
 socialImage: /images/editorial/social-rock-paper.jpg
 socialImageAlt: Folded red paper covers a dark stone beside a strip of green check marks.
 datePublished: "2026-11-25"
@@ -9,18 +13,9 @@ dateModified: "2026-11-25"
 
 # The Tests Passed. Who Won the Game?
 
-<p class="article-deck">A rock-paper-scissors game taught me where an AI coach should stop talking.</p>
-
-<p class="byline">Keith Williams · November 25, 2026</p>
-
-<figure class="editorial-figure">
-  <img src="/images/teaching/studio-rock-paper-tests.jpg" width="1280" height="853" alt="Folded red paper covers a dark stone beside a strip of green check marks." fetchpriority="high" />
-  <figcaption>Paper covers rock. A green check tells you only what someone thought to test.</figcaption>
-</figure>
-
 Choose rock. The computer chooses paper. You know who won. The game I gave my web applications students at NJIT had no idea.
 
-Twelve automated checks had passed on the starter. The page loaded. It could display a result if a test supplied one. It even knew how to explain that the game was unfinished. The function that had to **decide** who won was still a placeholder. You could read every green check as good news and still have to settle the round yourself. [Inside the starter trial](https://github.com/kaw393939/218_spec/blob/main/research/2026-10-25-rps-student-trial.md) · [What the tests checked](https://github.com/kaw393939/is218-rps-starter/blob/3983604d8e83de8fc9aadf792150df87e2961047/tests/test_shell.py)
+The starter passed all twelve automated checks. The page loaded. It could display a result if a test supplied one. It even knew how to explain that the game was unfinished. The function that had to **decide** who won was still a placeholder. If you wanted to know who had won, you still had to settle the round yourself. [Inside the starter trial](https://github.com/kaw393939/218_spec/blob/main/research/2026-10-25-rps-student-trial.md) · [What the tests checked](https://github.com/kaw393939/is218-rps-starter/blob/3983604d8e83de8fc9aadf792150df87e2961047/tests/test_shell.py)
 
 I left that hole on purpose. A coding agent could fill it in seconds. What I wanted to hear was a student saying, before anyone touched the code, *I picked rock. If the computer picks paper, the screen should tell me I lost.* That last word matters. A game can identify the winning move and still congratulate the wrong person.
 
@@ -34,12 +29,12 @@ I changed the coach so it could offer one example and let the learner pause. A y
 
 <figure class="editorial-figure">
   <img src="/images/teaching/studio-coach-pause.jpg" width="1080" height="720" alt="An open hand gestures toward a worked example while a learner holds a pencil over a blank card." loading="lazy" />
-  <figcaption>The first card can show a method. The blank one gives the learner somewhere to start. Both editorial illustrations were generated with AI.</figcaption>
+  <figcaption>The first card can show a method. The blank one gives the learner somewhere to start. Editorial illustrations generated with AI.</figcaption>
 </figure>
 
 ## Change one thing and hand over the keyboard
 
-Consider what happens when the help goes away. In a randomized study, Judy Hanwen Shen and Alex Tamkin asked 52 developers to use an unfamiliar Python library. All 26 who had an AI assistant finished both tasks within the time limit. Twenty-two of the 26 working independently did. On an immediate quiz without AI, the assisted group averaged about four points lower out of 27. It was a short experiment with one library. But it asks a question I can use tomorrow. When class ends, which part can a student carry into the next problem? [Read the revised study](https://arxiv.org/html/2601.20245v3)
+What can someone carry into the next problem? In a randomized study, Judy Hanwen Shen and Alex Tamkin asked 52 developers to use an unfamiliar Python library. All 26 who had an AI assistant finished both tasks within the time limit. Twenty-two of the 26 working independently did. On an immediate quiz without AI, the assisted group averaged about four points lower out of 27. They tested one library in one short session. What caught my attention was how much easier it would have been to see the finished tasks than to notice the gap on the quiz. [Read the revised study](https://arxiv.org/html/2601.20245v3)
 
 In my content management course, the project is a tool that answers questions from a set of documents. For the first answer, the coach can ask the student to find the passage that supports it. For the next round, I can ask for a detail the documents leave out and hand the keyboard over. If I immediately say “check the source,” I’ve already made the most interesting decision for the student. Waiting leaves room for them to notice the missing evidence, ask for help, or surprise me with a better check. [Try the two-question exercise](https://github.com/kaw393939/is373-rag/blob/main/docs/students/check.md)
 
@@ -53,6 +48,6 @@ Give someone a moment with the numbers. The average fell from ten minutes to sev
 
 To adapt this for your class, open the teacher guide and paste it into an AI chat with one assignment you already teach. Ask it to help you build a Studio. Pick the decision you want students to own. Play a stuck student yourself. If the first hint gives the decision away, revise that line and try it again. The download includes a paper-based route. **The ZIP is the teacher copy and contains answers. Give students only `LESSON.md` and `AGENTS.md`.** [Download the teacher Studio](/downloads/AI-Studio-Starter.zip) · [Open the teacher guide](https://github.com/kaw393939/kaw393939.github.io/blob/main/examples/ai-studio-starter/TEACHER-STUDIO.md)
 
-When students turn the work in, one revealing exchange is enough. They can choose a question that changed their work, point to the change, and show how they checked it. They can also mark a draft or explain the choice aloud. If the conversation already lives next to the fix, a link can spare everyone another reflection paper. [The classroom accounts and research behind the starter](/teaching/studio-field-notes)
+At hand-in, I want one moment I can ask about. They can choose a question that changed their work, point to the change, and show how they checked it. They can also mark a draft or explain the choice aloud. If the conversation already lives next to the fix, a link can spare everyone another reflection paper. [The classroom accounts and research behind the starter](/teaching/studio-field-notes)
 
 The question I keep coming back to is one I’d also ask someone mentoring a new engineer. **What do you ask on the first round that you hope they’ll ask for themselves on the second?**
