@@ -1,45 +1,11 @@
 export const navItems = [
-  { id: 'ai-careers', label: 'AI Careers', href: '/ai-careers' },
+  { id: 'writing', label: 'Writing', href: '/writing' },
   { id: 'teaching', label: 'Teaching', href: '/teaching' },
   { id: 'research', label: 'Research', href: '/research' },
   { id: 'projects', label: 'Projects', href: '/#projects' },
+  { id: 'ai-careers', label: 'AI Careers', href: '/ai-careers' },
   { id: 'about', label: 'About', href: '/#about' }
 ]
-export const focusAreas = [
-  {
-    number: '01', icon: 'book', title: 'Teaching AI',
-    text: 'Make AI less mysterious by using it to build something real. Then ask what worked, what failed, and what you can explain in your own words.',
-    tag: 'Skills, literacy & applied learning', href: '/teaching', linkLabel: 'Explore teaching'
-  },
-  {
-    number: '02', icon: 'judgment', title: 'Rethinking Education',
-    text: 'A finished assignment is not the whole story. I want to understand how people learn with AI and how we can recognize the judgment they develop.',
-    tag: 'Inquiry, curriculum & assessment', href: '/research', linkLabel: 'Explore research questions'
-  }
-]
-export const approachSteps = [
-  {
-    "number": "01",
-    "title": "Ask a better question.",
-    "text": "Start with the people, the problem, and the context. Give curiosity a useful direction."
-  },
-  {
-    "number": "02",
-    "title": "Make the intent clear.",
-    "text": "Write down the goal, the constraints, and what a good result should look like."
-  },
-  {
-    "number": "03",
-    "title": "Build. Test. Learn.",
-    "text": "Turn ideas into something tangible. Evaluate the result, examine the gaps, and improve it."
-  },
-  {
-    "number": "04",
-    "title": "Keep judgment human.",
-    "text": "Use AI to extend capability while staying accountable for the decisions that matter."
-  }
-]
-
 
 // Inquiry directions, not statements of completed empirical research.
 export const researchQuestions = [

@@ -1,38 +1,58 @@
 ---
-title: What I Ask Students to Show When AI Helps Write the Code
-description: Three lessons from teaching web development and AI at NJIT, starting with a shirt, a checkout page, and one press of the refresh button.
+title: The Tests Passed. Who Won the Game?
+description: A rock-paper-scissors game, an overly helpful AI coach, and a classroom exercise for finding out what a learner can check on their own.
+socialImage: /images/editorial/social-rock-paper.jpg
+socialImageAlt: Folded red paper covers a dark stone beside a strip of green check marks.
+datePublished: "2026-11-25"
+dateModified: "2026-11-25"
 ---
 
-# What I Ask Students to Show When AI Helps Write the Code
+# The Tests Passed. Who Won the Game?
 
-*Keith Williams · November 25, 2026*
+<p class="article-deck">A rock-paper-scissors game taught me where an AI coach should stop talking.</p>
 
-Buy a shirt. Refresh the page. Can you still find your order?
+<p class="byline">Keith Williams · November 25, 2026</p>
 
-That’s a question another teacher could borrow from my introductory web development course at NJIT. The checkout is simulated. The design problem is real. A student can show me a beautiful confirmation screen, and I’ll still have a question about what happened to the order.
+<figure class="editorial-figure">
+  <img src="/images/teaching/studio-rock-paper-tests.jpg" width="1280" height="853" alt="Folded red paper covers a dark stone beside a strip of green check marks." fetchpriority="high" />
+  <figcaption>Paper covers rock. A green check tells you only what someone thought to test.</figcaption>
+</figure>
 
-After 23 years of teaching, AI has me taking a closer look at my own assignments. I want students to use the tools they’ll encounter at work. I also want to hear the decisions they made while using them. This fall, revising projects across three courses brought a few lessons into focus for me.
+Choose rock. The computer chooses paper. You know who won. The game I gave my web applications students at NJIT had no idea.
 
-## Give the demo a second step
+Twelve automated checks had passed on the starter. The page loaded. It could display a result if a test supplied one. It even knew how to explain that the game was unfinished. The function that had to **decide** who won was still a placeholder. You could read every green check as good news and still have to settle the round yourself. [Inside the starter trial](https://github.com/kaw393939/218_spec/blob/main/research/2026-10-25-rps-student-trial.md) · [What the tests checked](https://github.com/kaw393939/is218-rps-starter/blob/3983604d8e83de8fc9aadf792150df87e2961047/tests/test_shell.py)
 
-In my introductory course, students design a storefront around a plain T-shirt. One way to review it is to hand the keyboard to a classmate. Ask them to buy a shirt and find the order after a refresh. Let them try it without coaching. If they get stuck, where did they expect to click? That observation gives the designer a specific change to make and the classmate something to try again.
+I left that hole on purpose. A coding agent could fill it in seconds. What I wanted to hear was a student saying, before anyone touched the code, *I picked rock. If the computer picks paper, the screen should tell me I lost.* That last word matters. A game can identify the winning move and still congratulate the wrong person.
 
-In my web applications course, the same idea works one level deeper. A team builds for a simulated customer. Suppose someone submits a service request and sees “Request received.” Restart the app and switch to the coordinator’s view. Can the person responsible find that request and act on it? Now the team has to account for both people in the transaction. Before anyone clicks, I can ask the student running the demo what they expect the coordinator to see and why.
+## The coach that kept asking why
 
-## Give students a reason to say “we don’t know”
+I call these assignments Studios. A student makes something, tries it, and decides what to change. In the project folder is a plain-text file called `AGENTS.md`. It tells an AI coding assistant how to act during that particular lesson. A teacher can open the file, read the directions, and change them. One of the hardest directions to get right is when to wait.
 
-In my content management course, students build an AI tool that answers questions using a collection of documents. A useful review takes two questions. Pick one the documents can answer and ask the student to show the passage that supports it. Then ask for a detail the documents leave out.
+I learned that from another Studio. In my introductory web course, students design a brand for a plain white T-shirt. To rehearse the assignment, I used a second AI to play a learner who kept answering “yes.” My coaching agent wanted a reason for the choice of audience. It asked. It rephrased. It asked again. The learner could have been unsure, tired, or ready to move on. My instructions had turned a reasonable question into a trap.
 
-If the tool supplies that missing detail anyway, we have something worth investigating. Which passage did the search return? What did the model add? A student who can locate the mistake and explain what the system should say has given me a much better look at their judgment. I want the assignment to reward that moment, even when the demo takes an unexpected turn.
+I changed the coach so it could offer one example and let the learner pause. A yes could approve a brand name. The reason the name fit a particular buyer could stay open until the learner had one. That rehearsal exposed a problem in my instructions. A simulated learner could help me find it. Only a classroom could tell me what real students would do next. [The coaching review](https://github.com/kaw393939/is117-brand-studio/blob/main/docs/coaching-review-2026-10-25.md)
 
-## Cut the paperwork that repeats the lesson
+<figure class="editorial-figure">
+  <img src="/images/teaching/studio-coach-pause.jpg" width="1080" height="720" alt="An open hand gestures toward a worked example while a learner holds a pencil over a blank card." loading="lazy" />
+  <figcaption>The first card can show a method. The blank one gives the learner somewhere to start. Both editorial illustrations were generated with AI.</figcaption>
+</figure>
 
-I had to apply the same scrutiny to my side of the course. It’s easy to ask for a project plan, a progress update, and a portfolio reflection, then discover I’m reading the same decision three times. Every extra write-up takes time students could spend putting the fix back in someone’s hands.
+## Change one thing and hand over the keyboard
 
-If a classmate reports a confusing checkout in a GitHub issue, the student can link the change there and ask the classmate to retry it. In the portfolio, one sentence can point back to that exchange and name what the student learned. I’d much rather spend our next minute together asking, “What would make you change your mind about that fix?”
+Consider what happens when the help goes away. In a randomized study, Judy Hanwen Shen and Alex Tamkin asked 52 developers to use an unfamiliar Python library. All 26 who had an AI assistant finished both tasks within the time limit. Twenty-two of the 26 working independently did. On an immediate quiz without AI, the assisted group averaged about four points lower out of 27. It was a short experiment with one library. But it asks a question I can use tomorrow. When class ends, which part can a student carry into the next problem? [Read the revised study](https://arxiv.org/html/2601.20245v3)
 
-That’s part of how I’m preparing students for forward-deployed engineering, where engineers work directly with the people who need a problem solved. I want my students to feel comfortable handing a customer the keyboard, watching where they get stuck, and deciding together what to fix.
+In my content management course, the project is a tool that answers questions from a set of documents. For the first answer, the coach can ask the student to find the passage that supports it. For the next round, I can ask for a detail the documents leave out and hand the keyboard over. If I immediately say “check the source,” I’ve already made the most interesting decision for the student. Waiting leaves room for them to notice the missing evidence, ask for help, or surprise me with a better check. [Try the two-question exercise](https://github.com/kaw393939/is373-rag/blob/main/docs/students/check.md)
 
-If you teach a project-based course, try changing one demo prompt before rewriting the whole assignment. What could you ask a student to show you in the *next minute* that you couldn’t learn from the finished screen?
+That moment has a workplace counterpart. A customer sees “request received” and walks away. The engineer sitting beside them can ask what the person at the other end actually received. Switch to that person’s view. Find the request. Give them the keyboard. That is one piece of forward-deployed engineering I can bring into a classroom today.
 
-[Try the T-shirt storefront](https://keithwilliams.org/is117-demo-days/samples/campus-cotton/a.html) · [Meet the simulated customer](https://keithwilliams.org/is218-studio/projects/customer-simulator.html) · [See the two-question AI check](https://github.com/kaw393939/is373-rag/blob/main/docs/students/check.md)
+## Try it in the next fifteen minutes
+
+The downloadable Studio starts with a question anyone can teach. A help desk changed its schedule. Five recorded waits used to be **4, 5, 5, 6, and 30 minutes**. Now they’re **6, 6, 7, 7, and 9**. Did service improve?
+
+Give someone a moment with the numbers. The average fell from ten minutes to seven. The middle person waited seven minutes instead of five. Now introduce a visitor with ten minutes between classes. What would your learner check first? Listen for who raises the question of how long the appointment itself takes.
+
+To adapt this for your class, open the teacher guide and paste it into an AI chat with one assignment you already teach. Ask it to help you build a Studio. Pick the decision you want students to own. Play a stuck student yourself. If the first hint gives the decision away, revise that line and try it again. The download includes a paper-based route. **The ZIP is the teacher copy and contains answers. Give students only `LESSON.md` and `AGENTS.md`.** [Download the teacher Studio](/downloads/AI-Studio-Starter.zip) · [Open the teacher guide](https://github.com/kaw393939/kaw393939.github.io/blob/main/examples/ai-studio-starter/TEACHER-STUDIO.md)
+
+When students turn the work in, one revealing exchange is enough. They can choose a question that changed their work, point to the change, and show how they checked it. They can also mark a draft or explain the choice aloud. If the conversation already lives next to the fix, a link can spare everyone another reflection paper. [The classroom accounts and research behind the starter](/teaching/studio-field-notes)
+
+The question I keep coming back to is one I’d also ask someone mentoring a new engineer. **What do you ask on the first round that you hope they’ll ask for themselves on the second?**
