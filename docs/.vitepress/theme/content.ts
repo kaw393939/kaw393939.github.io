@@ -11,19 +11,23 @@ export const navItems = [
 export const researchQuestions = [
   {
     number: '01', title: 'Learning beyond the generated answer',
-    text: 'A coach helps with the first example. What does the student notice when a detail changes in the second?'
+    text: 'A coach helps with the first example. What does the student notice when a detail changes in the second?',
+    href: '/teaching/studio-field-notes', linkLabel: 'Try a follow-up task'
   },
   {
     number: '02', title: 'Assessment when AI can produce the artifact',
-    text: 'What can a student predict, check, or correct that a finished project alone would never show?'
+    text: 'What can a student predict, check, or correct that a finished project alone would never show?',
+    href: '/teaching/when-ai-helps-write-the-code', linkLabel: 'See what the game leaves open'
   },
   {
     number: '03', title: 'Working with AI without handing over judgment',
-    text: 'Which decisions can an agent make on its own, and which need someone who knows the customer and the consequences?'
+    text: 'Which decisions can an agent make on its own, and which need someone who knows the customer and the consequences?',
+    href: '/research/systems/race-track-pit-stop', linkLabel: 'Trace a decision through review'
   },
   {
     number: '04', title: 'Reliable knowledge from messy information',
-    text: 'When two sources disagree, can a reader open the original passages and understand why a claim changed?'
+    text: 'When two sources disagree, can a reader open the original passages and understand why a claim changed?',
+    href: '/research/systems/vision-and-interface', linkLabel: 'Open up an AI citation'
   }
 ]
 

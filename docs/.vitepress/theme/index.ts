@@ -6,6 +6,8 @@ import ArticleIndex from './components/ArticleIndex.vue'
 import './style.css'
 import './guide.css'
 import './social.css'
+import './editorial-type.css'
+import './identity.css'
 
 export default {
   Layout,

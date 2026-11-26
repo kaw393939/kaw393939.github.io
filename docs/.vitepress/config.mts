@@ -64,6 +64,8 @@ export default defineConfig({
       .map(({ lastmod, ...item }) => item)
   },
   head: [
+    ['link', { rel: 'preload', as: 'font', type: 'font/woff2', crossorigin: 'anonymous', href: '/type/source-serif-4-latin-standard-normal.woff2' }],
+    ['link', { rel: 'stylesheet', href: '/type/brand-fonts.css' }],
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     ['meta', { name: 'theme-color', content: '#f3f0e8' }]
   ],
