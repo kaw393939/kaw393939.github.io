@@ -10,7 +10,7 @@ Pick up two ads for an “AI engineer” and underline the verbs. One employer w
 
 I read employer descriptions across five role families to help students decide what to practice. The 50-posting sample covers professional roles. Three separate internship examples show where a student might start. These examples describe the work employers requested. Visit the employer’s careers page to check availability, pay and eligibility before applying.
 
-[Explore roles](#roles-to-understand) · [Study internships](#internships-start-here) · [Compare 50 postings](#skills-report-50-real-posting-descriptions) · [Plan your skills](#what-should-you-learn) · [Build a portfolio project](#turn-research-into-a-plan)
+[Explore roles](#roles-to-understand) · [Study internships](#internships-start-here) · [Prepare for AI interviews](#how-employers-interview-with-ai) · [Compare 50 postings](#skills-report-50-real-posting-descriptions) · [Plan your skills](#what-should-you-learn) · [Build a portfolio project](#turn-research-into-a-plan)
 
 ## From a posting to a portfolio project
 
@@ -49,6 +49,19 @@ For students pursuing a BS/MS in computer science, software engineering, data sc
 Programming proficiency and an engineering degree support the work: developing customer-specific applications, LLM workflows and production solutions. This is a useful example of software work that also requires understanding people and their organizations.
 
 [View Palantir's posting](https://jobs.lever.co/palantir/d5486403-c050-4920-b2e0-91b69b61ebb2)
+
+## How employers interview with AI {#how-employers-interview-with-ai}
+
+When an invitation mentions AI, find out who will use it and at which stage. You might work through a problem with an AI tool while an engineer watches. You might also be answering questions from an AI interviewer. Here are four employers’ accounts.
+
+| Interview | What to expect |
+| --- | --- |
+| Canva · Live programming | In its AI-assisted interview, an engineer watches how you clarify a product requirement, decide which work to give the tool, inspect a suggestion, and explain a tradeoff. [An interviewer’s account](https://www.canva.dev/blog/engineering/ai-interview-success/) |
+| Rootly · Product engineering take-home | Candidates build a small incident-management app and submit a private repository, their AI session transcripts, and a short video walkthrough. Reviewers look for decisions the running app alone can hide, such as how a candidate caught a problem and changed course. [Rootly’s take-home instructions and example](https://rootly.com/blog/re-thinking-candidates-take-homes-in-the-ai-era-transcripts-over-code) |
+| Datadog · Technical interviews | Candidates hear in advance when a round expects AI-assisted coding. Other live technical rounds generally require independent work. After a take-home, expect live questions about your recommendations. [Candidate guidelines](https://careers.datadoghq.com/candidate-experience/interviewing-at-datadog-ai-guidelines/) |
+| McKinsey · Eligibility screening | In a voluntary screening interview, a chatbot called Mia asks about qualifications such as relevant experience or language proficiency. It compares answers with the role’s criteria. A person reviews its assessment before deciding whether a candidate advances. [Description of the screening interview](https://www.mckinsey.com/ai-assisted-interview-privacy-notice) |
+
+**Try a practice interview with a classmate.** Choose a responsibility from a posting you might apply for. If it calls for improving a tool through user feedback, bring one observation from someone who tried your project, the change it prompted, and the result of the retest. Let your classmate pick one of those pieces and ask a follow-up you haven’t rehearsed. If AI helped you make the change, show where you checked its work. Then put the tool aside and explain what evidence would make you choose differently. For the actual interview, check which tools that round permits and what work the interviewer wants to see. [Try this with a Studio assignment](/teaching/when-ai-helps-write-the-code#bring-a-job-posting-to-the-studio)
 
 ## Roles to understand
 
