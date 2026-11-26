@@ -8,7 +8,7 @@ teaser: In my NJIT Studios, I decide what the AI coach can handle and which deci
 
 I teach web development, web applications, and content management at NJIT, and I direct the undergraduate Enterprise AI program. Across those settings, I design assignments around a handoff. A classmate tries to buy a T-shirt. A reviewer asks what an automated check actually checked. Watching the person who built the work respond tells me something a finished screen cannot.
 
-This page is for faculty designing AI-assisted assignments and engineers mentoring someone new. Each example has a decision to practice, an artifact to inspect, and a way to tell whether the decision changed the outcome.
+If you teach a course or mentor a new engineer, pick one decision you want to watch the learner make. In the Studios below, it might be choosing a buyer, calling the winner of a game, or finding out why a website is unreachable.
 
 ## The Tests Passed. Who Won the Game?
 
@@ -18,7 +18,7 @@ My web applications starter passed twelve automated checks and still couldn’t 
 
 ## Build something you can explain
 
-I call these activities *Studios*. Students try a starter, choose one change, build it with help, and check what actually happened. A plain-text file called `AGENTS.md` tells the AI assistant when to help, what to ask, and when to wait.
+I call these activities *Studios*. Students try a starter, choose one change, build it with help, and check what actually happened. A plain-text file called `AGENTS.md` tells the AI assistant when to help, what to ask, and when to wait. Open a starter below to see what that looks like in practice.
 
 | Studio | A decision the student makes |
 | --- | --- |

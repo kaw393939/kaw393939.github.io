@@ -11,8 +11,8 @@ teaser: Field notes from my NJIT teaching and engineering practice, from testing
   <figcaption>AI-generated editorial illustration.</figcaption>
 </figure>
 
-I write from the two sides of my desk at NJIT. On one side is an assignment I designed, with an AI coach that sometimes gives away too much. On the other is software I built, with a test that can pass while a user still has a problem. I’m interested in the point where a teacher, an engineer, or a customer can tell the difference.
+I built a game starter that passed twelve tests while leaving the winner undecided. In my video editor, I could check a frame pixel by pixel and still have to listen to the export. I write about the gap between what we checked and what someone has good reason to believe.
 
-For a classroom experiment you can teach, take the [Studio starter](/downloads/AI-Studio-Starter.zip). For an engineering review, start with my [MetaVis case study](/research/systems/metavis-evidence-and-evaluation). The [systems collection](/research/systems/) gathers the wider research, and the [career field guide](/ai-careers) traces the responsibilities behind employers’ AI job titles.
+To try the classroom exercise, download the [teacher’s Studio starter](/downloads/AI-Studio-Starter.zip). To inspect the engineering, start with the [MetaVis case study](/research/systems/metavis-evidence-and-evaluation) or explore the [systems collection](/research/systems/). The [AI career field guide](/ai-careers) turns responsibilities from job postings into projects you can demonstrate.
 
 <ArticleIndex />

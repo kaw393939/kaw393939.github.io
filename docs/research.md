@@ -14,7 +14,7 @@ I’m pursuing that question in two directions. In education, I want to study wh
 
 In a classroom Studio, the AI coach can offer hints and help run checks. A follow-up problem gives the student a fresh choice. Which test would they run first? What evidence would make them change their mind?
 
-I’d like to compare students’ explanations, debugging choices, and solutions to unfamiliar problems after different amounts of coaching. To learn anything from the comparison, instructors need similar follow-up tasks and a consistent way to interpret the work. [Read the classroom feature](/teaching/when-ai-helps-write-the-code) · [Explore the research behind the Studio](/teaching/studio-field-notes)
+I’d like to work with another instructor on a common follow-up problem after students have had different amounts of coaching. We could compare three observations from each attempt. Who suggested the first check? What did the learner predict? How did they explain the result? [Read the classroom feature](/teaching/when-ai-helps-write-the-code) · [Explore the research behind the Studio](/teaching/studio-field-notes)
 
 ## What should count as evidence of learning?
 

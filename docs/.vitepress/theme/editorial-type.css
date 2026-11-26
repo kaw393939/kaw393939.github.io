@@ -1,0 +1,190 @@
+/* The journal pairs a book face for reading with its sans-serif companion for wayfinding. */
+:root {
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: "Source Sans 3", "Segoe UI", Helvetica, Arial, sans-serif;
+  --reading-size: clamp(1.125rem, 1.045rem + .35vw, 1.3rem);
+  --caption-size: clamp(.875rem, .855rem + .1vw, .95rem);
+  font-optical-sizing: auto;
+  font-kerning: normal;
+}
+
+.wordmark,
+.footer-name {
+  font-weight: 650;
+  letter-spacing: -.045em;
+}
+
+.cover h1 {
+  font-size: clamp(2.75rem, 1.22rem + 4.6vw, 5.8rem);
+  font-weight: 560;
+  line-height: 1.01;
+  letter-spacing: -.037em;
+}
+
+.cover h1 em {
+  font-style: italic;
+  font-weight: 475;
+}
+
+.cover-deck {
+  max-width: 44ch;
+  font-size: clamp(1.22rem, 1.08rem + .56vw, 1.64rem);
+  line-height: 1.42;
+}
+
+.section-rule h2, .section-intro h2, .profile-copy h2, .contact-section h2 {
+  font-weight: 565;
+  letter-spacing: -.033em;
+  line-height: 1.09;
+}
+
+.dispatch-card h3, .briefing-card h3, .research-item h3, .archive-grid h3, .project-case h3 {
+  font-weight: 575;
+  letter-spacing: -.022em;
+  line-height: 1.15;
+}
+
+.dispatch-card > p:not(.eyebrow),
+.briefing-card > p:not(.eyebrow),
+.archive-grid article > p:not(.eyebrow),
+.research-item p {
+  font: 400 clamp(1.04rem, 1rem + .18vw, 1.16rem)/1.5 var(--serif);
+}
+
+.eyebrow,
+.document-page :is(.eyebrow, .article-kicker) {
+  font: 650 .825rem/1.4 var(--sans);
+  letter-spacing: .085em;
+}
+
+.cover-image figcaption, .dispatch-image figcaption, .profile-image figcaption, .document-page figcaption {
+  font: 400 var(--caption-size)/1.48 var(--sans);
+}
+
+/* Size the column in the body face so its measure survives zoom and font changes. */
+.document-page {
+  max-width: 65ch;
+  font: 400 var(--reading-size)/1.62 var(--serif);
+}
+
+.document-page :is(p, li, dd) {
+  font-size: var(--reading-size);
+  line-height: 1.62;
+  widows: 3;
+  orphans: 3;
+}
+
+.document-page h1 {
+  font-size: clamp(2.35rem, 1.6rem + 3.15vw, 4.65rem);
+  font-weight: 560;
+  line-height: 1.05;
+  letter-spacing: -.036em;
+}
+
+.document-page h2 {
+  font-size: clamp(1.78rem, 1.45rem + 1.4vw, 2.65rem);
+  font-weight: 575;
+  line-height: 1.14;
+  letter-spacing: -.023em;
+  margin-block-start: 1.45em;
+}
+
+.document-page h3 {
+  font-size: clamp(1.36rem, 1.19rem + .72vw, 1.86rem);
+  font-weight: 600;
+  line-height: 1.22;
+  letter-spacing: -.012em;
+}
+
+.document-page :is(.article-deck, .standfirst) {
+  max-width: 52ch;
+  font: 400 clamp(1.24rem, 1.1rem + .65vw, 1.72rem)/1.4 var(--serif);
+  text-wrap: pretty;
+}
+
+.document-page :is(.byline, .article-byline) {
+  font: 400 .98rem/1.5 var(--sans);
+}
+
+.document-page blockquote p {
+  font: 450 1.12em/1.52 var(--serif);
+}
+
+.breadcrumb, .story-share, .article-share, .guide-contents,
+.career-skill-chart, .career-evidence summary, .document-page table,
+.document-page [class*="language-"] :is(.copy, .lang) {
+  font-family: var(--sans);
+}
+
+.document-page table {
+  font-size: clamp(.95rem, .93rem + .1vw, 1.03rem);
+  line-height: 1.44;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.document-page .career-skill-chart li {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+/* The index has room for paired cards; its opening text keeps a reading measure. */
+.document-page:has(.journal-index),
+.document-page:has(.journal-index) > div {
+  max-width: 58rem;
+}
+
+.document-page:has(.journal-index) .breadcrumb {
+  max-width: none;
+}
+
+.document-page:has(.journal-index) > div > div > p {
+  max-width: 65ch;
+}
+
+.document-page .journal-card h3 {
+  font-weight: 575;
+  line-height: 1.17;
+}
+
+.document-page .journal-card p {
+  font: 400 1.075rem/1.5 var(--serif);
+}
+
+@media (max-width: 540px) {
+  .wordmark { font-size: clamp(1.9rem, 8vw, 2.7rem); }
+  .cover-image figcaption { flex-wrap: wrap; gap: .15rem .75rem; }
+  .document-page th, .document-page td { padding: .55rem .65rem; }
+}
+
+@media print {
+  body:has(.document-page) :is(.site-header, .site-footer, .skip-link),
+  .document-page :is(.breadcrumb, .story-share, .article-share, .header-anchor, .table-hint),
+  .document-page [class*="language-"] .copy { display: none; }
+
+  .document-page,
+  .document-page:has(.journal-index),
+  .document-page > div {
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    min-height: 0;
+    font-size: 11pt;
+  }
+
+  .document-page :is(p, li, dd) { font-size: 11pt; line-height: 1.43; }
+  .document-page h1 { font-size: 28pt; }
+  .document-page h2 { font-size: 19pt; }
+  .document-page h3 { font-size: 14pt; }
+  .document-page :is(h1, h2, h3, h4, .article-deck, .byline) { break-after: avoid; }
+  .document-page :is(.article-deck, .standfirst) { font-size: 14pt; }
+  .document-page :is(.byline, figcaption) { font-size: 9pt; }
+  .document-page figure, .document-page tr { break-inside: avoid; }
+  .document-page figure img { max-height: 82mm; object-fit: contain; object-position: left; }
+  .document-page .table-scroll { overflow: visible; }
+  .document-page .table-scroll th { min-width: 0; }
+  .document-page table { font-size: 9pt; }
+  .document-page th, .document-page td { padding: 3pt; }
+  .document-page pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+}

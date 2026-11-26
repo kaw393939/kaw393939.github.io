@@ -22,6 +22,10 @@ A project question posted on GitHub is public. For a private inquiry, an accessi
 
 I use AI-generated illustrations to explain ideas. The author portrait is an AI-assisted adaptation of a photograph of me. The optional audio introduction uses a synthetic voice, and its transcript is next to the player. Technical diagrams, references, and links to original materials appear with the work they support.
 
+## Type and lettering
+
+This journal pairs Source Serif 4 for reading with Source Sans 3 for navigation. Frank Grießhammer designed the serif family and Paul D. Hunt designed its sans companion. Both typefaces load from this site. The GitHub and LinkedIn symbols come from Font Awesome Free by Fonticons and link to my public profiles. [Source Serif license](/type/source-serif-4-OFL.txt) · [Source Sans license](/type/source-sans-3-OFL.txt) · [Icon credits and license](/icons/font-awesome-license.txt)
+
 ## Teaching and reuse
 
 The teacher Studio includes directions for adapting an assignment and identifies which files to give students. For software, images, and third-party readings, check the terms attached to the original work. If you want to republish an article or use an illustration and the terms are unclear, send me the page and a short description of your intended use. [Teacher Studio](https://keithwilliams.org/downloads/AI-Studio-Starter.zip) · [Contact Keith](https://people.njit.edu/profile/kwilliam)

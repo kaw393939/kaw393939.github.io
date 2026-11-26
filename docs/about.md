@@ -12,7 +12,7 @@ Across those settings, I keep coming back to a practical question. What happens 
 
 ## Where it started
 
-My first home computer was a Tandy TRS-80 Color Computer 2. My father worked as a mainframe systems lead operator at Alcoa. Now I had a machine I could program myself, and I started teaching myself how.
+My father worked as a mainframe systems lead operator at Alcoa. My own way into computing was a Tandy TRS-80 Color Computer 2 at home. That’s where I taught myself to program.
 
 Later, through AmeriCorps, I taught children about computers at an after-school center in Pittsburgh. I’ve also worked with high schools. I still think about the person sitting down at a computer for the first time, wondering what they’re allowed to try.
 
@@ -24,7 +24,7 @@ Today my students use AI coding assistants. In the classroom exercises I call St
 
 ## Learning beyond my own classroom
 
-A conversation with an NJIT graduate student from Zambia led to a progressive web application workshop at ZCAS University for students and staff. In Zambia I also worked with the Ministry of Finance on an initiative to digitize public services. An online form only helps if the person completing it can actually finish the government transaction. That question about delivery has stayed with me. [NJIT on teaching in Zambia](https://news.njit.edu/inspiring-students-njit-africa) · [NJIT on digitizing government services](https://news.njit.edu/njit-lecturer-helps-digitize-government-services-zambia)
+An NJIT graduate student from Zambia connected me with ZCAS University. In our progressive web application workshop there, students and staff began building an app for student registration. I also worked with Zambia’s Ministry of Finance on digitizing public services. A registration form still gives me a good question to take into class. After someone clicks Submit, how do they know their registration went through? [NJIT on teaching in Zambia](https://news.njit.edu/inspiring-students-njit-africa) · [NJIT on digitizing government services](https://news.njit.edu/njit-lecturer-helps-digitize-government-services-zambia)
 
 ## What I’m working on now {#what-im-working-on-now}
 

@@ -9,6 +9,72 @@ const deps = createRequire(join(process.env.RUNNER_TEMP, 'portfolio-browser', 'p
 const { chromium } = deps('playwright-core')
 const port = 4173
 const origin = 'http://127.0.0.1:' + port
+const profiles = new Map([
+  ['GitHub', 'https://github.com/kaw393939'],
+  ['LinkedIn', 'https://www.linkedin.com/in/keithwilliams5/']
+])
+
+async function checkProfiles(page, width) {
+  for (const region of ['banner', 'contentinfo']) {
+    const landmark = page.getByRole(region)
+    for (const [name, href] of profiles) {
+      const link = landmark.getByRole('link', { name: new RegExp(name, 'i') })
+        .and(landmark.locator('a[rel~="me"]'))
+      const label = width + 'px ' + region + ' ' + name + ' profile'
+      assert.equal(await link.count(), 1, label + ' needs one named personal-profile link')
+      assert.equal(await link.evaluate(el => el.href), href, label + ' destination')
+      assert.ok(await link.isVisible(), label + ' must be visible')
+      if (width <= 390 && region === 'banner') {
+        const bounds = await link.boundingBox()
+        assert.ok(bounds && bounds.x >= 0 && bounds.y >= 0 && bounds.x + bounds.width <= width + 1
+          && bounds.y + bounds.height <= page.viewportSize().height, label + ' must be on screen with the menu closed')
+      }
+      assert.ok(await link.evaluate(el => el.tabIndex >= 0), label + ' must be keyboard reachable')
+      await link.click({ trial: true })
+    }
+  }
+}
+
+async function checkArticleType(page, width) {
+  const paragraph = '.story-intro ~ p'
+  await page.evaluate(() => document.fonts.ready.then(() => true))
+  const session = await page.context().newCDPSession(page)
+  try {
+    await session.send('DOM.enable')
+    await session.send('CSS.enable')
+    const { root } = await session.send('DOM.getDocument')
+    for (const [selector, family] of [['main h1', 'Source Serif 4'], [paragraph, 'Source Serif 4'], ['.story-share a', 'Source Sans 3']]) {
+      const { nodeId } = await session.send('DOM.querySelector', { nodeId: root.nodeId, selector })
+      assert.ok(nodeId, 'Missing typography sample ' + selector)
+      // Computed font-family alone also succeeds when a font download fails.
+      const { fonts } = await session.send('CSS.getPlatformFontsForNode', { nodeId })
+      assert.ok(fonts.some(font => font.isCustomFont && font.glyphCount > 0 && font.familyName.startsWith(family)),
+        width + 'px ' + selector + ' must render ' + family + ', found ' + fonts.map(font => font.familyName).join(', '))
+    }
+  } finally {
+    await session.detach()
+  }
+  if (width === 1440) {
+    const measure = await page.locator(paragraph).first().evaluate(el => {
+      const style = getComputedStyle(el)
+      const ctx = document.createElement('canvas').getContext('2d')
+      ctx.font = [style.fontStyle, style.fontWeight, style.fontSize, style.fontFamily].join(' ')
+      return (el.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight)) / ctx.measureText('0').width
+    })
+    assert.ok(measure >= 45 && measure <= 82, 'Desktop article paragraph should have a readable line length, found ' + measure.toFixed(1) + 'ch')
+    await page.emulateMedia({ media: 'print' })
+    try {
+      assert.ok(await page.getByRole('heading', { level: 1 }).isVisible(), 'Printed article needs its headline')
+      const byline = page.locator('.story-intro .byline')
+      assert.ok(await byline.isVisible() && /Keith Williams/i.test(await byline.innerText()), 'Printed article needs its author')
+      assert.ok(await page.locator('header.site-header').isHidden(), 'Keep site navigation out of the printed article')
+      assert.ok(await page.locator('.story-share').isHidden(), 'Keep interactive sharing controls out of the printed article')
+    } finally {
+      await page.emulateMedia({ media: 'screen' })
+    }
+  }
+}
+
 const preview = spawn('node', ['node_modules/vitepress/bin/vitepress.js', 'preview', 'docs', '--port', String(port)], { stdio: 'ignore' })
 let browser
 try {
@@ -53,6 +119,7 @@ try {
     } else {
       assert.ok(await page.getByRole('navigation', { name: 'Main navigation' }).isVisible())
     }
+    await checkProfiles(page, width)
     const portrait = page.locator('.profile-image img')
     await portrait.scrollIntoViewIfNeeded()
     await portrait.evaluate(img => img.decode())
@@ -67,6 +134,8 @@ try {
     const columns = await page.locator('.journal-cards').first().evaluate(grid => getComputedStyle(grid).gridTemplateColumns.split(' ').length)
     assert.equal(columns, width <= 550 ? 1 : 2, 'Writing index column count')
     await open('/research/systems/personalized-knowledge-artifacts')
+    await checkArticleType(page, width)
+    await fit('article after fonts loaded')
     const copy = page.getByRole('button', { name: 'Copy link' })
     await copy.click()
     if (width === 320) {
@@ -94,7 +163,7 @@ try {
     await fit('/ai-careers after expanding evidence')
     assert.ok(await page.locator('footer').getByRole('link', { name: 'Site notes' }).isVisible())
     await context.close()
-    console.log('PASS: ' + width + 'px navigation, author crop, article index, sharing and career evidence.')
+    console.log('PASS: ' + width + 'px navigation, profiles, author crop, index, article typography, sharing and career evidence.')
   }
 } finally {
   await browser?.close()

@@ -6,6 +6,11 @@ import { navItems, projects, researchQuestions, zambiaExperience } from './conte
 import HeroAudio from './components/HeroAudio.vue'
 import SiteIcon from './components/SiteIcon.vue'
 
+const profiles = [
+  { name: 'GitHub', url: site.github, icon: '/icons/github.svg' },
+  { name: 'LinkedIn', url: site.linkedin, icon: '/icons/linkedin-in.svg' }
+]
+
 const { frontmatter, page } = useData()
 const isHome = computed(() => frontmatter.value.layout === 'home')
 const section = computed(() => page.value.relativePath.split('/')[0].replace(/\.md$/, ''))
@@ -78,8 +83,13 @@ onUnmounted(() => {
   <a class="skip-link" href="#main">Skip to content</a>
   <header ref="header" class="site-header" @focusout="closeMenuOnFocusOut">
     <div class="masthead wrap">
-      <a class="wordmark" href="/" aria-label="Keith Williams home">Keith Williams<span aria-hidden="true">.</span></a>
+      <a class="wordmark" href="/" aria-label="Keith Williams home"><SiteIcon name="compass" class="wordmark-print-mark" />Keith Williams<span aria-hidden="true">.</span></a>
       <p class="masthead-subtitle">A journal of <em>AI, education<br> &amp; engineering.</em></p>
+      <nav class="profile-network" aria-label="Keith Williams’s profiles">
+        <a v-for="profile in profiles" :key="profile.name" class="profile-link" :href="profile.url" rel="me">
+          <img class="profile-logo" :src="profile.icon" alt="" width="18" height="18">{{ profile.name }}
+        </a>
+      </nav>
       <button ref="menuButton" type="button" class="menu-toggle" :aria-expanded="menuOpen" aria-controls="site-nav"
         @click="menuOpen = !menuOpen">{{ menuOpen ? 'Close' : 'Menu' }}
         <span aria-hidden="true">{{ menuOpen ? '−' : '+' }}</span>
@@ -136,7 +146,7 @@ onUnmounted(() => {
         <article class="briefing-card">
           <p class="eyebrow">Career field guide</p>
           <h3><a href="/ai-careers">What are employers actually asking for?</a></h3>
-          <p>I read 50 job and internship descriptions. Here’s how to turn one responsibility from a posting into a project you can show an interviewer.</p>
+          <p>I read 50 professional AI job postings and looked separately at three internships. Take one responsibility from a posting and turn it into a project you can show an interviewer.</p>
           <a class="inline-link" href="/ai-careers">Explore AI careers <span aria-hidden="true">↗</span></a>
         </article>
       </div>
@@ -171,7 +181,7 @@ onUnmounted(() => {
     <section id="research" class="research-section wrap" aria-labelledby="research-title">
       <div class="section-rule"><h2 id="research-title">Questions I’m working on</h2><a href="/research">Research agenda <span aria-hidden="true">↗</span></a></div>
       <div class="research-grid">
-        <article v-for="question in researchQuestions" :key="question.number" class="research-item"><h3>{{ question.title }}</h3><p>{{ question.text }}</p></article>
+        <article v-for="question in researchQuestions" :key="question.number" class="research-item"><h3>{{ question.title }}</h3><p>{{ question.text }}</p><a class="inline-link" :href="question.href">{{ question.linkLabel }} <span aria-hidden="true">↗</span></a></article>
       </div>
       <a class="inline-link" href="/research/systems/">Systems research and case studies <span aria-hidden="true">↗</span></a>
     </section>
@@ -184,14 +194,14 @@ onUnmounted(() => {
       <div class="profile-copy">
         <p class="eyebrow section-label"><span aria-hidden="true"></span> About the author</p>
         <h2 id="about-title">I’m Keith Williams.</h2>
-        <p id="approach">I teach Informatics at NJIT and direct its B.S. in Enterprise AI. In a classroom in Newark or a software project in Zambia, I keep coming back to the same question: how does the person using a system know it worked?</p>
+        <p id="approach">I teach Informatics at NJIT and direct its B.S. in Enterprise AI. In Zambia I worked with university staff and students on a registration app. I still like to ask the question a user has after clicking Submit. Did it go through, and how can I tell?</p>
         <div class="profile-links"><a class="inline-link" href="/about">Read my story <span aria-hidden="true">↗</span></a><a class="inline-link" href="/teaching">My teaching approach <span aria-hidden="true">↗</span></a></div>
         <HeroAudio />
       </div>
     </section>
 
     <section id="zambia" class="archive-section wrap" aria-labelledby="archive-title">
-      <div class="section-rule"><h2 id="archive-title">From the archive</h2></div>
+      <div class="section-rule"><h2 id="archive-title">Fieldwork and interviews</h2></div>
       <div class="archive-grid">
         <article v-for="experience in zambiaExperience" :key="experience.href" class="experience-entry">
           <p class="eyebrow">Zambia</p><h3><a :href="experience.href">{{ experience.title }}</a></h3>
@@ -220,7 +230,9 @@ onUnmounted(() => {
     <div class="wrap">
       <div class="footer-row">
         <div><a class="footer-name" href="/">Keith Williams<span aria-hidden="true">.</span></a><p>AI, education &amp; engineering</p></div>
-        <nav class="footer-links" aria-label="Footer navigation"><a href="/site-notes">Site notes</a><a :href="site.linkedin">LinkedIn</a><a :href="site.github">GitHub</a><a :href="site.faculty">NJIT profile</a><a href="#main">Back to top ↑</a></nav>
+        <nav class="footer-links" aria-label="Footer navigation"><a href="/site-notes">Site notes</a><a v-for="profile in profiles" :key="profile.name" class="profile-link" :href="profile.url" rel="me">
+          <img class="profile-logo" :src="profile.icon" alt="" width="18" height="18">{{ profile.name }}
+        </a><a :href="site.faculty">NJIT profile</a><a href="#main">Back to top ↑</a></nav>
       </div>
       <p class="footer-fine">© Keith Williams <span>Personal website. Views are my own.</span></p>
     </div>
