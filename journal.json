@@ -1,0 +1,58 @@
+{
+  "/ai-careers": {
+    "seconds": 3589.689,
+    "src": "https://keithwilliams.org/listen/audio/journal-ai-careers-01772ad1940e.mp3"
+  },
+  "/life-tracker": {
+    "seconds": 364.554,
+    "src": "https://keithwilliams.org/listen/audio/journal-life-tracker-3ebd4e1b8aff.mp3"
+  },
+  "/research/systems/dissertation-proposal": {
+    "seconds": 1567.645,
+    "src": "https://keithwilliams.org/listen/audio/journal-research__systems__dissertation-proposal-d724b5843718.mp3"
+  },
+  "/research/systems/english-software-engineering": {
+    "seconds": 210.848,
+    "src": "https://keithwilliams.org/listen/audio/journal-research__systems__english-software-engineering-8ad3ab202750.mp3"
+  },
+  "/research/systems/human-attention-kanban": {
+    "seconds": 226.27,
+    "src": "https://keithwilliams.org/listen/audio/journal-research__systems__human-attention-kanban-4af09f5418ec.mp3"
+  },
+  "/research/systems/literature-and-faculty": {
+    "seconds": 845.148,
+    "src": "https://keithwilliams.org/listen/audio/journal-research__systems__literature-and-faculty-5f2c94b6105b.mp3"
+  },
+  "/research/systems/metavis-evidence-and-evaluation": {
+    "seconds": 270.198,
+    "src": "https://keithwilliams.org/listen/audio/journal-research__systems__metavis-evidence-and-evaluation-19dd52b7ae08.mp3"
+  },
+  "/research/systems/personalized-knowledge-artifacts": {
+    "seconds": 243.464,
+    "src": "https://keithwilliams.org/listen/audio/journal-research__systems__personalized-knowledge-artifacts-594ac98f5d80.mp3"
+  },
+  "/research/systems/provenance-knowledge-graphs": {
+    "seconds": 237.252,
+    "src": "https://keithwilliams.org/listen/audio/journal-research__systems__provenance-knowledge-graphs-cbcaf6be4086.mp3"
+  },
+  "/research/systems/race-track-pit-stop": {
+    "seconds": 240.754,
+    "src": "https://keithwilliams.org/listen/audio/journal-research__systems__race-track-pit-stop-f68253ea5caa.mp3"
+  },
+  "/research/systems/uap-research-testbed": {
+    "seconds": 346.155,
+    "src": "https://keithwilliams.org/listen/audio/journal-research__systems__uap-research-testbed-b2cf5044e7d3.mp3"
+  },
+  "/research/systems/vision-and-interface": {
+    "seconds": 319.651,
+    "src": "https://keithwilliams.org/listen/audio/journal-research__systems__vision-and-interface-78425943e008.mp3"
+  },
+  "/teaching/studio-field-notes": {
+    "seconds": 421.37,
+    "src": "https://keithwilliams.org/listen/audio/journal-teaching__studio-field-notes-105511c74c33.mp3"
+  },
+  "/teaching/when-ai-helps-write-the-code": {
+    "seconds": 326.559,
+    "src": "https://keithwilliams.org/listen/audio/journal-teaching__when-ai-helps-write-the-code-0006c1e9ac6c.mp3"
+  }
+}

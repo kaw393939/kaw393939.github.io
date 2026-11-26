@@ -1,0 +1,254 @@
+{
+  "/architecture/backend": {
+    "seconds": 543.77,
+    "src": "https://keithwilliams.org/listen/audio/lab-architecture-backend-5d26bc5ca802.mp3"
+  },
+  "/architecture/contracts": {
+    "seconds": 343.052,
+    "src": "https://keithwilliams.org/listen/audio/lab-architecture-contracts-b5ce6b4a2664.mp3"
+  },
+  "/architecture/frontend": {
+    "seconds": 435.534,
+    "src": "https://keithwilliams.org/listen/audio/lab-architecture-frontend-e92bbbc4518f.mp3"
+  },
+  "/architecture/ingestion": {
+    "seconds": 394.398,
+    "src": "https://keithwilliams.org/listen/audio/lab-architecture-ingestion-8da4813c2c0b.mp3"
+  },
+  "/architecture/overview": {
+    "seconds": 290.373,
+    "src": "https://keithwilliams.org/listen/audio/lab-architecture-overview-8be6cf95fcce.mp3"
+  },
+  "/architecture/retrieval": {
+    "seconds": 422.541,
+    "src": "https://keithwilliams.org/listen/audio/lab-architecture-retrieval-04b9a8bc1f0e.mp3"
+  },
+  "/build/": {
+    "seconds": 190.279,
+    "src": "https://keithwilliams.org/listen/audio/lab-build-2084891fd3f6.mp3"
+  },
+  "/course-roadmap": {
+    "seconds": 335.327,
+    "src": "https://keithwilliams.org/listen/audio/lab-course-roadmap-02f600b24ff1.mp3"
+  },
+  "/decisions/": {
+    "seconds": 149.621,
+    "src": "https://keithwilliams.org/listen/audio/lab-decisions-f1039d9e97fb.mp3"
+  },
+  "/decisions/001-serving-boundaries": {
+    "seconds": 163.087,
+    "src": "https://keithwilliams.org/listen/audio/lab-decisions-001-serving-boundaries-8e965cbf6e6e.mp3"
+  },
+  "/decisions/002-retrieval-storage": {
+    "seconds": 167.483,
+    "src": "https://keithwilliams.org/listen/audio/lab-decisions-002-retrieval-storage-c20c9c8f0f4e.mp3"
+  },
+  "/decisions/003-workflow-ownership": {
+    "seconds": 176.254,
+    "src": "https://keithwilliams.org/listen/audio/lab-decisions-003-workflow-ownership-41b1c1eb85fb.mp3"
+  },
+  "/design/": {
+    "seconds": 168.79,
+    "src": "https://keithwilliams.org/listen/audio/lab-design-a70ef05e1599.mp3"
+  },
+  "/engineering/clean-build": {
+    "seconds": 474.202,
+    "src": "https://keithwilliams.org/listen/audio/lab-engineering-clean-build-fe173d4089c5.mp3"
+  },
+  "/engineering/examples": {
+    "seconds": 431.62,
+    "src": "https://keithwilliams.org/listen/audio/lab-engineering-examples-6892425f2fb7.mp3"
+  },
+  "/engineering/twelve-factor": {
+    "seconds": 613.644,
+    "src": "https://keithwilliams.org/listen/audio/lab-engineering-twelve-factor-20203a609f3c.mp3"
+  },
+  "/guide/": {
+    "seconds": 154.298,
+    "src": "https://keithwilliams.org/listen/audio/lab-guide-f477343150d8.mp3"
+  },
+  "/guide/capabilities": {
+    "seconds": 188.744,
+    "src": "https://keithwilliams.org/listen/audio/lab-guide-capabilities-6315106df86b.mp3"
+  },
+  "/guide/vision": {
+    "seconds": 188.043,
+    "src": "https://keithwilliams.org/listen/audio/lab-guide-vision-70d7cdaeb9ce.mp3"
+  },
+  "/guide/walkthrough": {
+    "seconds": 214.514,
+    "src": "https://keithwilliams.org/listen/audio/lab-guide-walkthrough-ec0084eef44e.mp3"
+  },
+  "/project/": {
+    "seconds": 237.806,
+    "src": "https://keithwilliams.org/listen/audio/lab-project-482dbbe6fd41.mp3"
+  },
+  "/project/acceptance": {
+    "seconds": 549.253,
+    "src": "https://keithwilliams.org/listen/audio/lab-project-acceptance-069283cca683.mp3"
+  },
+  "/project/decisions": {
+    "seconds": 405.72,
+    "src": "https://keithwilliams.org/listen/audio/lab-project-decisions-d052665ecae0.mp3"
+  },
+  "/project/hosting": {
+    "seconds": 556.807,
+    "src": "https://keithwilliams.org/listen/audio/lab-project-hosting-f45371cc0ac2.mp3"
+  },
+  "/project/knowledge": {
+    "seconds": 432.989,
+    "src": "https://keithwilliams.org/listen/audio/lab-project-knowledge-ade872830fa4.mp3"
+  },
+  "/project/plugins": {
+    "seconds": 351.08,
+    "src": "https://keithwilliams.org/listen/audio/lab-project-plugins-ff002c8549d4.mp3"
+  },
+  "/project/roadmap": {
+    "seconds": 705.807,
+    "src": "https://keithwilliams.org/listen/audio/lab-project-roadmap-3120a303b767.mp3"
+  },
+  "/project/setup": {
+    "seconds": 339.581,
+    "src": "https://keithwilliams.org/listen/audio/lab-project-setup-c4d882d35baa.mp3"
+  },
+  "/project/sources": {
+    "seconds": 184.587,
+    "src": "https://keithwilliams.org/listen/audio/lab-project-sources-866fdf1fa1c9.mp3"
+  },
+  "/project/streaming": {
+    "seconds": 330.237,
+    "src": "https://keithwilliams.org/listen/audio/lab-project-streaming-ab23c83920a8.mp3"
+  },
+  "/project/system": {
+    "seconds": 364.666,
+    "src": "https://keithwilliams.org/listen/audio/lab-project-system-6aa2339599d6.mp3"
+  },
+  "/reference/": {
+    "seconds": 138.122,
+    "src": "https://keithwilliams.org/listen/audio/lab-reference-d04448d8c020.mp3"
+  },
+  "/reference/browser-review": {
+    "seconds": 166.069,
+    "src": "https://keithwilliams.org/listen/audio/lab-reference-browser-review-fb1db49b396c.mp3"
+  },
+  "/reference/documentation-map": {
+    "seconds": 177.877,
+    "src": "https://keithwilliams.org/listen/audio/lab-reference-documentation-map-ed8a1d7e9b31.mp3"
+  },
+  "/reference/glossary": {
+    "seconds": 201.502,
+    "src": "https://keithwilliams.org/listen/audio/lab-reference-glossary-a6805fd11caa.mp3"
+  },
+  "/research/": {
+    "seconds": 244.61,
+    "src": "https://keithwilliams.org/listen/audio/lab-research-11aa00b383ef.mp3"
+  },
+  "/research/concepts": {
+    "seconds": 415.847,
+    "src": "https://keithwilliams.org/listen/audio/lab-research-concepts-7428eefd3cb0.mp3"
+  },
+  "/research/implementation-resources": {
+    "seconds": 815.984,
+    "src": "https://keithwilliams.org/listen/audio/lab-research-implementation-resources-1e463165cd81.mp3"
+  },
+  "/research/recent-developments": {
+    "seconds": 468.503,
+    "src": "https://keithwilliams.org/listen/audio/lab-research-recent-developments-8b71795fa98e.mp3"
+  },
+  "/research/similar-projects": {
+    "seconds": 674.546,
+    "src": "https://keithwilliams.org/listen/audio/lab-research-similar-projects-def873909b78.mp3"
+  },
+  "/reuse/": {
+    "seconds": 335.994,
+    "src": "https://keithwilliams.org/listen/audio/lab-reuse-0d7c3d7785eb.mp3"
+  },
+  "/reuse/harvest-plan": {
+    "seconds": 463.034,
+    "src": "https://keithwilliams.org/listen/audio/lab-reuse-harvest-plan-e3d6214c696a.mp3"
+  },
+  "/reuse/source-audit": {
+    "seconds": 901.963,
+    "src": "https://keithwilliams.org/listen/audio/lab-reuse-source-audit-79c76af93fb1.mp3"
+  },
+  "/reviews/": {
+    "seconds": 257.023,
+    "src": "https://keithwilliams.org/listen/audio/lab-reviews-520d3dc59e82.mp3"
+  },
+  "/reviews/clean-architecture": {
+    "seconds": 411.857,
+    "src": "https://keithwilliams.org/listen/audio/lab-reviews-clean-architecture-55133d941759.mp3"
+  },
+  "/reviews/design-patterns": {
+    "seconds": 529.591,
+    "src": "https://keithwilliams.org/listen/audio/lab-reviews-design-patterns-3ce7bfacfd0e.mp3"
+  },
+  "/reviews/rust-design": {
+    "seconds": 520.479,
+    "src": "https://keithwilliams.org/listen/audio/lab-reviews-rust-design-2ad8ee24f9b7.mp3"
+  },
+  "/sources": {
+    "seconds": 245.098,
+    "src": "https://keithwilliams.org/listen/audio/lab-sources-01831495d6d1.mp3"
+  },
+  "/status": {
+    "seconds": 289.372,
+    "src": "https://keithwilliams.org/listen/audio/lab-status-230b43f06981.mp3"
+  },
+  "/students/": {
+    "seconds": 229.44,
+    "src": "https://keithwilliams.org/listen/audio/lab-students-3703cf37d403.mp3"
+  },
+  "/students/ai-costs": {
+    "seconds": 790.383,
+    "src": "https://keithwilliams.org/listen/audio/lab-students-ai-costs-7fab50953701.mp3"
+  },
+  "/students/build": {
+    "seconds": 251.757,
+    "src": "https://keithwilliams.org/listen/audio/lab-students-build-b26ad0b71bf5.mp3"
+  },
+  "/students/check": {
+    "seconds": 214.366,
+    "src": "https://keithwilliams.org/listen/audio/lab-students-check-53f2c0c4511d.mp3"
+  },
+  "/students/chunking": {
+    "seconds": 420.839,
+    "src": "https://keithwilliams.org/listen/audio/lab-students-chunking-d434431bc0ed.mp3"
+  },
+  "/students/data-choices": {
+    "seconds": 961.91,
+    "src": "https://keithwilliams.org/listen/audio/lab-students-data-choices-6065fe8821ab.mp3"
+  },
+  "/students/embeddings": {
+    "seconds": 463.73,
+    "src": "https://keithwilliams.org/listen/audio/lab-students-embeddings-ca4e5ef226cb.mp3"
+  },
+  "/students/from-app-studio": {
+    "seconds": 429.602,
+    "src": "https://keithwilliams.org/listen/audio/lab-students-from-app-studio-b2167706d957.mp3"
+  },
+  "/students/library-survey": {
+    "seconds": 488.687,
+    "src": "https://keithwilliams.org/listen/audio/lab-students-library-survey-640ca4fce4cc.mp3"
+  },
+  "/students/plan": {
+    "seconds": 221.628,
+    "src": "https://keithwilliams.org/listen/audio/lab-students-plan-a6b8c14dc23f.mp3"
+  },
+  "/students/prompts": {
+    "seconds": 392.148,
+    "src": "https://keithwilliams.org/listen/audio/lab-students-prompts-aecce8cb7696.mp3"
+  },
+  "/students/reference": {
+    "seconds": 267.754,
+    "src": "https://keithwilliams.org/listen/audio/lab-students-reference-0e2cb615817f.mp3"
+  },
+  "/students/stuck": {
+    "seconds": 249.26,
+    "src": "https://keithwilliams.org/listen/audio/lab-students-stuck-5e1f64ac834d.mp3"
+  },
+  "/validation": {
+    "seconds": 290.258,
+    "src": "https://keithwilliams.org/listen/audio/lab-validation-8539a9b4ab4c.mp3"
+  }
+}
