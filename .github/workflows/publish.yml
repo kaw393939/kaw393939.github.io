@@ -54,6 +54,29 @@ jobs:
           python3 scripts/narration/extract-journal.py --dist docs/.vitepress/dist --out "$RUNNER_TEMP/journal-narration"
           python3 scripts/narration/check-current.py --journal "$RUNNER_TEMP/journal-narration" --lab "$RUNNER_TEMP/lab-narration" --media _spoken_media --dist docs/.vitepress/dist
           python3 scripts/narration/install.py --media _spoken_media --public-dir docs/.vitepress/dist/listen
+      - name: Set up the independent speech check
+        if: steps.editions.outputs.ready == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Cache the listening model
+        if: steps.editions.outputs.ready == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/speech-qa-model
+          key: speech-qa-model-linux-66cfde4ce0b6da9e
+      - name: Transcribe two recordings and check their content
+        if: steps.editions.outputs.ready == 'true'
+        run: |
+          python -m pip install --quiet --only-binary=:all: sherpa-onnx==1.12.33 numpy==1.26.4
+          model=sherpa-onnx-nemo-ctc-en-conformer-small
+          local_model="$RUNNER_TEMP/speech-qa-model"
+          if [[ ! -s "$local_model/$model/model.int8.onnx" ]]; then
+            mkdir -p "$local_model"
+            curl -fsSL --retry 3 "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/$model.tar.bz2" -o "$RUNNER_TEMP/speech-model.tar.bz2"
+            tar -xjf "$RUNNER_TEMP/speech-model.tar.bz2" -C "$local_model" "$model/model.int8.onnx" "$model/tokens.txt"
+          fi
+          python scripts/narration/check-speech.py --model "$local_model/$model" --published _spoken_media --report "$RUNNER_TEMP/speech-qa.json"
       - name: Test real playback in Chrome
         if: steps.editions.outputs.ready == 'true'
         run: node scripts/narration/check-playback.mjs

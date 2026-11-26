@@ -29,6 +29,6 @@ if args.public_dir:
         if src.stat().st_size != row['bytes'] or hashlib.sha256(src.read_bytes()).hexdigest() != row['audioSha256']:
             raise ValueError(f'Corrupt recording: {row["id"]}')
         shutil.copyfile(src, dest/file)
-    for name in ['journal.json','lab.json']:
+    for name in ['journal.json','lab.json','catalog.json']:
         shutil.copyfile(args.media/name, dest/name)
     print(f"{len(catalog['items'])} integrity-checked audio files installed.")

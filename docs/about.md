@@ -40,4 +40,4 @@ If you teach with AI, tell me about a decision you want the learner to make inde
 
 For a reproducible issue with one of my public projects, include the project link and what you observed. [Start a public project conversation](/#conversation)
 
-*Parts of this account first appeared on my [earlier About page](https://eaikw.com/about/).*
+*Parts of this account first appeared on my [earlier About page](https://github.com/kaw393939/eaikw-portfolio-site/blob/e9d1440cac8d1ef3cada374de4ab074c94d87123/src/about.njk).*

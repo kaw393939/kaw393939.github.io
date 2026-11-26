@@ -26,6 +26,8 @@ I use AI-generated illustrations to explain ideas. The author portrait is an AI-
 
 This journal pairs Source Serif 4 for reading with Source Sans 3 for navigation. Frank Grießhammer designed the serif family and Paul D. Hunt designed its sans companion. Both typefaces load from this site. The GitHub and LinkedIn symbols come from Font Awesome Free by Fonticons and link to my public profiles. [Source Serif license](/type/source-serif-4-OFL.txt) · [Source Sans license](/type/source-sans-3-OFL.txt) · [Icon credits and license](/icons/font-awesome-license.txt)
 
+Long articles run in a single reading column. The serif changes shape with its size, so a headline and a paragraph each have room to breathe. Printed handouts keep the author credit and keep headings with the text they introduce. [How Adobe designed the optical sizes](https://fonts.adobe.com/fonts/source-serif-4-display) · [US Web Design System on readable line length](https://designsystem.digital.gov/components/typography/) · [Matthew Butterick on headings and page breaks](https://practicaltypography.com/keep-with-next-paragraph.html)
+
 ## Teaching and reuse
 
 The teacher Studio includes directions for adapting an assignment and identifies which files to give students. For software, images, and third-party readings, check the terms attached to the original work. If you want to republish an article or use an illustration and the terms are unclear, send me the page and a short description of your intended use. [Teacher Studio](https://keithwilliams.org/downloads/AI-Studio-Starter.zip) · [Contact Keith](https://people.njit.edu/profile/kwilliam)
