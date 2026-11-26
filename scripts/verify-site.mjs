@@ -333,13 +333,16 @@ check('Article share enhancements are shipped with clipboard feedback and a manu
   const code = scripts.map(path => readFileSync(resolve(assets, path), 'utf8'))
     .find(js => /clipboard\.writeText\(/.test(js) && js.includes('Copy link'))
   assert.ok(code, 'No shipped article clipboard control')
-  for (const text of ['Article link copied.', 'Select and copy the article link.', 'More sharing options']) {
-    assert.ok(code.includes(text), 'Missing share interaction: ' + text)
-  }
   const component = readFileSync('docs/.vitepress/theme/components/ArticleShare.vue', 'utf8')
-  for (const text of ['aria-live="polite"', 'type="url" readonly', 'field.value?.focus()', 'field.value?.select()']) {
-    assert.ok(component.includes(text), 'Missing accessible copy fallback: ' + text)
+  for (const action of ['copyLink', 'share']) {
+    assert.match(component, new RegExp('<button\\b[^>]*type="button"[^>]*@click="' + action + '"'))
   }
+  assert.match(component, /<input\b[^>]*type="url"[^>]*readonly/)
+  assert.match(component, /role="status"[^>]*aria-live="polite"/)
+  assert.match(component, /field\.value\?\.focus\(/)
+  assert.match(component, /field\.value\?\.select\(/)
+  const shareAnchor = mainContent(feature).match(/<a\b[^>]*href="https:\/\/www\.linkedin\.com\/sharing\/share-offsite\/[^"]+"[^>]*>/)?.[0]
+  assert.ok(shareAnchor && /aria-label="[^"]*LinkedIn[^"]*"/i.test(shareAnchor), 'The sharing control must identify its external destination')
 })
 
 check('Sitemap excludes the error page; error page is noindex', () => {
@@ -448,6 +451,41 @@ check('Public guide links only to approved public destinations', () => {
   assert.ok(guide.includes('fictional'))
   assert.ok(guide.includes('not automatically an approved home'))
 })
+check('Site Notes explains the site practices and is reachable in every portfolio footer', () => {
+  const route = '/site-notes'
+  const html = read('site-notes.html')
+  const main = mainContent(html)
+  const text = renderedText(main)
+  const url = base + route
+  const schema = schemas(html).find(data => data['@type'] === 'WebPage')
+  assert.equal(schema?.url, url)
+  assert.equal(metadata(html, 'og:type'), 'website')
+  assert.match(metadata(html, 'description') || '', /sharing/i)
+  assert.equal(metadata(html, 'og:url'), url)
+  assert.ok(html.includes('rel="canonical" href="' + url + '"'))
+  assert.ok(sitemap.includes('<loc>' + url + '</loc>'))
+  assert.ok(!schemas(html).some(data => data['@type'] === 'Article'))
+  assert.doesNotMatch(main, /class="(?:story-intro|story-share)"/)
+  assert.equal((main.match(/<h1\b/g) || []).length, 1)
+
+  // Verify subject coverage and accountable source/contact routes, not a specific headline or sentence.
+  for (const subject of [/GitHub Pages/i, /IP addresses/i, /search/i, /session/i, /sharing/i,
+    /portrait/i, /AI-assisted/i, /audio/i, /transcript/i, /reuse/i, /accessib|difficult to use/i]) {
+    assert.match(text, subject)
+  }
+  requireLink(main, 'https://people.njit.edu/profile/kwilliam')
+  requireLink(main, 'https://www.linkedin.com/legal/privacy-policy')
+  assert.match(main, /href="https:\/\/docs\.github\.com\/[^"]*(?:#data-collection|privacy-statement)/)
+  assert.match(main, /href="(?:https:\/\/keithwilliams\.org)?\/downloads\/AI-Studio-Starter\.zip"/)
+  for (const page of readdirSync('docs', { recursive: true }).filter(path => path.endsWith('.md') && path !== '404.md' &&
+    !path.split(/[\\/]/).some(part => part.startsWith('.') || part === 'public'))) {
+    const document = read(page.replace(/\.md$/, '.html'))
+    const footer = document.match(/<footer\b[^>]*class="site-footer"[^>]*>([\s\S]*?)<\/footer>/)?.[1] || ''
+    requireLink(footer, route)
+    assert.doesNotMatch(document, /<(?:script|iframe|img)\b[^>]*\bsrc="(?:https?:)?\/\/(?:[\w.-]+\.)?(?:linkedin\.com|licdn\.com)\//i, 'Sharing must not embed LinkedIn as a reader loads ' + page)
+  }
+})
+
 check('Custom domain survives the production build', () => {
   assert.equal(read('CNAME').trim(), 'keithwilliams.org')
 })
@@ -543,7 +581,7 @@ function publicDateFinding(html) {
   for (const value of fields) {
     const text = clean(value)
       // Keep actual references and tool identifiers intact (URLs, file paths, and Rust edition flags).
-      .replace(/\{#[a-z][\w:.-]*\}/gi, ' ')
+      .replace(/\{#[a-z][\w:.-]*\}|\b[A-Z]{1,5}-\d{1,3}(?:\/(?:[A-Z]{1,5}-)?\d{1,3})+\b/g, ' ')
       .replace(/(?:https?:\/\/|www\.)\S+|(?:^|\s)(?:\.\.?\/|\/)[^\s<>]+/gi, ' ')
       .replace(/\b[\w.-]*\d{4}[-.\w]*\.(?:json|csv|pdf|md|png|jpe?g|webp)\b|--edition(?:\s*=\s*|\s+)\d{4}\b|\b(?:RFC|ISO|IEEE)\s+\d{4}(?=\b)/gi, ' ')
     const visibleYear = /(?<![\w/])(?:1[6-9]|20)\d{2}(?:s)?(?![\w/])/i

@@ -32,6 +32,20 @@ export default defineConfig({
   appearance: false,
   markdown: {
     config(md) {
+      md.renderer.rules.table_open = (tokens, index) => {
+        let heading = ''
+        for (let i = index - 1; i >= 0; i--) {
+          if (tokens[i].type === 'heading_open') {
+            heading = (tokens[i + 1].children || [])
+              .filter(token => token.type === 'text' || token.type === 'code_inline')
+              .map(token => token.content).join('').trim()
+            break
+          }
+        }
+        const label = heading ? 'Table: ' + heading : 'Data table'
+        return '<ReaderTable label="' + md.utils.escapeHtml(label) + '"><table>\n'
+      }
+      md.renderer.rules.table_close = () => '</table></ReaderTable>\n'
       md.core.ruler.after('inline', 'article-introduction', state => {
         const path = state.env.relativePath || ''
         if (!articleDesk(path, state.env.frontmatter || {})) return

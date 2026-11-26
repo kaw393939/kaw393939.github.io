@@ -32,6 +32,9 @@ function dismissMenu(event: KeyboardEvent) {
 function handleOutsideClick(event: MouseEvent) {
   if (menuOpen.value && !header.value?.contains(event.target as Node)) closeMenu()
 }
+function closeMenuOnFocusOut(event: FocusEvent) {
+  if (event.relatedTarget instanceof Node && !header.value?.contains(event.relatedTarget)) closeMenu()
+}
 function observeSections() {
   observer?.disconnect()
   currentAnchor.value = ''
@@ -73,7 +76,7 @@ onUnmounted(() => {
 
 <template>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header ref="header" class="site-header">
+  <header ref="header" class="site-header" @focusout="closeMenuOnFocusOut">
     <div class="masthead wrap">
       <a class="wordmark" href="/" aria-label="Keith Williams home">Keith Williams<span aria-hidden="true">.</span></a>
       <p class="masthead-subtitle">A journal of <em>AI, education<br> &amp; engineering.</em></p>
@@ -98,7 +101,7 @@ onUnmounted(() => {
         <p class="eyebrow section-label"><span aria-hidden="true"></span> The teaching issue</p>
         <h1 id="cover-title"><a href="/teaching/when-ai-helps-write-the-code">The Tests Passed.<br><em>Who Won the Game?</em></a></h1>
         <p class="cover-deck">My rock-paper-scissors starter passed twelve tests. It still couldn’t tell you who won. The missing rule became a lesson in what students can check for themselves.</p>
-        <p class="cover-byline">By Keith Williams</p>
+        <p class="cover-byline">By <a href="/about">Keith Williams</a> · NJIT lecturer and software builder</p>
         <a class="read-link" href="/teaching/when-ai-helps-write-the-code">Read the feature <span aria-hidden="true">→</span></a>
       </div>
       <figure class="cover-image">
@@ -181,7 +184,7 @@ onUnmounted(() => {
       <div class="profile-copy">
         <p class="eyebrow section-label"><span aria-hidden="true"></span> About the author</p>
         <h2 id="about-title">I’m Keith Williams.</h2>
-        <p id="approach">I’m a Senior University Lecturer at the New Jersey Institute of Technology and Director of the B.S. Enterprise AI program. I teach students to build software, test it with other people, and explain the choices behind it.</p>
+        <p id="approach">I teach Informatics at NJIT and direct its B.S. in Enterprise AI. In a classroom in Newark or a software project in Zambia, I keep coming back to the same question: how does the person using a system know it worked?</p>
         <div class="profile-links"><a class="inline-link" href="/about">Read my story <span aria-hidden="true">↗</span></a><a class="inline-link" href="/teaching">My teaching approach <span aria-hidden="true">↗</span></a></div>
         <HeroAudio />
       </div>
@@ -217,7 +220,7 @@ onUnmounted(() => {
     <div class="wrap">
       <div class="footer-row">
         <div><a class="footer-name" href="/">Keith Williams<span aria-hidden="true">.</span></a><p>AI, education &amp; engineering</p></div>
-        <nav class="footer-links" aria-label="Footer navigation"><a :href="site.linkedin">LinkedIn</a><a :href="site.github">GitHub</a><a :href="site.faculty">NJIT profile</a><a href="#main">Back to top ↑</a></nav>
+        <nav class="footer-links" aria-label="Footer navigation"><a href="/site-notes">Site notes</a><a :href="site.linkedin">LinkedIn</a><a :href="site.github">GitHub</a><a :href="site.faculty">NJIT profile</a><a href="#main">Back to top ↑</a></nav>
       </div>
       <p class="footer-fine">© Keith Williams <span>Personal website. Views are my own.</span></p>
     </div>

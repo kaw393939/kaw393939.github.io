@@ -1,12 +1,14 @@
 ---
 title: Teaching AI
-description: Explore three NJIT classroom Studios and download a starter for designing AI-assisted assignments where students make and check their own decisions.
-teaser: Give the AI coach one job. Leave the student one decision worth making. Three classroom Studios show what that looks like in practice.
+description: Keith Williams shares his Studio method at NJIT, a guide for faculty and engineering mentors designing AI-assisted assignments people can test and explain.
+teaser: In my NJIT Studios, I decide what the AI coach can handle and which decision a learner needs to own. The distinction matters to anyone who mentors engineers.
 ---
 
 # Teaching AI
 
-After more than two decades at NJIT, I still look forward to handing a student’s work to someone who has never seen it. A classmate trying to buy a T-shirt can find a problem that everyone who built the store missed. The student gets feedback they can use straight away. As their teacher, I get to see how they decide what to change.
+I teach web development, web applications, and content management at NJIT, and I direct the undergraduate Enterprise AI program. Across those settings, I design assignments around a handoff. A classmate tries to buy a T-shirt. A reviewer asks what an automated check actually checked. Watching the person who built the work respond tells me something a finished screen cannot.
+
+This page is for faculty designing AI-assisted assignments and engineers mentoring someone new. Each example has a decision to practice, an artifact to inspect, and a way to tell whether the decision changed the outcome.
 
 ## The Tests Passed. Who Won the Game?
 
@@ -34,6 +36,8 @@ The download includes a worked example, a student handout, and the coach’s ins
 
 ## Learning beyond one assignment
 
-I’m investigating which decisions students can make when the next task looks different. The [research agenda](/research) explains the question. Students choosing a portfolio project can use the [AI career field guide](/ai-careers) to find a responsibility they want to practice.
+The follow-up I care about is what happens on a fresh task, after the coach stops prompting. I describe the comparison I’d like to study in my [research agenda](/research). The [AI career field guide](/ai-careers) connects classroom practice to responsibilities employers assign to engineers.
 
-I publish two tools for people designing their own materials. The Educational Design System provides reusable layouts for course sites. Everyday AI CLI is an alpha command-line toolkit for repeatable AI tasks. [Explore the Educational Design System](https://kaw393939.github.io/educational-design-system/) · [See Everyday AI CLI](https://github.com/kaw393939/everyday-ai-cli)
+If you want to try the Studio in another discipline or a team onboarding exercise, send me the task, the decision you want someone to own, and what you could observe afterward. [Contact me through NJIT](https://people.njit.edu/profile/kwilliam)
+
+I also publish two tools for colleagues building their own materials. The Educational Design System provides reusable layouts for course sites. Everyday AI CLI is an alpha command-line toolkit for repeatable AI tasks. [Explore the Educational Design System](https://kaw393939.github.io/educational-design-system/) · [See Everyday AI CLI](https://github.com/kaw393939/everyday-ai-cli)
