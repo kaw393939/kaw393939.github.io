@@ -165,8 +165,14 @@ try {
     await toggle.press('Enter')
     const methodology = contents.getByRole('link', { name: /methodology/i })
     assert.ok(await methodology.isVisible())
+    const fragment = await methodology.getAttribute('href')
     await methodology.click()
-    await page.waitForFunction(() => document.querySelector(':target')?.tagName === 'H2')
+    await page.waitForFunction(hash => {
+      const heading = document.getElementById(decodeURIComponent(hash.slice(1)))
+      if (location.hash !== hash || heading?.tagName !== 'H2') return false
+      const bounds = heading.getBoundingClientRect()
+      return bounds.bottom > 0 && bounds.top < window.innerHeight
+    }, fragment)
     const collection = page.getByRole('navigation', { name: 'Breadcrumb' })
       .getByRole('link', { name: 'Evidence-Governed AI Systems' })
     assert.equal(await collection.getAttribute('href'), '/research/systems/')
