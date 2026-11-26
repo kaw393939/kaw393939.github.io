@@ -2,13 +2,10 @@
 title: The Tests Passed. Who Won the Game?
 description: A rock-paper-scissors game, an overly helpful AI coach, and a classroom exercise for finding out what a learner can check on their own.
 teaser: "A rock-paper-scissors game taught me where an AI coach should stop talking."
-dateLabel: "November 25, 2026"
 articleGenre: "Classroom feature"
 imageCaption: "Paper covers rock. A green check tells you only what someone thought to test."
 socialImage: /images/editorial/social-rock-paper.jpg
 socialImageAlt: Folded red paper covers a dark stone beside a strip of green check marks.
-datePublished: "2026-11-25"
-dateModified: "2026-11-25"
 ---
 
 # The Tests Passed. Who Won the Game?

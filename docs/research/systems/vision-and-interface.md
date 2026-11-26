@@ -3,7 +3,6 @@ title: "What Should Happen When You Click an AI Citation?"
 description: "A proposed briefing interface connects each claim to its original passage, keeps competing accounts visible, and explains why an assessment changed."
 teaser: "A citation can open a 200-page document and still leave you guessing. A useful briefing should take you to the passage, the interpretation, and the strongest competing account."
 articleGenre: "Interface design proposal"
-dateLabel: "November 2026"
 ---
 
 # What Should Happen When You Click an AI Citation? {#from-claims-to-navigable-knowledge}
@@ -49,7 +48,7 @@ A briefing earns its short form by making qualifications easy to inspect. The in
 
 Give participants the same documents in three interfaces: a document list, an ordinary chat, and a briefing with optional evidence views. Ask them to spot a copied claim, correct an incorrect source link, and explain a changed assessment. Measure accuracy, time, and cognitive load. A graph deserves the space it takes only if readers complete these tasks more effectively with it.
 
-## Related 2026 research
+## Research on claims and entity linking {#related-2026-research}
 
 Vitali and Pasqual’s preprint treats statements as attributable claims with potentially competing interpretations. Kakatkar and Khatib’s working paper examines how to represent and explain the status of claims. A systematic review of Wikidata entity linking addresses disambiguation, including the complications of time and qualified relationships. These are starting points for a comparison. [Provenance-Enhanced Statements](https://arxiv.org/abs/2606.15246) · [Epistemic Knowledge Graphs](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7525242) · [Entity Linking with Wikidata](https://doi.org/10.1145/3795134)
 

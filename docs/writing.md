@@ -13,6 +13,6 @@ teaser: Teaching experiments, career reporting, and engineering essays for peopl
 
 I write about what happens when people give AI real work. The classroom stories start with assignments other teachers can try. The engineering essays trace decisions back to evidence. The career reporting asks what an employer means when a job description says “AI.”
 
-Teaching this week? Take the [Studio starter for teachers](/downloads/AI-Studio-Starter.zip). For the research questions and technical cases behind the essays, visit the [systems research collection](/research/systems/).
+Planning an assignment? Take the [Studio starter for teachers](/downloads/AI-Studio-Starter.zip). For the research questions and technical cases behind the essays, visit the [systems research collection](/research/systems/).
 
 <ArticleIndex />

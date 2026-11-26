@@ -10,13 +10,13 @@ I’m a Senior University Lecturer at the New Jersey Institute of Technology and
 
 ## Where it started
 
-For Christmas in 1983, I got a Tandy TRS-80 Color Computer 2. My father worked as a mainframe systems lead operator at Alcoa. Now I had a machine I could program myself, and I started teaching myself how.
+My first home computer was a Tandy TRS-80 Color Computer 2. My father worked as a mainframe systems lead operator at Alcoa. Now I had a machine I could program myself, and I started teaching myself how.
 
 Later, through AmeriCorps, I taught children about computers at an after-school center in Pittsburgh. I’ve also worked with high schools. I still think about the person sitting down at a computer for the first time, wondering what they’re allowed to try.
 
 ## Building things, teaching people
 
-I started teaching at NJIT as an adjunct in 2002. I’ve developed courses and helped shape the Web and Information Systems program. Along the way I built Showedme.net, a web application framework and learning management system, and Wrkbench, an iOS collaboration app.
+I started teaching at NJIT as an adjunct. I’ve developed courses and helped shape the Web and Information Systems program. Along the way I built Showedme.net, a web application framework and learning management system, and Wrkbench, an iOS collaboration app.
 
 Today my students use AI coding assistants. In the classroom exercises I call Studios, I can give the assistant a job and reserve a decision for the student. A learner can ask for help, test a prediction, and see what they would change. [Try a Studio](/teaching/when-ai-helps-write-the-code)
 
@@ -26,7 +26,7 @@ In Zambia, I taught software engineering and worked with government teams on dig
 
 ## What I’m working on now {#what-im-working-on-now}
 
-I started using ChatGPT shortly after its launch. Two questions have held my attention. How do we tell what someone learned when AI helped them build? How do we trace a confident answer back to the evidence behind it? My [research agenda](/research) describes the studies I’d like to run. The <a href="/knowledge-lab/">Knowledge Lab</a> gives readers a retrieval exercise to try, and my [project portfolio](/#projects) links to the software and teaching materials behind the work.
+Two questions keep coming up in my work with AI. How do we tell what someone learned when AI helped them build? How do we trace a confident answer back to the evidence behind it? My [research agenda](/research) describes the studies I’d like to run. The <a href="/knowledge-lab/">Knowledge Lab</a> gives readers a retrieval exercise to try, and my [project portfolio](/#projects) links to the software and teaching materials behind the work.
 
 I also write about ordinary uses of AI. [Life Tracker](/life-tracker) is the method I use to follow a task from a conversation to a verified result. A separate proposal, EverydayAI Newark, imagines paid workshops helping fund free community learning and opportunities for students to show their work. It is a proposal, not an operating program.
 

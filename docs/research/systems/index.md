@@ -3,7 +3,6 @@ title: "Evidence-Governed AI Systems"
 description: "Explore Keith Williams’s research on tracing AI claims to evidence, sharing scarce review time, and testing which decisions people should keep."
 teaser: "Start with a flawed video export, a repeated witness account, or a queue of decisions. Each exposes a different way an AI system can earn a reader’s trust."
 articleGenre: "Research collection"
-dateLabel: "November 2026"
 ---
 
 # Evidence-Governed AI Systems
@@ -38,4 +37,4 @@ The [preliminary dissertation proposal](./dissertation-proposal) sets out potent
 
 [Chunky Monkey](https://github.com/kaw393939/chunky-monkey-text-chunker) contains document processing and verification code. [MetaVis](https://github.com/kaw393939/metavis-demo-projects) contains a Swift/Metal pipeline and quality checks. A private Ordo Executor prototype implements ingestion and candidate-review contracts.
 
-The [Ordo project](https://github.com/kaw393939/ordo) documents the design for a broader runtime. Its implementation remains planned. In November 2026 the private UAP catalog held 38 metadata records and an acquisition plan. The source collection, labeled benchmark, and evaluation of the combined system are future work. Its reliability, usability, and cost advantages remain open questions.
+The [Ordo project](https://github.com/kaw393939/ordo) documents the design for a broader runtime. Its implementation remains planned. The catalog snapshot described here contains 38 metadata records and an acquisition plan. The source collection, labeled benchmark, and evaluation of the combined system are future work. Its reliability, usability, and cost advantages remain open questions.

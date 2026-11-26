@@ -3,7 +3,6 @@ title: "What Makes a Software Requirement Good Enough for an AI Agent?"
 description: "Turn a user’s request into an observable software requirement, a bounded task for a coding agent, and a test a teammate can run independently."
 teaser: "“The order went through” sounds precise until someone refreshes the page. One extra sentence can make a software requirement testable."
 articleGenre: "Engineering essay"
-dateLabel: "November 2026"
 ---
 
 # What Makes a Software Requirement Good Enough for an AI Agent? {#english-as-a-higher-abstraction-in-software-engineering}

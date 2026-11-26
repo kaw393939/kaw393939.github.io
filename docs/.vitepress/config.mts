@@ -45,12 +45,21 @@ export default defineConfig({
   },
   sitemap: {
     hostname: site.url,
-    transformItems: items => items.filter(item => !/(^|\/)404(?:\.html)?\/?$/.test(item.url))
+    transformItems: items => items
+      .filter(item => !/(^|\/)404(?:\.html)?\/?$/.test(item.url))
+      .map(({ lastmod, ...item }) => item)
   },
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     ['meta', { name: 'theme-color', content: '#f3f0e8' }]
   ],
+  transformPageData(page) {
+    // Keep editorial dates out of the client-side navigation payload as well as the page itself.
+    for (const key of ['date', 'dateLabel', 'datePublished', 'dateModified', 'lastUpdated']) {
+      delete page.frontmatter[key]
+    }
+    delete page.lastUpdated
+  },
   transformHead({ pageData }) {
     const path = pageData.relativePath
     if (path === '404.md') return [] // The error page sets noindex in its own frontmatter.
@@ -71,8 +80,6 @@ export default defineConfig({
     const imageUrl = new URL(social.path, homeUrl).href
     const imageAlt = social.alt
     const author = { '@type': 'Person', '@id': person['@id'], name: site.name, url: homeUrl }
-    const published = pageData.frontmatter.datePublished
-    const modified = pageData.frontmatter.dateModified
     const head: HeadConfig[] = [
       ['link', { rel: 'canonical', href: url }],
       ['meta', { property: 'og:type', content: profile ? 'profile' : article ? 'article' : 'website' }],
@@ -103,17 +110,13 @@ export default defineConfig({
       head.push(jsonLd({
         '@type': 'Article', '@id': `${url}#article`, ...common, headline: pageData.title,
         author, image: imageUrl, mainEntityOfPage: url, articleSection: desk,
-        abstract: shareDescription, publisher: author,
-        ...(published ? { datePublished: published } : {}),
-        ...(modified ? { dateModified: modified } : {})
+        abstract: shareDescription, publisher: author
       }))
       head.push(
         ['meta', { name: 'author', content: site.name }],
         ['meta', { property: 'article:author', content: site.url + '/about' }],
         ['meta', { property: 'article:section', content: desk }]
       )
-      if (published) head.push(['meta', { property: 'article:published_time', content: String(published) }])
-      if (modified) head.push(['meta', { property: 'article:modified_time', content: String(modified) }])
     } else {
       head.push(jsonLd({ '@type': collection ? 'CollectionPage' : 'WebPage', ...common, name: pageData.title, author }))
     }

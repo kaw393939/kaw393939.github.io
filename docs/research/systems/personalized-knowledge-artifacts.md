@@ -3,7 +3,6 @@ title: "Can One Set of Evidence Support a Lesson, a Briefing, and a Podcast?"
 description: "Follow the engineering work from document chunking to media review and a proposal for producing personalized material people can trace to its sources."
 teaser: "A commuter might want the two-minute audio version. A teacher might want a diagram. What happens to the one uncertainty both audiences need to hear?"
 articleGenre: "Research essay"
-dateLabel: "November 2026"
 ---
 
 # Can One Set of Evidence Support a Lesson, a Briefing, and a Podcast? {#from-personalized-knowledge-artifacts-to-governed-ai-systems}
@@ -20,12 +19,12 @@ A graph can map those relationships. Text and vector search can retrieve the mat
 
 ## How my projects explored this
 
-- **December 2024.** Chunky Monkey splits documents into manageable pieces and preserves metadata, hashes, and verification records. Before asking a model to explain a passage, I need to be able to find that same passage again. [Chunky Monkey](https://github.com/kaw393939/chunky-monkey-text-chunker)
-- **December 2025.** MetaVis combines native Swift and Metal media processing with sensor measurements, reference tests, and optional Gemini review. An editor can describe a desired change in words while code limits what the change can do. [MetaVis](https://github.com/kaw393939/metavis-demo-projects)
-- **2026.** Ordo and a private Ordo Executor prototype moved the inquiry toward source manifests, proposed claims, and explicit decisions to admit them to a shared record. The public Ordo repository documents a broader design whose Elixir runtime remains planned. [Ordo](https://github.com/kaw393939/ordo)
-- **November 2026.** My private UAP catalog identifies sources for later acquisition. Conflicting accounts and repeated testimony make it a useful candidate for future evaluation. The entries are metadata and leads.
+- **Document processing.** Chunky Monkey splits documents into manageable pieces and preserves metadata, hashes, and verification records. Before asking a model to explain a passage, I need to be able to find that same passage again. [Chunky Monkey](https://github.com/kaw393939/chunky-monkey-text-chunker)
+- **Media evaluation.** MetaVis combines native Swift and Metal media processing with sensor measurements, reference tests, and optional Gemini review. An editor can describe a desired change in words while code limits what the change can do. [MetaVis](https://github.com/kaw393939/metavis-demo-projects)
+- **Workflow design.** Ordo and a private Ordo Executor prototype moved the inquiry toward source manifests, proposed claims, and explicit decisions to admit them to a shared record. The public Ordo repository documents a broader design whose Elixir runtime remains planned. [Ordo](https://github.com/kaw393939/ordo)
+- **Corpus planning.** My private UAP catalog identifies sources for later acquisition. Conflicting accounts and repeated testimony make it a useful candidate for future evaluation. The entries are metadata and leads.
 
-These dates refer to repository records. They mark a sequence of engineering questions rather than the first appearance of the ideas in the field.
+Each repository shows which part of the research question I explored. The linked work lets a reader inspect the evidence behind that progression.
 
 ## What I mean by reliability
 

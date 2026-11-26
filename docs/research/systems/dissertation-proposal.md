@@ -2,8 +2,6 @@
 title: Preliminary Doctoral Dissertation Proposal
 description: Keith Williams proposes three studies to test how an AI system can trace claims to sources and decide which cases deserve an expert’s time.
 teaser: Five stories repeat one witness. Is that enough evidence to put a claim in an AI briefing? A proposed study asks who should decide and what that review costs.
-dateLabel: November 19, 2026
-datePublished: "2026-11-19"
 articleGenre: Preliminary doctoral research proposal
 ---
 
@@ -30,15 +28,15 @@ I started with a teaching problem. A student might benefit from an audio explana
 
 These projects supplied parts of the problem and some of the tools I could test.
 
-| Period | Existing repository evidence | Research relevance |
+| Engineering stage | Existing repository evidence | Research relevance |
 | --- | --- | --- |
-| December 2024 | [Chunky Monkey](https://github.com/kaw393939/chunky-monkey-text-chunker): token-aware segmentation, metadata, hashing, verification | Make large information sources inspectable and reusable |
-| December 2025 | [MetaVis](https://github.com/kaw393939/metavis-demo-projects): Swift/Metal rendering, sensor evidence, deterministic QC, Gemini qualitative review, bounded QA loops | Explore measured versus probabilistic evaluation of generated media |
-| February–May 2026 | [Studio Ordo](https://github.com/kaw393939/ordostudio), Ordo Executor (private prototype): agent evals, modular executors, source/candidate/review/promotion contracts | Convert interpretations into auditable, governed workflows |
-| July 2026 | [Ordo](https://github.com/kaw393939/ordo): Race Track/Pit Stop and human review doctrine | Formalize permission and attention constraints; runtime remains proposed |
-| November 2026 | UAP Corpus (private research catalog): metadata catalog and provenance-first acquisition design | Stress-test conflicting sources and duplicate testimony |
+| Document processing | [Chunky Monkey](https://github.com/kaw393939/chunky-monkey-text-chunker): token-aware segmentation, metadata, hashing, verification | Make large information sources inspectable and reusable |
+| Media evaluation | [MetaVis](https://github.com/kaw393939/metavis-demo-projects): Swift/Metal rendering, sensor evidence, deterministic QC, Gemini qualitative review, bounded QA loops | Explore measured versus probabilistic evaluation of generated media |
+| Review workflows | [Studio Ordo](https://github.com/kaw393939/ordostudio), Ordo Executor (private prototype): agent evals, modular executors, source/candidate/review/promotion contracts | Convert interpretations into auditable, governed workflows |
+| Decision authority | [Ordo](https://github.com/kaw393939/ordo): Race Track/Pit Stop and human review doctrine | Formalize permission and attention constraints; runtime remains proposed |
+| Corpus design | UAP Corpus (private research catalog): metadata catalog and provenance-first acquisition design | Stress-test conflicting sources and duplicate testimony |
 
-The dates mark repository records. MetaVis includes executable tests. The combined AEGO architecture and the claims about its performance still await implementation and evaluation.
+The links document the engineering work behind each stage. MetaVis includes executable tests. The combined AEGO architecture and the claims about its performance still await implementation and evaluation.
 
 ## 2. Problem statement
 
@@ -123,11 +121,11 @@ The system must recognize its own derivatives. Generating three new briefings fr
 
 ## 5. Methodology
 
-The three studies follow the **design science research** approach described by Hevner and colleagues (2004). Each tests part of a working artifact against a simpler approach. The results would guide revisions to the software and to the underlying explanation of when it should work.
+The three studies follow the **design science research** approach described by Hevner and colleagues. Each tests part of a working artifact against a simpler approach. The results would guide revisions to the software and to the underlying explanation of when it should work.
 
 ### Study A — Sensor evidence and knowledge construction
 
-**Why UAP:** government and historical UAP records form a difficult testbed for source lineage, multimodal attribution, entity disambiguation, conflicting claims, event versus publication dates, uncertainty and changing releases. NASA's [2023 study](https://www.nasa.gov/wp-content/uploads/2023/09/uap-independent-study-team-final-report-0.pdf) identified missing sensor metadata/calibration as real limitations. The [National Archives RG 615](https://www.archives.gov/research/topics/uaps/rg-615) provides an official collection updated as records arrive. The goal is **faithfulness to evidence**, not adjudicating extraordinary explanations. A second labeled benchmark is mandatory for quantitative ground truth. See [research testbed rationale](./uap-research-testbed).
+**Why UAP:** government and historical UAP records form a difficult testbed for source lineage, multimodal attribution, entity disambiguation, conflicting claims, event versus publication dates, uncertainty and changing releases. NASA's [independent study](https://www.nasa.gov/wp-content/uploads/2023/09/uap-independent-study-team-final-report-0.pdf) identified missing sensor metadata/calibration as real limitations. The [National Archives RG 615](https://www.archives.gov/research/topics/uaps/rg-615) provides an official collection updated as records arrive. The goal is **faithfulness to evidence**, not adjudicating extraordinary explanations. A second labeled benchmark is mandatory for quantitative ground truth. See [research testbed rationale](./uap-research-testbed).
 
 
 
@@ -171,20 +169,20 @@ Include error analysis for systematic overconfidence, correlated sources, inacce
 
 Established foundations include:
 
-- [W3C PROV-O](https://www.w3.org/TR/prov-o/) (2013) — provenance;
-- [GraphRAG](https://arxiv.org/abs/2404.16130) (2024) — graph-based corpus summarization;
-- [Learning to Defer](https://proceedings.mlr.press/v119/mozannar20b.html) (Mozannar and Sontag, 2020) — algorithmic allocation to experts;
-- [GRACE](https://aclanthology.org/2026.akbc-1.16/) (Yi, Minot, and Lee, 2026) — expert attention in graph knowledge expansion;
-- [Provenance-Enhanced Statements](https://arxiv.org/abs/2606.15246) (Vitali and Pasqual, 2026 preprint) — attributed claims and competing epistemic stances;
-- [Epistemic Knowledge Graphs](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7525242) (Kakatkar and Khatib, 2026 working paper) — epistemic status and provenance-aware explanations;
-- [Ontology-guided neuro-symbolic GraphRAG](https://link.springer.com/article/10.1007/s00521-026-12495-0) (2026) — independent empirical comparison with explicit source-traceability measures;
+- [W3C PROV-O](https://www.w3.org/TR/prov-o/) — provenance;
+- [GraphRAG](https://arxiv.org/abs/2404.16130) — graph-based corpus summarization;
+- [Learning to Defer](https://proceedings.mlr.press/v119/mozannar20b.html) (Mozannar and Sontag) — algorithmic allocation to experts;
+- [GRACE](https://aclanthology.org/2026.akbc-1.16/) (Yi, Minot, and Lee) — expert attention in graph knowledge expansion;
+- [Provenance-Enhanced Statements](https://arxiv.org/abs/2606.15246) (Vitali and Pasqual, preprint) — attributed claims and competing epistemic stances;
+- [Epistemic Knowledge Graphs](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7525242) (Kakatkar and Khatib, working paper) — epistemic status and provenance-aware explanations;
+- [Ontology-guided neuro-symbolic GraphRAG](https://link.springer.com/article/10.1007/s00521-026-12495-0) — independent empirical comparison with explicit source-traceability measures;
 - [ICD 203](https://www.intelligence.gov/mission/our-values/objectivity) — established analytic tradecraft for source quality, uncertainty and alternatives;
-- [G-Eval](https://aclanthology.org/2023.emnlp-main.153/) (2023) — LLM-based qualitative evaluation;
-- [Payton et al.](https://doi.org/10.1145/1734229.1734231) (2010) — semantic self-assessment and achieved fidelity of query results;
-- [Deek et al.](https://digitalcommons.njit.edu/fac_pubs/16112/) (1999) — structured software problem solving and program development;
-- [Sylla and Wen](https://digitalcommons.njit.edu/fac_pubs/14771/) (2002) — multi-objective/multi-criteria decision evaluation;
-- [Grandhi and Jones](https://digitalcommons.njit.edu/fac_pubs/6913/) (2015) — interruption decision-making with contextual information;
-- [Hevner et al.](https://aisel.aisnet.org/misq/vol28/iss1/6/) (2004) — design science in information systems.
+- [G-Eval](https://aclanthology.org/2023.emnlp-main.153/) — LLM-based qualitative evaluation;
+- [Payton et al.](https://doi.org/10.1145/1734229.1734231) — semantic self-assessment and achieved fidelity of query results;
+- [Deek et al.](https://digitalcommons.njit.edu/fac_pubs/16112/) — structured software problem solving and program development;
+- [Sylla and Wen](https://digitalcommons.njit.edu/fac_pubs/14771/) — multi-objective/multi-criteria decision evaluation;
+- [Grandhi and Jones](https://digitalcommons.njit.edu/fac_pubs/6913/) — interruption decision-making with contextual information;
+- [Hevner et al.](https://aisel.aisnet.org/misq/vol28/iss1/6/) — design science in information systems.
 
 The proposed contribution is a documented algorithm and reference architecture joining sensor-reported evidence quality, policy commissioning, consequence-sensitive review and capacity-aware knowledge promotion. A systematic review must first establish what existing systems already demonstrate. Controlled comparisons would then show whether adding these pieces together buys anything in practice.
 
@@ -192,7 +190,7 @@ The proposed contribution is a documented algorithm and reference architecture j
 
 This is a proposed intellectual alignment, not an indication of commitment by faculty.
 
-- **Jamie Payton, Dean, Ying Wu College of Computing:** a **secondary, bounded connection** through adaptive queries and reporting achieved consistency guarantees in dynamic mobile/sensor networks, plus computing education. Her 2009–2010 work does **not** directly investigate truthfulness of AI-generated claims, provenance-aware graph promotion, or expert-attention routing. Its applicability must be demonstrated, not assumed.
+- **Jamie Payton, Dean, Ying Wu College of Computing:** a **secondary, bounded connection** through adaptive queries and reporting achieved consistency guarantees in dynamic mobile/sensor networks, plus computing education. Her cited work on adaptive queries does **not** directly investigate truthfulness of AI-generated claims, provenance-aware graph promotion, or expert-attention routing. Its applicability must be demonstrated, not assumed.
 - **Fadi P. Deek:** problem solving, software development processes, cognitive and collaborative evaluation; useful for the methodology and agent-engineering experiments.
 - **Cheickna Sylla:** multi-criteria decision modeling and technology evaluation; relevant to consequence, cost and review-routing policies.
 - **Michael A. Ehrlich:** innovation and financial decision-making; relevant to the economics of expert attention and the viability of high-value applications.

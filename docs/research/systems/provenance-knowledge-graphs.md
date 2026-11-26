@@ -3,7 +3,6 @@ title: "Six Articles, One Witness"
 description: "See how a proposed graph and vector search system would follow a claim back to its origin, distinguish repeated testimony, and retain competing accounts."
 teaser: "A search returns six accounts of an event. If all six quote the same interview, how many independent witnesses should a briefing report?"
 articleGenre: "Research proposal and corpus case study"
-dateLabel: "November 2026"
 ---
 
 # Six Articles, One Witness {#from-messy-multimodal-sources-to-qualified-knowledge}
@@ -31,7 +30,7 @@ I would retrieve the small set of relevant relationships, then return to the sou
 
 ## UAP corpus as a difficult case
 
-On November 12, 2026, my private UAP research catalog held **38 metadata records and leads**. They include government archives, hearings, books, scientific papers, and first- or secondhand accounts. The original files had yet to be acquired. The proposed claim network is a design.
+The reviewed snapshot of my private UAP research catalog contains **38 metadata records and leads**. They include government archives, hearings, books, scientific papers, and first- or secondhand accounts. The original files had yet to be acquired. The proposed claim network is a design.
 
 For a pilot, I would start with a small rights-cleared selection such as a government report and a hearing transcript. Label the event date separately from the dates of testimony and publication. Ask annotators which statements quote a witness, which restate another publication, and which supply independent observations. These labels let us score attribution and source copying even when the cause of an event is unknown.
 

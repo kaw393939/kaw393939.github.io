@@ -98,7 +98,7 @@ onUnmounted(() => {
         <p class="eyebrow section-label"><span aria-hidden="true"></span> The teaching issue</p>
         <h1 id="cover-title"><a href="/teaching/when-ai-helps-write-the-code">The Tests Passed.<br><em>Who Won the Game?</em></a></h1>
         <p class="cover-deck">My rock-paper-scissors starter passed twelve tests. It still couldn’t tell you who won. The missing rule became a lesson in what students can check for themselves.</p>
-        <p class="cover-byline">By Keith Williams <span aria-hidden="true">/</span> <time datetime="2026-11-25">November 25, 2026</time></p>
+        <p class="cover-byline">By Keith Williams</p>
         <a class="read-link" href="/teaching/when-ai-helps-write-the-code">Read the feature <span aria-hidden="true">→</span></a>
       </div>
       <figure class="cover-image">
@@ -190,8 +190,8 @@ onUnmounted(() => {
     <section id="zambia" class="archive-section wrap" aria-labelledby="archive-title">
       <div class="section-rule"><h2 id="archive-title">From the archive</h2></div>
       <div class="archive-grid">
-        <article v-for="experience in zambiaExperience" :key="experience.year" class="experience-entry">
-          <p class="eyebrow">Zambia · {{ experience.year }}</p><h3><a :href="experience.href">{{ experience.title }}</a></h3>
+        <article v-for="experience in zambiaExperience" :key="experience.href" class="experience-entry">
+          <p class="eyebrow">Zambia</p><h3><a :href="experience.href">{{ experience.title }}</a></h3>
           <p>{{ experience.text }}</p><a class="inline-link" :href="experience.href">{{ experience.linkLabel }} <span aria-hidden="true">↗</span></a>
         </article>
         <article><p class="eyebrow">NJIT News</p><h3><a href="https://news.njit.edu/njit-faculty-artificial-intelligence-learning-opportunity">Artificial intelligence as a learning opportunity</a></h3>
@@ -219,7 +219,7 @@ onUnmounted(() => {
         <div><a class="footer-name" href="/">Keith Williams<span aria-hidden="true">.</span></a><p>AI, education &amp; engineering</p></div>
         <nav class="footer-links" aria-label="Footer navigation"><a :href="site.linkedin">LinkedIn</a><a :href="site.github">GitHub</a><a :href="site.faculty">NJIT profile</a><a href="#main">Back to top ↑</a></nav>
       </div>
-      <p class="footer-fine">© {{ new Date().getFullYear() }} Keith Williams <span>Personal website. Views are my own.</span></p>
+      <p class="footer-fine">© Keith Williams <span>Personal website. Views are my own.</span></p>
     </div>
   </footer>
 </template>

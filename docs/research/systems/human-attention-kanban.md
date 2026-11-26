@@ -3,7 +3,6 @@ title: "Human Attention as an Engineering Constraint"
 description: "A practical way to evaluate AI review queues by expert time, error costs, and how much reliable work reaches the people who need it."
 teaser: "An agent can produce another ten drafts while a reviewer reads the first one. How can a team tell whether it is getting more useful work done?"
 articleGenre: "Research and economics essay"
-dateLabel: "November 2026"
 ---
 
 # Human Attention as an Engineering Constraint
@@ -22,7 +21,7 @@ Keep the full history in the underlying system. Give reviewers a board of cases,
 
 **Total expected cost = computation + expert review + consequences of errors + recovery.**
 
-Take the ambiguous name. A reviewer can resolve today’s case. If hundreds of similar cases keep arriving, that reviewer might spend the same time evaluating a narrowly defined matching rule. The second option becomes attractive only after the rule works on held-out records and someone with authority approves its use. Sample its automatic decisions afterward to find errors the rule itself misses.
+Take the ambiguous name. A reviewer can resolve the individual case. If hundreds of similar cases keep arriving, that reviewer might spend the same time evaluating a narrowly defined matching rule. The second option becomes attractive only after the rule works on held-out records and someone with authority approves its use. Sample its automatic decisions afterward to find errors the rule itself misses.
 
 The least expensive next step might be a database lookup, a local model, a more capable model, or a person. The price of a model call is only one term in that equation.
 

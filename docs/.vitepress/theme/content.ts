@@ -118,17 +118,15 @@ export const projects = [
 
 export const zambiaExperience = [
   {
-    year: '2019',
     title: 'Teaching at ZCAS University',
     text: 'I taught an intensive progressive web app workshop for university staff and students in Zambia. Participants began developing a student-registration app, connecting mobile development lessons to a practical university need.',
     href: 'https://news.njit.edu/inspiring-students-njit-africa',
-    linkLabel: 'Read the 2019 NJIT story'
+    linkLabel: 'Read the ZCAS workshop story'
   },
   {
-    year: '2020',
     title: 'Supporting digital public services',
     text: 'NJIT reported on my work with Zambia’s Ministry of Finance to help digitize government systems, introduce agile development, and bring lessons from the work back into my NJIT teaching.',
     href: 'https://news.njit.edu/njit-lecturer-helps-digitize-government-services-zambia',
-    linkLabel: 'Read the 2020 NJIT story'
+    linkLabel: 'Read the public services story'
   }
 ]

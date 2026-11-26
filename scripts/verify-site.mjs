@@ -301,12 +301,6 @@ check('Every article has its own illustrated teaser, canonical sharing link and 
     assert.equal(article.description, description, path)
     assert.ok(!teasers.has(label) && !descriptions.has(description), 'Reused teaser or description: ' + path)
     teasers.add(label); descriptions.add(description)
-    for (const [key, property] of [['datePublished', 'article:published_time'], ['dateModified', 'article:modified_time']]) {
-      const date = fm.match(new RegExp('^' + key + ':\\s*["\']?(\\d{4}-\\d{2}-\\d{2})', 'm'))?.[1]
-      assert.equal(article[key]?.slice(0, 10), date, path + ' ' + key)
-      assert.equal(metadata(html, property)?.slice(0, 10), date, path + ' ' + property)
-    }
-
     assert.equal(article.url, canonical)
     assert.equal(article.mainEntityOfPage, canonical)
     assert.equal(metadata(html, 'og:url'), canonical)
@@ -350,6 +344,7 @@ check('Article share enhancements are shipped with clipboard feedback and a manu
 
 check('Sitemap excludes the error page; error page is noindex', () => {
   assert.ok(!sitemap.includes('/404'))
+  assert.doesNotMatch(sitemap, /<lastmod\b/i, 'Sitemap must be date-free')
   assert.ok((sitemap.match(/<loc>/g) || []).length >= 17, 'Sitemap should include the expanded research site')
   assert.ok(sitemap.includes('/teaching'))
   assert.ok(sitemap.includes('/research'))
@@ -458,7 +453,7 @@ check('Custom domain survives the production build', () => {
 })
 check('Personal story is sourced and proposals are distinguished from accomplishments', () => {
   const about = read('about.html')
-  for (const text of ['TRS-80', '1983', 'Alcoa', 'AmeriCorps', 'Showedme.net', 'Wrkbench', 'not an operating program']) assert.ok(about.includes(text), text)
+  for (const text of ['TRS-80', 'Alcoa', 'AmeriCorps', 'Showedme.net', 'Wrkbench', 'not an operating program']) assert.ok(about.includes(text), text)
   assert.ok(home.includes('href="/about"'))
   assert.ok(about.includes('rel="canonical" href="https://keithwilliams.org/about"'))
   assert.ok(sitemap.includes('/about'))
@@ -475,7 +470,7 @@ for (const width of [480, 960, 1200]) {
 check('AI careers guide has discoverability, provenance, eligibility and SEO', () => {
   const careers = read('ai-careers.html')
   assert.equal((careers.match(/<h1\b/g) || []).length, 1)
-  for (const phrase of ['November 12, 2026', 'November 20, 2026', 'annualized', 'experienced professional roles', 'not market averages', 'No employer affiliation']) assert.ok(careers.includes(phrase), phrase)
+  for (const phrase of ['annualized', 'experienced professional roles', 'not market averages', 'No employer affiliation']) assert.ok(careers.includes(phrase), phrase)
   for (const host of ['www.google.com', 'nvidia.wd5.myworkdayjobs.com', 'jobs.lever.co', 'openai.com', 'job-boards.greenhouse.io']) assert.ok(careers.includes(host), host)
   assert.ok(careers.includes('https://keithwilliams.org/ai-careers'))
   assert.ok(careers.includes('application/ld+json'))
@@ -486,7 +481,12 @@ check('AI careers guide has discoverability, provenance, eligibility and SEO', (
 
 check('Career skills report has 50 distinct sourced descriptions and honest limits', () => {
   const careers = read('ai-careers.html')
-  const dataset = JSON.parse(read('research/ai-careers-2026-11-12.json'))
+  const resource = 'research/ai-careers.json'
+  const legacyResource = 'research/ai-careers-2026-11-12.json'
+  const publicData = read(resource)
+  assert.equal(read(legacyResource), publicData, 'Legacy data URL must preserve compatibility')
+  assert.doesNotMatch(publicData, /"checked_date"\s*:/)
+  const dataset = JSON.parse(publicData)
   assert.equal(dataset.families.length, 5)
   const postings = dataset.families.flatMap(f => f.postings)
   assert.equal(postings.length, 50)
@@ -496,12 +496,74 @@ check('Career skills report has 50 distinct sourced descriptions and honest limi
     for (const count of Object.values(family.counts)) assert.ok(count >= 0 && count <= 10)
     for (const p of family.postings) {
       assert.ok(p.url.startsWith('https://') && p.evidence && p.status && p.skills.length)
-      assert.equal(p.checked_date, '2026-11-12')
     }
   }
-  for (const phrase of ['50 real posting descriptions', 'purposive convenience sample', 'current application status unconfirmed', 'expected-fill date', 'not hiring guarantees']) assert.ok(careers.includes(phrase), phrase)
+  for (const phrase of ['50 real posting descriptions', 'purposive convenience sample', 'application status unconfirmed', 'not hiring guarantees']) assert.ok(careers.includes(phrase), phrase)
   assert.equal((careers.match(/class="career-evidence"/g) || []).length, 5)
-  assert.ok(careers.includes('/research/ai-careers-2026-11-12.json'))
+  requireLink(mainContent(careers), '/' + resource)
+  assert.ok(!mainContent(careers).includes('/' + legacyResource), 'Readers should use the stable resource URL')
+})
+
+function publicDateFinding(html) {
+  // Strip non-visible program data before inspecting reader-facing copy and accessible labels.
+  const head = html.match(/<head\b[^>]*>([\s\S]*?)<\/head>/i)?.[1] || ''
+  const body = (html.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)?.[1] || '')
+    .replace(/<!--[^]*?-->/g, '').replace(/<(script|style|template)\b[^>]*>[\s\S]*?<\/\1>/gi, '')
+  const clean = value => value.replace(/&(?:amp|quot|#39|apos|nbsp|#160|#xA0);/gi,
+    entity => ({ '&amp;': '&', '&quot;': '"', '&#39;': "'", '&apos;': "'", '&nbsp;': ' ', '&#160;': ' ', '&#xa0;': ' ' })[entity.toLowerCase()])
+    .replace(/[\s\u200b]+/g, ' ').trim()
+  const fields = [body.replace(/<[^>]*>/g, ' '), head.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1] || '']
+  for (const match of body.matchAll(/<[a-z][^>]*>/gi)) {
+    for (const attr of match[0].matchAll(/\s(?:alt|title|aria-label|placeholder|datetime)="([^"]*)"/gi)) fields.push(attr[1])
+  }
+  const timestamp = /^(?:(?:article|og|video|book|music):(?:published_time|modified_time|updated_time|release_date|expiration_time)|(?:(?:dc|dcterms)[.:])?(?:date(?:created|published|modified|issued|updated)?|created|modified|issued)|last-modified|pubdate)$/i
+  for (const [tag] of head.matchAll(/<meta\b[^>]*>/gi)) {
+    const key = tag.match(/\s(?:name|property|http-equiv)="([^"]+)"/i)?.[1] || ''
+    if (timestamp.test(key)) return 'publishing timestamp metadata: ' + key
+    if (/^(?:(?:og|twitter):(?:title|description|image:alt)|description)$/i.test(key)) {
+      fields.push(tag.match(/\scontent="([^"]+)"/i)?.[1] || '')
+    }
+  }
+  for (const [, json] of head.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)) {
+    const visit = item => {
+      if (!item || typeof item !== 'object') return undefined
+      for (const [key, value] of Object.entries(item)) {
+        if (/^(?:date(?:Published|Modified|Created|Updated)|uploadDate|releaseDate|copyrightYear|sdDatePublished)$/.test(key)) return key
+        if (typeof value === 'string' && /^(?:description|headline|abstract|caption|name)$/.test(key)) fields.push(value)
+        const found = visit(value)
+        if (found) return found
+      }
+    }
+    const bad = visit(JSON.parse(json))
+    if (bad) return 'publishing timestamp in structured data: ' + bad
+  }
+  const month = '(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)'
+  const day = '(?:0?[1-9]|[12]\\d|3[01])(?:st|nd|rd|th)?'
+  const exact = new RegExp('\\b(?:' + month + '\\.?\\s+(?:the\\s+)?' + day + '|' + day + '\\s+(?:of\\s+)?' + month + '|(?:0?[1-9]|1[0-2])[/.-](?:0?[1-9]|[12]\\d|3[01])[/.-](?:\\d{4}|\\d{2})|(?:0?[1-9]|[12]\\d|3[01])/(?:0?[1-9]|1[0-2])/(?:(?:\\d{4}|\\d{2})))\\b', 'i')
+  for (const value of fields) {
+    const text = clean(value)
+      // Keep actual references and tool identifiers intact (URLs, file paths, and Rust edition flags).
+      .replace(/\{#[a-z][\w:.-]*\}/gi, ' ')
+      .replace(/(?:https?:\/\/|www\.)\S+|(?:^|\s)(?:\.\.?\/|\/)[^\s<>]+/gi, ' ')
+      .replace(/\b[\w.-]*\d{4}[-.\w]*\.(?:json|csv|pdf|md|png|jpe?g|webp)\b|--edition(?:\s*=\s*|\s+)\d{4}\b|\b(?:RFC|ISO|IEEE)\s+\d{4}(?=\b)/gi, ' ')
+    const visibleYear = /(?<![\w/])(?:1[6-9]|20)\d{2}(?:s)?(?![\w/])/i
+    const iso = /\b(?:1[6-9]|20)\d{2}[-/](?:0[1-9]|1[0-2])[-/](?:0[1-9]|[12]\d|3[01])\b/
+    const spelledMonth = /\b(?:January|February|April|June|July|August|September|October|November|December)\b/
+    const monthContext = /\b(?:in|by|since|during|until|through|of|from|each|every|last|this|next)\s+(?:May|March)\b/
+    const shortDate = /\b(?:dated?|updated?|on|due|checked|deadline|as of|posted)\s+(?:0?[1-9]|1[0-2])\/(?:0?[1-9]|[12]\d|3[01])\b/i
+    const date = text.match(iso) || text.match(exact) || text.match(visibleYear) ||
+      text.match(spelledMonth) || text.match(monthContext) || text.match(shortDate)
+    if (date) return 'reader-facing date: ' + text.slice(Math.max(0, date.index - 26), date.index + date[0].length + 25)
+  }
+}
+
+check('Public copy, accessible labels and sharing previews omit calendar dates', () => {
+  const problems = []
+  for (const file of readdirSync(dist, { recursive: true }).filter(file => file.endsWith('.html'))) {
+    const problem = publicDateFinding(read(file))
+    if (problem) problems.push(file + ': ' + problem)
+  }
+  assert.deepEqual(problems, [])
 })
 
 console.log(`\n${checks.length} static checks passed. Browser and real-device checks remain separate.`)

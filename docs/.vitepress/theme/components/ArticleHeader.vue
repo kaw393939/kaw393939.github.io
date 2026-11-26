@@ -8,19 +8,13 @@ import ArticleShare from './ArticleShare.vue'
 const { page, frontmatter } = useData()
 const media = computed(() => articleMedia(page.value.relativePath, frontmatter.value).cover)
 const url = computed(() => site.url + pageRoute(page.value.relativePath))
-const dateLabel = computed(() => {
-  if (frontmatter.value.dateLabel) return frontmatter.value.dateLabel
-  const date = frontmatter.value.datePublished
-  if (!date) return ''
-  return new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(date))
-})
 </script>
 
 <template>
   <div class="story-intro">
     <p class="article-deck">{{ frontmatter.teaser || page.description }}</p>
     <p class="byline">
-      <a href="/about">{{ site.name }}</a><template v-if="frontmatter.articleGenre"> · {{ frontmatter.articleGenre }}</template><template v-if="dateLabel"> · {{ dateLabel }}</template>
+      <a href="/about">{{ site.name }}</a><template v-if="frontmatter.articleGenre"> · {{ frontmatter.articleGenre }}</template>
     </p>
     <ArticleShare :key="url" :url="url" :title="page.title" />
     <figure class="story-cover editorial-figure">

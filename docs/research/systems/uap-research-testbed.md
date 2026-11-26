@@ -3,7 +3,6 @@ title: "What Can an AI System Actually Verify About a UAP Report?"
 description: "Historical UAP records offer a way to test AI source attribution, copied accounts, and changing assessments alongside an independently labeled benchmark."
 teaser: "Three newspapers can quote one witness. An archive can preserve all three. The question an AI researcher can score is whether a system knows the difference."
 articleGenre: "Research methods essay"
-dateLabel: "November 2026"
 ---
 
 # What Can an AI System Actually Verify About a UAP Report? {#why-uap-records-are-an-unusually-demanding-research-testbed}
@@ -24,11 +23,11 @@ I want to see whether a system can preserve testimony, trace a copied account, a
 | A transcription, translation, or generated summary | The original and the transformations that produced the derivative |
 | A revised release, redaction, or access restriction | Which version the reader can inspect and what it permits |
 
-NASA’s independent study identified missing calibration data and metadata as limitations for many observations. A system should tell a reader what those gaps prevent them from inferring. [NASA’s 2023 independent study](https://www.nasa.gov/wp-content/uploads/2023/09/uap-independent-study-team-final-report-0.pdf)
+NASA’s independent study identified missing calibration data and metadata as limitations for many observations. A system should tell a reader what those gaps prevent them from inferring. [NASA’s independent study](https://www.nasa.gov/wp-content/uploads/2023/09/uap-independent-study-team-final-report-0.pdf)
 
 ## An official, evolving records source
 
-The U.S. National Archives maintains Record Group 615 for UAP material received from federal agencies under the FY2024 National Defense Authorization Act. The Archives says it updates the collection as records arrive. An accession tells a researcher something important about custody. The statements inside still need attribution, and reuse requires checking the rights associated with the source. [National Archives collection](https://www.archives.gov/research/topics/uaps/rg-615)
+The U.S. National Archives maintains Record Group 615 for UAP material received from federal agencies under the National Defense Authorization Act provision establishing the UAP Records Collection. The Archives says it updates the collection as records arrive. An accession tells a researcher something important about custody. The statements inside still need attribution, and reuse requires checking the rights associated with the source. [National Archives collection](https://www.archives.gov/research/topics/uaps/rg-615)
 
 ## What the system is responsible for
 
@@ -36,7 +35,7 @@ Ask it to identify the original record, distinguish a contemporaneous observatio
 
 ## The existing corpus is not yet acquired
 
-My November 2026 planning catalog contains **38 metadata items and four collection entry points**. The source media, OCR or speech-transcription derivatives, and annotated claim labels still need to be acquired or produced.
+The reviewed planning catalog contains **38 metadata items and four collection entry points**. The source media, OCR or speech-transcription derivatives, and annotated claim labels still need to be acquired or produced.
 
 I would begin with a small rights-cleared group comprising a government report, a hearing transcript, a historical investigation, and an independently authored account. Preserve acquisition dates, content hashes, rights decisions, page spans, and media timestamps. Then ask annotators to mark attributable statements, source copying, uncertainty, and contradictions.
 

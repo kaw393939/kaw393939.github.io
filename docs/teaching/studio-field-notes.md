@@ -2,9 +2,6 @@
 title: "When Should an AI Coach Step Back?"
 description: "Five choices for designing an AI-assisted assignment, drawn from classroom research, GitHub educators, and engineers who review agent-written code."
 teaser: "A hint can solve the problem before a learner gets a turn. Five design choices help teachers decide when to offer help, when to wait, and what to ask for afterward."
-dateLabel: "November 25, 2026"
-datePublished: "2026-11-25"
-dateModified: "2026-11-25"
 articleGenre: "Teaching field notes"
 imageCaption: "Two cards, one worked example, and a decision left to the learner."
 ---

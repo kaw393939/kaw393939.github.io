@@ -3,7 +3,6 @@ title: "The Video Looks Right. What Did the Software Check?"
 description: "Inside MetaVis, a Swift and Metal editing prototype where frame hashes, GPU tests, and a bounded Gemini review check different parts of a video export."
 teaser: "A polished frame can hide a missing soundtrack or an expensive rendering loop. The tests in my video editor gave each failure a different way to show up."
 articleGenre: "Engineering case study"
-dateLabel: "December 2025 experiments, reviewed November 2026"
 ---
 
 # The Video Looks Right. What Did the Software Check? {#metavis-engineering-ai-through-evidence-and-evaluation}
@@ -36,11 +35,11 @@ The Sprint 16 design budgets how much evidence leaves the system. It selects fra
 
 ## Hardware optimization as an engineering boundary
 
-The design assigns suitable work to Apple media engines, Core ML/Vision, and Metal and reuses buffers to limit copies. The December 22–23, 2025 sprint notes report measurements on an Apple M3. They document that setup and workload. A claim about comparative performance would need a controlled test on the systems being compared. [Hardware design](https://github.com/kaw393939/metavis-demo-projects/blob/main/Docs/CONCEPT_HARDWARE_MAXIMIZATION.md) · [M3 measurements](https://github.com/kaw393939/metavis-demo-projects/blob/main/Sprints/24i_shader_perf_m3/FINDINGS.md)
+The design assigns suitable work to Apple media engines, Core ML/Vision, and Metal and reuses buffers to limit copies. The shader-performance sprint notes report measurements on an Apple M3. They document that setup and workload. A claim about comparative performance would need a controlled test on the systems being compared. [Hardware design](https://github.com/kaw393939/metavis-demo-projects/blob/main/Docs/CONCEPT_HARDWARE_MAXIMIZATION.md) · [M3 measurements](https://github.com/kaw393939/metavis-demo-projects/blob/main/Sprints/24i_shader_perf_m3/FINDINGS.md)
 
 ## Gaps and research implications
 
-The December 21 code audit found mock services and unfinished production AI paths. Some media fixtures are outside the public repository. Some tests require a particular environment. A skipped AI check can report acceptance. Of those limitations, the last is the one I would fix first. The person approving an export needs to see **passed, failed, or untested** for each promised check. [Read the audit](https://github.com/kaw393939/metavis-demo-projects/blob/main/Docs/code_review/Master_Executive_Summary.md)
+The prototype code audit found mock services and unfinished production AI paths. Some media fixtures are outside the public repository. Some tests require a particular environment. A skipped AI check can report acceptance. Of those limitations, the last is the one I would fix first. The person approving an export needs to see **passed, failed, or untested** for each promised check. [Read the audit](https://github.com/kaw393939/metavis-demo-projects/blob/main/Docs/code_review/Master_Executive_Summary.md)
 
 My research question is whether a few well-chosen measurements, followed by a bounded qualitative review and human acceptance, can catch consequential mistakes with less review effort. The code gives me a place to run that comparison.
 

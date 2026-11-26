@@ -3,7 +3,6 @@ title: "When Should an AI Workflow Stop for a Person?"
 description: "Follow an email from a timestamp to a proposed financial decision to see how evidence, consequences, and authority change who should review an AI output."
 teaser: "The same email can tell you when a message was sent, what someone reported, and what another person still needs to authorize. Each calls for a different decision."
 articleGenre: "Architecture proposal"
-dateLabel: "November 2026"
 ---
 
 # When Should an AI Workflow Stop for a Person? {#the-race-track-and-the-pit-stop}

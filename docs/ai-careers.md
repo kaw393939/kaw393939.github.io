@@ -8,7 +8,7 @@ teaser: All ten forward deployed roles in this sample mentioned working with cus
 
 Pick up two ads for an “AI engineer” and underline the verbs. One employer wants someone to sit with a customer, find out why a workflow stalls, and deliver a fix. Another wants someone to design tests that catch model failures before release. Those are two different weeks at work. They also suggest two different projects a student could build.
 
-I read employer descriptions across five role families to help students decide what to practice. The 50-posting sample covers professional roles. Three separate internship examples show where a student might start. The sources were checked on **November 12, 2026**. Check the employer’s page for today’s availability, pay, and eligibility.
+I read employer descriptions across five role families to help students decide what to practice. The 50-posting sample covers professional roles. Three separate internship examples show where a student might start. These examples describe the work employers requested. Visit the employer’s careers page to check availability, pay and eligibility before applying.
 
 [Explore roles](#roles-to-understand) · [Study internships](#internships-start-here) · [Compare 50 postings](#skills-report-50-real-posting-descriptions) · [Plan your skills](#what-should-you-learn) · [Build a portfolio project](#turn-research-into-a-plan)
 
@@ -18,13 +18,11 @@ I read employer descriptions across five role families to help students decide w
 - **If you like investigating failures**, look for evaluation, observability, and testing. Show a test that caught a plausible wrong answer and explain how you knew it was wrong.
 - **If you’re applying as a student**, check graduation windows, work location, travel, and deadlines before you spend hours on an application.
 
-
-
 ## Internship examples {#internships-start-here}
 
-### Google · Forward Deployed Engineering Intern, BS/MS, Summer 2027
+### Google · Forward Deployed Engineering Intern, BS/MS
 
-**NYC, Sunnyvale or Reston · 12 weeks.** The listed application deadline was November 20, 2026. The posting is included here as an example of the work and eligibility requirements.
+**NYC, Sunnyvale or Reston · 12 weeks.**
 
 For penultimate-year BS/MS students. The posting connects Python, production AI, data pipelines and vector databases/RAG with customer discovery. Preferred skills include agents, tracing and token/cost metrics.
 
@@ -32,9 +30,9 @@ Google listed **$98,000–$131,000** as an **annualized salary range** with a 0%
 
 [View Google's posting](https://www.google.com/about/careers/applications/jobs/results/75665705386549958-forward-deployed-engineering-intern-bsms-summer-2027)
 
-### NVIDIA · AI Operations Intern, AI Clouds, Summer 2027
+### NVIDIA · AI Operations Intern, AI Clouds
 
-**Santa Clara · $20–$71/hour.** NVIDIA posted the role on November 10, 2026, and said applications would be accepted at least until November 14, 2026.
+**Santa Clara · $20–$71/hour.**
 
 For students pursuing a BS/MS in computer science, software engineering, data science or an equivalent field. Build a scoped workflow tool with AI-assisted development, validate the output, collect feedback and document the result. Skills include Python/JavaScript/TypeScript, APIs, Git and testing.
 
@@ -42,7 +40,7 @@ For students pursuing a BS/MS in computer science, software engineering, data sc
 
 ### Palantir · Forward Deployed Software Engineer, Internship — Commercial
 
-**Chicago · Onsite · Estimated $10,000/month.** The posting specified graduation in **December 2027 or spring 2028**, listed 25–50% travel, and gave no closing date when checked.
+**Chicago · Onsite · Estimated $10,000/month.** The example specified a graduation window and 25–50% travel. Check eligibility against the employer’s own posting.
 
 Programming proficiency and an engineering degree support the work: developing customer-specific applications, LLM workflows and production solutions. This is a useful example of software work that also requires understanding people and their organizations.
 
@@ -94,7 +92,7 @@ These are **experienced professional roles**. Read the job duties alongside the 
 
 ## Skills report: 50 real posting descriptions
 
-The sample contains ten distinct job descriptions per family, checked November 12, 2026. Start with the work you want to learn and open the corresponding employer records below.
+The sample contains ten distinct job descriptions per family. Start with the work you want to learn and open the corresponding employer records below.
 
 ### What the sample suggests
 
@@ -108,17 +106,17 @@ The sample contains ten distinct job descriptions per family, checked November 1
 
 Read the responsibilities even when a title sounds familiar. Liberate’s “AI Agent Engineer” involved customer discovery and integrations. Point72’s architect helped users adopt AI while a separate team owned the core production systems.
 
-For searches, try the titles employers actually used. Examples include *Frontier Agents Engineer*, *AI Engineer — Agent Platform*, *AI Deployment Manager — Builder*, *Product Evals Engineer*, and *AI Evaluations Platform Engineer*. These examples document terminology in use as of November 2026. Measuring growth would take comparable data across time.
+For searches, try the titles employers actually used. Examples include *Frontier Agents Engineer*, *AI Engineer — Agent Platform*, *AI Deployment Manager — Builder*, *Product Evals Engineer*, and *AI Evaluations Platform Engineer*. These terms can help you find related work under different titles.
 
 ### How to read the counts
 
 This is a **purposive convenience sample**. I selected distinct employer requisitions and excluded duplicate syndications and location variants. The forward deployed, agent, and evaluation groups each cover ten employers. Applied AI covers nine and architecture eight. HiddenLayer contributed three distinct architecture functions, giving security work a larger place in that group.
 
-At the review date, **38 employer descriptions showed an application route**. Eleven could be read through indexed employer material, with current application status unconfirmed. One was an official May 2026 PDF. DoorDash still showed an application page after its November 9 expected-fill date. Four other links had already stopped serving a usable posting and were excluded.
+The evidence included **38 employer descriptions with an application route**. Eleven more came from indexed employer material, with application status unconfirmed. One came from an official university PDF. The DoorDash application page was readable, but the vacancy could not be confirmed. Four other links stopped serving a usable posting and were excluded.
 
 Counts include duties, preferred skills, and allowed alternatives. Eight mentions of a language in ten postings do not mean eight employers required it. Each chart counts the skills relevant to that role family. The records underneath show what each employer actually said and how the source was checked.
 
-[Download the dated evidence dataset (JSON)](/research/ai-careers-2026-11-12.json)
+[Download the skills evidence dataset (JSON)](/research/ai-careers.json)
 
 ### Forward Deployed Engineer: 10 postings
 
@@ -135,7 +133,7 @@ The ten employers placed engineers alongside customers in industries ranging fro
 
 #### OpenAI · Forward Deployed Engineer - Seoul
 
-[OpenAI employer posting](https://openai.com/careers/forward-deployed-engineer-seoul-seoul-south-korea/) · Checked November 12, 2026
+[OpenAI employer posting](https://openai.com/careers/forward-deployed-engineer-seoul-seoul-south-korea/)
 
 **Location:** Seoul; hybrid 3 days; 50% travel. **Experience:** 5+ years engineering/technical deployment including customer-facing work.
 
@@ -147,7 +145,7 @@ The ten employers placed engineers alongside customers in industries ranging fro
 
 #### Reveal Technology · Forward Deployed Engineer - UK
 
-[Reveal Technology employer posting](https://jobs.lever.co/revealtech/4625811e-f69e-47f1-b278-7da3b5bee806?gh_src=8VC+job+board) · Checked November 12, 2026
+[Reveal Technology employer posting](https://jobs.lever.co/revealtech/4625811e-f69e-47f1-b278-7da3b5bee806?gh_src=8VC+job+board)
 
 **Location:** Remote UK/hybrid; up to 20% global travel. **Experience:** 5+ years defense/dual-use; UK DV or US TS/SCI/equivalent clearance required.
 
@@ -159,7 +157,7 @@ The ten employers placed engineers alongside customers in industries ranging fro
 
 #### Jeeves · Forward Deployed Engineer
 
-[Jeeves employer posting](https://jobs.lever.co/tryjeeves/4f6d62ba-1496-43db-9bd3-4d10357c98c2?lever-source%5B%5D=portfoliojobs.a16z.com) · Checked November 12, 2026
+[Jeeves employer posting](https://jobs.lever.co/tryjeeves/4f6d62ba-1496-43db-9bd3-4d10357c98c2?lever-source%5B%5D=portfoliojobs.a16z.com)
 
 **Location:** Mexico City remote/hybrid; Latin America travel. **Experience:** 7+ years software engineering/management; 2+ customer-facing.
 
@@ -171,7 +169,7 @@ The ten employers placed engineers alongside customers in industries ranging fro
 
 #### Loadsmart · Forward Deployed Engineer
 
-[Loadsmart employer posting](https://jobs.lever.co/loadsmart/152abf3a-d8b3-4289-b746-3c16dbabc703?gh_src=Purpose+job+board) · Checked November 12, 2026
+[Loadsmart employer posting](https://jobs.lever.co/loadsmart/152abf3a-d8b3-4289-b746-3c16dbabc703?gh_src=Purpose+job+board)
 
 **Location:** Body says US remote, up to 50% client/Chicago travel; header says Chicago onsite. **Experience:** 5+ years full-stack; US work authorization, no visa sponsorship.
 
@@ -183,7 +181,7 @@ The ten employers placed engineers alongside customers in industries ranging fro
 
 #### Tenex · Forward Deployed Engineer
 
-[Tenex employer posting](https://jobs.ashbyhq.com/tenexlabs/2a359a2a-d5ed-48e8-96b8-b93826110ee9) · Checked November 12, 2026
+[Tenex employer posting](https://jobs.ashbyhq.com/tenexlabs/2a359a2a-d5ed-48e8-96b8-b93826110ee9)
 
 **Location:** Manhattan onsite 5 days. **Experience:** Production delivery required; no minimum years stated.
 
@@ -195,7 +193,7 @@ The ten employers placed engineers alongside customers in industries ranging fro
 
 #### Appen · Forward Deployed Engineer
 
-[Appen employer posting](https://jobs.lever.co/appen-2/61d18244-84c0-401a-984c-14fc88a1b1da) · Checked November 12, 2026
+[Appen employer posting](https://jobs.lever.co/appen-2/61d18244-84c0-401a-984c-14fc88a1b1da)
 
 **Location:** San Francisco hybrid 2 days. **Experience:** 3+ years customer-facing technical; relevant bachelor's or equivalent.
 
@@ -207,7 +205,7 @@ The ten employers placed engineers alongside customers in industries ranging fro
 
 #### Teleskope · Forward Deployed Engineer
 
-[Teleskope employer posting](https://jobs.ashbyhq.com/teleskope/278bce22-653b-41f1-aaeb-2c2f7c7f4092) · Checked November 12, 2026
+[Teleskope employer posting](https://jobs.ashbyhq.com/teleskope/278bce22-653b-41f1-aaeb-2c2f7c7f4092)
 
 **Location:** New York hybrid. **Experience:** 2+ years enterprise customer technical support; CS degree or equivalent.
 
@@ -219,7 +217,7 @@ The ten employers placed engineers alongside customers in industries ranging fro
 
 #### FieldAI · Forward Deployed Engineer (Singapore)
 
-[FieldAI employer posting](https://jobs.lever.co/field-ai/dfa08958-6fc7-43f3-ac1f-b4c5767b0d12) · Checked November 12, 2026
+[FieldAI employer posting](https://jobs.lever.co/field-ai/dfa08958-6fc7-43f3-ac1f-b4c5767b0d12)
 
 **Location:** Singapore onsite; travel as needed. **Experience:** 2–3 years field robotics/software integration; master's or equivalent practical experience.
 
@@ -231,7 +229,7 @@ The ten employers placed engineers alongside customers in industries ranging fro
 
 #### CrossCountry Consulting · Forward Deployed Engineer & Agentic Workflow Engineer
 
-[CrossCountry Consulting employer posting](https://jobs.lever.co/crosscountry-consulting/6a386d56-fd29-4c6d-9bd9-3491464ca68e?lever-source=remotehunt.app) · Checked November 12, 2026
+[CrossCountry Consulting employer posting](https://jobs.lever.co/crosscountry-consulting/6a386d56-fd29-4c6d-9bd9-3491464ca68e?lever-source=remotehunt.app)
 
 **Location:** US remote; 20–40% travel; description also states hybrid option. **Experience:** 5+ software years, 2+ AI/LLM; technical bachelor's; Manager/Associate Director.
 
@@ -243,7 +241,7 @@ The ten employers placed engineers alongside customers in industries ranging fro
 
 #### Baseten · Forward Deployed Engineer (Training)
 
-[Baseten employer posting](https://jobs.ashbyhq.com/Baseten/11ab2593-6648-4943-ab4a-284fe7e89720/) · Checked November 12, 2026
+[Baseten employer posting](https://jobs.ashbyhq.com/Baseten/11ab2593-6648-4943-ab4a-284fe7e89720/)
 
 **Location:** San Francisco/New York hybrid. **Experience:** Minimum 1–2 years shipping/maintaining large production systems.
 
@@ -271,7 +269,7 @@ All ten descriptions combined software delivery and evaluation. ContactMonkey us
 
 #### Material Bank · Applied AI Engineer
 
-[Material Bank employer posting](https://job-boards.greenhouse.io/materialbank/jobs/7732615003) · Checked November 12, 2026
+[Material Bank employer posting](https://job-boards.greenhouse.io/materialbank/jobs/7732615003)
 
 **Location:** Remote. **Experience:** 8+ years production software; senior individual contributor.
 
@@ -283,7 +281,7 @@ All ten descriptions combined software delivery and evaluation. ContactMonkey us
 
 #### Future · Applied AI Engineer
 
-[Future employer posting](https://job-boards.greenhouse.io/future/jobs/4745515005) · Checked November 12, 2026
+[Future employer posting](https://job-boards.greenhouse.io/future/jobs/4745515005)
 
 **Location:** Remote. **Experience:** Production services and LLM experience; years not specified in reviewed description.
 
@@ -295,7 +293,7 @@ All ten descriptions combined software delivery and evaluation. ContactMonkey us
 
 #### Dwelly · Applied AI Engineer
 
-[Dwelly employer posting](https://job-boards.greenhouse.io/dwelly/jobs/4954106101) · Checked November 12, 2026
+[Dwelly employer posting](https://job-boards.greenhouse.io/dwelly/jobs/4954106101)
 
 **Location:** Remote UK/Ireland/European time zones. **Experience:** Production AI systems; no numeric minimum stated.
 
@@ -307,7 +305,7 @@ All ten descriptions combined software delivery and evaluation. ContactMonkey us
 
 #### ContactMonkey · Applied AI Engineer
 
-[ContactMonkey employer posting](https://job-boards.greenhouse.io/contactmonkey/jobs/4717437006) · Checked November 12, 2026
+[ContactMonkey employer posting](https://job-boards.greenhouse.io/contactmonkey/jobs/4717437006)
 
 **Location:** Toronto; three office days weekly. **Experience:** 3+ years software engineering including AI/ML or LLM features.
 
@@ -319,7 +317,7 @@ All ten descriptions combined software delivery and evaluation. ContactMonkey us
 
 #### Scale AI · Applied AI Engineer
 
-[Scale AI employer posting](https://job-boards.greenhouse.io/scaleai/jobs/4751059005) · Checked November 12, 2026
+[Scale AI employer posting](https://job-boards.greenhouse.io/scaleai/jobs/4751059005)
 
 **Location:** Kuwait City, Kuwait. **Experience:** Production software experience; scoped components under senior engineers.
 
@@ -331,7 +329,7 @@ All ten descriptions combined software delivery and evaluation. ContactMonkey us
 
 #### Fanatics · Applied AI Engineer
 
-[Fanatics employer posting](https://job-boards.greenhouse.io/fanaticsinc/jobs/4457595009) · Checked November 12, 2026
+[Fanatics employer posting](https://job-boards.greenhouse.io/fanaticsinc/jobs/4457595009)
 
 **Location:** New York City; office-based. **Experience:** 3+ years applied AI or software engineering, including shipped AI.
 
@@ -343,7 +341,7 @@ All ten descriptions combined software delivery and evaluation. ContactMonkey us
 
 #### Anthropic · Applied AI Engineer, Enterprise
 
-[Anthropic employer posting](https://job-boards.greenhouse.io/anthropic/jobs/5057647008) · Checked November 12, 2026
+[Anthropic employer posting](https://job-boards.greenhouse.io/anthropic/jobs/5057647008)
 
 **Location:** San Francisco/New York; three office days. **Experience:** 4+ years technical experience.
 
@@ -355,7 +353,7 @@ All ten descriptions combined software delivery and evaluation. ContactMonkey us
 
 #### CHAOS Industries · Applied AI Engineer
 
-[CHAOS Industries employer posting](https://job-boards.greenhouse.io/chaosindustries/jobs/5237013007) · Checked November 12, 2026
+[CHAOS Industries employer posting](https://job-boards.greenhouse.io/chaosindustries/jobs/5237013007)
 
 **Location:** San Francisco; at least two office days. **Experience:** 2–5 years; exceptional fresh graduates welcomed; US citizen or permanent resident.
 
@@ -367,7 +365,7 @@ All ten descriptions combined software delivery and evaluation. ContactMonkey us
 
 #### OpenAI · Applied AI Engineer
 
-[OpenAI employer posting](https://openai.com/careers/applied-ai-engineer-singapore/) · Checked November 12, 2026
+[OpenAI employer posting](https://openai.com/careers/applied-ai-engineer-singapore/)
 
 **Location:** Singapore; three office days. **Experience:** Demonstrated enterprise production delivery; numeric minimum not stated.
 
@@ -379,7 +377,7 @@ All ten descriptions combined software delivery and evaluation. ContactMonkey us
 
 #### Anthropic · Applied AI Engineer, Startups
 
-[Anthropic employer posting](https://job-boards.greenhouse.io/anthropic/jobs/5432575008) · Checked November 12, 2026
+[Anthropic employer posting](https://job-boards.greenhouse.io/anthropic/jobs/5432575008)
 
 **Location:** London, UK. **Experience:** 4+ years software/FDE/technical founder; customer-facing experience.
 
@@ -406,7 +404,7 @@ These architects worked on presales, customer deployments, internal adoption, an
 
 #### HiddenLayer · AI Solutions Architect – Federal
 
-[HiddenLayer employer posting](https://job-boards.greenhouse.io/hiddenlayer/jobs/5162409007) · Checked November 12, 2026
+[HiddenLayer employer posting](https://job-boards.greenhouse.io/hiddenlayer/jobs/5162409007)
 
 **Location:** Remote US; DC preferred. **Experience:** 5+ years customer-facing technical roles with federal support; Top Secret/eligibility preferred.
 
@@ -418,7 +416,7 @@ These architects worked on presales, customer deployments, internal adoption, an
 
 #### Veeam · AI Solution Architect
 
-[Veeam employer posting](https://job-boards.greenhouse.io/veeamsoftware/jobs/4999633101) · Checked November 12, 2026
+[Veeam employer posting](https://job-boards.greenhouse.io/veeamsoftware/jobs/4999633101)
 
 **Location:** Remote US. **Experience:** 2+ years AI architect and 5+ software engineering.
 
@@ -430,7 +428,7 @@ These architects worked on presales, customer deployments, internal adoption, an
 
 #### Impiricus · AI Solutions Architect
 
-[Impiricus employer posting](https://job-boards.greenhouse.io/impiricus/jobs/5432801008) · Checked November 12, 2026
+[Impiricus employer posting](https://job-boards.greenhouse.io/impiricus/jobs/5432801008)
 
 **Location:** Atlanta/New York/Remote US. **Experience:** 5+ product/design OR 2+ applied engineering.
 
@@ -442,7 +440,7 @@ These architects worked on presales, customer deployments, internal adoption, an
 
 #### DoorDash · Senior Associate, AI Solutions Architect, Marketing Technology
 
-[DoorDash employer posting](https://job-boards.greenhouse.io/doordashusa/jobs/8226916) · Checked November 12, 2026
+[DoorDash employer posting](https://job-boards.greenhouse.io/doordashusa/jobs/8226916)
 
 **Location:** Multiple US cities including NYC. **Experience:** 2–4 years marketing/technology with hands-on tools.
 
@@ -450,11 +448,11 @@ These architects worked on presales, customer deployments, internal adoption, an
 
 **What the work involves:** Builds marketing tools and workflow automations; measures efficiency/quality gains; coding, APIs/data and explaining concepts to nontechnical partners.
 
-**Pay:** Not recorded in this review. **Source at review:** The application page was visible after the November 9, 2026 expected-fill date. Availability was uncertain.
+**Pay:** Not recorded in this review. **Source at review:** The employer’s application page was readable. Vacancy status was unconfirmed.
 
 #### Neo4j · AI Solutions Architect
 
-[Neo4j employer posting](https://job-boards.greenhouse.io/neo4j/jobs/4726392006) · Checked November 12, 2026
+[Neo4j employer posting](https://job-boards.greenhouse.io/neo4j/jobs/4726392006)
 
 **Location:** United States compensation scope; exact work location not captured. **Experience:** 5+ years enterprise application architecture; travel up to 50%.
 
@@ -466,7 +464,7 @@ These architects worked on presales, customer deployments, internal adoption, an
 
 #### Point72 · AI Solutions Architect
 
-[Point72 employer posting](https://job-boards.greenhouse.io/point72/jobs/8649431002) · Checked November 12, 2026
+[Point72 employer posting](https://job-boards.greenhouse.io/point72/jobs/8649431002)
 
 **Location:** EMEA-facing; exact city not captured. **Experience:** 3+ years client-facing product/solution-engineering/FDE.
 
@@ -478,7 +476,7 @@ These architects worked on presales, customer deployments, internal adoption, an
 
 #### HiddenLayer · AI Solutions Architect – Pre-sales
 
-[HiddenLayer employer posting](https://job-boards.greenhouse.io/hiddenlayer/jobs/4595140007) · Checked November 12, 2026
+[HiddenLayer employer posting](https://job-boards.greenhouse.io/hiddenlayer/jobs/4595140007)
 
 **Location:** Remote US. **Experience:** Proven presales/postsales architecture experience; years not given.
 
@@ -490,7 +488,7 @@ These architects worked on presales, customer deployments, internal adoption, an
 
 #### HiddenLayer · AI Solutions Architect – Post-Sales (UK)
 
-[HiddenLayer employer posting](https://job-boards.greenhouse.io/hiddenlayer/jobs/5128009007) · Checked November 12, 2026
+[HiddenLayer employer posting](https://job-boards.greenhouse.io/hiddenlayer/jobs/5128009007)
 
 **Location:** Remote UK. **Experience:** Proven post-sales/customer success/solutions engineering.
 
@@ -502,7 +500,7 @@ These architects worked on presales, customer deployments, internal adoption, an
 
 #### Nutanix · Advisory Solutions Architect – AI
 
-[Nutanix employer posting](https://careers.nutanix.com/en/jobs/32421/advisory-solutions-architect-ai/) · Checked November 12, 2026
+[Nutanix employer posting](https://careers.nutanix.com/en/jobs/32421/advisory-solutions-architect-ai/)
 
 **Location:** Singapore; at least three office days. **Experience:** 7–9+ years presales/architecture; travel up to 30%.
 
@@ -514,7 +512,7 @@ These architects worked on presales, customer deployments, internal adoption, an
 
 #### eimagine · AI Solutions Architect
 
-[eimagine employer posting](https://careers-eimagine.icims.com/jobs/1779/ai-solutions-architect/job) · Checked November 12, 2026
+[eimagine employer posting](https://careers-eimagine.icims.com/jobs/1779/ai-solutions-architect/job)
 
 **Location:** Indianapolis, Indiana; remote-enabled employer. **Experience:** 5+ years AI/ML/analytics; consulting; bachelor's or equivalent.
 
@@ -544,7 +542,7 @@ These ten employers gave agent-building work several titles. Six had directly vi
 
 #### Gigi · AI Engineer / AI Agent Engineer
 
-[Gigi employer posting](https://jobs.ashbyhq.com/gigi/46e8dd52-6b56-4e14-9980-ed74058c9c2c/) · Checked November 12, 2026
+[Gigi employer posting](https://jobs.ashbyhq.com/gigi/46e8dd52-6b56-4e14-9980-ed74058c9c2c/)
 
 **Location:** Toronto, on-site. **Experience:** Production software track record and hands-on LLM project; no exact years required.
 
@@ -556,7 +554,7 @@ These ten employers gave agent-building work several titles. Six had directly vi
 
 #### Sekai · AI Agent Engineer (Coding Agent)
 
-[Sekai employer posting](https://jobs.ashbyhq.com/sekai/6b385ffe-8550-44cb-969e-5fae13d6f42a) · Checked November 12, 2026
+[Sekai employer posting](https://jobs.ashbyhq.com/sekai/6b385ffe-8550-44cb-969e-5fae13d6f42a)
 
 **Location:** San Francisco listing; remote-first company. **Experience:** Shipped and operated agentic production systems; no exact years found.
 
@@ -568,7 +566,7 @@ These ten employers gave agent-building work several titles. Six had directly vi
 
 #### TRM Labs · AI Agent Engineer – US Remote
 
-[TRM Labs employer posting](https://jobs.ashbyhq.com/trm-labs/828b60b2-ac8f-407d-92a0-8b794c8cf391/) · Checked November 12, 2026
+[TRM Labs employer posting](https://jobs.ashbyhq.com/trm-labs/828b60b2-ac8f-407d-92a0-8b794c8cf391/)
 
 **Location:** United States remote. **Experience:** Deep backend/systems experience; senior/staff expectations described.
 
@@ -580,7 +578,7 @@ These ten employers gave agent-building work several titles. Six had directly vi
 
 #### Hipp Health · AI Agent Engineer — Patient Intake
 
-[Hipp Health employer posting](https://jobs.ashbyhq.com/hipp/65b0c62e-42bf-4817-85eb-7f1adee3c8cd) · Checked November 12, 2026
+[Hipp Health employer posting](https://jobs.ashbyhq.com/hipp/65b0c62e-42bf-4817-85eb-7f1adee3c8cd)
 
 **Location:** United States remote. **Experience:** No fixed years; demonstrated built/tested/improved agents.
 
@@ -592,7 +590,7 @@ These ten employers gave agent-building work several titles. Six had directly vi
 
 #### Livefront / Zeal · Agentic Engineer
 
-[Livefront / Zeal employer posting](https://job-boards.greenhouse.io/livefront/jobs/4390697009) · Checked November 12, 2026
+[Livefront / Zeal employer posting](https://job-boards.greenhouse.io/livefront/jobs/4390697009)
 
 **Location:** Remote USA. **Experience:** Production agent systems and enterprise delivery experience; no numeric years.
 
@@ -604,7 +602,7 @@ These ten employers gave agent-building work several titles. Six had directly vi
 
 #### NewsBreak · AI Engineer, Agent Platform
 
-[NewsBreak employer posting](https://job-boards.greenhouse.io/newsbreak/jobs/4683873006) · Checked November 12, 2026
+[NewsBreak employer posting](https://job-boards.greenhouse.io/newsbreak/jobs/4683873006)
 
 **Location:** Mountain View, CA; application specifies five days onsite. **Experience:** AI product with real users; side project/internal tool/open-source/MVP accepted as evidence.
 
@@ -616,7 +614,7 @@ These ten employers gave agent-building work several titles. Six had directly vi
 
 #### GitLab · Backend Engineer (Python), AI Engineering: Agent Foundations
 
-[GitLab employer posting](https://job-boards.greenhouse.io/gitlab/jobs/8704363002) · Checked November 12, 2026
+[GitLab employer posting](https://job-boards.greenhouse.io/gitlab/jobs/8704363002)
 
 **Location:** Remote Canada, Poland, UK. **Experience:** Intermediate; production Python backend and LLM-framework/AI-backend experience.
 
@@ -628,7 +626,7 @@ These ten employers gave agent-building work several titles. Six had directly vi
 
 #### Scale AI · Frontier Agents Engineer (Applied AI)
 
-[Scale AI employer posting](https://job-boards.greenhouse.io/scaleai/jobs/4720573005) · Checked November 12, 2026
+[Scale AI employer posting](https://job-boards.greenhouse.io/scaleai/jobs/4720573005)
 
 **Location:** San Francisco, CA. **Experience:** 4+ years software, ML or applied AI.
 
@@ -640,7 +638,7 @@ These ten employers gave agent-building work several titles. Six had directly vi
 
 #### Starburst · AI Agent Engineer
 
-[Starburst employer posting](https://job-boards.greenhouse.io/starburst/jobs/5430686008) · Checked November 12, 2026
+[Starburst employer posting](https://job-boards.greenhouse.io/starburst/jobs/5430686008)
 
 **Location:** United States; 25% travel stated. **Experience:** 5+ years AI/ML; 1+ year production agent/LLM; AI startup or product-team experience.
 
@@ -652,7 +650,7 @@ These ten employers gave agent-building work several titles. Six had directly vi
 
 #### Liberate · AI Agent Engineer
 
-[Liberate employer posting](https://job-boards.greenhouse.io/liberate/jobs/4925435008) · Checked November 12, 2026
+[Liberate employer posting](https://job-boards.greenhouse.io/liberate/jobs/4925435008)
 
 **Location:** Boston or San Francisco/Berkeley hybrid, two office days. **Experience:** 3+ years solutions engineering or technical consulting; bachelor's related field.
 
@@ -682,7 +680,7 @@ The ten employers covered product evaluation, model evaluation, and the systems 
 
 #### Anthropic · Research Engineer, Post-Training Model Evaluations
 
-[Anthropic employer posting](https://job-boards.greenhouse.io/anthropic/jobs/5198255008) · Checked November 12, 2026
+[Anthropic employer posting](https://job-boards.greenhouse.io/anthropic/jobs/5198255008)
 
 **Location:** San Francisco / Seattle. **Experience:** ML evaluations at scale; bachelor's or equivalent; level-dependent years.
 
@@ -694,7 +692,7 @@ The ten employers covered product evaluation, model evaluation, and the systems 
 
 #### Dscout · AI Research Engineer
 
-[Dscout employer posting](https://job-boards.greenhouse.io/dscout/jobs/4472409009) · Checked November 12, 2026
+[Dscout employer posting](https://job-boards.greenhouse.io/dscout/jobs/4472409009)
 
 **Location:** San Francisco / Bay Area. **Experience:** Published research; PhD/in progress or MS plus two research internships, or equivalent creative ML research.
 
@@ -706,7 +704,7 @@ The ten employers covered product evaluation, model evaluation, and the systems 
 
 #### Turing · AI Evaluation Engineer (Python)
 
-[Turing employer posting](https://work.turing.com/r/5it0cUV8NC) · Checked November 12, 2026
+[Turing employer posting](https://work.turing.com/r/5it0cUV8NC)
 
 **Location:** Remote; four-hour PST overlap. **Experience:** 3–5 years Python; relevant bachelor's.
 
@@ -718,7 +716,7 @@ The ten employers covered product evaluation, model evaluation, and the systems 
 
 #### Tactical Edge · AI Evaluation Engineer
 
-[Tactical Edge employer posting](https://www.tacticaledgeai.com/careers/qa-engineer/) · Checked November 12, 2026
+[Tactical Edge employer posting](https://www.tacticaledgeai.com/careers/qa-engineer/)
 
 **Location:** Seattle onsite. **Experience:** Production software/AI/data or distributed-systems testing; no numeric years.
 
@@ -730,7 +728,7 @@ The ten employers covered product evaluation, model evaluation, and the systems 
 
 #### Ashoka University · AI Evaluation Engineer
 
-[Ashoka University employer posting](https://careers.ashoka.edu.in/wp-content/uploads/2026/05/JD-for-AI-Evaluation-Engineer_V2DD.pdf) · Checked November 12, 2026
+[Ashoka University employer posting](https://careers.ashoka.edu.in/wp-content/uploads/2026/05/JD-for-AI-Evaluation-Engineer_V2DD.pdf)
 
 **Location:** Not captured; India institution. **Experience:** Relevant bachelor's/master's; 1–4 years desirable.
 
@@ -738,11 +736,11 @@ The ten employers covered product evaluation, model evaluation, and the systems 
 
 **What the work involves:** Medical evaluation pipelines, model submissions/leaderboards, WER/F1/clinical metrics, logging; Python mandatory, PyTorch/Hugging Face, APIs, batch/streaming, MLflow/W&B and documentation.
 
-**Pay:** Not captured. **Source at review:** The university’s May 2026 PDF was accessible. Vacancy status was unconfirmed.
+**Pay:** Not captured. **Source at review:** The university published a PDF description. Vacancy status was unconfirmed.
 
 #### OpenAI · Product Evals Engineer, ChatGPT Learning
 
-[OpenAI employer posting](https://openai.com/careers/product-evals-engineer-chatgpt-learning-san-francisco/) · Checked November 12, 2026
+[OpenAI employer posting](https://openai.com/careers/product-evals-engineer-chatgpt-learning-san-francisco/)
 
 **Location:** San Francisco, three office days/week. **Experience:** Strong software/data/evaluation engineering; no numeric years in description.
 
@@ -754,7 +752,7 @@ The ten employers covered product evaluation, model evaluation, and the systems 
 
 #### Microsoft AI · Principal AI Evaluations Platform Engineer
 
-[Microsoft AI employer posting](https://job-boards.greenhouse.io/microsoftcorporation/jobs/4409587009) · Checked November 12, 2026
+[Microsoft AI employer posting](https://job-boards.greenhouse.io/microsoftcorporation/jobs/4409587009)
 
 **Location:** Zurich or London; four office days/week. **Experience:** BS+4 years or MS+2 years or equivalent; production distributed-systems/on-call experience.
 
@@ -766,7 +764,7 @@ The ten employers covered product evaluation, model evaluation, and the systems 
 
 #### Karya · Research Engineer, AI Evaluations
 
-[Karya employer posting](https://job-boards.greenhouse.io/karya/jobs/5459428008) · Checked November 12, 2026
+[Karya employer posting](https://job-boards.greenhouse.io/karya/jobs/5459428008)
 
 **Location:** Bengaluru, India; hybrid options. **Experience:** 4+ years ML engineering/applied ML research; master's preferred or equivalent.
 
@@ -778,7 +776,7 @@ The ten employers covered product evaluation, model evaluation, and the systems 
 
 #### HP · Agentic AI Systems Evaluation Engineer
 
-[HP employer posting](https://job-boards.greenhouse.io/hp/jobs/6228405004) · Checked November 12, 2026
+[HP employer posting](https://job-boards.greenhouse.io/hp/jobs/6228405004)
 
 **Location:** Houston, Texas. **Experience:** 7+ years relevant engineering; bachelor's or equivalent.
 
@@ -790,7 +788,7 @@ The ten employers covered product evaluation, model evaluation, and the systems 
 
 #### Sedgwick · AI Evaluation Engineer
 
-[Sedgwick employer posting](https://sedgwick.wd1.myworkdayjobs.com/en-US/Sedgwick/job/AI-Evaluation-Engineer_R80152) · Checked November 12, 2026
+[Sedgwick employer posting](https://sedgwick.wd1.myworkdayjobs.com/en-US/Sedgwick/job/AI-Evaluation-Engineer_R80152)
 
 **Location:** US remote (header Telecommuter FL). **Experience:** 4+ years software/ML/data, 1–2 LLM years; master's preferred; description contains template wording.
 
@@ -806,7 +804,7 @@ The ten employers covered product evaluation, model evaluation, and the systems 
 
 One small project can demonstrate different responsibilities. For a forward deployed role, show how a user’s feedback changed the work. For applied AI, compare a feature against a baseline and a difficult test case. An architect could use the same project to explain the data flow, access controls, operating costs, and a build-or-buy decision. An evaluation engineer could track disagreement between two reviewers. An agent engineer could trace a failed tool call and show what happens next.
 
-These are examples for practice, **not hiring guarantees**. Check enrollment, work authorization, location, travel, and clearance requirements in the current posting.
+These are examples for practice, **not hiring guarantees**. Check enrollment, work authorization, location, travel, and clearance requirements in the employer’s posting.
 
 ## What should you learn?
 
@@ -820,12 +818,12 @@ These are examples for practice, **not hiring guarantees**. Check enrollment, wo
 
 ## Turn research into a plan
 
-Choose two employer descriptions and put them side by side. Keep the original links, dates checked, eligibility, location, pay basis, and deadlines. Underline one responsibility they share. Then choose one gap you can address with a project small enough to finish.
+Choose two employer descriptions and put them side by side. Keep the original links, eligibility, location and pay basis. Check application requirements with the employer. Underline one responsibility they share. Then choose one gap you can address with a project small enough to finish.
 
 If you publish the work as a portfolio or research site, give a reader three things: the employer requirement, an example of you doing that work, and enough evidence for someone to check the result. Ask a peer for one specific improvement, make the change, and link the revision. Keep private application details out of the public repository.
 
 ## How this guide is maintained
 
-This edition preserves the descriptions as checked on **November 12, 2026**. A source link lets readers revisit the employer directly. Job availability, compensation, and requirements can change after the check date. A future edition should record its own date and describe what changed.
+The dataset and employer links let readers inspect the basis for each finding. Postings can close, move or change. For an application, consult the employer directly. For a portfolio project, use the recorded responsibilities to choose a skill and demonstrate it.
 
 *Educational guidance from Keith Williams. No employer affiliation, placement guarantee or official NJIT career-services endorsement is implied.*
