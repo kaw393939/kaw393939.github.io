@@ -42,7 +42,7 @@ function observeSections() {
   observer?.disconnect()
   currentAnchor.value = ''
   if (!isHome.value || !('IntersectionObserver' in window)) return
-  const items = Array.from(document.querySelectorAll('#projects, #about'))
+  const items = Array.from(document.querySelectorAll('#projects'))
   const visible = new Set<string>()
   observer = new IntersectionObserver(entries => {
     for (const entry of entries) {
@@ -118,7 +118,7 @@ onUnmounted(() => {
       <div class="dispatch-grid">
         <article class="dispatch-card">
           <figure class="dispatch-image">
-            <img src="/images/teaching/studio-coach-pause.jpg" alt="A student holds a pencil while the teacher pauses beside the page" width="1080" height="720" loading="lazy" decoding="async">
+            <img src="/images/teaching/studio-coach-pause.jpg" alt="An open hand gestures toward a worked example while a learner holds a pencil over a blank card" width="1080" height="720" loading="lazy" decoding="async">
             <figcaption>AI-generated illustration</figcaption>
           </figure>
           <p class="eyebrow">Classroom practice</p>
@@ -128,7 +128,7 @@ onUnmounted(() => {
         </article>
         <article class="dispatch-card">
           <figure class="dispatch-image">
-            <img src="/images/editorial/evidence-desk.jpg" alt="A magnifier rests on blue tracing paper" width="1080" height="720" loading="lazy" decoding="async">
+            <img src="/images/editorial/evidence-desk.jpg" alt="A magnifier rests on blue tracing paper" width="1000" height="666" loading="lazy" decoding="async">
             <figcaption>AI-generated illustration</figcaption>
           </figure>
           <p class="eyebrow">Systems research</p>
@@ -155,9 +155,9 @@ onUnmounted(() => {
         <div class="project-list">
           <article v-for="project in projects" :id="project.id" :key="project.id" class="project-case" :aria-labelledby="`${project.id}-title`">
             <details>
-              <summary><span class="project-category">{{ project.category }}</span>
-                <h3 :id="`${project.id}-title`">{{ project.title }}</h3><span class="disclose-mark" aria-hidden="true"></span>
-              </summary>
+              <summary><h3 :id="`${project.id}-title`"><span class="project-category">{{ project.category }}</span>
+                {{ project.title }}<span class="disclose-mark" aria-hidden="true"></span>
+              </h3></summary>
               <div class="project-content">
                 <p class="project-summary">{{ project.summary }}</p>
                 <p class="project-status">{{ project.status }}</p>

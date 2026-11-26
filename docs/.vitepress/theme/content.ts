@@ -4,7 +4,7 @@ export const navItems = [
   { id: 'research', label: 'Research', href: '/research' },
   { id: 'projects', label: 'Projects', href: '/#projects' },
   { id: 'ai-careers', label: 'AI Careers', href: '/ai-careers' },
-  { id: 'about', label: 'About', href: '/#about' }
+  { id: 'about', label: 'About', href: '/about' }
 ]
 
 // Inquiry directions, not statements of completed empirical research.

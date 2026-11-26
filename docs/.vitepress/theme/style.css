@@ -93,7 +93,7 @@ img { display: block; max-width: 100%; height: auto; }
 .project-case summary { position: relative; display: grid; gap: .2rem; padding: 1.02rem 2.8rem 1.1rem 0; cursor: pointer; list-style: none; }
 .project-case summary::-webkit-details-marker { display: none; }
 .project-case summary:hover h3 { color: var(--accent); }
-.project-category { color: var(--muted); font-size: .79rem; }
+.project-category { display: block; margin-bottom: .2rem; color: var(--muted); font: .79rem/1.45 var(--sans); letter-spacing: normal; }
 .project-case h3 { margin: 0; font: 500 clamp(1.52rem, 2.15vw, 2.35rem)/1.12 var(--serif); letter-spacing: -.038em; }
 .disclose-mark { position: absolute; top: 50%; right: .1rem; height: 1.5rem; width: 1.5rem; transform: translateY(-50%); }
 .disclose-mark::before, .disclose-mark::after { content: ""; position: absolute; inset: calc(50% - 1px) .26rem auto; height: 2px; background: var(--ink); }
