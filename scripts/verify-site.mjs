@@ -329,7 +329,9 @@ check('Personal story is sourced and proposals are distinguished from accomplish
 
 assert.ok(!home.includes('is373-greeting'))
 assert.ok(!home.includes('Hi, IS373! Welcome to my portfolio.'))
-assert.ok(home.includes('/images/keith-portrait-20261111-960.webp'))
+for (const width of [480, 960, 1200]) {
+  assert.ok(home.includes('/images/keith-williams-editorial-' + width + '.webp'))
+}
 
 check('AI careers guide has discoverability, provenance, eligibility and SEO', () => {
   const careers = read('ai-careers.html')

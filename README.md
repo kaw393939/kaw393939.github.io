@@ -44,7 +44,7 @@ The homepage includes an optional 16-second AI-narrated audio introduction, gene
 
 ## Content and imagery
 
-Homepage structure lives in `docs/.vitepress/theme/Layout.vue`; repeatable content lives in `theme/content.ts`, shared identity and URLs in `.vitepress/site.ts`, icons in `theme/components/SiteIcon.vue`, and styles in `theme/style.css`. The user-provided photograph of Keith Williams in the About section lives at `docs/public/images/keith-williams.jpg`. It retains its original pixels with private metadata removed (only display orientation is retained), and uses a responsive CSS crop, descriptive alt text, explicit dimensions, and lazy loading. The original AI-generated explorer and sage imagery also lives in `docs/public/images/`. The explorer landscape remains in the hero; these conceptual illustrations are distinct from the portrait photograph.
+Homepage structure lives in `docs/.vitepress/theme/Layout.vue`; repeatable content lives in `theme/content.ts`, shared identity and URLs in `.vitepress/site.ts`, icons in `theme/components/SiteIcon.vue`, and styles in `theme/style.css`. The profile uses an AI-assisted editorial portrait adapted from Keith’s classroom photograph. Its three responsive WebP files are in `docs/public/images/keith-williams-editorial-*.webp`; `site.ts` supplies the author image to search and social metadata.
 
 No analytics, tracking scripts, embedded contact forms, or external font requests are included.
 
@@ -66,7 +66,7 @@ Issue templates become available only after they are on the default branch and r
 
 Run `npm test` before publishing. It builds the production site and checks pre-rendered content, SEO metadata, JSON-LD, sitemap/noindex behavior, image references and size budgets, accessibility markup, and muted-text contrast. These checks do not replace browser keyboard, responsive-layout, screen-reader, or real-device testing.
 
-The portrait and landscape have responsive WebP derivatives. Originals are retained unchanged. Regenerate derivatives with `python scripts/optimize-images.py` (Python 3 and Pillow required). The script applies display orientation, preserves the photograph's content, and does not carry private metadata into web derivatives.
+The current editorial headshot is published at 480, 960, and 1200 pixels square. Export WebP derivatives without private metadata and update the responsive image references when replacing the portrait. The legacy image optimizer applies to the older source photographs and illustrations.
 
 The navigation supports Escape dismissal, outside-click dismissal, and resets across layout breakpoints. The page uses SVG arrow icons rather than platform-dependent text glyphs.
 

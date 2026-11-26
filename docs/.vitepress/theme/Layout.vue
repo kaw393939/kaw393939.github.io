@@ -181,7 +181,8 @@ onUnmounted(() => {
 
     <section id="about" class="profile-section wrap" aria-labelledby="about-title">
       <figure class="profile-image">
-        <img src="/images/keith-portrait-20261111-960.webp" srcset="/images/keith-portrait-20261111-480.webp 480w, /images/keith-portrait-20261111-960.webp 960w, /images/keith-portrait-20261111-1440.webp 1440w" sizes="(max-width: 720px) 100vw, (max-width: 1100px) 42vw, 445px" alt="Keith Williams in a classroom" width="2316" height="3088" loading="lazy" decoding="async">
+        <img src="/images/keith-williams-editorial-960.webp" srcset="/images/keith-williams-editorial-480.webp 480w, /images/keith-williams-editorial-960.webp 960w, /images/keith-williams-editorial-1200.webp 1200w" sizes="(max-width: 520px) 92vw, (max-width: 720px) 480px, (max-width: 1100px) 38vw, 480px" alt="Keith Williams in a navy blazer and an open-collar blue shirt" width="1200" height="1200" loading="lazy" decoding="async">
+        <figcaption>AI-assisted portrait from an original photograph.</figcaption>
       </figure>
       <div class="profile-copy">
         <p class="eyebrow section-label"><span aria-hidden="true"></span> About the author</p>
