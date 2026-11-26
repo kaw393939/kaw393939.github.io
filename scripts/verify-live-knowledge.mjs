@@ -55,13 +55,4 @@ async function verify({path,test,plainUrl = false}) {
   throw new Error(`GitHub Pages ${path} did not serve expected content: ${last}`)
 }
 for (const target of targets) await verify(target)
-// Record what a reader using an alternate address actually reaches.
-for (const alias of ['https://www.keithwilliams.org/', 'https://kaw393939.github.io/']) {
-  try {
-    const response = await fetch(alias, { signal: AbortSignal.timeout(10000) })
-    console.log(`Address check: ${alias} -> ${response.url} (HTTP ${response.status})`)
-  } catch (error) {
-    console.log(`Address check: ${alias} -> ${error.cause?.code || error.message}`)
-  }
-}
 console.log('PASS: actual portfolio and pinned Knowledge Lab pages served over public HTTPS.')

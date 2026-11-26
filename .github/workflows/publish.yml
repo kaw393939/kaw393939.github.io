@@ -54,6 +54,8 @@ jobs:
       - name: Check live verification script syntax
         if: github.event_name == 'pull_request'
         run: node --check scripts/verify-live-knowledge.mjs
+      - name: Report public domain alias health
+        run: node scripts/verify-addresses.mjs
       - name: Record scope
         run: |
           echo 'Portfolio source and pinned is373-rag revision passed static checks.' >> "$GITHUB_STEP_SUMMARY"
