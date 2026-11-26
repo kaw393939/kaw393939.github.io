@@ -1,50 +1,45 @@
 ---
-title: The Tests Passed. Who Won the Game?
-description: A rock-paper-scissors game, an overly helpful AI coach, and a classroom exercise for finding out what a learner can check on their own.
-teaser: "A rock-paper-scissors game taught me where an AI coach should stop talking."
-articleGenre: "Classroom feature"
-imageCaption: "Paper covers rock. A green check tells you only what someone thought to test."
-socialImage: /images/editorial/social-rock-paper.jpg
-socialImageAlt: Folded red paper covers a dark stone beside a strip of green check marks.
+title: What Could You Learn If You Could Listen to Every Student Work?
+description: Turn an assignment into an AI Studio, collect student explanations as they work, and use AI-assisted grading to plan individual feedback and the next class.
+teaser: Give an AI coach an assignment you already teach. What students say while working can help you grade one project and decide what to teach the whole class tomorrow.
+articleGenre: Classroom feature
+imageCaption: A teacher can design the question and decide which responses are worth bringing back to class.
+socialImage: /images/editorial/social-field-desk.jpg
+socialImageAlt: An open notebook with hand-drawn diagrams and a red pencil on a blue desk.
+socialImageWidth: 1200
+socialImageHeight: 630
 ---
 
-# The Tests Passed. Who Won the Game?
+# What Could You Learn If You Could Listen to Every Student Work?
 
-Choose rock. The computer chooses paper. You know who won. The game I gave my web applications students at NJIT had no idea.
+One of the best reasons to pull up a chair beside a student is to hear the story behind a choice. Imagine a student pointing to a size chart on a website they built. “I put the measurements at the top. Then I tried to buy the shirt and realized the size button took me right past them.” Now I have something to teach with. I know what the student expected, what surprised them, and why they changed the page. While I’m helping one student, I miss exchanges like that at the next table.
 
-The starter passed all twelve automated checks. The page loaded. It could display a result if a test supplied one. It even knew how to explain that the game was unfinished. The function that had to **decide** who won was still a placeholder. If you wanted to know who had won, you still had to settle the round yourself. [Inside the starter trial](https://github.com/kaw393939/218_spec/blob/main/research/2026-10-25-rps-student-trial.md) · [What the tests checked](https://github.com/kaw393939/is218-rps-starter/blob/3983604d8e83de8fc9aadf792150df87e2961047/tests/test_shell.py)
+That’s why I make assignments I call *Studios*. I can take something I already teach, give an AI coach a few good questions to ask while the student works, and decide which responses belong in the hand-in. When I sit down to grade, I can use AI to read that evidence with me at two levels. What feedback would help this particular student? What should I do with the whole class tomorrow?
 
-I left that hole on purpose. A coding agent could fill it in seconds. What I wanted to hear was a student saying, before anyone touched the code, *I picked rock. If the computer picks paper, the screen should tell me I lost.* That last word matters. A game can identify the winning move and still congratulate the wrong person.
+## Start with an assignment you already teach
 
-## The coach that kept asking why
+Open an ordinary AI chat, paste in the teacher guide and an assignment, and type **“Help me turn this into a Studio.”** The guide asks which decision you want students to learn to make. It drafts a short lesson for them and instructions for a coach that can ask a question, offer a hint, and wait for the reply. You can use your existing rubric and submission process. [Open the teacher guide](https://github.com/kaw393939/kaw393939.github.io/blob/main/examples/ai-studio-starter/TEACHER-STUDIO.md)
 
-I call these assignments Studios. A student makes something, tries it, and decides what to change. In the project folder is a plain-text file called `AGENTS.md`. It tells an AI coding assistant how to act during that particular lesson. A teacher can open the file, read the directions, and change them. One of the hardest directions to get right is when to wait.
+I’d try the lesson once before handing it out. Play a student and say, “I’m stuck. Pick for me.” If the coach makes the very decision you wanted the student to practice, you’ve found a line to edit. Ask it to offer an example from a different problem, then try the exchange again. The template gives you a quick way to rehearse an assignment from the other side of the desk.
 
-I learned that from another Studio. In my introductory web course, students design a brand for a plain white T-shirt. To rehearse the assignment, I used a second AI to play a learner who kept answering “yes.” My coaching agent wanted a reason for the choice of audience. It asked. It rephrased. It asked again. The learner could have been unsure, tired, or ready to move on. My instructions had turned a reasonable question into a trap.
+## Decide what you want to hear
 
-I changed the coach so it could offer one example and let the learner pause. A yes could approve a brand name. The reason the name fit a particular buyer could stay open until the learner had one. That rehearsal exposed a problem in my instructions. A simulated learner could help me find it. Only a classroom could tell me what real students would do next. [The coaching review](https://github.com/kaw393939/is117-brand-studio/blob/main/docs/coaching-review-2026-10-25.md)
+I design these assignments around **Research → Plan → Build → Test → Explain**. Each stage gives the coach a reason to ask a different question. In the Knowledge Lab, a student building an app that answers questions from documents can begin by reading a source and finding a question it can answer. During planning, the coach might ask, “Which passage do you expect your app to find?” After the student builds and tests the app, the coach can return to that prediction. “What did it actually return? Show me the words that support your answer.” The student can set the passages side by side and explain what they would keep or change. <a href="/knowledge-lab/students/research" target="_self">Try the Knowledge Lab research step</a>.
 
-<figure class="editorial-figure">
-  <img src="/images/teaching/studio-coach-pause.jpg" width="1080" height="720" alt="An open hand gestures toward a worked example while a learner holds a pencil over a blank card." loading="lazy" />
-  <figcaption>The first card can show a method. The blank one gives the learner somewhere to start. Editorial illustrations generated with AI.</figcaption>
-</figure>
+You choose how much of that conversation to collect. The general starter lets a learner submit a short exchange, annotate the work, or explain a choice aloud. My Brand Studio gives a more structured example. Its coach drafts a learning record with the student’s words or a labeled paraphrase, the help they received, and a link to the work or check they’re discussing. The student can correct the record before submitting it with their work. A brief answer like “yes” stays brief. The coach leaves the reasoning open for the student to supply. [See the Brand Studio learning record](https://github.com/kaw393939/is117-brand-studio/blob/main/LEARNING.md)
 
-## Change one thing and hand over the keyboard
+## Grade one project, then read across the class
 
-What can someone carry into the next problem? In a randomized study, Judy Hanwen Shen and Alex Tamkin asked 52 developers to use an unfamiliar Python library. All 26 who had an AI assistant finished both tasks within the time limit. Twenty-two of the 26 working independently did. On an immediate quiz without AI, the assisted group averaged about four points lower out of 27. They tested one library in one short session. What caught my attention was how much easier it would have been to see the finished tasks than to notice the gap on the quiz. [Read the revised study](https://arxiv.org/html/2601.20245v3)
+For an individual review, I can give AI the rubric, the project, and the responses the student chose to submit. I’d start with a request like this.
 
-In my content management course, the project is a tool that answers questions from a set of documents. For the first answer, the coach can ask the student to find the passage that supports it. For the next round, I can ask for a detail the documents leave out and hand the keyboard over. If I immediately say “check the source,” I’ve already made the most interesting decision for the student. Waiting leaves room for them to notice the missing evidence, ask for help, or surprise me with a better check. <a href="/knowledge-lab/students/check#five-questions-to-prepare" target="_self">Try a supported question and a missing-evidence question</a>.
+> Find a choice this student can explain. Show me their words and the part of the project they refer to. Draft feedback that recognizes what they did well and asks one question the evidence leaves open.
 
-That moment has a workplace counterpart. A customer sees “request received” and walks away. The engineer sitting beside them can ask what the person at the other end actually received. Switch to that person’s view. Find the request. Give them the keyboard. That is one piece of forward-deployed engineering I can bring into a classroom today.
+Take the student who moved the size chart. The site shows where the measurements ended up. Their explanation gives me a reason to credit the decision to revise. That frees me to ask, *How would you check whether someone buying their first shirt notices the measurements now?* I review the evidence and decide the grade. [See the instructor’s assessment guide](https://github.com/kaw393939/is117-brand-studio/blob/main/docs/assessment.md)
 
-## Try it in the next fifteen minutes
+Then I can ask something that grading one project at a time makes easy to miss.
 
-The downloadable Studio starts with a question anyone can teach. A help desk changed its schedule. Five recorded waits used to be **4, 5, 5, 6, and 30 minutes**. Now they’re **6, 6, 7, 7, and 9**. Did service improve?
+> Across these submissions, where did students give different reasons for the same choice? Find a difficulty worth teaching again and an approach another student could learn from. Point me to the responses behind each observation.
 
-Give someone a moment with the numbers. The average fell from ten minutes to seven. The middle person waited seven minutes instead of five. Now introduce a visitor with ten minutes between classes. What would your learner check first? Listen for who raises the question of how long the appointment itself takes.
+Suppose several students say their search worked because it returned a passage. One student opens the original document and discovers that the next sentence changes the answer. I now have a way to open our next class. Give everyone that passage and ask what advice they would give the reader before and after seeing the next sentence. I can also turn the question back on my assignment. If the coach told everyone exactly where to look, I’ll want to leave that decision open on the next case. The starter supplies the lesson and coach. The instructor runs the review using the submitted work.
 
-To adapt this for your class, open the teacher guide and paste it into an AI chat with one assignment you already teach. Ask it to help you build a Studio. Pick the decision you want students to own. Play a stuck student yourself. If the first hint gives the decision away, revise that line and try it again. The download includes a paper-based route. **The ZIP is the teacher copy and contains answers. Give students only `LESSON.md` and `AGENTS.md`.** [Download the teacher Studio](/downloads/AI-Studio-Starter.zip) · [Open the teacher guide](https://github.com/kaw393939/kaw393939.github.io/blob/main/examples/ai-studio-starter/TEACHER-STUDIO.md)
-
-At hand-in, I want one moment I can ask about. They can choose a question that changed their work, point to the change, and show how they checked it. They can also mark a draft or explain the choice aloud. If the conversation already lives next to the fix, a link can spare everyone another reflection paper. [The classroom accounts and research behind the starter](/teaching/studio-field-notes)
-
-The question I keep coming back to is one I’d also ask someone mentoring a new engineer. **What do you ask on the first round that you hope they’ll ask for themselves on the second?**
+If you try this, start with a question you already ask when you pull up a chair beside a student. Build it into an assignment. When you review the replies, look for one that changes the feedback you give that student and one that changes what you teach next. [Download the teacher Studio, including worked answers](/downloads/AI-Studio-Starter.zip) · [Read the teaching field notes](/teaching/studio-field-notes)

@@ -13,11 +13,6 @@ export const writingDesk: ImageAsset = {
   width: 1200, height: 630
 }
 
-const rock: ImageAsset = {
-  path: '/images/teaching/studio-rock-paper-tests.jpg',
-  alt: 'Folded red paper covers a dark stone beside a strip of green check marks.',
-  width: 1280, height: 853
-}
 const coach: ImageAsset = {
   path: '/images/teaching/studio-coach-pause.jpg',
   alt: 'An open hand gestures toward a worked example while a learner holds a pencil over a blank card.',
@@ -61,8 +56,11 @@ export function articleMedia(path: string, frontmatter: Frontmatter) {
   let cover = writingDesk
   let share = writingDesk
   if (path === 'teaching/when-ai-helps-write-the-code.md') {
-    cover = rock
-    share = { ...rock, path: '/images/editorial/social-rock-paper.jpg', width: 1200, height: 630 }
+    cover = {
+      path: '/images/editorial/field-desk.jpg',
+      alt: 'An open notebook and a red pencil on a blue workbench in angled sunlight.',
+      width: 1440, height: 960
+    }
   } else if (path === 'teaching/studio-field-notes.md') {
     cover = coach
     share = { ...coach, path: '/images/articles/studio-field-notes.jpg', width: 1200, height: 630 }

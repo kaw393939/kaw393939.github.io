@@ -14,10 +14,10 @@ edition:
     /teaching/when-ai-helps-write-the-code:
       label: The teaching issue
       headline: |-
-        The Tests Passed.
-        Who Won the Game?
-      teaser: My rock-paper-scissors starter passed twelve tests. It still couldn’t tell you who won. The missing rule became a lesson in what students can check for themselves.
-      caption: Paper covers rock.
+        What Could You Learn If You Could
+        Listen to Every Student Work?
+      teaser: Turn an assignment you already teach into a Studio. A few well-chosen questions give you student responses you can use for individual feedback and to decide what to teach next.
+      caption: A place to keep the questions you want to ask as students work.
     /teaching/studio-field-notes:
       label: Classroom practice
       headline: When should an AI coach step back?

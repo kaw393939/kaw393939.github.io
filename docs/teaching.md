@@ -10,9 +10,9 @@ I teach web development, web applications, and content management at NJIT, and I
 
 If you teach a course or mentor a new engineer, pick one decision you want to watch the learner make. In the Studios below, it might be choosing a buyer, calling the winner of a game, or finding out why a website is unreachable. If you’re here for your IS373 project, <a href="/knowledge-lab/students/" target="_self">open the student guide</a> to choose your next step.
 
-## The Tests Passed. Who Won the Game?
+## What Could You Learn If You Could Listen to Every Student Work?
 
-My web applications starter passed twelve automated checks and still couldn’t settle a round of rock-paper-scissors. That was deliberate. The part I wanted the student to explain was what happens when the computer picks paper and the player picks rock. The feature follows that question through three courses. [Read the classroom story](/teaching/when-ai-helps-write-the-code)
+Take an assignment you already teach. Where would you like to sit beside a student and ask what they’re thinking? The Studio template lets you put that question into the assignment. During grading, AI can help you find the evidence for one student’s feedback and compare responses across the class to decide what to revisit. [Read the classroom feature](/teaching/when-ai-helps-write-the-code)
 
 ![A learner holds a pencil over a blank card beside a worked example.](/images/teaching/studio-coach-pause.jpg)
 

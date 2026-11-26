@@ -19,10 +19,10 @@ const desk = {
   <figcaption>AI-generated editorial illustration.</figcaption>
 </figure>
 
-I built a game starter that passed twelve tests while leaving the winner undecided. In my video editor, I could check a frame pixel by pixel and still have to listen to the export. I write about the gap between what we checked and what someone has good reason to believe.
+In my classroom, I want to hear what a student tried and why they changed their mind. In my video editor, I want to know what a viewer will actually see and hear. These pieces follow the work that helps me answer those questions.
 
 - **Read an engineering case.** Which check tells you what a viewer actually receives in a video export? [Inside MetaVis](/research/systems/metavis-evidence-and-evaluation) · [All systems case studies and research](/research/systems/)
 - **Try a student exercise.** Ask who organizes events, open the passage your search returns, and show a classmate the words that answer the question. <a href="/knowledge-lab/students/reference#your-first-15-minutes" target="_self">Run the 15-minute retrieval lab</a> · [Find a portfolio project in an AI job posting](/ai-careers)
-- **Adapt a Studio for your class.** Choose one decision you want a learner to make, then rehearse how the AI coach responds. [Read the classroom case](/teaching/when-ai-helps-write-the-code) · [Download the teacher kit with worked answers](/downloads/AI-Studio-Starter.zip)
+- **Adapt a Studio for your class.** Turn an existing assignment into a guided conversation. Use the responses to give feedback and find a question worth revisiting with everyone. [Read the classroom feature](/teaching/when-ai-helps-write-the-code) · [Download the teacher kit with worked answers](/downloads/AI-Studio-Starter.zip)
 
 <ArticleIndex />

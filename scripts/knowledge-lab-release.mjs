@@ -1,6 +1,6 @@
 export const source = {
   repository: 'https://github.com/kaw393939/is373-rag.git',
-  revision: '32bb74872916c4bb572cdb0c2d7d2bad89e36951',
+  revision: '52e441de1cbd94e395c73abbde23add152e5fd7e',
   base: '/knowledge-lab/',
   origin: 'https://keithwilliams.org'
 }

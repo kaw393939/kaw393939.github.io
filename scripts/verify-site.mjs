@@ -249,8 +249,7 @@ check('Social previews, canonical URLs and structured data match the reading des
     assert.equal(image.origin, base)
     if (route === coverPath || route === '/' || route === '/writing') {
       if (route !== '/') {
-        const crop = route === coverPath ? 'social-rock-paper.jpg' : 'social-field-desk.jpg'
-        assert.equal(image.pathname, '/images/editorial/' + crop, route)
+        assert.equal(image.pathname, '/images/editorial/social-field-desk.jpg', route)
       }
       assert.equal(metadata(html, 'og:image:width'), '1200', route)
       assert.equal(metadata(html, 'og:image:height'), '630', route)
@@ -483,7 +482,7 @@ check('Homepage serves local editorial photographs with accessible, sized images
   assert.ok(images.some(img => img.includes('loading="lazy"')))
   assert.ok(images.some(img => img.includes('srcset=') && img.includes('sizes=')))
   for (const path of ['images/editorial/field-desk.jpg', 'images/editorial/evidence-desk.jpg',
-    'images/teaching/studio-rock-paper-tests.jpg', 'images/teaching/studio-coach-pause.jpg']) {
+    'images/teaching/studio-coach-pause.jpg']) {
     const bytes = readFileSync(resolve(dist, path))
     assert.ok(bytes.length > 1000 && bytes.readUInt16BE(0) === 0xffd8, path)
   }

@@ -17,7 +17,7 @@ export const researchQuestions = [
   {
     number: '02', title: 'Assessment when AI can produce the artifact',
     text: 'What can a student predict, check, or correct that a finished project alone would never show?',
-    href: '/teaching/when-ai-helps-write-the-code', linkLabel: 'See what the game leaves open'
+    href: '/teaching/when-ai-helps-write-the-code', linkLabel: 'See how a Studio records student decisions'
   },
   {
     number: '03', title: 'Working with AI without handing over judgment',
