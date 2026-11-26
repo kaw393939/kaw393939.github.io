@@ -1,12 +1,14 @@
 ---
 title: About Keith Williams
-description: Meet Keith Williams, an NJIT lecturer and Enterprise AI program director whose work connects software engineering, classroom teaching, and public services.
-teaser: A home computer in Pittsburgh, a classroom in Newark, and software work in Zambia shaped the way I teach people to build with AI.
+description: Meet Keith Williams, NJIT’s Enterprise AI program director. Explore his work in software engineering, public services in Zambia, and AI-assisted learning.
+teaser: I build software, design courses, and study how people decide whether to trust an AI-assisted result. My route here runs through Pittsburgh, Newark, and Zambia.
 ---
 
 # About Keith Williams
 
-I’m a Senior University Lecturer at the New Jersey Institute of Technology and director of its B.S. in Enterprise AI. When a student shows me a working project, I like to hand it to someone else. What happens when that person tries something the student never anticipated? That’s often where the most interesting part of the lesson begins. [Inside my classroom](/teaching)
+I’m Keith Williams, a Senior University Lecturer in Informatics at the New Jersey Institute of Technology and director of its B.S. in Enterprise AI. I’ve built software for learning and collaboration, taught mobile development at ZCAS University in Zambia, and worked with Zambia’s Ministry of Finance on digital public services.
+
+Across those settings, I keep coming back to a practical question. What happens when the person who built the system hands it to the person who needs it? It shapes how I design courses, test software, and think about human judgment in AI. [Inside my classroom](/teaching) · [My engineering case studies](/research/systems/)
 
 ## Where it started
 
@@ -22,16 +24,20 @@ Today my students use AI coding assistants. In the classroom exercises I call St
 
 ## Learning beyond my own classroom
 
-In Zambia, I taught software engineering and worked with government teams on digital public services, user experience, and prototypes. A prototype gave us something concrete to put in front of the person trying to use a service. We could watch where they got stuck and ask what they had expected to happen. [NJIT on teaching in Zambia](https://news.njit.edu/inspiring-students-njit-africa) · [NJIT on digitizing government services](https://news.njit.edu/njit-lecturer-helps-digitize-government-services-zambia)
+A conversation with an NJIT graduate student from Zambia led to a progressive web application workshop at ZCAS University for students and staff. In Zambia I also worked with the Ministry of Finance on an initiative to digitize public services. An online form only helps if the person completing it can actually finish the government transaction. That question about delivery has stayed with me. [NJIT on teaching in Zambia](https://news.njit.edu/inspiring-students-njit-africa) · [NJIT on digitizing government services](https://news.njit.edu/njit-lecturer-helps-digitize-government-services-zambia)
 
 ## What I’m working on now {#what-im-working-on-now}
 
 Two questions keep coming up in my work with AI. How do we tell what someone learned when AI helped them build? How do we trace a confident answer back to the evidence behind it? My [research agenda](/research) describes the studies I’d like to run. The <a href="/knowledge-lab/">Knowledge Lab</a> gives readers a retrieval exercise to try, and my [project portfolio](/#projects) links to the software and teaching materials behind the work.
 
-I also write about ordinary uses of AI. [Life Tracker](/life-tracker) is the method I use to follow a task from a conversation to a verified result. A separate proposal, EverydayAI Newark, imagines paid workshops helping fund free community learning and opportunities for students to show their work. It is a proposal, not an operating program.
+In MetaVis, my Swift and Metal video-editing prototype, checking a rendered frame and checking an exported video tell you different things. I wrote up the tests so another engineer can inspect the distinction. [Inside MetaVis](/research/systems/metavis-evidence-and-evaluation)
+
+[Life Tracker](/life-tracker) explains how I carry the same habit into everyday work with an AI assistant. A separate proposal, EverydayAI Newark, imagines paid workshops helping fund free community learning. It is a proposal, not an operating program.
 
 ## Let’s compare notes {#lets-compare-notes}
 
-I’d like to hear about an assignment that changed how you teach, or a software project that made you rethink what counts as evidence. [Connect on LinkedIn](https://www.linkedin.com/in/keithwilliams5/) · [Find me at NJIT](https://people.njit.edu/profile/kwilliam) · [Start a public conversation](/#conversation)
+If you teach with AI, tell me about a decision you want the learner to make independently. If you’re exploring a research collaboration or working on a public-facing service, I’d like to hear which result your team is trying to verify and who needs to trust it. My NJIT profile lists my professional email. [Contact me at NJIT](https://people.njit.edu/profile/kwilliam) · [Connect on LinkedIn](https://www.linkedin.com/in/keithwilliams5/)
+
+For a reproducible issue with one of my public projects, include the project link and what you observed. [Start a public project conversation](/#conversation)
 
 *Parts of this account first appeared on my [earlier About page](https://eaikw.com/about/).*

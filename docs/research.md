@@ -1,14 +1,14 @@
 ---
 title: Rethinking Education with AI
-description: Keith Williams outlines research on what students can do after AI assistance, how to trace claims to sources, and where a human reviewer adds value.
-teaser: Change one requirement, withhold one hint, or introduce two conflicting records. What does it take for a person to notice what matters next?
+description: Explore Keith Williams’s research agenda in AI-assisted learning, evidence in software systems, and the human decisions behind reliable engineering.
+teaser: A teaching Studio and a video-editing prototype brought me to the same problem. When an AI helps produce an answer, how can someone independently check it?
 ---
 
 # Rethinking Education with AI
 
-A student and an AI assistant build a working program. The next day I change one rule. Can the student predict which part will break? In a different setting, a reader asks a question and gets an answer with two citations. Can they see when those sources disagree?
+In my NJIT Studios, I can change one rule in a game and ask the person who built it which test should fail. In MetaVis, my Swift and Metal editing prototype, a reference frame can pass a pixel check while the exported video still needs a sound check. Both experiences led me to ask what a test actually lets another person conclude.
 
-Both questions start with something that looks finished. I want to study what it takes for a person to inspect it and decide what to do next. These are proposed studies and engineering questions. The technical case studies document the work completed so far.
+I’m pursuing that question in two directions. In education, I want to study what someone can do after AI assistance ends. In knowledge systems, I want to find out how a human reviewer can trace a claim to its evidence and spot where the system needs attention. These are proposed studies and engineering questions. The technical case studies document the work completed so far.
 
 ## Can you use what you learned somewhere new?
 
@@ -32,4 +32,8 @@ The systems series follows the problem from source documents through retrieval, 
 
 An assistant that can use tools can turn a misunderstanding into a real change. I want to know which actions a person should review, what evidence the assistant should preserve, and how to correct a mistake. [Life Tracker](/life-tracker) describes how I record and check actions in a small personal workflow. [Ordo](https://github.com/kaw393939/ordo) documents a broader system for human-directed AI work.
 
-An earlier project proposal, EverydayAI Newark, asked how community members outside the university could practice these skills on real projects. [Read about my background and community work](/about)
+An earlier project proposal, EverydayAI Newark, asked how people outside the university could practice these skills on real projects. [My background and community work](/about)
+
+## Research collaborations
+
+I’d welcome a colleague who wants to compare two versions of an AI-assisted assignment, or an engineering team with a claim that is difficult to trace back to a source. A useful first conversation starts with one task, an observable result, and a question the available evidence cannot yet answer. [Contact me through NJIT](https://people.njit.edu/profile/kwilliam)
