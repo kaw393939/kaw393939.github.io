@@ -5,15 +5,23 @@ description: Classroom accounts, studies of novice learners, GitHub Education di
 
 # What shaped the AI Studio starter
 
-*Keith Williams · November 2026*
+*Keith Williams · November 25, 2026*
 
-I wanted a teacher to be able to bring one assignment, try the AI coach as a student, and leave with something they could use in the next class. These sources changed what I put in the starter. [Download the teacher Studio](/downloads/AI-Studio-Starter.zip) · [Read the classroom article](/teaching/when-ai-helps-write-the-code)
+I wanted a teacher to be able to bring one assignment, try the AI coach as a student, and leave with something they could use in the next class. These sources changed what I put in the starter. The teacher download includes the answers. Share only `LESSON.md` and `AGENTS.md` with students. [Download the teacher Studio](/downloads/AI-Studio-Starter.zip) · [Read the classroom article](/teaching/when-ai-helps-write-the-code)
 
 ## Could a student recognize a problem after the coach stops pointing at it?
 
 Majeed Kazemitabaar and colleagues paired Python exercises with manual changes in a controlled study of 69 novice programmers aged 10–17. The group with access to code generation completed more authoring tasks. The researchers found no statistically significant overall difference in retention scores a week later. In a separate randomized high-school math study, Hamsa Bastani and colleagues found that students using unrestricted GPT did better during practice and worse than controls on a subsequent unaided exam. Teacher-designed safeguards substantially reduced that downside. The tasks, learners, and tools differed. I took a design question from both studies: what can I ask the learner to do when the help changes? [Programming study](https://arxiv.org/abs/2302.07427) · [Mathematics study](https://doi.org/10.1073/pnas.2422633122)
 
 **In the starter:** the teacher picks a question to model in practice and a fresh case where the student can decide what to check. A student who needs a hint can still get one. The teacher can see when it entered the conversation.
+
+## What happens when the learner gets the next move?
+
+Robert Atkinson, Alexander Renkl, and Mary Margaret Merrill studied a familiar classroom move years before coding agents were available. Students worked through probability examples with more and more steps left for them to complete. In their experiments, pairing that fading support with a prompt to explain the underlying principle improved performance on new problems. That gave me a reason to build a second case into the Studio and to leave time for the student to initiate a check. Whether it carries across to my courses is an open question. [Worked examples and self-explanation](https://doi.org/10.1037/0022-0663.95.4.774)
+
+Two programming studies measure different things teachers and engineering managers care about. Cui and colleagues combined three workplace experiments involving 4,867 developers. They estimated about 26% more completed tasks among users of a coding assistant. Shen and Tamkin randomly assigned 52 developers to work on two tasks with an unfamiliar Python library, with or without AI. On an immediate 27-point quiz without assistance, the assisted group averaged 4.15 points lower. All 26 assisted developers finished the exercise in time, compared with 22 of 26 in the control group. These outcomes can coexist. I use the revised November paper for the quiz score. [Workplace study](https://doi.org/10.1287/mnsc.2025.00535) · [Revised learning study](https://arxiv.org/html/2601.20245v3)
+
+**In the starter:** give credit for a sensible check either way. Record whether the student identified it on their own or acted on a hint. A later fresh example gives them another chance to start.
 
 ## Does the coach actually leave the decision open?
 

@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { execFileSync } from 'node:child_process'
 import { readFileSync, existsSync, statSync } from 'node:fs'
 import { resolve } from 'node:path'
 
@@ -9,14 +10,65 @@ const error = read('404.html')
 const sitemap = read('sitemap.xml')
 const guide = read('life-tracker.html')
 const starter = read('life-tracker-starter.txt')
+const base = 'https://keithwilliams.org'
+const coverPath = '/teaching/when-ai-helps-write-the-code'
+const notesPath = '/teaching/studio-field-notes'
+const studioZip = '/downloads/AI-Studio-Starter.zip'
+const writing = read('writing.html')
+const feature = read(coverPath.slice(1) + '.html')
+const notes = read(notesPath.slice(1) + '.html')
 const checks = []
+
+function mainContent(html) {
+  const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/)
+  assert.ok(main, 'Missing pre-rendered main')
+  return main[1]
+}
+function requireLink(html, href) {
+  assert.ok(html.includes(`href="${href}"`), `Missing link to ${href}`)
+}
+function metadata(html, name) {
+  for (const tag of html.match(/<meta\b[^>]+>/g) || []) {
+    if (tag.includes(`name="${name}"`) || tag.includes(`property="${name}"`)) {
+      return tag.match(/\bcontent="([^"]+)"/)?.[1]
+    }
+  }
+}
+function schemas(html) {
+  return [...html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)]
+    .map(match => JSON.parse(match[1]))
+}
 function check(name, fn) { fn(); checks.push(name); console.log(`PASS ${name}`) }
 
-check('Homepage is pre-rendered with one H1 and original content', () => {
-  assert.equal((home.match(/<h1\b/g) || []).length, 1)
-  for (const text of ['Teaching AI.', 'Rethinking', 'Education.', 'Keith Williams', 'Senior University Lecturer', 'B.S. Enterprise AI', 'Keep judgment human.', 'Public on GitHub', 'student records']) assert.ok(home.includes(text), text)
-  assert.ok(home.includes('<main'))
+check('Editorial homepage leads with a linked cover story', () => {
+  const main = mainContent(home)
+  const headings = [...main.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/g)]
+  assert.equal(headings.length, 1)
+  assert.match(headings[0][1].replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' '), /The Tests Passed\.\s*Who Won the Game\?/i)
+  requireLink(headings[0][1], coverPath)
+  requireLink(main, coverPath)
+  for (const url of ['/writing', '/teaching', '/research', '/research/systems/', '/ai-careers', '/about']) requireLink(home, url)
+  assert.ok(home.includes('Keith Williams'))
 })
+check('Writing index puts original work and its classroom materials within reach', () => {
+  const index = mainContent(writing)
+  assert.match(index, /<figure\b[\s\S]*?src="\/images\/editorial\/field-desk\.jpg"[\s\S]*?<figcaption>AI-generated editorial illustration\.<\/figcaption>/)
+  const routes = [coverPath, notesPath, '/research/systems/', '/research/systems/english-software-engineering',
+    '/research/systems/provenance-knowledge-graphs', '/research/systems/human-attention-kanban', '/ai-careers']
+  for (const url of routes) {
+    requireLink(index, url)
+    const file = url.endsWith('/') ? url.slice(1) + 'index.html' : url.slice(1) + '.html'
+    const html = read(file)
+    assert.equal((mainContent(html).match(/<h1\b/g) || []).length, 1, url)
+  }
+  for (const html of [index, mainContent(feature), mainContent(read('teaching.html'))]) requireLink(html, studioZip)
+  for (const html of [feature, notes]) assert.equal((mainContent(html).match(/<h1\b/g) || []).length, 1)
+  const files = execFileSync('unzip', ['-Z1', resolve(dist, studioZip.slice(1))], { encoding: 'utf8' })
+    .trim().split(/\r?\n/).filter(name => !name.endsWith('/'))
+  assert.deepEqual(files.sort(), ['AGENTS.md', 'LESSON.md', 'README.md', 'TEACHER-STUDIO.md']
+    .map(name => 'AI-Studio-Starter/' + name).sort())
+})
+
 check('Project cases and historical experience include status and source links', () => {
   assert.equal((home.match(/class="project-case"/g) || []).length, 5)
   assert.equal((home.match(/class="experience-entry"/g) || []).length, 2)
@@ -30,13 +82,9 @@ check('Project cases and historical experience include status and source links',
     'https://news.njit.edu/njit-lecturer-helps-digitize-government-services-zambia'
   ]) assert.ok(home.includes(`href="${url}"`), url)
 })
-check('Knowledge Lab is prominent in navigation and accurate in project cases', () => {
-  const layout = readFileSync('docs/.vitepress/theme/Layout.vue', 'utf8')
-  assert.ok(layout.includes('href="/knowledge-lab/"'))
-  assert.ok(home.includes('href="/knowledge-lab/"'))
-  assert.ok(home.includes('>Knowledge Lab</a>'))
+check('Knowledge Lab is discoverable from the public portfolio and course pages', () => {
+  for (const html of [home, read('teaching.html')]) requireLink(html, '/knowledge-lab/')
   assert.ok(home.includes('Ordo Knowledge Lab'))
-  assert.ok(home.includes('research application planned'))
 })
 
 check('Section anchors and accessible heading references resolve uniquely', () => {
@@ -46,26 +94,19 @@ check('Section anchors and accessible heading references resolve uniquely', () =
   for (const [, references] of home.matchAll(/aria-labelledby="([^"]+)"/g)) {
     for (const id of references.split(' ')) assert.ok(ids.includes(id), id)
   }
-  assert.ok(home.includes('href="#projects"'))
-  for (const href of ['/teaching', '/research', '/#about']) assert.ok(home.includes(`href="${href}"`), href)
+  for (const id of ['projects', 'about', 'zambia', 'conversation']) assert.ok(ids.includes(id), 'Legacy anchor: ' + id)
 })
-check('AI education missions and research agenda are explicit and qualified', () => {
-  assert.equal((home.match(/class="focus-item"/g) || []).length, 2)
-  assert.equal((home.match(/class="research-item"/g) || []).length, 4)
-  for (const phrase of ['TWO CONNECTED MISSIONS', 'Teaching AI', 'Rethinking Education', 'QUESTIONS WORTH TESTING', 'not claims of completed empirical research']) {
-    assert.ok(home.includes(phrase), phrase)
-  }
+check('Teaching and research front doors expose the feature and supporting material', () => {
   const teaching = read('teaching.html')
   const research = read('research.html')
   for (const page of [teaching, research]) {
-    assert.equal((page.match(/<h1\b/g) || []).length, 1)
-    assert.ok(page.includes('id="main" tabindex="-1"'))
+    assert.equal((mainContent(page).match(/<h1\b/g) || []).length, 1)
+    requireLink(mainContent(page), coverPath)
+    requireLink(mainContent(page), notesPath)
   }
-  assert.ok(teaching.includes('AI literacy is not just knowing'))
+  assert.ok(teaching.includes('AGENTS.md'))
   assert.ok(research.includes('not a list of completed experiments'))
   assert.ok(research.includes('peer-reviewed'))
-  assert.ok(teaching.includes('rel="canonical" href="https://keithwilliams.org/teaching"'))
-  assert.ok(research.includes('rel="canonical" href="https://keithwilliams.org/research"'))
 })
 
 check('Research series and advisor proposal are generated and accessible', () => {
@@ -117,25 +158,65 @@ check('Removed homepage popup stays absent', () => {
   assert.ok(!layout.includes('Making AI<br>work for'))
 })
 check('Unique title, canonical URL and share metadata', () => {
-  assert.match(home, /<title>Keith Williams · AI &amp; Education<\/title>/)
+  const title = home.match(/<title>([^<]+)<\/title>/)?.[1]
+  assert.ok(title && title.includes('Keith Williams') && title.length > 'Keith Williams'.length)
+  assert.equal(metadata(home, 'og:title'), title)
+
   assert.match(home, /rel="canonical" href="https:\/\/keithwilliams.org\/"/)
   assert.match(home, /property="og:url" content="https:\/\/keithwilliams.org\/"/)
   assert.ok(home.includes('name="description"'))
   assert.ok(home.includes('name="viewport"'))
   assert.ok(home.includes('lang="en-US"'))
 })
-check('Valid profile structured data', () => {
-  const data = JSON.parse(home.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1])
-  assert.equal(data['@type'], 'ProfilePage')
-  assert.equal(data.mainEntity['@type'], 'Person')
-  assert.equal(data.mainEntity.name, 'Keith Williams')
-  assert.equal(data.mainEntity.sameAs.length, 3)
+check('Social previews, canonical URLs and structured data match the reading destination', () => {
+  const pages = [
+    ['/', 'ProfilePage', home],
+    ['/writing', 'CollectionPage', writing],
+    ['/teaching', 'CollectionPage', read('teaching.html')],
+    ['/research', 'CollectionPage', read('research.html')],
+    [coverPath, 'Article', feature],
+    [notesPath, 'Article', notes]
+  ]
+  for (const [route, type, html] of pages) {
+    const url = base + route
+    assert.ok(html.includes(`rel="canonical" href="${url}"`), url)
+    assert.equal(metadata(html, 'og:url'), url)
+    assert.ok(metadata(html, 'og:title') && metadata(html, 'og:description'), route)
+    assert.equal(metadata(html, 'twitter:card'), 'summary_large_image', route)
+    const image = new URL(metadata(html, 'og:image'))
+    assert.equal(image.origin, base)
+    if (route === coverPath || route === '/' || route === '/writing') {
+      const crop = route === coverPath ? 'social-rock-paper.jpg' : 'social-field-desk.jpg'
+      assert.equal(image.pathname, '/images/editorial/' + crop, route)
+      assert.equal(metadata(html, 'og:image:width'), '1200', route)
+      assert.equal(metadata(html, 'og:image:height'), '630', route)
+    }
+    assert.ok(existsSync(resolve(dist, image.pathname.slice(1))), image.href)
+    assert.ok(metadata(html, 'og:image:alt'), image.href)
+    const schema = schemas(html).find(data => data['@type'] === type)
+    assert.ok(schema, type + ' ' + route)
+    assert.equal(schema.url, url)
+    if (type === 'Article') {
+      assert.equal(schema.author.name, 'Keith Williams')
+      assert.equal(schema.image, image.href)
+      assert.equal(metadata(html, 'og:type'), 'article')
+      requireLink(mainContent(html), 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url))
+    }
+  }
+  const data = schemas(home)
+  const person = data.find(s => s['@type'] === 'ProfilePage').mainEntity
+  assert.equal(person['@type'], 'Person')
+  assert.equal(person.name, 'Keith Williams')
+  assert.equal(person.sameAs.length, 3)
+  assert.ok(data.some(s => s['@type'] === 'WebSite' && s.url === base + '/'))
 })
+
 check('Sitemap excludes the error page; error page is noindex', () => {
   assert.ok(!sitemap.includes('/404'))
   assert.ok((sitemap.match(/<loc>/g) || []).length >= 17, 'Sitemap should include the expanded research site')
   assert.ok(sitemap.includes('/teaching'))
   assert.ok(sitemap.includes('/research'))
+  for (const route of ['/writing', coverPath, notesPath]) assert.ok(sitemap.includes(base + route), route)
   assert.ok(sitemap.includes('/research/systems/vision-and-interface'))
   assert.ok(sitemap.includes('/research/systems/uap-research-testbed'))
   assert.match(error, /name="robots" content="noindex, follow"/)
@@ -143,18 +224,32 @@ check('Sitemap excludes the error page; error page is noindex', () => {
   assert.ok(!error.includes('application/ld+json'))
   assert.ok(read('robots.txt').includes('Sitemap: https://keithwilliams.org/sitemap.xml'))
 })
-check('All homepage images have alt text, dimensions, and responsive sources', () => {
-  const images = home.match(/<img\b[^>]*>/g)
-  assert.equal(images.length, 2)
+check('Homepage serves local editorial photographs with accessible, sized images', () => {
+  const images = home.match(/<img\b[^>]*>/g) || []
+  assert.ok(images.length >= 3)
+  const sources = []
   for (const img of images) {
-    for (const attr of ['alt', 'width', 'height', 'srcset', 'sizes']) assert.match(img, new RegExp(`${attr}="[^\"]+"`))
-    for (const match of img.matchAll(/\/(images\/[^\s",]+)/g)) assert.ok(existsSync(resolve(dist, match[1])), match[1])
+    for (const attr of ['width', 'height', 'src']) assert.match(img, new RegExp('\\b' + attr + '="[^"]+"'))
+    assert.match(img, /\balt="[^"]*"/)
+    if (img.includes('alt=""')) {
+      const beforeImage = home.slice(0, home.indexOf(img))
+      assert.match(beforeImage, /<a\b[^>]*aria-hidden="true"[^>]*>\s*$/, 'Empty alt belongs to a decorative linked image')
+    }
+    const src = img.match(/\bsrc="([^"]+)"/)[1]
+    sources.push(src)
+    for (const [, path] of img.matchAll(/\/(images\/[^\s",]+)/g)) assert.ok(existsSync(resolve(dist, path)), path)
   }
-  assert.ok(images[0].includes('fetchpriority="high"'))
-  assert.ok(images[1].includes('loading="lazy"'))
-  assert.ok(statSync(resolve(dist, 'images/keith-portrait-20261111-480.webp')).size < 60000)
-  assert.ok(statSync(resolve(dist, 'images/explorer-horizon-480.webp')).size < 60000)
+  assert.ok(sources.includes('/images/teaching/studio-rock-paper-tests.jpg'))
+  assert.ok(images.some(img => img.includes('fetchpriority="high"') && /\balt="[^"]+"/.test(img)))
+  assert.ok(images.some(img => img.includes('loading="lazy"')))
+  assert.ok(images.some(img => img.includes('srcset=') && img.includes('sizes=')))
+  for (const path of ['images/editorial/field-desk.jpg', 'images/editorial/evidence-desk.jpg',
+    'images/teaching/studio-rock-paper-tests.jpg', 'images/teaching/studio-coach-pause.jpg']) {
+    const bytes = readFileSync(resolve(dist, path))
+    assert.ok(bytes.length > 1000 && bytes.readUInt16BE(0) === 0xffd8, path)
+  }
 })
+
 check('Accessible controls and reduced-motion support remain', () => {
   assert.ok(home.includes('class="skip-link"'))
   assert.ok(home.includes('aria-controls="site-nav"'))
@@ -174,12 +269,13 @@ check('Muted text exceeds AA contrast for normal text', () => {
   const muted = css.match(/--muted:\s*(#[a-f0-9]+)/i)[1]
   assert.ok((luminance(paper) + .05) / (luminance(muted) + .05) >= 4.5)
 })
-check('Responsive contact rules follow base rules and menu can scroll', () => {
+check('Responsive navigation includes a viewport bound and can scroll', () => {
   const css = readFileSync('docs/.vitepress/theme/style.css', 'utf8')
-  assert.ok(css.search(/@media\s*\(max-width:\s*720px\)/) > css.indexOf('.contact-actions {'))
-  assert.ok(css.includes('max-height: calc(100dvh - 72px)'))
-  assert.ok(css.includes('overflow-y: auto'))
+  assert.match(css, /@media\s*[^{}]*(?:max-width|width\s*<=)/)
+  assert.match(css, /max-height:\s*[^;}]*[ds]?vh/)
+  assert.match(css, /overflow-y:\s*auto/)
 })
+
 check('Supporting paragraphs do not inherit small eyebrow typography', () => {
   const css = readFileSync('docs/.vitepress/theme/style.css', 'utf8')
   for (const [, selector, declarations] of css.matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
@@ -212,7 +308,7 @@ check('Guide metadata and sitemap resolve to the public article', () => {
 })
 check('Public guide links only to approved public destinations', () => {
   const approvedExternalLinks = new Set(['https://github.com/kaw393939', 'https://people.njit.edu/profile/kwilliam', 'https://www.linkedin.com/in/keithwilliams5/'])
-  for (const [, href] of guide.matchAll(/<a\b[^>]*href="(https?:\/\/[^"]+)"/g)) assert.ok(approvedExternalLinks.has(href), href)
+  for (const [, href] of mainContent(guide).matchAll(/<a\b[^>]*href="(https?:\/\/[^"]+)"/g)) assert.ok(approvedExternalLinks.has(href), href)
   const starterUrls = starter.match(/https?:\/\/\S+/g) || []
   assert.deepEqual(starterUrls, ['https://keithwilliams.org/life-tracker'])
   assert.ok(guide.includes('fictional'))
@@ -242,8 +338,8 @@ check('AI careers guide has discoverability, provenance, eligibility and SEO', (
   for (const host of ['www.google.com', 'nvidia.wd5.myworkdayjobs.com', 'jobs.lever.co', 'openai.com', 'job-boards.greenhouse.io']) assert.ok(careers.includes(host), host)
   assert.ok(careers.includes('https://keithwilliams.org/ai-careers'))
   assert.ok(careers.includes('application/ld+json'))
-  assert.ok(home.includes('Explore AI careers'))
-  assert.ok(home.includes('>AI Careers</a>'))
+  requireLink(home, '/ai-careers')
+  requireLink(mainContent(writing), '/ai-careers')
   assert.ok(sitemap.includes('/ai-careers'))
 })
 

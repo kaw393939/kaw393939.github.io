@@ -1,6 +1,6 @@
 ---
 title: Teaching AI
-description: Keith Williams helps students learn AI and software development by building, questioning, testing, and explaining real work.
+description: Keith Williams’s classroom Studios, teacher starter, and field notes on seeing what a student understands when AI helps build the work.
 ---
 
 # Teaching AI
@@ -9,49 +9,32 @@ description: Keith Williams helps students learn AI and software development by 
 
 I've taught at NJIT for more than two decades. The tools have changed a lot. What still makes teaching worthwhile is seeing someone go from “I don't know where to start” to “I can figure this out.”
 
-[What I Ask Students to Show When AI Helps Write the Code](/teaching/when-ai-helps-write-the-code) draws on three projects from my fall courses. It includes a demo question you can try with your own students.
+## The Tests Passed. Who Won the Game?
+
+A round of Rock, Paper, Scissors gives me a question to ask after the automated checks pass. What result did the student expect when they played? The feature follows three courses and the choices I make about when an AI coach should speak and when it should wait. [Read the classroom story](/teaching/when-ai-helps-write-the-code)
+
+![A learner holds a pencil over a blank card beside a worked example.](/images/teaching/studio-coach-pause.jpg)
 
 ## Build something you can explain
 
-I want students to use AI, not hide it. But getting a working answer is only the beginning. Can you explain the choices? Find the mistake? Change the requirements and make it work again?
+I call these activities *Studios*. Students try the starter, decide on one change, build it with help, check what happened, and choose what to keep. A short instruction file called `AGENTS.md` tells the AI how to coach that particular lesson. The decision left to the student changes with the course.
 
-In practice, that means:
+| Studio | A decision the student owns |
+| --- | --- |
+| [Brand Studio · Intro to Website Development](https://github.com/kaw393939/is117-brand-studio) | Choose an audience for a plain white T-shirt. Show where that choice changed the storefront or its voice. |
+| [Rock, Paper, Scissors · Building Web Applications](https://github.com/kaw393939/is218-rps-starter) | Agree on the rule for one round. Explain a test and check the result by playing the game. |
+| [Server Studio · Content Management Systems](https://github.com/kaw393939/373_hosting) | Predict how a request will reach a calculator running on the student's server. Open the public address and check the prediction. |
 
-- **Start with a real purpose.** Who is this for, and what should it help them do?
-- **Make the goal clear.** Write down the requirements and what a good result would look like.
-- **Build and check.** Try the tool, inspect the output, and test the important parts.
-- **Show your thinking.** Explain a decision, reflect on a mistake, and apply what you learned somewhere new.
+The <a href="/knowledge-lab/">Knowledge Lab</a> takes the same habit into retrieval. When an AI answers from a collection of documents, can the student find the passage that supports the answer? What happens when the information is missing?
 
-I don't want students' confidence to depend on one model or one interface. I want them to develop habits they can carry to the next tool.
+## Try a Studio in your course
 
-## A few ways we practice
+Start with an assignment you already teach. Choose one moment when you want to hear the learner's reasoning before the assistant offers an answer. The starter helps you rehearse that exchange and produces a student handout and a set of coaching instructions. The teacher copy contains answers. Share only `LESSON.md` and `AGENTS.md` with students. [Download the teacher Studio starter](/downloads/AI-Studio-Starter.zip)
 
-### From an idea to working software
+For the decisions behind the design, the field notes connect classroom and engineering research to specific choices about hints, evidence, and follow-up questions. [Read the Studio field notes](/teaching/studio-field-notes)
 
-Students use project requirements, tests, repositories, and small revisions to turn an idea into something they can demonstrate. AI can help with the steps; students still need to understand what they are building and why.
+## Learning beyond one assignment
 
-### Making a brand from a plain T-shirt
+When AI helps produce an assignment, how do we know what the student can do the next time? That's the question behind my [research on learning and judgment](/research). The [AI career field guide](/ai-careers) gives students a way to choose a project around a responsibility they might encounter at work.
 
-The [IS117 Brand Studio](https://github.com/kaw393939/is117-brand-studio) starts with a neutral storefront. Students give it a purpose, a voice, and a visual identity, then explain their choices. It's a public teaching template and an educational demonstration, **not** a commercial checkout.
-
-### Asking where an AI answer came from
-
-The <a href="/knowledge-lab/">Knowledge Lab</a> gives students a place to explore retrieval, databases, sources, and the cost of using language models. The aim is to look past a convincing answer and understand the system that produced it.
-
-## Learning should be approachable
-
-I care about making technical ideas easier to enter without making them less meaningful. That interest also runs through my [Educational Design System](https://kaw393939.github.io/educational-design-system/), a published foundation for reusable teaching materials, and [Everyday AI CLI](https://github.com/kaw393939/everyday-ai-cli), an alpha toolkit for repeatable AI tasks.
-
-Neither is a finished answer to teaching with AI. They're things to try, inspect, and improve.
-
-## The question behind the work
-
-When AI helps produce an assignment, how do we know what the student learned? That is a question worth investigating, not something a polished demo settles.
-
-[Explore my research questions](/research) · [Read my story](/about) · [See the projects](/#projects)
-
-*This is my teaching approach, not an official NJIT curriculum statement or a claim of measured learning gains.*
-
-## Explore the changing job market
-
-[AI Careers: real jobs, internships and skills](/ai-careers) connects employer requirements to practical projects you can build and explain. It is a dated research snapshot, not a promise of employment.
+I also publish the tools behind the teaching. The Educational Design System supplies reusable layouts for course materials. Everyday AI CLI is an alpha toolkit for repeatable AI tasks. [Explore the Educational Design System](https://kaw393939.github.io/educational-design-system/) · [See Everyday AI CLI](https://github.com/kaw393939/everyday-ai-cli)

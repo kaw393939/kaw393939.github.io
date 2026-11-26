@@ -5,13 +5,13 @@ description: A source-linked guide to AI careers and internships, with a 50-post
 
 # AI Careers
 
-**What are employers actually asking for, and what can you start learning now?**
+**What problem would an employer trust you to solve?** I put together this field guide for students choosing what to practice and what to show in a portfolio. It draws on 50 employer postings. Pick a responsibility that interests you, then find a project where someone could watch you do it.
 
-AI is changing the work people do. The useful question is not just “Will there be jobs?” It is “What problems are organizations hiring people to solve?” This field guide connects real employer postings to skills you can practice and projects you can explain.
+For example, a forward deployed engineer works with a customer to get software working in their environment. A short demo in which a classmate tries your app, finds a problem, and retests your fix can help you explain how you work with another person. [See how I use project demos in class](/teaching)
 
-**Sources checked: November 12, 2026.** This is a selected research snapshot, not a comprehensive job board. Openings, pay and eligibility can change. Check the employer's page before applying.
+**I checked these sources on November 12, 2026.** The examples preserve what employers asked for at that time. Visit the employer's page for current availability, pay, and eligibility.
 
-[Explore roles](#roles-to-understand) · [Find internships](#internships-start-here) · [Compare 50 postings](#skills-report-50-real-posting-descriptions) · [Plan your skills](#what-should-you-learn) · [Build your research site](#turn-research-into-a-plan)
+[Explore roles](#roles-to-understand) · [Study the internship examples](#internships-start-here) · [Compare 50 postings](#skills-report-50-real-posting-descriptions) · [Plan your skills](#what-should-you-learn) · [Build your research site](#turn-research-into-a-plan)
 
 ## The short version
 
@@ -23,21 +23,21 @@ AI is changing the work people do. The useful question is not just “Will there
 
 ### Google · Forward Deployed Engineering Intern, BS/MS, Summer 2027
 
-**NYC, Sunnyvale or Reston · 12 weeks · Apply before November 20, 2026.** The employer describes rolling review, so do not wait for the last day.
+**NYC, Sunnyvale or Reston · 12 weeks.** The listed application deadline was November 20, 2026. The posting is included here as an example of the work and eligibility requirements.
 
 For penultimate-year BS/MS students. The posting connects Python, production AI, data pipelines and vector databases/RAG with customer discovery. Preferred skills include agents, tracing and token/cost metrics.
 
 **Pay:** the posting lists a US salary range of **$98,000–$131,000**, with 0% bonus. Treat this as an **annualized salary range**, not the total earnings for a 12-week internship.
 
-[Read the Google posting and apply](https://www.google.com/about/careers/applications/jobs/results/75665705386549958-forward-deployed-engineering-intern-bsms-summer-2027)
+[View Google's posting](https://www.google.com/about/careers/applications/jobs/results/75665705386549958-forward-deployed-engineering-intern-bsms-summer-2027)
 
 ### NVIDIA · AI Operations Intern, AI Clouds, Summer 2027
 
-**Santa Clara · $20–$71/hour.** Posted November 10, 2026. The employer says applications will be accepted **at least until November 14, 2026**. That is not a guaranteed closing date.
+**Santa Clara · $20–$71/hour.** Posted November 10, 2026. The posting said applications would be accepted **at least until November 14, 2026**. Check the employer's page for its current status.
 
 For students pursuing a BS/MS in computer science, software engineering, data science or an equivalent field. Build a scoped workflow tool with AI-assisted development, validate the output, collect feedback and document the result. Skills include Python/JavaScript/TypeScript, APIs, Git and testing.
 
-[Read the NVIDIA posting and apply](https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/AI-Operations-Intern--AI-Clouds---Summer-2027_JR2029119-1)
+[View NVIDIA's posting](https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/AI-Operations-Intern--AI-Clouds---Summer-2027_JR2029119-1)
 
 ### Palantir · Forward Deployed Software Engineer, Internship — Commercial
 
@@ -45,7 +45,7 @@ For students pursuing a BS/MS in computer science, software engineering, data sc
 
 Programming proficiency and an engineering degree support the work: developing customer-specific applications, LLM workflows and production solutions. This is a useful example of software work that also requires understanding people and their organizations.
 
-[Read the Palantir posting and apply](https://jobs.lever.co/palantir/d5486403-c050-4920-b2e0-91b69b61ebb2)
+[View Palantir's posting](https://jobs.lever.co/palantir/d5486403-c050-4920-b2e0-91b69b61ebb2)
 
 ## Roles to understand
 

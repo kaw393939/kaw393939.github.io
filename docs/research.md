@@ -1,58 +1,38 @@
 ---
 title: Rethinking Education with AI
-description: Keith Williams explores what learning, judgment, and responsibility mean when AI can produce more of the work.
+description: Keith Williams's questions about independent learning, source-grounded AI, and how to spend human attention on decisions that need it.
 ---
 
 # Rethinking Education with AI
 
-**If AI can produce the assignment, what do we want the student to learn?**
+**If AI can produce the assignment, what do we want the student to learn?** I come back to that question in class when a student shows me something that works. I want to know what they would try if I changed one requirement.
 
-That question keeps coming up in my teaching and in the tools I build. I don't think we can answer it simply by banning the technology, or by assuming that a better-looking result means better learning.
+A related question shows up in my engineering work. An AI system gives someone a plausible answer. What would it take for that person to check the source, spot an error, and correct it?
 
-This is a set of interests and questions, **not a list of completed experiments or peer-reviewed findings**.
-
-## Research in AI systems and knowledge engineering
-
-Alongside my teaching research, I'm investigating how AI systems can transform messy text, audio, video, and documents into **personalized, source-grounded knowledge artifacts** while using human attention responsibly.
-
-The work connects multimodal sensors, deterministic tests, qualitative model evaluation, provenance, hybrid graph/vector retrieval, and human–AI decision policies. Some components exist in working software; the combined architecture remains a research proposal.
-
-**[Explore the six-article research series and technical case studies](/research/systems/)**
-
-For faculty discussion: [preliminary doctoral research proposal](/research/systems/dissertation-proposal) · [literature and NJIT faculty connections](/research/systems/literature-and-faculty).
+This is a research agenda, **not a list of completed experiments or peer-reviewed findings**.
 
 ## Can you use what you learned somewhere new?
 
-Someone may finish a project with AI and still struggle to explain or change it. I'd like to understand what kinds of practice help students carry their learning into a new situation.
+In my programming Studios, an AI coach can offer hints, run checks, and help a learner move forward. At the next checkpoint I can change the rule of a game or give the student a new source to inspect. How much of what they learned travels with them?
 
-A useful study might look at how students explain a decision, debug unfamiliar code, or solve a related problem with and without AI. We'd need fair comparisons and a clear way to judge the results, not just impressions from a successful class session.
+I'd like to compare how students explain a decision, debug unfamiliar code, or solve a related problem with different amounts of help. A successful demo gives us a place to start. An answer about learning would require fair comparisons and a consistent way to judge the follow-up. [Read the classroom feature](/teaching/when-ai-helps-write-the-code) · [Explore the research behind the Studio](/teaching/studio-field-notes)
 
 ## What should count as evidence of learning?
 
-The final program, essay, or design is only part of the picture. The questions a student asks, the tests they choose, and the reasons they give for a decision may tell us something the finished work does not.
+The questions a student asks, the tests they choose, and the reasons they give for revising their work may tell us something the finished program, essay, or design leaves out. I'd like to know which of those observations are useful to another instructor, how consistently teachers can interpret them, and how much time collection takes away from practice.
 
-I'm interested in assessment that makes room for explanation, revision, and demonstration. That doesn't automatically make it better: we also need to ask whether it is fair, consistent, and practical for students and teachers.
+## Building knowledge a reader can check
+
+![A magnifying glass enlarges a marked spot on layers of blue tracing paper.](/images/editorial/evidence-desk.jpg)
+
+Imagine two documents that disagree about the same event. A search system can return both. A reader still needs to see which passage supports each claim, where the records disagree, and what remains uncertain. My research starts with that reader's problem.
+
+The systems series explores document processing, graph and vector retrieval, software tests, and deciding when a person should review a result. It distinguishes what I have built from the larger architecture I propose to evaluate. [Read the research series and technical case studies](/research/systems/)
+
+For a closer look at engineering decisions, start with the [MetaVis case study](/research/systems/metavis-evidence-and-evaluation). For the proposed research methods and questions open for faculty discussion, see the [preliminary doctoral proposal](/research/systems/dissertation-proposal) and [literature and faculty reading map](/research/systems/literature-and-faculty).
 
 ## How do we work with AI responsibly?
 
-An assistant that can act across tools creates a different relationship from a chatbot that only suggests text. How much direction does it need? What should it verify? How do we recover when it gets something wrong?
+An assistant that can act across tools creates a different relationship from a chatbot that suggests text. How much direction does it need? What should it verify? How do we recover when it gets something wrong? [Life Tracker](/life-tracker) describes how I keep a record of what happened. [Ordo](https://github.com/kaw393939/ordo) documents the design of a broader system for human-directed AI work.
 
-[Life Tracker](/life-tracker) is a practical example of keeping work and follow-through visible. [Ordo](https://github.com/kaw393939/ordo) explores a broader design for human-directed AI workflows. These are examples to examine, not proof that the approach has been validated.
-
-## Start small, show the work
-
-My instinct is to build a concrete example, make the assumptions visible, and compare it with an alternative. Then ask what the evidence supports and what it doesn't.
-
-Any formal study would need an appropriate method, privacy protections, and institutional review where required. Until then, classroom experiences and software projects can help us ask better questions without pretending to settle them.
-
-## Ideas beyond the university
-
-I'm also interested in practical community AI education: helping people understand what these tools can and cannot do, and giving them a useful place to begin. My earlier EverydayAI Newark concept belongs in that category of **ideas to explore**, not established programs.
-
-[More about my background and ideas](/about) · [How I teach AI](/teaching) · [Start a public conversation](/#conversation)
-
-*Personal research interests. No completed study, institutional endorsement, or formal doctoral appointment is implied.*
-
-## Explore the changing job market
-
-[AI Careers: real jobs, internships and skills](/ai-careers) connects employer requirements to practical projects you can build and explain. It is a dated research snapshot, not a promise of employment.
+I also want practical AI education to reach beyond the university. My earlier EverydayAI Newark concept explored how community members could learn with real projects. [Read about my background and community work](/about)

@@ -1,5 +1,7 @@
 # Make a Studio from an assignment you already teach
 
+**Teacher copy.** This README includes the example answers. Share only **LESSON.md** and **AGENTS.md** with students.
+
 A Studio gives students something to make, one decision to own, and a way to find out whether their decision holds up. The teacher decides when AI can help and when it should wait.
 
 ## Start here
