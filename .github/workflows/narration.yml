@@ -1,0 +1,236 @@
+name: Build narrated editions
+
+on:
+  push:
+    branches: [main, automation/narration-build]
+    paths:
+      - 'docs/**'
+      - 'scripts/narration/**'
+      - 'scripts/build-knowledge-lab.mjs'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/narration.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Both source branches share one media branch. Keep its previous/current pair consistent.
+concurrency:
+  group: narrated-editions-writer
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/automation/narration-build'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      pending: ${{ steps.inventory.outputs.pending }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Read the Knowledge Lab revision used by the site
+        id: lab
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          from pathlib import Path
+          import re
+          source = Path('scripts/build-knowledge-lab.mjs').read_text()
+          pins = re.findall(r"^\s*revision:\s*['\"]([0-9a-f]{40})['\"]", source, re.M)
+          if len(pins) != 1:
+              raise SystemExit("Expected one full revision in the Knowledge Lab build script.")
+          print("revision=" + pins[0])
+          PY
+
+      - uses: actions/checkout@v4
+        with:
+          repository: kaw393939/is373-rag
+          ref: ${{ steps.lab.outputs.revision }}
+          path: _lab
+          persist-credentials: false
+
+      - uses: actions/checkout@v4
+        with:
+          ref: narrated-editions
+          path: _previous
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            _lab/package-lock.json
+
+      - name: Build the journal
+        run: |
+          npm ci --no-audit --no-fund
+          npm run build
+      - name: Build the pinned Knowledge Lab
+        working-directory: _lab
+        env:
+          DOCS_BASE: /knowledge-lab/
+          DOCS_ORIGIN: https://keithwilliams.org
+          LAB_REVISION: ${{ steps.lab.outputs.revision }}
+        run: |
+          npm ci --no-audit --no-fund
+          GITHUB_SHA="$LAB_REVISION" npm run build
+
+      - name: Extract spoken text and identify changed recordings
+        id: inventory
+        run: |
+          python3 scripts/narration/extract-journal.py --dist docs/.vitepress/dist --out _spoken/journal
+          python3 scripts/narration/extract-lab.py --dist _lab/dist --docs _lab/docs --out _spoken/lab
+          python3 scripts/narration/prepare.py --journal _spoken/journal --lab _spoken/lab --out _render --previous _previous
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          from pathlib import Path
+          print('pending=' + str(sum(1 for _ in Path('_render/input').glob('*.txt'))))
+          PY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: narration-prepared
+          path: _render/
+          retention-days: 7
+          if-no-files-found: error
+          overwrite: true
+
+  render:
+    needs: prepare
+    if: needs.prepare.outputs.pending != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    steps:
+      - uses: actions/checkout@v4
+        if: matrix.shard < fromJSON(needs.prepare.outputs.pending)
+        with:
+          persist-credentials: false
+
+      - uses: actions/download-artifact@v4
+        if: matrix.shard < fromJSON(needs.prepare.outputs.pending)
+        with:
+          name: narration-prepared
+          path: _render
+
+      - uses: actions/setup-python@v5
+        if: matrix.shard < fromJSON(needs.prepare.outputs.pending)
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: scripts/narration/requirements.txt
+
+      - uses: actions/cache@v4
+        if: matrix.shard < fromJSON(needs.prepare.outputs.pending)
+        with:
+          path: ${{ runner.temp }}/narration-models
+          key: narration-models-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('scripts/narration/render.py', 'scripts/narration/requirements.txt') }}
+
+      - name: Install the voice renderer
+        if: matrix.shard < fromJSON(needs.prepare.outputs.pending)
+        run: |
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y --no-install-recommends ffmpeg
+          fi
+          python -m pip install -r scripts/narration/requirements.txt
+
+      - name: Render this shard
+        if: matrix.shard < fromJSON(needs.prepare.outputs.pending)
+        env:
+          SHARD: ${{ matrix.shard }}
+        run: |
+          python scripts/narration/render.py --input _render/input --output _part --shard "$SHARD" --shards 12 --model-dir "$RUNNER_TEMP/narration-models"
+
+      - name: Record an empty shard
+        if: matrix.shard >= fromJSON(needs.prepare.outputs.pending)
+        env:
+          SHARD: ${{ matrix.shard }}
+        run: |
+          mkdir -p _part
+          echo '{}' > "_part/manifest-$SHARD.json"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: narration-part-${{ matrix.shard }}
+          path: _part/
+          retention-days: 7
+          if-no-files-found: error
+          compression-level: 0
+          overwrite: true
+
+  collect:
+    needs: [prepare, render]
+    if: >-
+      !cancelled() && needs.prepare.result == 'success' &&
+      (needs.render.result == 'success' || (needs.render.result == 'skipped' && needs.prepare.outputs.pending == '0'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    outputs:
+      changed: ${{ steps.publish.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: narrated-editions
+          path: _published
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: narration-prepared
+          path: _render
+      - uses: actions/download-artifact@v4
+        if: needs.prepare.outputs.pending != '0'
+        with:
+          pattern: narration-part-*
+          merge-multiple: true
+          path: _parts
+
+      - name: Prepare empty shard inventories when every recording is reusable
+        if: needs.prepare.outputs.pending == '0'
+        run: |
+          mkdir -p _render/input _parts
+          for shard in {0..11}; do echo '{}' > "_parts/manifest-$shard.json"; done
+
+      - name: Validate and collect the edition
+        run: python3 scripts/narration/collect.py --prepared _render --parts _parts --published _published
+
+      - name: Commit changed media to the editions branch
+        id: publish
+        working-directory: _published
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+          else
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Update narrated editions'
+            git push origin HEAD:refs/heads/narrated-editions
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
+
+  publish-site:
+    needs: collect
+    if: github.ref == 'refs/heads/main' && needs.collect.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: write
+    steps:
+      - name: Request site publication with the finished recordings
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run publish.yml --repo "$GITHUB_REPOSITORY" --ref main
