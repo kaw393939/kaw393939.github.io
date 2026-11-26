@@ -7,7 +7,12 @@ articleGenre: "Research essay"
 
 # Can One Set of Evidence Support a Lesson, a Briefing, and a Podcast? {#from-personalized-knowledge-artifacts-to-governed-ai-systems}
 
-Imagine asking an AI to turn a technical report into a lesson for a beginner and a short briefing for a manager. The lesson defines unfamiliar terms. The briefing jumps to the decision. In the original report, one finding depends on a measurement the researchers could not repeat. Will that caveat survive either rewrite?
+Imagine a technical report describing a faster export. One run got the expected file to the editor sooner. That finding is hypothetical. Here is how I would put it in two people’s hands.
+
+- **For a learner:** “A shorter export means the same clip finishes sooner. We saw it once. <u>The team could not repeat the result.</u> What would you keep the same on the next run?”
+- **For a manager:** “One export finished sooner. <u>The team could not repeat the result.</u> Keep the current delivery estimate until repeated runs support a change.”
+
+I would return a briefing that simply said “The new export is faster.” A reader could reasonably use that sentence to promise a shorter turnaround. Would the person reading the lesson and the person making that promise understand the same limit?
 
 That question brought me from personalized educational content to the engineering of evidence. Tailoring the presentation is valuable. Paying an expert to recheck every sentence in every version can consume the time the system was supposed to save.
 

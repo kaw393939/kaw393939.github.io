@@ -7,9 +7,13 @@ articleGenre: "Interface design proposal"
 
 # What Should Happen When You Click an AI Citation? {#from-claims-to-navigable-knowledge}
 
-Imagine reading a briefing that says two reports independently describe the same event. You click the sentence. One report quotes the other. The interface has just helped you correct the briefing, provided you can see where each passage came from and flag the relationship for review.
+A briefing says, “Two independent reports describe a light near the ridge.” If you were the editor, what would you want a click on *independent* to show? Here is a design sketch with two invented reports.
 
-That is the experience I want from an AI-assisted research tool. A teacher, engineer, or analyst should be able to read a short account, investigate one sentence, and return to the account with a clearer idea of what it supports. This essay describes a proposed interface.
+1. **Select the claim.** The proposed briefing opens a panel with the sentence and its two supporting passages, from a witness interview in Report A and a later account in Report B.
+2. **Inspect the quotation.** In A the witness says, “I saw a light near the ridge.” B reproduces the words and credits the interview in A. Opening the passage in context reveals who is speaking in each document.
+3. **Flag the duplicate.** Mark B as quoting A and send the independence claim for review. The editor can keep both documents and revise the briefing to say that both draw on one witness.
+
+In a usability study I would time how long a reader takes to reach the quoted passage and score whether they identify A as the parent and flag the independence claim correctly. The walkthrough describes the interface I want to test.
 
 ## The central design decision: claims come first
 

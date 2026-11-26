@@ -8,7 +8,7 @@ teaser: In my NJIT Studios, I decide what the AI coach can handle and which deci
 
 I teach web development, web applications, and content management at NJIT, and I direct the undergraduate Enterprise AI program. Across those settings, I design assignments around a handoff. A classmate tries to buy a T-shirt. A reviewer asks what an automated check actually checked. Watching the person who built the work respond tells me something a finished screen cannot.
 
-If you teach a course or mentor a new engineer, pick one decision you want to watch the learner make. In the Studios below, it might be choosing a buyer, calling the winner of a game, or finding out why a website is unreachable.
+If you teach a course or mentor a new engineer, pick one decision you want to watch the learner make. In the Studios below, it might be choosing a buyer, calling the winner of a game, or finding out why a website is unreachable. If you’re here for your IS373 project, <a href="/knowledge-lab/students/" target="_self">open the student guide</a> to choose your next step.
 
 ## The Tests Passed. Who Won the Game?
 
@@ -26,7 +26,7 @@ I call these activities *Studios*. Students try a starter, choose one change, bu
 | [Rock, Paper, Scissors · Building Web Applications](https://github.com/kaw393939/is218-rps-starter) | Predict the outcome of a round from the player’s point of view. Check a test, then play it yourself. |
 | [Server Studio · Content Management Systems](https://github.com/kaw393939/373_hosting) | Predict how a request will reach a calculator running on your server. Open the public address and see what happens. |
 
-For a project that works with documents, try the <a href="/knowledge-lab/">Knowledge Lab</a>. Give the system a question it can answer and ask for the passage that supports its answer. Then ask for a detail the collection leaves out.
+In the <a href="/knowledge-lab/" target="_self">Knowledge Lab</a>, I use a club handbook to give students two different decisions. Can they find who organizes events? What should the app say about a meeting room the handbook never names? <a href="/knowledge-lab/students/check" target="_self">Use those two questions to check a RAG app</a>.
 
 ## Try a Studio in your course
 
@@ -38,6 +38,6 @@ The download includes a worked example, a student handout, and the coach’s ins
 
 The follow-up I care about is what happens on a fresh task, after the coach stops prompting. I describe the comparison I’d like to study in my [research agenda](/research). The [AI career field guide](/ai-careers) connects classroom practice to responsibilities employers assign to engineers.
 
-If you want to try the Studio in another discipline or a team onboarding exercise, send me the task, the decision you want someone to own, and what you could observe afterward. [Contact me through NJIT](https://people.njit.edu/profile/kwilliam)
+If you want to try a Studio in another course, send me the task and the decision you want the learner to own. I’d like to hear what they choose when you hand them the keyboard. [Contact me through NJIT](https://people.njit.edu/profile/kwilliam)
 
 I also publish two tools for colleagues building their own materials. The Educational Design System provides reusable layouts for course sites. Everyday AI CLI is an alpha command-line toolkit for repeatable AI tasks. [Explore the Educational Design System](https://kaw393939.github.io/educational-design-system/) · [See Everyday AI CLI](https://github.com/kaw393939/everyday-ai-cli)

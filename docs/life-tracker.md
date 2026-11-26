@@ -7,9 +7,32 @@ layout: doc
 
 # Life Tracker
 
-Suppose an assistant helps arrange a workshop. It finds a room, drafts a request, and reports progress. Can the organizer put the room number on the invitation yet? Until the venue confirms the booking, someone still owns the next step.
+Suppose Maya is organizing a workshop. An assistant has found a room and drafted the request. Maya has an invitation ready to send. Can she put the room number on it? This booking is fictional, but it illustrates a problem I encounter whenever an assistant can draft something faster than I can verify the result.
 
-I call my way of keeping track of that step *Life Tracker*. A private GitHub repository holds my work queue. Each issue names the outcome I need, the person responsible, and the evidence that will let me close it. The workshop below is fictional. You can try the method with one task of your own.
+## A simple example {#example}
+
+| Booking stage | What Maya records in the issue |
+| --- | --- |
+| Research | The venue lists a room with enough seats. Maya checks the availability and keeps a reference to the listing. |
+| Draft and decision | The assistant drafts a request with the room, date, and time. Maya checks the details and approves the request. |
+| In progress | Maya sends the approved request. The sent message establishes that the venue has been asked. |
+| Waiting | Maya owns the follow-up. She records when she will check for a reply and leaves the issue open. |
+| Closed | The venue confirms the room, date, and time. Maya compares the reply with the request, records where to find it, and puts the room on the invitation. |
+
+I call this way of following through *Life Tracker*. A private GitHub issue gives the next person a place to find the owner, the next action, and the evidence needed to close the task. Try the same fields with one piece of your own work.
+
+<div class="guide-template">
+
+**Your first issue**
+
+- Workstream
+- Verified current state, source reference, and time checked
+- Next action, owner, and dependencies
+- Confirmed deadline, with its source and time zone
+- Proposed follow-up, if needed
+- Completion criteria
+
+</div>
 
 [Download the checklist and issue template](/life-tracker-starter.txt)
 
@@ -18,7 +41,6 @@ I call my way of keeping track of that step *Life Tracker*. A private GitHub rep
     <li><a href="#daily-workflow">How I use it</a></li>
     <li><a href="#set-up">Set up your own</a></li>
     <li><a href="#working-with-ai">How I work with AI</a></li>
-    <li><a href="#example">Follow a workshop booking</a></li>
     <li><a href="#keep-it-private">Keep the work private</a></li>
   </ul>
 </nav>
@@ -45,19 +67,6 @@ A date I choose for checking back goes in its own field. Adding it to an issue d
 4. **Give each open issue one status.** I use `status:needs-research`, `status:needs-draft`, `status:needs-decision`, `status:in-progress`, and `status:waiting`. I add `workstream:project` when I need to group related work, and `priority:time-sensitive` when a concrete deadline warrants it.
 5. **Take one task through the full cycle.** Use an action as the title, assign an owner, and fill in the template. Verify the outcome and close the issue. Adjust the fields after you see what was useful.
 
-<div class="guide-template">
-
-**Your first issue**
-
-- Workstream
-- Verified current state, source reference, and time checked
-- Next action, owner, and dependencies
-- Confirmed deadline, with its source and time zone
-- Proposed follow-up, if needed
-- Completion criteria
-
-</div>
-
 ## How I work with AI {#working-with-ai}
 
 I tell the assistant which outcome I need, which sources it may use, and whether I want research, a draft, or an action. I can give it read-only access for research. If I later want it to change an issue or send a message, I specify what to change or whom to contact and what commitments it may make.
@@ -67,19 +76,6 @@ A request I use as a starting point is:
 > Review this task using the sources I have authorized. Tell me what you verified, what you still need, and who owns the next step. Draft any suggested message for my review. Do not send messages or change other systems.
 
 After an action, I check the resulting issue, message, or source record. If the assistant cannot see a source, it can identify what is missing. Anyone with authorized access should be able to pick up the task from the issue, including a person working without AI.
-
-## A simple example {#example}
-
-| Booking stage | What the organizer can verify |
-| --- | --- |
-| Research | The venue’s room options, capacity, and latest availability. |
-| Draft | A request names the room, date, and time the organizer wants. |
-| Decision | The organizer approves the room and the request. |
-| In progress | The authorized request appears in the sent record. |
-| Waiting | The venue owes a reply. The issue names who will check back and when. |
-| Closed | The venue confirms the room, date, and time. The organizer checks all three against the request. |
-
-Notice what changed in the final row. Now the organizer has the evidence needed to put the room on the invitation.
 
 ## Keep the work private {#keep-it-private}
 

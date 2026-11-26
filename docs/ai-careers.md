@@ -12,6 +12,10 @@ I read employer descriptions across five role families to help students decide w
 
 [Explore roles](#roles-to-understand) · [Study internships](#internships-start-here) · [Compare 50 postings](#skills-report-50-real-posting-descriptions) · [Plan your skills](#what-should-you-learn) · [Build a portfolio project](#turn-research-into-a-plan)
 
+## From a posting to a portfolio project
+
+Google’s internship example below combines customer discovery with building a tool. Here’s one way to practice both. Ask a classmate to use a club handbook to find out who organizes events. Watch where they look. Build a search that returns the relevant passage, then hand the keyboard back. Keep the question, the passage they found, and the change their feedback led you to make. Those three pieces give an interviewer something specific to ask you about. <a href="/knowledge-lab/students/reference#your-first-15-minutes" target="_self">Try the handbook search with five sample documents</a>.
+
 ## The short version
 
 - **If you like working with people**, look for customer discovery, workshops, and implementation. For a portfolio example, give a classmate the keyboard, observe one difficulty, fix it, and invite them to retest. [See a classroom demo](/teaching)
@@ -809,7 +813,7 @@ These are examples for practice, **not hiring guarantees**. Check enrollment, wo
 ## What should you learn?
 
 1. **Build something small.** Connect a Python or TypeScript application to an API or database. Use Git, write a test, and deploy it somewhere a second person can try.
-2. **Trace an answer.** Connect a model to a source, then ask for a detail that source leaves out. Show where the answer came from. The <a href="/knowledge-lab/">Knowledge Lab</a> has an exercise.
+2. **Trace an answer.** Connect a model to a source, then ask for a detail that source leaves out. Open the cited passage and decide which part of the answer it supports. <a href="/knowledge-lab/students/check" target="_self">Test your app with five kinds of questions</a>.
 3. **Measure a result.** Run a small test set, record one failure, and check the effect of a change. If cost, latency, privacy, or security matters to the user, say how you checked it.
 4. **Hand over the keyboard.** Ask someone who never helped build the system to try it. Let them tell you where an instruction, screen, or result surprised them.
 5. **Make a claim you can defend.** If your change saved time, show the before and after measurements. If you tried it with fictional data, say so.

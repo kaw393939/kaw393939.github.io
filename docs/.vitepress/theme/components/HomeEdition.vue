@@ -22,6 +22,20 @@ const [headline, ...emphasis] = lead.headline.trim().split(/\r?\n/)
     </figure>
   </section>
 
+  <section class="lab-feature wrap" aria-labelledby="home-lab-title">
+    <div class="lab-exercise">
+      <p class="eyebrow">Ordo Knowledge Lab</p>
+      <h2 id="home-lab-title">Who saw the harbor light move?</h2>
+      <p>Three fictional reports describe a light near a pier. Count the independent observations, then compare answers with a classmate. Which line supports your count?</p>
+      <a class="read-link" href="/knowledge-lab/guide/walkthrough" target="_self">Try the ten-minute source check <span aria-hidden="true">→</span></a>
+    </div>
+    <ul class="lab-paths" aria-label="More ways to use the lab">
+      <li><a class="inline-link" href="/knowledge-lab/students/" target="_self">Build the IS373 student project <span aria-hidden="true">→</span></a></li>
+      <li><a class="inline-link" href="/knowledge-lab/kits/three-report-source-check.txt" target="_self">Get the classroom handout (.txt) <span aria-hidden="true">→</span></a></li>
+      <li><a class="inline-link" href="/knowledge-lab/design/" target="_self">Read the proposed system design <span aria-hidden="true">→</span></a></li>
+    </ul>
+  </section>
+
   <section v-if="supporting.length" id="missions" class="dispatches wrap" aria-labelledby="dispatches-title">
     <div class="section-rule"><h2 id="dispatches-title">From the journal</h2> <a href="/writing">All writing <span aria-hidden="true">↗</span></a></div>
     <div class="dispatch-grid">

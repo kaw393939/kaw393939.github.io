@@ -60,6 +60,8 @@ For this work, **qualifying a claim** means recording the evidence and condition
 
 **RQ2 — Adaptive review.** Can commissioning rules case by case lower expert minutes per correctly qualified claim compared with reviewing every case or using a fixed confidence threshold? The system must stay within a predefined bound on consequential false promotions, cases in which it accepts a claim for a use its evidence does not support.
 
+My provisional primary endpoint for Study B is **expert minutes per correctly qualified claim, subject to a consequential false-promotion limit**. Before the pilot, domain reviewers would label which errors could change a downstream decision and set the maximum acceptable fraction of promoted claims with those errors for the intended use. I would register the denominator, limit, and uncertainty rule before observing policy outcomes. A policy that exceeds the bound fails the reliability condition. Among policies that meet it, equal or greater reviewer time per correctly qualified claim would count against the proposed advantage.
+
 **RQ3 — Attention-aware scheduling.** With a fixed number of reviewers, can a pull-based, Kanban-inspired queue get verified claims to their users sooner or produce more value per reviewer hour than first-in, first-out (FIFO) or uncertainty-first ordering?
 
 **RQ4 — Knowledge reuse.** When a graph steers retrieval toward qualified claims and their sources, can it reduce the model context and marginal cost of each new artifact while preserving citation fidelity, important contradictions and usefulness?
@@ -230,7 +232,7 @@ The prototype can reuse selective design ideas and code from MetaVis and Ordo Ex
 ## 11. Questions for prospective advisors
 
 1. Is the central contribution best framed as an **Information Systems design-science artifact**, a **Computer Science optimization algorithm**, or a joint program?
-2. Which single outcome should anchor the dissertation: consequential error at fixed review budget, or human minutes at fixed reliability?
+2. Is the proposed reliability bound defensible for the intended use? What evidence would justify replacing reviewer time at fixed reliability with consequential error at a fixed review budget?
 3. What is the minimum defensible demonstration of progressive commissioning beyond existing learning-to-defer research?
 4. What secondary dataset would provide useful ground truth alongside the deliberately disputed UAP material?
 5. What would an independent evaluation need to establish beyond what my existing engineering prototypes demonstrate?

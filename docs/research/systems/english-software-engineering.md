@@ -13,7 +13,13 @@ I sometimes tell students that “English is the new computer science.” What I
 
 ## What moves upward
 
-For the storefront, I would write the requirement in the customer’s language. *After I submit a request and close the page, the coordinator can reopen the app and find my request once.* Now the team can discuss whose account can see the record, what survives a restart, and what should happen if someone clicks twice.
+**Example issue — Let a coordinator retrieve a submitted request.** A customer should be able to close the storefront as soon as they see confirmation. Here is the acceptance check I would put in the issue.
+
+1. **Before the test**, create a customer account and a separate coordinator account. Check that the coordinator has no request labeled “Workshop notebooks.”
+2. **As the customer**, submit one request labeled “Workshop notebooks,” wait for confirmation, and close the page.
+3. **As the coordinator**, open the app in a fresh session. The request list must contain exactly one “Workshop notebooks” entry from that customer. Open it and compare the details with what the customer submitted.
+
+A teammate can run those steps without seeing the implementation. A double click raises a separate product decision. Should the app combine two submissions, warn the customer, or accept both? Ask the product owner before turning any of those behaviors into a test.
 
 In my courses, personas and journeys name the people involved. Themes and epics organize scope. A user story and its acceptance criteria belong in a versioned issue small enough for someone to try. A pull request links the change, the test, and the decision to accept it. A short specification saves the next person from reconstructing these decisions from several chats.
 

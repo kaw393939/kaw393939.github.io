@@ -11,7 +11,18 @@ import './identity.css'
 
 export default {
   Layout,
-  enhanceApp({ app }) {
+  enhanceApp({ app, router }) {
+    // The Lab is built separately and has its own VitePress page manifest.
+    if (typeof window !== 'undefined') {
+      router.onBeforeRouteChange = href => {
+        const url = new URL(href, window.location.href)
+        if (url.href !== window.location.href && url.origin === window.location.origin &&
+          /^\/(?:knowledge-lab|is373-rag)(?:\/|$)/.test(url.pathname)) {
+          window.location.assign(url.href)
+          return false
+        }
+      }
+    }
     app.component('ReaderTable', ReaderTable)
     app.component('ArticleHeader', ArticleHeader)
     app.component('ArticleIndex', ArticleIndex)
