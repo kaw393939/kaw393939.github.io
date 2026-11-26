@@ -6,7 +6,7 @@ const root = resolve('docs/.vitepress/dist')
 const page = name => readFileSync(resolve(root, 'knowledge-lab', name), 'utf8')
 const manifest = JSON.parse(page('mirror-manifest.json'))
 assert.equal(manifest.repository, 'https://github.com/kaw393939/is373-rag.git')
-assert.equal(manifest.revision, '797882fc1043e15db4f210e29cd3e97b35615294')
+assert.equal(manifest.revision, 'e8f9b77505bbeba6750ccf5b65fd0da328b9f868')
 assert.equal(manifest.base, '/knowledge-lab/')
 const homepage = readFileSync(resolve(root,'index.html'),'utf8')
 assert.ok(homepage.includes('href="/knowledge-lab/"'), 'Main nav must link to the published Knowledge Lab')
@@ -14,10 +14,13 @@ assert.ok(homepage.includes('Knowledge Lab'), 'Main nav project name is missing'
 assert.ok(!homepage.includes('href="/is373-rag/"'), 'Do not publish stale main navigation')
 assert.ok(homepage.includes('Ordo Knowledge Lab'), 'Portfolio case study is missing')
 for (const target of ['index.html','students/index.html','students/prompts.html',
+  'guide/walkthrough.html','kits/three-report-source-check.txt',
   'guide/vision.html','project/roadmap.html','students/embeddings.html',
   'students/chunking.html','students/library-survey.html','students/from-app-studio.html','assets','sitemap.xml']) {
   assert.ok(existsSync(resolve(root, 'knowledge-lab',target)), `Missing mirrored target ${target}`)
 }
+assert.ok(page('guide/walkthrough.html').includes('/knowledge-lab/kits/three-report-source-check.txt'), 'Missing practice kit link in walkthrough')
+assert.ok(page('kits/three-report-source-check.txt').includes('ONE INCIDENT, THREE REPORTS'), 'Missing practice kit content')
 const home = page('index.html')
 const students = page('students/index.html')
 assert.ok(home.includes('Build answers you') && home.includes('ONE COMPLETE RAG EXAMPLE'), 'Expected project landing')

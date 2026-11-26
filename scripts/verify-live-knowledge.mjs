@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict'
 
 const root = 'https://keithwilliams.org'
-const pinned = '797882fc1043e15db4f210e29cd3e97b35615294'
+const pinned = 'e8f9b77505bbeba6750ccf5b65fd0da328b9f868'
 const targets = [
   {path: '/', test: body => body.includes('href="/knowledge-lab/"') && !body.includes('href="/is373-rag/"') && body.includes('Ordo Knowledge Lab')},
   {path: '/knowledge-lab/', test: body => body.includes('Build answers you') && body.includes('ONE COMPLETE RAG EXAMPLE')},
@@ -21,6 +21,9 @@ const targets = [
   {path: '/knowledge-lab/students/chunking', test: body => body.includes('Chunking: where should we cut a document?')},
   {path: '/knowledge-lab/students/from-app-studio', test: body => body.includes('From your existing FastAPI app to a small hosted RAG')},
   {path: '/knowledge-lab/students/library-survey', test: body => body.includes('AI libraries: what they do, and when to use them')},
+  {path: '/knowledge-lab/guide/walkthrough', test: body => body.includes('/knowledge-lab/kits/three-report-source-check.txt')},
+  {path: '/knowledge-lab/kits/three-report-source-check.txt', test: body => body.startsWith('ONE INCIDENT, THREE REPORTS')},
+  {path: '/site-notes', test: body => body.includes('https://keithwilliams.org/site-notes') && body.includes('GitHub Pages')},
   {path: '/knowledge-lab/mirror-manifest.json', test: body => {
     const info = JSON.parse(body)
     return info.revision === pinned && info.base === '/knowledge-lab/'
