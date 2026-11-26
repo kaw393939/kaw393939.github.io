@@ -360,15 +360,23 @@ check('Sitemap excludes the error page; error page is noindex', () => {
   assert.ok(read('robots.txt').includes('Sitemap: https://keithwilliams.org/sitemap.xml'))
 })
 check('Homepage serves local editorial photographs with accessible, sized images', () => {
-  const images = home.match(/<img\b[^>]*>/g) || []
+  const matches = [...home.matchAll(/<img\b[^>]*>/g)]
+  const images = matches.map(match => match[0])
   assert.ok(images.length >= 3)
   const sources = []
-  for (const img of images) {
+  for (const match of matches) {
+    const img = match[0]
     for (const attr of ['width', 'height', 'src']) assert.match(img, new RegExp('\\b' + attr + '="[^"]+"'))
     assert.match(img, /\balt="[^"]*"/)
     if (img.includes('alt=""')) {
-      const beforeImage = home.slice(0, home.indexOf(img))
-      assert.match(beforeImage, /<a\b[^>]*aria-hidden="true"[^>]*>\s*$/, 'Empty alt belongs to a decorative linked image')
+      const beforeImage = home.slice(0, match.index)
+      const afterImage = home.slice(match.index + img.length)
+      if (img.includes('class="profile-logo"')) {
+        assert.match(beforeImage, /<a\b[^>]*rel="me"[^>]*>\s*$/)
+        assert.match(afterImage, /^\s*(?:GitHub|LinkedIn)\s*<\/a>/, 'Decorative profile icon needs a visible link label')
+      } else {
+        assert.match(beforeImage, /<a\b[^>]*aria-hidden="true"[^>]*>\s*$/, 'Decorative linked image must be hidden')
+      }
     }
     const src = img.match(/\bsrc="([^"]+)"/)[1]
     sources.push(src)
