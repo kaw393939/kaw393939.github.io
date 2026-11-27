@@ -14,10 +14,10 @@ edition:
     /teaching/when-ai-helps-write-the-code:
       label: The teaching issue
       headline: |-
-        The Question I Want Students
-        to Ask Without Me
-      teaser: Give every team a bike-shop owner to interview. What students ask her, and what a rider understands afterward, can change the feedback you give and the class you teach next.
-      caption: A Studio starts with a question the teacher wants students to ask on their own.
+        The Tests Passed.
+        Who Won the Game?
+      teaser: My rock-paper-scissors starter passed twelve tests. It still couldn’t tell you who won. The missing rule became a lesson in what students can check for themselves.
+      caption: Paper covers rock.
     /teaching/studio-field-notes:
       label: Classroom practice
       headline: When should an AI coach step back?

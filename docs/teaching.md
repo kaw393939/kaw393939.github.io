@@ -10,9 +10,13 @@ I teach web development, web applications, and content management at NJIT, and I
 
 If you teach a course or mentor a new engineer, pick one decision you want to watch the learner make. In the Studios below, it might be choosing a buyer, calling the winner of a game, or finding out why a website is unreachable. If you’re here for your IS373 project, <a href="/knowledge-lab/students/" target="_self">open the student guide</a> to choose your next step.
 
+## The Tests Passed. Who Won the Game?
+
+Twelve automated checks passed, but none could prove the game knew who won. [Read the rock-paper-scissors story](/teaching/when-ai-helps-write-the-code).
+
 ## The Question I Want Students to Ask Without Me
 
-A rider requests Friday. Has the shop promised a repair? In my web applications Studio, every team can interview the fictional owner and ask a real classmate to try its answer. The same short project record gives students a story for an interview and gives me evidence for individual feedback and the next class. [Read the classroom feature](/teaching/when-ai-helps-write-the-code)
+A rider requests Friday. Has the shop promised a repair? In my web applications Studio, every team can interview the fictional owner and ask a real classmate to try its answer. The same short project record gives students a story for an interview and gives me evidence for individual feedback and the next class. [Read the bike-shop Studio story](/teaching/the-question-i-want-students-to-ask)
 
 ![A learner holds a pencil over a blank card beside a worked example.](/images/teaching/studio-coach-pause.jpg)
 

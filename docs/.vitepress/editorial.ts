@@ -57,6 +57,13 @@ export function articleMedia(path: string, frontmatter: Frontmatter) {
   let share = writingDesk
   if (path === 'teaching/when-ai-helps-write-the-code.md') {
     cover = {
+      path: '/images/teaching/studio-rock-paper-tests.jpg',
+      alt: 'Folded red paper covers a dark stone beside a strip of green check marks.',
+      width: 1280, height: 853
+    }
+    share = { ...cover, path: '/images/editorial/social-rock-paper.jpg', width: 1200, height: 630 }
+  } else if (path === 'teaching/the-question-i-want-students-to-ask.md') {
+    cover = {
       path: '/images/editorial/field-desk.jpg',
       alt: 'An open notebook and a red pencil on a blue workbench in angled sunlight.',
       width: 1440, height: 960

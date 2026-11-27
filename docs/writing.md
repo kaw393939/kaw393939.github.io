@@ -23,6 +23,6 @@ In my classroom, I want to hear what a student tried and why they changed their 
 
 - **Read an engineering case.** Which check tells you what a viewer actually receives in a video export? [Inside MetaVis](/research/systems/metavis-evidence-and-evaluation) · [All systems case studies and research](/research/systems/)
 - **Try a student exercise.** Ask who organizes events, open the passage your search returns, and show a classmate the words that answer the question. <a href="/knowledge-lab/students/reference#your-first-15-minutes" target="_self">Run the 15-minute retrieval lab</a> · [Find a portfolio project in an AI job posting](/ai-careers)
-- **Adapt a Studio for your class.** Turn an existing assignment into a guided conversation. Use the responses to give feedback and find a question worth revisiting with everyone. [Read the classroom feature](/teaching/when-ai-helps-write-the-code) · [Download the teacher kit with worked answers](/downloads/AI-Studio-Starter.zip)
+- **Adapt a Studio for your class.** Turn an existing assignment into a guided conversation. Use the responses to give feedback and find a question worth revisiting with everyone. [Read the bike-shop Studio story](/teaching/the-question-i-want-students-to-ask) · [Read the rock-paper-scissors story](/teaching/when-ai-helps-write-the-code) · [Download the teacher kit with worked answers](/downloads/AI-Studio-Starter.zip)
 
 <ArticleIndex />

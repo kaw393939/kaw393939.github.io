@@ -20,7 +20,7 @@ Later, through AmeriCorps, I taught children about computers at an after-school 
 
 I started teaching at NJIT as an adjunct. I’ve developed courses and helped shape the Web and Information Systems program. Along the way I built Showedme.net, a web application framework and learning management system, and Wrkbench, an iOS collaboration app.
 
-Today my students use AI coding assistants. In the assignments I call Studios, I can ask a student what they expect to happen, then come back to their answer when I review the work. An instructor can adapt the template to an assignment they already teach. [Read about the Studio method](/teaching/when-ai-helps-write-the-code)
+Today my students use AI coding assistants. In the assignments I call Studios, I can ask a student what they expect to happen, then come back to their answer when I review the work. An instructor can adapt the template to an assignment they already teach. [Read about the Studio method](/teaching/the-question-i-want-students-to-ask)
 
 ## Learning beyond my own classroom
 

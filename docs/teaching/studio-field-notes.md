@@ -10,7 +10,7 @@ imageCaption: "Two cards, one worked example, and a decision left to the learner
 
 <span id="what-shaped-the-ai-studio-starter"></span>
 
-Before putting an AI coach in front of students, try asking it for the answer. See what happens if you ask again. The reply tells you how much of your assignment the learner still gets to do. I built that rehearsal into my teacher Studio after reading studies of beginners, accounts from other classrooms, and engineers’ descriptions of reviewing AI-assisted work. Here are five decisions those sources changed. [Download the teacher Studio](/downloads/AI-Studio-Starter.zip) · [Read the classroom feature](/teaching/when-ai-helps-write-the-code)
+Before putting an AI coach in front of students, try asking it for the answer. See what happens if you ask again. The reply tells you how much of your assignment the learner still gets to do. I built that rehearsal into my teacher Studio after reading studies of beginners, accounts from other classrooms, and engineers’ descriptions of reviewing AI-assisted work. Here are five decisions those sources changed. [Download the teacher Studio](/downloads/AI-Studio-Starter.zip) · [Read the classroom feature](/teaching/the-question-i-want-students-to-ask)
 
 ## Give the student a fresh case {#could-a-student-recognize-a-problem-after-the-coach-stops-pointing-at-it}
 

@@ -14,10 +14,12 @@ const guide = read('life-tracker.html')
 const starter = read('life-tracker-starter.txt')
 const base = 'https://keithwilliams.org'
 const coverPath = '/teaching/when-ai-helps-write-the-code'
+const bikePath = '/teaching/the-question-i-want-students-to-ask'
 const notesPath = '/teaching/studio-field-notes'
 const studioZip = '/downloads/AI-Studio-Starter.zip'
 const writing = read('writing.html')
 const feature = read(coverPath.slice(1) + '.html')
+const bike = read(bikePath.slice(1) + '.html')
 const notes = read(notesPath.slice(1) + '.html')
 const checks = []
 
@@ -88,7 +90,7 @@ check('Homepage renders the configured articles, promotion copy and sharing artw
 check('Writing index puts original work and its classroom materials within reach', () => {
   const index = mainContent(writing)
   assert.match(index, /<figure\b[\s\S]*?src="\/images\/editorial\/field-desk\.jpg"[\s\S]*?<figcaption>AI-generated editorial illustration\.<\/figcaption>/)
-  const routes = [coverPath, notesPath, '/research/systems/', '/research/systems/english-software-engineering',
+  const routes = [coverPath, bikePath, notesPath, '/research/systems/', '/research/systems/english-software-engineering',
     '/research/systems/provenance-knowledge-graphs', '/research/systems/human-attention-kanban', '/ai-careers']
   for (const url of routes) {
     requireLink(index, url)
@@ -96,12 +98,21 @@ check('Writing index puts original work and its classroom materials within reach
     const html = read(file)
     assert.equal((mainContent(html).match(/<h1\b/g) || []).length, 1, url)
   }
-  for (const html of [index, mainContent(feature), mainContent(read('teaching.html'))]) requireLink(html, studioZip)
-  for (const html of [feature, notes]) assert.equal((mainContent(html).match(/<h1\b/g) || []).length, 1)
+  for (const html of [index, mainContent(feature), mainContent(bike), mainContent(read('teaching.html'))]) requireLink(html, studioZip)
+  for (const html of [feature, bike, notes]) assert.equal((mainContent(html).match(/<h1\b/g) || []).length, 1)
   const files = execFileSync('unzip', ['-Z1', resolve(dist, studioZip.slice(1))], { encoding: 'utf8' })
     .trim().split(/\r?\n/).filter(name => !name.endsWith('/'))
   assert.deepEqual(files.sort(), ['AGENTS.md', 'LESSON.md', 'README.md', 'TEACHER-STUDIO.md']
     .map(name => 'AI-Studio-Starter/' + name).sort())
+})
+
+check('The original teaching URL and the separate bike-shop post render distinct articles', () => {
+  assert.match(mainContent(feature), /The Tests Passed\. Who Won the Game\?/)
+  assert.match(mainContent(feature), /55029c04d60e2c2b19e923defc82af24e9c4b9da/)
+  assert.match(mainContent(bike), /The Question I Want Students to Ask Without Me/)
+  assert.match(mainContent(bike), /id="bring-a-job-posting-to-the-studio"/)
+  requireLink(mainContent(read('teaching.html')), bikePath)
+  requireLink(mainContent(read('ai-careers.html')), bikePath + '#bring-a-job-posting-to-the-studio')
 })
 
 check('Project cases and historical experience include status and source links', () => {
@@ -237,6 +248,7 @@ check('Social previews, canonical URLs and structured data match the reading des
     ['/teaching', 'CollectionPage', read('teaching.html')],
     ['/research', 'CollectionPage', read('research.html')],
     [coverPath, 'Article', feature],
+    [bikePath, 'Article', bike],
     [notesPath, 'Article', notes]
   ]
   for (const [route, type, html] of pages) {
@@ -247,9 +259,10 @@ check('Social previews, canonical URLs and structured data match the reading des
     assert.equal(metadata(html, 'twitter:card'), 'summary_large_image', route)
     const image = new URL(metadata(html, 'og:image'))
     assert.equal(image.origin, base)
-    if (route === coverPath || route === '/' || route === '/writing') {
+    if ([coverPath, bikePath, '/', '/writing'].includes(route)) {
       if (route !== '/') {
-        assert.equal(image.pathname, '/images/editorial/social-field-desk.jpg', route)
+        assert.equal(image.pathname, route === coverPath
+          ? '/images/editorial/social-rock-paper.jpg' : '/images/editorial/social-field-desk.jpg', route)
       }
       assert.equal(metadata(html, 'og:image:width'), '1200', route)
       assert.equal(metadata(html, 'og:image:height'), '630', route)
@@ -342,7 +355,7 @@ check('Every article has its own illustrated teaser, canonical sharing link and 
   const researchArticles = readdirSync('docs/research/systems')
     .filter(name => name.endsWith('.md') && name !== 'index.md')
     .map(name => '/research/systems/' + name.slice(0, -3))
-  const expected = new Set([coverPath, notesPath, '/ai-careers', '/life-tracker', ...researchArticles])
+  const expected = new Set([coverPath, bikePath, notesPath, '/ai-careers', '/life-tracker', ...researchArticles])
   const cards = new Map()
   for (const [, card] of mainContent(writing).matchAll(/<article\b[^>]*class="journal-card"[^>]*>([\s\S]*?)<\/article>/g)) {
     const link = card.match(/<a\b[^>]*\bclass="journal-card-link"[^>]*>/)?.[0]
@@ -450,7 +463,7 @@ check('Sitemap excludes the error page; error page is noindex', () => {
   assert.ok((sitemap.match(/<loc>/g) || []).length >= 17, 'Sitemap should include the expanded research site')
   assert.ok(sitemap.includes('/teaching'))
   assert.ok(sitemap.includes('/research'))
-  for (const route of ['/writing', coverPath, notesPath]) assert.ok(sitemap.includes(base + route), route)
+  for (const route of ['/writing', coverPath, bikePath, notesPath]) assert.ok(sitemap.includes(base + route), route)
   assert.ok(sitemap.includes('/research/systems/vision-and-interface'))
   assert.ok(sitemap.includes('/research/systems/uap-research-testbed'))
   assert.match(error, /name="robots" content="noindex, follow"/)
